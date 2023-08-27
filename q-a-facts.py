@@ -1,3 +1,5 @@
+import subprocess
+
 from transformers import AutoTokenizer
 from datasets import Dataset
 
@@ -19,7 +21,21 @@ os.environ['OPENAI_API_BASE']=OPENAI_API_BASE
 
 import openai
 
-#from vars
+# Initialize tokenizer
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-1.4b-deduped")
+tokenizer.pad_token = tokenizer.eos_token
+
+# Function to read data
+def read_data(input_file):
+    selected_prompts = []
+    for file_name in os.listdir(input_file):
+        if file_name.endswith('.txt'):
+            file_path = os.path.join(input_file, file_name)
+            if os.path.isfile(file_path):
+                with open(file_path, 'r') as file:
+                    content = file.read()
+                    selected_prompts.append(content)
+    return selected_prompts
 
 def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH=128, BLOCK_SIZE=256):
     
@@ -70,18 +86,6 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH=128, BLOCK_SIZE=256):
     
     return dataset
 
-# Function to read data
-def read_data(input_file):
-    selected_prompts = []
-    for file_name in os.listdir(input_file):
-        if file_name.endswith('.txt'):
-            file_path = os.path.join(input_file, file_name)
-            if os.path.isfile(file_path):
-                with open(file_path, 'r') as file:
-                    content = file.read()
-                    selected_prompts.append(content)
-    return selected_prompts
-
 # Function to create dataset (assuming tokenizer is defined)
 def create_dataset(selected_prompts, tokenizer):
     input_ids_list = []
@@ -104,145 +108,125 @@ def create_dataset(selected_prompts, tokenizer):
     
     return dataset_dict
 
-# Function to generate questions and answers using API with batch processing
-def generate_qa_batch(contexts):
+def generate_qa_batch_with_chat_completion(contexts):
     generated_questions = []
-    generated_answers = []
     
-    question_messages = []
-    for context in contexts:
-        question_prompt = f"""User:
-
-{context}
-
-Instruction: Provide a test question that can be answered using the above information.
-
-Test Question:\n"""
-        question_messages.append({"role": "user", "content": question_prompt})
+    # Prepare the messages for ChatCompletion
+    stringified_contexts = json.dumps(contexts)
+    prompts = [
+        {
+            "role": "user",
+            "content": stringified_contexts
+        },
+        {
+            "role": "system",
+            "content": "Complete every element of the array. Reply with an array of all completions."
+        }
+    ]
     
-    question_messages.append({"role": "system", "content": "Complete every element of the array. Reply with an array of all completions."})
-    
-    question_response = openai.ChatCompletion.create(
+    # Perform the ChatCompletion
+    stringified_batch_completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=question_messages,
-        max_tokens=512 * len(contexts)
+        messages=prompts,
+        max_tokens=1000
     )
     
-    question_batch_completion = json.loads(question_response.choices[0].message.content)
-    generated_questions.extend(question_batch_completion)
+    # Extract the responses
+    batch_completion = json.loads(stringified_batch_completion.choices[0].message.content)
     
-    answer_messages = []
-    for i, context in enumerate(contexts):
-        answer_prompt = f"""User:
+    for completion in batch_completion:
+        question = completion.strip()  # Adapt this line based on the structure of your output
+        generated_questions.append(question)
+    
+    return generated_questions
 
-{context}
+# Your existing code to process in batches can stay the same, just replace the function
 
-Question: {generated_questions[i]}
+    
+def generate_qa_batch_curl(contexts):
+    try:
+        generated_questions = []
+        generated_answers = []
+        
+        for context in contexts:
+            question_prompt = f"User:\n\n{context}\n\nInstruction: Provide a test question that can be answered using the above information.\n\nTest Question:\n"
+            
+            # Convert the prompt to a JSON object
+            data = {
+                "model": "gpt-3.5-turbo",
+                "prompt": question_prompt,
+                "max_tokens": 128,
+                "temperature": 1.0
+            }
+            
+            # Create the curl command
+            curl_command = f"""curl http://192.168.3.122:5001/v1/completions -H 'Content-Type: application/json' -H 'Authorization: Bearer {OPENAI_API_KEY}' -d {json.dumps(json.dumps(data))} --insecure"""
+            
+            print(f"Sending request with curl: {curl_command}")
+            
+            # Execute the curl command
+            curl_response = subprocess.check_output(curl_command, shell=True).decode("utf-8")
+            
+            print(f"Received response: {curl_response}")
+            
+            # Parse the JSON response
+            json_response = json.loads(curl_response)
+            
+            # Extract and store the question
+            question = json_response["choices"][0]["text"].strip()
+            generated_questions.append(question)
+            
+            # Generate answer (you can also use a curl command here in a similar way)
+            generated_answers.append("Dummy answer")
+        
+        return generated_questions, generated_answers
 
-Answer:\n"""
-        answer_messages.append({"role": "user", "content": answer_prompt})
-    
-    answer_messages.append({"role": "system", "content": "Complete every element of the array. Reply with an array of all completions."})
-    
-    answer_response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=answer_messages,
-        max_tokens=512 * len(contexts)
-    )
-    
-    answer_batch_completion = json.loads(answer_response.choices[0].message.content)
-    generated_answers.extend(answer_batch_completion)
-    
-    return generated_questions, generated_answers
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return [], []  # Return empty lists to continue with the next batch
 
-# Function to synthesize facts using API with batch processing
-def synthesize_facts(qa_pairs):
-    synthesized_facts = []
-    
-    fact_messages = []
-    for q, a in qa_pairs:
-        fact_prompt = f"""User:
-
-I have a question and an answer:
-Question: {q}
-Answer: {a}
-
-Instruction: Synthesize this information into a factual statement.
-
-Fact:\n"""
-        fact_messages.append({"role": "user", "content": fact_prompt})
-    
-    fact_messages.append({"role": "system", "content": "Complete every element of the array. Reply with an array of all completions."})
-    
-    fact_response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=fact_messages,
-        max_tokens=256 * len(qa_pairs)
-    )
-    
-    fact_batch_completion = json.loads(fact_response.choices[0].message.content)
-    synthesized_facts.extend(fact_batch_completion)
-    
-    return synthesized_facts
-
-# Initialize tokenizer
-tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-1.4b-deduped")
-tokenizer.pad_token = tokenizer.eos_token
 
 # Read data
-input_file = "./source/"  # Replace with your actual directory
+input_file = "./source/"
 selected_prompts = read_data(input_file)
 
 # Create initial dataset
-dataset = create_dataset(selected_prompts, tokenizer)
-processed_dataset = process_dataset(dataset, tokenizer)
+dataset = process_dataset(create_dataset(selected_prompts, tokenizer),tokenizer)
 
 # Convert tokenized text to a list of strings for the API
-tokenized_texts = [tokenizer.decode(seq, skip_special_tokens=True) for seq in processed_dataset['input_ids']]
+tokenized_texts = [tokenizer.decode(seq, skip_special_tokens=True) for seq in dataset['input_ids']]
 
-# Initialize results dictionary
+# Initialize results_dict and tqdm progress bar
 results_dict = {
     "contexts": [],
-    "questions": [],
-    "answers": [],
-    "facts": []
+    "questions": []
 }
-
-# Initialize tqdm progress bar
 pbar = tqdm(total=len(tokenized_texts))
 
 # Process in batches (assuming batch size of 5 for demonstration)
-batch_size = 5
+batch_size = 1
 for i in range(0, len(tokenized_texts), batch_size):
-    batch_contexts = tokenized_texts[i:i+batch_size]
-    
-    # Generate questions and answers
-    generated_questions, generated_answers = generate_qa_batch(batch_contexts)
-    
-    # Synthesize facts
-    qa_pairs = list(zip(generated_questions, generated_answers))
-    synthesized_facts = synthesize_facts(qa_pairs)
-    
-    # Store in results_dict
-    results_dict["contexts"].extend(batch_contexts)
-    results_dict["questions"].extend(generated_questions)
-    results_dict["answers"].extend(generated_answers)
-    results_dict["facts"].extend(synthesized_facts)
-    
-    # Update tqdm progress bar
-    pbar.update(len(batch_contexts))
+    try:
+        batch_contexts = tokenized_texts[i:i+batch_size]
+        
+        # Generate questions and answers
+        #generated_questions, generated_answers = generate_qa_batch_with_chat_completion(batch_contexts)
+        generated_questions, generated_answers = generate_qa_batch_curl(batch_contexts)
+        
+        # Store in results_dict
+        results_dict["contexts"].extend(batch_contexts)
+        results_dict["questions"].extend(generated_questions)
+        #results_dict["answers"].extend(generated_answers)
+        
+        # Update tqdm progress bar
+        pbar.update(len(batch_contexts))
 
-    # Display input to output for each batch
-    print("\nBatch Results:")
-    for j in range(len(batch_contexts)):
-        print(f"Context: {batch_contexts[j]}")
-        print(f"Question: {generated_questions[j]}")
-        print(f"Answer: {generated_answers[j]}")
-        print(f"Fact: {synthesized_facts[j]}")
-        print("----")
+    except Exception as e:
+        print(f"An error occurred in the batch process: {e}")
 
 # Close tqdm progress bar
 pbar.close()
+
 
 # Save to JSON file
 with open("results.json", "w") as f:

@@ -16,7 +16,7 @@
     "adam_beta1": 0.9,
     "adam_beta2": 0.999,
     "adam_epsilon": 1e-8,
-    "epochs": 5,
+    "epochs": 3,
     "gradient_accumulation_steps": 1,
     "seed": 42,
     "split_ratio": 0.25,
