@@ -405,6 +405,29 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     # Train
     trainer.train()
     wandb.finish()
+    
+    from vars import bnb_config, lora_config
+    # Explicitly reloading the best model at the end
+    best_model_checkpoint = trainer.state.best_model_checkpoint  # Get the best model checkpoint path
+    print(f"Reloading the best model from checkpoint: {best_model_checkpoint}")
+
+    # Reload the model
+    from vars import lora_config, bnb_config  # Assuming you're importing these configurations
+
+    # Load the model configuration and model itself
+    peft_config = PeftConfig.from_pretrained(best_model_checkpoint)
+    model = AutoModelForCausalLM.from_pretrained(
+        peft_config.base_model_name_or_path,
+        quantization_config=bnb_config,
+        device_map=device_map
+    )
+
+    # Rest of your model setup code
+    model.gradient_checkpointing_enable()
+    model = prepare_model_for_kbit_training(model)
+    model = get_peft_model(model, lora_config)
+    model.resize_token_embeddings(len(tokenizer))
+    model.config.use_cache = False
 
 
 class EarlyStoppingCallback_epochs(TrainerCallback):
