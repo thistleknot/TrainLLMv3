@@ -1,7 +1,7 @@
 {
     "shuffle": true,
     "sub_sample_ratio": 0.15,
-    "sub_sample": true,
+    "sub_sample": false,
     "quantized": true,
     "group_size": 128,
     "eos_token": "</s>",
