@@ -1,7 +1,4 @@
 # TrainLLMv2
-./run.sh
-
-cot is flan cot
-
-datataset is in TrainLLM repo
+./mezo-run.sh prep_data.py
+./mezo-run.sh mezo-all-phases.py
 
