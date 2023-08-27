@@ -429,7 +429,6 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     model.resize_token_embeddings(len(tokenizer))
     model.config.use_cache = False
 
-
 class EarlyStoppingCallback_epochs(TrainerCallback):
     def __init__(self, valid_dataset, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, num_eval_examples=4, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
@@ -463,10 +462,10 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             state.best_model_checkpoint = self.output_dir
             self._save_model(self.output_dir)
             self.patience_counter = 0
-            print('Perplexity improved:', self.patience_counter)
+            print('Perplexity improved:',eval_perplexity,'patience:', self.patience_counter)
         else:
             self.patience_counter += 1
-            print('Perplexity failed to improve:', self.patience_counter)
+            print('Perplexity failed to improve:',eval_perplexity,'patience:', self.patience_counter)
             if self.patience_counter >= self.patience:
                 control.should_training_stop = True
         
@@ -481,6 +480,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         # Optionally, save the tokenizer and other resources
         if self.trainer.is_world_process_zero():
             self.trainer.tokenizer.save_pretrained(output_dir)
+        self.trainer.state.best_model_checkpoint = self.output_dir
 
     def on_train_begin(self, args, state, control, **kwargs):
         # Run evaluation to get metrics for the initial model
@@ -497,7 +497,10 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             # Save the initial model as the best model
             self._save_model(self.output_dir)
             print(f'Initial model perplexity: {initial_perplexity}, saved as best model.')
-            
+   
+    def on_train_end(self, args, state, control, **kwargs):
+        state.best_model_checkpoint = self.output_dir
+        
 def subsample_dataset(dataset, fraction=0.1):
     """Subsample a given fraction of the dataset."""
     num_samples = len(dataset)
