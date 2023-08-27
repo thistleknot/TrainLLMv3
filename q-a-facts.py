@@ -155,7 +155,7 @@ def generate_qa_batch_curl(contexts):
             data = {
                 "model": "gpt-3.5-turbo",
                 "prompt": question_prompt,
-                "max_tokens": 128,
+                "max_tokens": 192,
                 "temperature": 1.0
             }
             
