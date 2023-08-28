@@ -1,0 +1,339 @@
+Context:
+
+--Logic Cheat Sheet--
+
+Definitions:
+
+	Proof:
+		A logical argument that derives a conclusion from given premises using the laws of logic.
+	Basics:
+		Premises (cause thesis): Starting assumptions or statements.
+		Conclusion (Response): The statement to be proven.
+		Rules of Inference: Used to deduce new statements from given ones.
+
+Symbols and Notations:
+
+	¬: NOT
+	∨: OR
+	∧: AND
+	⇒: implies (necessary, sufficient, if/then)
+	➞: Parallel
+	➔: Sequential
+	≡: equivalent to
+	∈: Ontology
+		UNICODE Symbol: U+2208
+	⊆: Tautology
+		UNICODE Symbol: U+2286
+	∀: for all (universal quantifier)
+	∃: there exists (existential quantifier)
+	s.t.: such that
+	⊕: Burden of Proof
+		UNICODE Symbol: U+2295
+	↑: Fallacy
+		UNICODE Symbol: U+2191
+	↓: Evidence Hierarchy
+		UNICODE Symbol: U+2193
+	⊙: Razor Principles
+		UNICODE Symbol: U+2299
+	⊗: Falsifiability
+		UNICODE Symbol: U+2297
+	Ø: Empirical Evidence
+		UNICODE Symbol: U+2205
+	↻: Logical Consistency
+		UNICODE Symbol: U+21BB
+	': Doesn't 
+	C: Cause (Premise, Preconditional, Affectation, input)
+	⭘: Response (relation to, and/or causes effect, i.e. output)
+	⦿: Phenomenon Description (No specific UNICODE provided)
+	⨀: Mechanism of Action (No specific UNICODE provided)
+
+Basic Logical Operators:
+
+	Not (negation):
+		¬ P: "it is not the case that P"
+	
+	And (conjunction):
+		C ∧ ⭘: "both C and ⭘"
+	
+	Or (disjunction):
+		C ∨ ⭘: "either C or ⭘ (or both)"
+	
+	Conditional connective:
+		C ⇒ ⭘: 
+			has various meanings:
+				"C implies ⭘"
+				"If C then ⭘"
+				"C is sufficient for ⭘"
+				"⭘ is necessary for C"
+			
+	Biconditional connective:
+		C ≡ ⭘: 
+			"C is necessary and sufficient for ⭘"
+			"C if and only if ⭘" (abbreviated as 'iff')
+
+Rules of Inference:
+
+	Rule of Premises (Cause, precondition): 
+		You can use a premise at any point in a proof.
+		
+	Valid argument: 
+		Reasoning in which a conclusion follows necessarily from the premises presented, so that the conclusion cannot be false if the premises are true.
+		
+	Modus Ponens:
+		C ∧ (C → ⭘) → ⭘
+		
+	Modus Tollens:
+		¬⭘ ∧ (C → ⭘) → ¬C
+		
+	Rule of Syllogism:
+		(C → ⭘) ∧ (⭘ → Response) → C → Response
+		
+	Commutativity:
+		C ∧ ⭘ ≡ ⭘ ∧ C
+		C ∨ ⭘ ≡ ⭘ ∨ C
+		
+	Equivalence:
+		Statements can be replaced by logically equivalent ones.
+		
+	Substitution:
+		Tautologies can be used with substituted statements.
+
+Ontology:
+
+	Ontology (~Porphyrian Tree):
+		Hierarchical Classification:
+			Given a statement C, its truth can be represented as C.
+			Its falsehood (or negation) can be represented as ¬C.
+			If C is a category and ⭘ is a sub-category:
+				⭘ ⇒ C
+				Means:
+					if ⭘ is true, C is also true.
+			∈
+			Means:
+				Given a statement C, its truth can be represented as C.
+				Its falsehood (or negation) can be represented as ¬C.
+	
+		Conditionality and Class Membership:
+			C ⇒ ⭘
+		Existence in the Hierarchy:
+			C
+			
+Tautology:
+
+	⊆₁(P₁ ➔ P₂ ➔ P₃ ➞ ... ➞ Pᵢ )
+		UNICODE Symbol: U+22A8
+
+	Order of Operations:
+		⊨₁
+			UNICODE Symbol: U+22A8
+
+	Layers:
+		⊆₂(P₁ ⊨₂ L₁, P₂ ⊨₂ L₂, P₃ ⊨₂ L₃)
+
+	Members:
+		⊆₃(L₁ ⊨₃ M₁, L₂ ⊨₃ M₂, L₃ ⊨₃ M₃)
+
+	Sequential Pattern:
+		C ➔ ⭘ 
+
+	Parallel Pattern:
+		C ➞ ⭘ 
+
+Evidence Hierarchy:
+
+	↓: 
+		Phenomenon Description:
+			⦿ (No specific UNICODE provided): Describes an observable effect or trend.
+	
+	Mechanism of Action:
+		⨀ (No specific UNICODE provided): Explains *how* a particular process or phenomenon occurs.
+		
+	Direct C (Primary Reaction): 
+		(E_{i}) ⇒ (C): Direct C (Primary Reaction): An independent term that has a direct and strong effect on the response variable.
+		
+	Proximate C (Influencing Precondition):
+		(E_{j}) ⇢ (C): Proximate C (Influencing Precondition): An independent term that sets the conditions for the direct C to manifest.
+		
+	Evidence Levels:
+	
+		Anecdotal 
+			↓₁
+		Observational
+			↓₂
+		Experimental
+			↓₃
+		Meta-Analysis
+			↓₄: Implies an ontology and matching tautology.
+			
+		Predictive Power:
+		
+			E ↓⚖ ⭘: Measures the strength of a model's predictions. It can range from "No Predictive Power" to "Perfect Predictive Power", and is quantified through various metrics and statistical tests.
+			
+				Direct C:
+					E ↓⚙ ⭘: An independent term that has a direct and strong effect on the response variable.
+				
+				Proximate C:
+					E ↓✦ ⭘: An independent term that sets the conditions for the direct C to manifest.
+					
+				Circumstantial Evidence:
+					E ↓↝ ⭘: Evidence that, while not directly proving a fact, gives rise to a logical inference that the fact exists based on the circumstances.
+
+Fallacies:
+
+	Post Hoc Ergo Propter Hoc:
+		C⇒⭘: Just because C happened before ⭘, doesn't mean C caused ⭘.
+		
+	Ad Hominem:
+		C¬↓⭘: Discrediting C doesn't necessarily discredit C's argument.
+		
+	Appeal to Ignorance:
+		¬C⇒B: Absence of evidence against C implies B.
+		
+	Straw Man:
+		¬(C⇒⭘) ∨ ⭘∧¬(~⭘) ∨ C∧¬(~C): C or ⭘ is misrepresented. C is not necessarily false.
+		
+	Incorrect Implication:
+		¬(C⇒⭘) ∨ C∧¬⭘: C is true, ⭘ is not true.
+		
+	Circular Argument:
+		C¬⇒C: Using C to prove C.
+		
+	Appeal to Authority:
+		(E⇒X)∧(E⇒¬True): If an expert (E) says something, it is taken as true (X), even when what the expert says is not necessarily true.
+		
+	Appeal to Popularity:
+		(C₁⇒C)∧(C₁⇒¬True): A claim's popularity doesn't determine its truth.
+
+Logical Equivalences:
+
+	Double negation law:
+		¬¬C ≡ C
+
+	Commutative laws:
+		C ∧ ⭘ ≡ ⭘ ∧ C
+		C ∨ ⭘ ≡ ⭘ ∨ C
+
+	Associative laws:
+		C ∧ (⭘ ∧ R) ≡ (C ∧ ⭘) ∧ R
+		C ∨ (⭘ ∨ R) ≡ (C ∨ ⭘) ∨ R
+
+	Idempotent laws:
+		C ∧ C ≡ C
+		C ∨ C ≡ C
+
+	Distributive laws:
+		C ∧ (⭘ ∨ R) ≡ (C ∧ ⭘) ∨ (C ∧ R)
+		C ∨ (⭘ ∧ R) ≡ (C ∨ ⭘) ∧ (C ∨ R)
+
+	DeMorgan's Law:
+		¬(C ∨ ⭘) ≡ ¬C ∧ ¬⭘
+		¬(C ∧ ⭘) ≡ ¬C ∨ ¬⭘
+		Means:
+			Allows transformations between negations and conjunctions/disjunctions.
+	
+	Contrapositive law:
+	    C → ⭘ ≡ ¬⭘ → ¬C
+
+	Conditional Laws:
+	    C ⇔ O ≡ (C ⇒ O) ∧ (O ⇒ C)
+	        The conditional statement "C → ⭘" is equivalent to the disjunction of ¬C and ⭘. 
+	        In other words, if "C" is false (¬C) or "⭘" is true, the implication holds.
+	        This can be interpreted as "C implies ⭘."
+	
+	Biconditional law:
+	    C ↔ ⭘ ≡ (C → ⭘) ∧ (⭘ → C)
+	        This means that "C" is true if and only if "⭘" is true.
+	
+	Double Negation:
+	    C ≡ ¬¬C
+
+	Commutativity:
+		C ∧ ⭘ ≡ ⭘ ∧ C
+		C ∨ ⭘ ≡ ⭘ ∨ C
+	
+	Equivalence:
+		Statements can be replaced by logically equivalent ones.
+	
+	Substitution:
+		Tautologies can be used with substituted statements.
+
+ƒ Function:
+	ƒ(C) = ⭘
+
+Razor Principles:
+
+	Occam's:
+		⊙₁: "Fewest assumptions preferred"
+	
+	Hitchens':
+		⊙₂: "Claim without evidence can be dismissed"
+	
+	Hanlon's:
+		⊙₃: "Prefer ignorance over malice"
+
+Special Logical Concepts:
+
+	False Statements Existence:
+		If C is a statement and it's false, then ¬C. 
+		(For any statement C that isn't part of the hierarchy, its absence is ¬C.)
+		
+	Falsifiability:
+		C ⊗:
+			"Claim C can be tested and possibly proven false"
+	
+	Empirical Evidence:
+		C Ø:
+			"Claim C is based on observable and testable data"
+	
+	Logical Consistency:
+		C ↻ ⭘:
+			"Statements C and ⭘ are logically consistent"
+
+	Converse:
+		C ⇒ ⭘ is the converse of ⭘ ⇒ C
+	
+	Contrapositive:
+		¬⭘ ⇒ ¬C is the contrapositive of C ⇒ ⭘
+	
+	Disjunctive Syllogism:
+		¬C ∧ (C ∨ ⭘) → ⭘
+	
+	Conditional Disjunction:
+		C → ⭘ ≡ ¬C ∨ ⭘
+	
+	Constructing a Conjunction:
+		C, ⭘ → C ∧ ⭘
+	
+	Definition of Biconditional:
+		C ↔ ⭘ ≡ (C → ⭘) ∧ (⭘ → C)
+	
+	Decomposing a Conjunction:
+		C ∧ ⭘ → C, ⭘
+	
+	Constructing a Disjunction:
+		C → C ∨ ⭘
+
+	Contradiction:
+		A: a statement that is always false.
+
+	Burden of Proof:
+		C ⊕: "Proof required for claim C"
+
+Instruction:
+
+Analyze any provided text or record using the comprehensive logic structures from the cheat sheet. Specifically:
+
+Identify and establish the ontology by breaking down the hierarchical classifications.
+Determine the evidence hierarchy from anecdotal to meta-analysis.
+Use basic logical operators and rules of inference to reason the content.
+Identify any potential fallacies or logical inconsistencies.
+Employ logical equivalences and special logical concepts, such as falsifiability and empirical evidence, where relevant.
+If possible, use the provided symbols and notations for clarity.
+Given the following record, apply the above comprehensive analysis:
+
+here is a record from an adversarial dataset
+
+"Brain"	
+"Motor systems are areas of the brain that are directly or indirectly involved in producing body movements, that is, in activating muscles. Except for the muscles that control the eye, which are driven by nuclei in the midbrain, all the voluntary muscles in the body are directly innervated by motor neurons in the spinal cord and hindbrain. Spinal motor neurons are controlled both by neural circuits intrinsic to the spinal cord, and by inputs that descend from the brain. The intrinsic spinal circuits implement many reflex responses, and contain pattern generators for rhythmic movements such as walking or swimming. The descending connections from the brain allow for more sophisticated control."	
+"What do intrinsic spinal circuits contain that might help with actions beyond simple rhythmic movements?"	
+{ "text": [ "descending connections from the brain" ], "answer_start": [ 624 ] }	
