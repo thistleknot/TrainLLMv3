@@ -135,7 +135,7 @@ def generate_qa_batch_with_chat_completion(contexts):
     batch_completion = json.loads(stringified_batch_completion.choices[0].message.content)
     
     for completion in batch_completion:
-        question = completion.strip()  # Adapt this line based on the structure of your output
+        question = completion.strip().split("\n")[0]  # Adapt this line based on the structure of your output
         generated_questions.append(question)
     
     return generated_questions
@@ -155,7 +155,7 @@ def generate_qa_batch_curl(contexts):
             data = {
                 "model": "gpt-3.5-turbo",
                 "prompt": question_prompt,
-                "max_tokens": 192,
+                "max_tokens": 256,
                 "temperature": 1.0
             }
             
@@ -166,8 +166,15 @@ def generate_qa_batch_curl(contexts):
             
             # Execute the curl command
             curl_response = subprocess.check_output(curl_command, shell=True).decode("utf-8")
-            
-            print(f"Received response: {curl_response}")
+            response_dict = json.loads(curl_response)
+            generated_text = response_dict['choices'][0]['text'].strip().split("\n")[0]
+
+            # Print the keys of the dictionary
+            #print("Keys in the JSON response:")
+            #for key in response_dict.keys():
+            #    print(key)
+            #print(f"Received response: {curl_response}")
+            print(generated_text)
             
             # Parse the JSON response
             json_response = json.loads(curl_response)

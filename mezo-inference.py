@@ -38,7 +38,17 @@ print_trainable_parameters(infer_model)
 infer_model.model.config.use_cache = True
 infer_model.config.use_cache = True
 
-tokenizer = AutoTokenizer.from_pretrained('bits-ft-I-R')
+#tokenizer = AutoTokenizer.from_pretrained('bits-ft')
+
+tokenizer = AutoTokenizer.from_pretrained(MODEL, legacy=False)
+tokenizer.pad_token = tokenizer.eos_token
+special_tokens_dict = {
+    'additional_special_tokens': ['<SUMM>','</SUMM>', '<CQ>','</CQ>', '<CQA>','</CQA>', '<QA>','</QA>', '<preferred>','</preferred>', '<dispreferred>','</dispreferred>'],
+    'mask_token': '[MASK]'
+}
+tokenizer.add_special_tokens(special_tokens_dict)
+
+infer_model.resize_token_embeddings(len(tokenizer))
 
 print("Special tokens:", tokenizer.special_tokens_map)
 print("BOS Token:", tokenizer.bos_token)
@@ -51,23 +61,20 @@ print("MASK Token:", tokenizer.mask_token)
 
 query_text = (
 f"""
-Context:
-
-Until 1917, it was possible for someone who was not a priest, but only in minor orders, to become a cardinal (see "lay cardinals", below), but they were enrolled only in the order of cardinal deacons. For example, in the 16th century, Reginald Pole was a cardinal for 18 years before he was ordained a priest. In 1917 it was established that all cardinals, even cardinal deacons, had to be priests, and, in 1962, Pope John XXIII set the norm that all cardinals be ordained as bishops, even if they are only priests at the time of appointment. As a consequence of these two changes, canon 351 of the 1983 Code of Canon Law requires that a cardinal be at least in the order of priesthood at his appointment, and that those who are not already bishops must receive episcopal consecration. Several cardinals aged over 80 or close to it when appointed have obtained dispensation from the rule of having to be a bishop. These were all appointed cardinal-deacons, but one of them, Roberto Tucci, lived long enough to exercise the right of option and be promoted to the rank of cardinal-priest.
-
 Prompt:
 
-TL;DR
+Recall the most accurate information to answer the question.
 
-Response:
-"""
+Which company introduced new kits for Marseille?
+
+<QCA><preferred>Context:"""
 )
 torch.manual_seed(SEED)
 
 # attention_mask = torch.ones_like(input_ids)
 generator = pipeline('text-generation', model=infer_model, tokenizer=tokenizer,
                      min_length=50,
-                     max_length=512,
+                     max_length=256,
                      temperature=1,
                      # attention_mask=attention_mask,
                      do_sample=True,

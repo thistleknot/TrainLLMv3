@@ -20,7 +20,7 @@ datasets_info = [
     {'pkl_path': './source/dolly_closed_qa.pkl', 'dataset_name': 'lionelchg/dolly_closed_qa', 'splits': ['train', 'test']},
 ]
 
-num_new_tokens = tokenizer.add_special_tokens(special_tokens_dict)
+tokenizer.add_special_tokens(special_tokens_dict)
 
 def clear_model(model, path):
     model.save_pretrained(path)
