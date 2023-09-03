@@ -528,17 +528,18 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         metrics = self.trainer.evaluate()
 
         # Calculate perplexity from loss
-        eval_perplexity = np.exp(metrics.get('eval_loss', 0))
-
-        if state.best_metric is None or eval_perplexity < state.best_metric:
-            state.best_metric = eval_perplexity
+        epoch_eval_loss = metrics.get('eval_loss', 0)
+        epoch_perplexity = np.exp(epoch_eval_loss)
+        
+        if state.best_metric is None or epoch_perplexity < state.best_metric:
+            state.best_metric = epoch_perplexity
             state.best_model_checkpoint = self.output_dir
             self._save_model(self.output_dir)
             self.patience_counter = 0
-            print('Perplexity improved:',eval_perplexity,'patience:', self.patience_counter)
+            print(f'Perplexity net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, patience:, {self.patience_counter}, saved as best model')
         else:
             self.patience_counter += 1
-            print('Perplexity failed to improve:',eval_perplexity,'patience:', self.patience_counter)
+            print(f'Perplexity net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, patience:, {self.patience_counter}, no save')
             if self.patience_counter >= self.patience:
                 control.should_training_stop = True
         
@@ -570,7 +571,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
             # Save the initial model as the best model
             self._save_model(self.output_dir)
-            print(f'Initial model perplexity: {initial_perplexity}, eval_loss: {initial_eval_loss}, saved as best model.')
+            print(f'Perplexity net initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, patience:, {self.patience_counter}, saved as best model')
    
     def on_train_end(self, args, state, control, **kwargs):
         state.best_model_checkpoint = self.output_dir
