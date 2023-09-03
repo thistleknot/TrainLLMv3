@@ -89,6 +89,7 @@ def process_phase(phase, input_file, output_dir, phase_dir=None):
             sampled_dolly_closed_qa_qa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qa'][i] for i in sampled_dolly_closed_qa_indices]
             sampled_dolly_closed_qa_caq_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['caq'][i] for i in sampled_dolly_closed_qa_indices]
             sampled_dolly_closed_qa_cqa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['cqa'][i] for i in sampled_dolly_closed_qa_indices]
+            sampled_dolly_closed_qa_qca_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qca'][i] for i in sampled_dolly_closed_qa_indices]
 
             # For Dolly 15K
             sampled_dolly_15k_qa_prompts = [datasets_dict['dolly_15k']['pretrain']['qa'][i] for i in sampled_dolly_15k_indices]
