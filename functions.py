@@ -561,6 +561,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         
         # Calculate perplexity from loss
         initial_perplexity = np.exp(metrics.get('eval_loss', 0))
+        initial_eval_loss = metrics.get('eval_loss', 0)  # Extracting eval_loss
         
         # If best_metric is not set or the initial perplexity is better, update best_metric and best_model_checkpoint
         if state.best_metric is None or initial_perplexity < state.best_metric:
@@ -569,7 +570,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
             # Save the initial model as the best model
             self._save_model(self.output_dir)
-            print(f'Initial model perplexity: {initial_perplexity}, saved as best model.')
+            print(f'Initial model perplexity: {initial_perplexity}, eval_loss: {initial_eval_loss}, saved as best model.')
    
     def on_train_end(self, args, state, control, **kwargs):
         state.best_model_checkpoint = self.output_dir
