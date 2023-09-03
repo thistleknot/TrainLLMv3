@@ -58,13 +58,13 @@ print("MASK Token:", tokenizer.mask_token)
 
 query_text = (
 f"""
-Prompt:
+Instruction:
 
-Recall the most accurate information to answer the question.
+When and why was the plaxton coach production halted?
 
-Which company introduced new kits for Marseille?
+Context:
 
-<QCA><preferred>Context:"""
+"""
 )
 torch.manual_seed(SEED)
 

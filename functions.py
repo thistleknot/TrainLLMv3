@@ -11,6 +11,11 @@ from torch.utils.data import SequentialSampler, RandomSampler
 from torch.optim.lr_scheduler import LambdaLR
 from pathlib import Path
 
+
+def extract_indices(dataset):
+    keys_list = list(dataset.keys())
+    return range(0, len(dataset[keys_list[0]]))
+
 def clear_model(model, path):
     model.save_pretrained(path)
     del model
@@ -144,7 +149,7 @@ def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
 def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE):
     
     eos_token_id = tokenizer.eos_token_id
-	#start/stop with eos?
+    #start/stop with eos?
     tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist + [eos_token_id])])
     total_length = len(tokenized_text)
 
@@ -248,7 +253,7 @@ def process_hierarchical_dataset(hierarchical_dataset_dict, SPLIT_RATIO, FINE_TU
         hierarchical_split_dataset[dataset_key] = split_data
 
     return hierarchical_split_dataset
-
+    
 def create_dataset(text_list, tokenizer):
     input_ids_list = []
     attention_mask_list = []
@@ -257,10 +262,11 @@ def create_dataset(text_list, tokenizer):
     for text in text_list:
         tokenized_text = tokenizer.encode(text[0], add_special_tokens=True, return_tensors='pt').squeeze()
         attention_mask = [1] * len(tokenized_text) # Adjusting for variable lengths
+
         input_ids_list.append(tokenized_text.tolist())  # Truncate or pad as needed
-        
         attention_mask_list.append(attention_mask)
-        labels_list.append(tokenized_text.tolist())  # Using the same tokenized sequence for labels
+        
+        labels_list.append(text[0])  # Store the original text as the label
 
     dataset_dict = {
         "input_ids": input_ids_list,
@@ -364,6 +370,11 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     print("LEARNING_RATE:",LEARNING_RATE)
 
     dataset_ = shuffle_dataset(dataset_)
+    
+    labels = [str(x) for x in dataset_['labels']]
+    with open('./labels.json', 'w') as f:
+        json.dump(labels, f, indent=4)
+    
     #dataset_ = shuffle_hierarchical_dataset(hierarchical_dataset)
     
     train_dataset, valid_dataset, eval_subset = process_dataset(
@@ -380,10 +391,7 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
         SHUFFLE=SHUFFLE,
         #FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
-    
-    pickle.dump(train_dataset, open('./train_dataset.pkl', 'wb'))
-    pickle.dump(train_dataset, open('./valid_dataset.pkl', 'wb'))
-    
+
     # Get number of sequences for each split
     num_train_sequences = len(train_dataset)
     num_valid_sequences = len(valid_dataset)

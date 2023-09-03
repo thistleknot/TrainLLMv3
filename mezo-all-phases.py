@@ -11,10 +11,6 @@ tokenizer.pad_token = tokenizer.eos_token
 
 tokenizer.add_special_tokens(special_tokens_dict)
 
-def extract_indices(dataset):
-    keys_list = list(dataset.keys())
-    return range(0, len(dataset[keys_list[0]]))
-    
 def load_model(quantized, phase_dir, tokenizer):
     device_map = {"": 0}
         

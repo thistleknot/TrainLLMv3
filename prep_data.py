@@ -91,6 +91,14 @@ qa_prompt_template = "Instruction:\n\n{prompt}\n\n<QA><preferred>Answer:\n\n{res
 summ_prompt_template = "Context:\n\n{context}\n\nPrompt:\n\n{prompt}\n\n<SUMM><preferred>Response:\n\n{response}\n\n</preferred></SUMM>"
 quote_prompt_template = "Prompt:\n\n{quote_prompt}\n\n{tags}\n\n<QT><preferred>Response:\n\n{quote}\n\n-{author}</preferred></QT>"
 
+caq_prompt_template = "Context:\n\n{context}\n\nAnswer:\n\n{response}\n\nInstruction:\n\n{prompt}\n\n"
+cqa_prompt_template = "Context:\n\n{context}\n\nInstruction:\n\n{prompt}Answer:\n\n{response}\n\n"
+qca_prompt_template = "Instruction:\n\n{prompt}Context:\n\n{context}\n\nAnswer:\n\n{response}\n\n"
+qa_prompt_template = "Instruction:\n\n{prompt}Answer:\n\n{response}\n\n"
+summ_prompt_template = "Context:\n\n{context}\n\nPrompt:\n\n{prompt}\n\nResponse:\n\n{response}\n\n"
+quote_prompt_template = "Prompt:\n\n{quote_prompt}\n\n{tags}Response:\n\n{quote}-{author}\n\n"
+
+
 # Load or download datasets_
 datasets_ = {}
 for info in datasets_info:
