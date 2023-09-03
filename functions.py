@@ -381,6 +381,9 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
         #FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
     
+    pickle.dump(train_dataset, open('./train_dataset.pkl', 'wb'))
+    pickle.dump(train_dataset, open('./valid_dataset.pkl', 'wb'))
+    
     # Get number of sequences for each split
     num_train_sequences = len(train_dataset)
     num_valid_sequences = len(valid_dataset)

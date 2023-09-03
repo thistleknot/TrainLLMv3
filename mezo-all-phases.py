@@ -99,17 +99,18 @@ def process_phase(phase, input_file, output_dir, phase_dir=None):
             sampled_openai_tldr_prompts = [datasets_dict['openai_summarize_tldr']['pretrain']['summ'][i] for i in sampled_dolly_15k_indices]
             
             selected_prompts = [\
-            *sampled_qa_prompts,\
-            *sampled_caq_prompts,\
-            *sampled_cqa_prompts,\
+            #*sampled_qa_prompts,\
+            #*sampled_caq_prompts,\
+            #*sampled_cqa_prompts,\
             *sampled_dolly_closed_qa_qa_prompts,\
             *sampled_dolly_closed_qa_caq_prompts,\
             *sampled_dolly_closed_qa_cqa_prompts,\
-            *sampled_dolly_15k_qa_prompts,\
-            *sampled_dolly_15k_caq_prompts,\
-            *sampled_dolly_15k_cqa_prompts,\
+            #*sampled_dolly_15k_qa_prompts,\
+            #*sampled_dolly_15k_caq_prompts,\
+            #*sampled_dolly_15k_cqa_prompts,\
             *sampled_openai_tldr_prompts\
             ]
+            pickle.dump(selected_prompts, open('./selected_prompts.pkl', 'wb'))
                 
     elif phase == "Phase III":
         with open('sampled_indices.pkl', 'rb') as f:
