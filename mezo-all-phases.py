@@ -94,6 +94,7 @@ def process_phase(phase, input_file, output_dir, phase_dir=None):
             sampled_dolly_15k_qa_prompts = [datasets_dict['dolly_15k']['pretrain']['qa'][i] for i in sampled_dolly_15k_indices]
             sampled_dolly_15k_caq_prompts = [datasets_dict['dolly_15k']['pretrain']['caq'][i] for i in sampled_dolly_15k_indices]
             sampled_dolly_15k_cqa_prompts = [datasets_dict['dolly_15k']['pretrain']['cqa'][i] for i in sampled_dolly_15k_indices]
+            sampled_dolly_15k_qca_prompts = [datasets_dict['dolly_15k']['pretrain']['qca'][i] for i in sampled_dolly_15k_indices]
             
             # For OpenAI TLDR
             sampled_openai_tldr_prompts = [datasets_dict['openai_summarize_tldr']['pretrain']['summ'][i] for i in sampled_dolly_15k_indices]
@@ -105,6 +106,7 @@ def process_phase(phase, input_file, output_dir, phase_dir=None):
             *sampled_dolly_closed_qa_qa_prompts,\
             *sampled_dolly_closed_qa_caq_prompts,\
             *sampled_dolly_closed_qa_cqa_prompts,\
+            *sampled_dolly_closed_qa_qca_prompts,\
             #*sampled_dolly_15k_qa_prompts,\
             #*sampled_dolly_15k_caq_prompts,\
             #*sampled_dolly_15k_cqa_prompts,\
@@ -167,7 +169,7 @@ def process_phase(phase, input_file, output_dir, phase_dir=None):
         lr_scheduler_type=LR_SCHEDULER_TYPE,
         mlm_prob=MLM_PROB,
         patience=PATIENCE,
-		FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
+        FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
 
     # Save tokenizer
