@@ -71,3 +71,17 @@ lora_config = LoraConfig(
       ]
 )
 
+special_tokens_dict = {
+    'additional_special_tokens': ['<SUMM>','</SUMM>', '<CQ>','</CQ>', '<QCA>','</QCA>','<CQA>','</CQA>', '<QA>','</QA>', '<QT>','</QT>', '<preferred>','</preferred>', '<dispreferred>','</dispreferred>'],
+    'mask_token': '<MASK>'
+}
+
+datasets_info = [
+    {'pkl_path': './source/squad_v2.pkl', 'dataset_name': 'squad_v2', 'splits': ['train', 'validation']},
+    {'pkl_path': './source/openai_summarize_tldr.pkl', 'dataset_name': 'CarperAI/openai_summarize_tldr', 'splits': ['train', 'valid', 'test']},
+    {'pkl_path': './source/wizardLM.pkl', 'dataset_name': 'WizardLM/WizardLM_evol_instruct_V2_196k', 'splits': ['train']},
+    {'pkl_path': './source/dolly_closed_qa.pkl', 'dataset_name': 'lionelchg/dolly_closed_qa', 'splits': ['train', 'test']},
+    {'pkl_path': './source/dolly-15k.pkl', 'dataset_name': 'databricks/databricks-dolly-15k', 'splits': ['train']},
+    {'pkl_path': './source/english_quotes.pkl', 'dataset_name': 'Abirate/english_quotes', 'splits': ['train']}
+]
+

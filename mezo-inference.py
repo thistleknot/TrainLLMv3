@@ -42,10 +42,7 @@ infer_model.config.use_cache = True
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL, legacy=False)
 tokenizer.pad_token = tokenizer.eos_token
-special_tokens_dict = {
-    'additional_special_tokens': ['<SUMM>','</SUMM>', '<CQ>','</CQ>', '<CQA>','</CQA>', '<QA>','</QA>', '<preferred>','</preferred>', '<dispreferred>','</dispreferred>'],
-    'mask_token': '[MASK]'
-}
+
 tokenizer.add_special_tokens(special_tokens_dict)
 
 infer_model.resize_token_embeddings(len(tokenizer))

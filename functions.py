@@ -11,6 +11,12 @@ from torch.utils.data import SequentialSampler, RandomSampler
 from torch.optim.lr_scheduler import LambdaLR
 from pathlib import Path
 
+def clear_model(model, path):
+    model.save_pretrained(path)
+    del model
+    torch.cuda.empty_cache()
+    torch.cuda.synchronize()
+
 def find_target_modules(model):
     # Initialize a Set to Store Unique Layers
     unique_layers = set()
@@ -119,11 +125,27 @@ def shuffle_dataset(dataset_dict):
         shuffled_dataset[key] = [values[i] for i in indices]
 
     return shuffled_dataset
+    
+def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
+    shuffled_hierarchical_dataset = {}
+    
+    for dataset_key, dataset_dict in hierarchical_dataset_dict.items():
+        indices = list(range(len(next(iter(dataset_dict.values())))))
+        random.shuffle(indices)
+
+        shuffled_dataset = {}
+        for key, values in dataset_dict.items():
+            shuffled_dataset[key] = [values[i] for i in indices]
+        
+        shuffled_hierarchical_dataset[dataset_key] = shuffled_dataset
+    
+    return shuffled_hierarchical_dataset
 
 def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE):
     
     eos_token_id = tokenizer.eos_token_id
-    tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist + [eos_token_id])])[:-1]
+	#start/stop with eos?
+    tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist + [eos_token_id])])
     total_length = len(tokenized_text)
 
     # 2. Generate stride lengths dynamically
@@ -204,13 +226,36 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     print(len(train_dataset), len(valid_dataset))
     return train_dataset, valid_dataset, eval_subset
 
+def process_hierarchical_dataset(hierarchical_dataset_dict, SPLIT_RATIO, FINE_TUNE_SAMPLE_SIZE, SHUFFLE):
+    hierarchical_split_dataset = {}
+    
+    # Generate random indices for train/validation/evaluation splits
+    indices = list(range(FINE_TUNE_SAMPLE_SIZE))
+    if SHUFFLE:
+        random.shuffle(indices)
+        
+    train_end_idx = int(FINE_TUNE_SAMPLE_SIZE * SPLIT_RATIO)
+    valid_end_idx = train_end_idx + int(FINE_TUNE_SAMPLE_SIZE * (1 - SPLIT_RATIO) * 0.5)
+    
+    training_indices = indices[:train_end_idx]
+    validation_indices = indices[train_end_idx]
+
+    for dataset_key, dataset_dict in hierarchical_dataset_dict.items():
+        split_data = {
+            "train": {key: [dataset_dict[key][i] for i in training_indices if i < len(dataset_dict[key])] for key in dataset_dict},
+            "valid": {key: [dataset_dict[key][i] for i in validation_indices if i < len(dataset_dict[key])] for key in dataset_dict},
+        }
+        hierarchical_split_dataset[dataset_key] = split_data
+
+    return hierarchical_split_dataset
+
 def create_dataset(text_list, tokenizer):
     input_ids_list = []
     attention_mask_list = []
     labels_list = []
 
     for text in text_list:
-        tokenized_text = tokenizer.encode(text, add_special_tokens=True, return_tensors='pt').squeeze()
+        tokenized_text = tokenizer.encode(text[0], add_special_tokens=True, return_tensors='pt').squeeze()
         attention_mask = [1] * len(tokenized_text) # Adjusting for variable lengths
         input_ids_list.append(tokenized_text.tolist())  # Truncate or pad as needed
         
@@ -224,7 +269,20 @@ def create_dataset(text_list, tokenizer):
     }
     
     return dataset_dict
-
+    
+def create_hierarchical_dataset(selected_prompts, tokenizer):
+    #print(np.shape(selected_prompts))
+    
+    hierarchical_dataset_dict = {}
+    #print(len(selected_prompts))
+    for category_idx, category in enumerate(selected_prompts):
+        #print(len(category[0]))
+        sub_dataset = create_dataset(category[0], tokenizer)
+        
+        hierarchical_dataset_dict[category_idx] = sub_dataset
+            
+    return hierarchical_dataset_dict
+    
 def get_cosine_with_hard_restarts_schedule_with_warmup(optimizer, num_warmup_steps, num_training_steps, last_epoch=-1, max_lr=1.0):
     min_lr = 0.1 * max_lr  # Set min_lr to be 10% of max_lr
 
@@ -238,7 +296,6 @@ def get_cosine_with_hard_restarts_schedule_with_warmup(optimizer, num_warmup_ste
         return lr
 
     return LambdaLR(optimizer, lr_lambda, last_epoch)
-
 
 def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_accumulation_steps, weight_decay, adam_beta1, adam_beta2, adam_epsilon, max_grad_norm, batch_size, optim, block_size, zo_eps, lr_scheduler_type, data_collator, num_train_epochs, output_dir, lora_config=None, warm_ratio=None, train_epoch_steps=None):
     """Generate OurArguments object."""
@@ -296,9 +353,10 @@ def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, call
         tokenizer=tokenizer
     )
 
-def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, WARM_RATIO, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience):
+def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, WARM_RATIO, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE):
     
     dataset_ = create_dataset(selected_prompts, tokenizer)
+    #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
     
     patience_counter = 0
     best_eval_perplexity = float('inf')  # start with a high value
@@ -306,8 +364,11 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     print("LEARNING_RATE:",LEARNING_RATE)
 
     dataset_ = shuffle_dataset(dataset_)
+    #dataset_ = shuffle_hierarchical_dataset(hierarchical_dataset)
     
     train_dataset, valid_dataset, eval_subset = process_dataset(
+    #train_dataset, valid_dataset, eval_subset = process_hierarchical_dataset(
+        #hierarchical_dataset_dict=dataset_,
         dataset_dict=dataset_,
         tokenizer=tokenizer,
         STRIDE_LENGTH=STRIDE_LENGTH,
@@ -316,7 +377,8 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
         SUB_SAMPLE=SUB_SAMPLE,
         SUB_SAMPLE_RATIO=SUB_SAMPLE_RATIO,
         MIN_NUM_EVAL_EXAMPLES=MIN_NUM_EVAL_EXAMPLES,
-        SHUFFLE=SHUFFLE
+        SHUFFLE=SHUFFLE,
+        #FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
     
     # Get number of sequences for each split

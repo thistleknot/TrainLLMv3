@@ -8,26 +8,13 @@ os.environ['LD_LIBRARY_PATH'] += ":/home/user/env/lib/python3.11/site-packages/n
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL, legacy=False)
 tokenizer.pad_token = tokenizer.eos_token
-special_tokens_dict = {
-    'additional_special_tokens': ['<SUMM>','</SUMM>', '<CQ>','</CQ>', '<CQA>','</CQA>', '<QA>','</QA>', '<preferred>','</preferred>', '<dispreferred>','</dispreferred>'],
-    'mask_token': '[MASK]'
-}
-
-datasets_info = [
-    {'pkl_path': './source/squad_v2.pkl', 'dataset_name': 'squad_v2', 'splits': ['train', 'validation']},
-    {'pkl_path': './source/openai_summarize_tldr.pkl', 'dataset_name': 'CarperAI/openai_summarize_tldr', 'splits': ['train', 'valid', 'test']},
-    {'pkl_path': './source/wizardLM.pkl', 'dataset_name': 'WizardLM/WizardLM_evol_instruct_V2_196k'},
-    {'pkl_path': './source/dolly_closed_qa.pkl', 'dataset_name': 'lionelchg/dolly_closed_qa', 'splits': ['train', 'test']},
-]
 
 tokenizer.add_special_tokens(special_tokens_dict)
 
-def clear_model(model, path):
-    model.save_pretrained(path)
-    del model
-    torch.cuda.empty_cache()
-    torch.cuda.synchronize()
-
+def extract_indices(dataset):
+    keys_list = list(dataset.keys())
+    return range(0, len(dataset[keys_list[0]]))
+    
 def load_model(quantized, phase_dir, tokenizer):
     device_map = {"": 0}
         
@@ -74,69 +61,56 @@ def process_phase(phase, input_file, output_dir, phase_dir=None):
                 with open(file_path, 'r') as file:
                     content = file.read()
                     selected_prompts.append(content)
-                    
+                        
     elif phase == "Phase II":
         # Load the dataset dictionary
         with open('./source/datasets_dict.pkl', 'rb') as f:
             datasets_dict = pickle.load(f)
+            
+            squad_v2_indices = extract_indices(datasets_dict['squad_v2']['pretrain'])
+            openai_tldr_indices = extract_indices(datasets_dict['openai_summarize_tldr']['pretrain'])
+            dolly_closed_qa_indices = extract_indices(datasets_dict['dolly_closed_qa']['pretrain'])
+            dolly_15k_indices = extract_indices(datasets_dict['dolly_15k']['pretrain'])
+            
+            sampled_squad_indices = random.sample(squad_v2_indices, FINE_TUNE_SAMPLE_SIZE)
+            sampled_openai_tldr_indices = random.sample(openai_tldr_indices, FINE_TUNE_SAMPLE_SIZE)
+            sampled_dolly_closed_qa_indices = random.sample(dolly_closed_qa_indices, FINE_TUNE_SAMPLE_SIZE)
+            sampled_dolly_15k_indices = random.sample(dolly_15k_indices, FINE_TUNE_SAMPLE_SIZE)
 
-        # Extract squad_v2_prompts
-        squad_v2_prompts = datasets_dict['squad_v2']['pretrain']
+            # 3. Extract prompts using the sampled indices
 
-        tldr_prompts = datasets_dict['openai_summarize_tldr']['pretrain']
-        tldr_indices = list(range(len(tldr_prompts)))
+            # For SQuAD v2
+            sampled_qa_prompts = [datasets_dict['squad_v2']['pretrain']['qa'][i] for i in sampled_squad_indices]
+            #not meant to be caq, some questions have non specific questions about a presumed prior context.
+            sampled_caq_prompts = [datasets_dict['squad_v2']['pretrain']['caq'][i] for i in sampled_squad_indices]
+            sampled_cqa_prompts = [datasets_dict['squad_v2']['pretrain']['cqa'][i] for i in sampled_squad_indices]
 
-        # Generate a list of indices
-        # Load or download datasets_
-        datasets_ = {}
-        for info in datasets_info:
-            dataset_name = info['dataset_name'].split("/")[-1]  # Extract the last part of the dataset name
-            datasets_[dataset_name] = load_or_download_dataset(info['pkl_path'], info['dataset_name'], info.get('splits'))
+            # For Dolly Closed QA
+            sampled_dolly_closed_qa_qa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qa'][i] for i in sampled_dolly_closed_qa_indices]
+            sampled_dolly_closed_qa_caq_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['caq'][i] for i in sampled_dolly_closed_qa_indices]
+            sampled_dolly_closed_qa_cqa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['cqa'][i] for i in sampled_dolly_closed_qa_indices]
 
-        # Access individual datasets
-        squad_v2 = datasets_['squad_v2']
-        
-        dolly_closed_qa = datasets_dict['dolly_closed_qa']['pretrain']
-        #print(datasets_dict.keys())
-        #squad_v2_indices = random.sample(range(sample_ratios['squad_v2']['size']), int(sample_ratios['squad_v2']['min_sample_size']))
-        squad_v2_indices = list(range(0,len(squad_v2)))
-        dolly_closed_qa_indices = list(range(0,len(dolly_closed_qa)))
-        
-        #FINE_TUNE_SAMPLE_SIZE=200
-        # Sample indices for fine-tuning
-        sampled_squad_indices = random.sample(squad_v2_indices, FINE_TUNE_SAMPLE_SIZE)
-        sampled_dolly_closed_qa_indices = random.sample(dolly_closed_qa_indices, FINE_TUNE_SAMPLE_SIZE)
-        sampled_tldr_indices = random.sample(tldr_indices, FINE_TUNE_SAMPLE_SIZE)
-        
-        sampled_tldr_prompts = [tldr_prompts[i]['prompt'] for i in sampled_tldr_indices]
-        
-        sampled_dolly_closed_qa_prompts = [dolly_closed_qa[i] for i in dolly_closed_qa_indices]
-        
-        print('\nsampled_tldr_prompts\n')
-        [print(p) for p in random.sample(sampled_tldr_prompts,3)]
-        
-        print('\nsampled_dolly_closed_qa_prompts\n')
-        [print(p) for p in random.sample(sampled_dolly_closed_qa_prompts,3)]
-        # Extract the corresponding 'cq' and 'cqa' prompts
-        sampled_cqa_prompts = [j for i in sampled_squad_indices for j in squad_v2_prompts['cqa'][i] if j]
-        #sampled_qa_prompts = [j for i in sampled_squad_indices for j in squad_v2_prompts['qa'][i] if j]
-        sampled_cq_prompts = [j for i in sampled_squad_indices for j in squad_v2_prompts['cq'][i] if j]
-        #print('\ntldr sampled_cqa_prompts\n')
-        #[print(p) for p in random.sample(sampled_cqa_prompts,3)]
-        #print('\nsampled_qa_prompts,3 prompts\n')
-        #[print(p) for p in random.sample(sampled_qa_prompts,3)]
-        print('\nsampled_cq_prompts\n')
-        [print(p) for p in random.sample(sampled_cq_prompts,3)]
-        # Combine the prompts for training
-        #selected_prompts = [*sampled_cq_prompts, *sampled_cqa_prompts, *sampled_qa_prompts,*sampled_tldr_prompts]
-        selected_prompts = [*sampled_cq_prompts,*sampled_cqa_prompts,*sampled_tldr_prompts,*sampled_dolly_closed_qa_prompts]
-        pickle.dump(selected_prompts, open('selected_prompts.pkl', 'wb'))
-        #selected_prompts = [*sampled_cq_prompts, *sampled_cqa_prompts, *sampled_qa_prompts]
-
-        # Save the sampled indices for future use
-        pickle.dump([sampled_squad_indices,sampled_tldr_prompts], open('sampled_indices.pkl', 'wb'))
-        #pickle.dump(sampled_squad_indices, open('sampled_squad_indices.pkl', 'wb'))
-        
+            # For Dolly 15K
+            sampled_dolly_15k_qa_prompts = [datasets_dict['dolly_15k']['pretrain']['qa'][i] for i in sampled_dolly_15k_indices]
+            sampled_dolly_15k_caq_prompts = [datasets_dict['dolly_15k']['pretrain']['caq'][i] for i in sampled_dolly_15k_indices]
+            sampled_dolly_15k_cqa_prompts = [datasets_dict['dolly_15k']['pretrain']['cqa'][i] for i in sampled_dolly_15k_indices]
+            
+            # For OpenAI TLDR
+            sampled_openai_tldr_prompts = [datasets_dict['openai_summarize_tldr']['pretrain']['summ'][i] for i in sampled_dolly_15k_indices]
+            
+            selected_prompts = [\
+            *sampled_qa_prompts,\
+            *sampled_caq_prompts,\
+            *sampled_cqa_prompts,\
+            *sampled_dolly_closed_qa_qa_prompts,\
+            *sampled_dolly_closed_qa_caq_prompts,\
+            *sampled_dolly_closed_qa_cqa_prompts,\
+            *sampled_dolly_15k_qa_prompts,\
+            *sampled_dolly_15k_caq_prompts,\
+            *sampled_dolly_15k_cqa_prompts,\
+            *sampled_openai_tldr_prompts\
+            ]
+                
     elif phase == "Phase III":
         with open('sampled_indices.pkl', 'rb') as f:
             sampled_indices = pickle.load(f)
@@ -191,7 +165,8 @@ def process_phase(phase, input_file, output_dir, phase_dir=None):
         device_map=device_map,
         lr_scheduler_type=LR_SCHEDULER_TYPE,
         mlm_prob=MLM_PROB,
-        patience=PATIENCE
+        patience=PATIENCE,
+		FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
 
     # Save tokenizer
