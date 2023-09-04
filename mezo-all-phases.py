@@ -222,8 +222,8 @@ with open('./source/datasets_dict.pkl', 'rb') as f:
     sampled_openai_tldr_prompts = [datasets_dict['openai_summarize_tldr']['pretrain']['summ'][i] for i in sampled_dolly_15k_indices]
 
 # Execute phases
-process_phase("Phase I", output_dir='./bits', prior_phase_dir=None)
-process_phase("Phase II", output_dir='./bits-ft', prior_phase_dir='./bits')
-process_phase("Phase III", output_dir='./bits-ft-I-R', prior_phase_dir='bits-ft')
+#process_phase("Phase I", output_dir='./bits', prior_phase_dir=None)
+#process_phase("Phase II", output_dir='./bits-ft', prior_phase_dir='./bits')
+#process_phase("Phase III", output_dir='./bits-ft-I-R', prior_phase_dir='bits-ft')
 process_phase("Phase IV", output_dir='./bits-ft-C-I-R', prior_phase_dir='bits-ft-I-R')
 

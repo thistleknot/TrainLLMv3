@@ -392,15 +392,15 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     num_valid_sequences = len(valid_dataset)
 
     # Calculate epoch steps for each split
-    train_epoch_steps = num_train_sequences / BATCH_SIZE * GRADIENT_ACCUMULATION_STEPS
-    valid_epoch_steps = num_valid_sequences / BATCH_SIZE * GRADIENT_ACCUMULATION_STEPS
+    train_epoch_steps = int(max(1,np.round(num_train_sequences / BATCH_SIZE * GRADIENT_ACCUMULATION_STEPS)))
+    valid_epoch_steps = int(max(1,np.round(num_valid_sequences / BATCH_SIZE * GRADIENT_ACCUMULATION_STEPS)))
 
     # Calculate max training steps
     #max_train_steps = int(train_epoch_steps * EPOCHS)
-    max_train_steps = int(train_epoch_steps * EPOCHS)
+    max_train_steps = int(max(1,np.round(train_epoch_steps)) * EPOCHS)
 
     #1 epoch
-    min_steps = int(train_epoch_steps*1)
+    min_steps = int(max(1,np.round(train_epoch_steps*1)))
 
     #print('perplexity starts counting at:', min_steps, ' eval:', EVAL_STEPS)
 
@@ -543,6 +543,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.train_epoch_steps = train_epoch_steps
 
     def on_epoch_end(self, args, state, control, **kwargs):
+        current_lr = self.trainer.optimizer.param_groups[0]['lr']
         # Sample a new eval_subset from valid_dataset or train_dataset depending on eval_mode
         #new_eval_subset = random.sample(list(self.valid_dataset), 1max(1, min(self.eval_subset_size, len(self.valid_dataset), self.train_epoch_steps)))
         new_eval_subset = random.sample(list(self.valid_dataset), 1)
@@ -561,10 +562,10 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             state.best_model_checkpoint = self.output_dir
             self._save_model(self.output_dir)
             self.patience_counter = 0
-            print(f'Perplexity net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, patience:, {self.patience_counter}, saved as best model')
+            print(f'Perplexity net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, saved as best model')
         else:
             self.patience_counter += 1
-            print(f'Perplexity net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, patience:, {self.patience_counter}, no save')
+            print(f'Perplexity net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, no save')
             if self.patience_counter >= self.patience:
                 control.should_training_stop = True
         
@@ -583,6 +584,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.trainer.state.best_model_checkpoint = self.output_dir
 
     def on_train_begin(self, args, state, control, **kwargs):
+        initial_lr = self.trainer.optimizer.param_groups[0]['lr']
         new_eval_subset = random.sample(list(self.valid_dataset), 1)
         
         # Update the trainer's eval_dataset
@@ -601,7 +603,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
             # Save the initial model as the best model
             self._save_model(self.output_dir)
-            print(f'Perplexity net initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, patience:, {self.patience_counter}, saved as best model')
+            print(f'Perplexity net initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, saved as best model')
    
     def on_train_end(self, args, state, control, **kwargs):
         state.best_model_checkpoint = self.output_dir
@@ -681,7 +683,7 @@ class OurArguments(TrainingArguments):
     top_k: int = None  # top-k for generation
     top_p: float = 0.95  # top-p for generation
     max_new_tokens: int = 50  # max number of new tokens to generate
-    eos_token: str = "\n"  # end of sentence token
+    eos_token: str = "    n"  # end of sentence token
 
     # Saving
     save_model: bool = False  # whether to save the model
@@ -725,8 +727,7 @@ class MeZOTrainer(Trainer):
         # number of training epochs: num_train_epochs
         # number of training steps per epoch: num_update_steps_per_epoch
         # total number of training steps to execute: max_steps
-        total_train_batch_size = self._train_batch_size * \
-            args.gradient_accumulation_steps * args.world_size
+        total_train_batch_size = self._train_batch_size * args.gradient_accumulation_steps * args.world_size
 
         len_dataloader = None
         if has_length(train_dataloader):
@@ -1002,8 +1003,7 @@ class MeZOTrainer(Trainer):
                     and (torch.isnan(tr_loss_step) or torch.isinf(tr_loss_step))
                 ):
                     # if loss is nan or inf simply add the average of previous logged losses
-                    tr_loss += tr_loss / \
-                        (1 + self.state.global_step - self._globalstep_last_logged)
+                    tr_loss += tr_loss / (1 + self.state.global_step - self._globalstep_last_logged)
                 else:
                     tr_loss += tr_loss_step
 
@@ -1057,8 +1057,7 @@ class MeZOTrainer(Trainer):
 
                     model.zero_grad()
                     self.state.global_step += 1
-                    self.state.epoch = epoch + \
-                        (step + 1 + steps_skipped) / steps_in_epoch
+                    self.state.epoch = epoch + (step + 1 + steps_skipped) / steps_in_epoch
                     self.control = self.callback_handler.on_step_end(
                         args, self.state, self.control)
 
@@ -1101,7 +1100,7 @@ class MeZOTrainer(Trainer):
         
         self.state.best_model_checkpoint = None
         logger.info(
-            "\n\nTraining completed. Do not forget to share your model on huggingface.co/models =)\n\n")
+            "    n    nTraining completed. Do not forget to share your model on huggingface.co/models =)    n    n")
         if args.load_best_model_at_end and self.state.best_model_checkpoint is not None:
             # The rest of the original code
             
@@ -1447,8 +1446,7 @@ def get_sequences(text, tokenizer, seq_length=768, stride_ratio=0.5):
     # Truncate the last sequence if it less than seq_length
     last_sequence = sequences[-1]
     if len(last_sequence) < seq_length:
-        last_sequence = last_sequence + \
-            [tokenizer.pad_token_id] * (seq_length - len(last_sequence))
+        last_sequence = last_sequence + [tokenizer.pad_token_id] * (seq_length - len(last_sequence))
         sequences[-1] = last_sequence
 
     # Drop any remaining sequences that are less than seq_length
