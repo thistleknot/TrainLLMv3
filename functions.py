@@ -583,7 +583,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.trainer.state.best_model_checkpoint = self.output_dir
 
     def on_train_begin(self, args, state, control, **kwargs):
-        new_eval_subset = random.sample(list(self.valid_dataset), max(1, min(self.eval_subset_size, len(self.valid_dataset), self.train_epoch_steps)))
+        new_eval_subset = random.sample(list(self.valid_dataset), 1)
         
         # Update the trainer's eval_dataset
         self.trainer.eval_dataset = new_eval_subset
