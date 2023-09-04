@@ -336,28 +336,20 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
         data_collator=data_collator
     )
 
-def initialize_trainer(args, model, train_dataset, valid_dataset, tokenizer, callbacks=None, optimizer=None, scheduler=None):
+def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, callbacks=None):
     """Initialize and return MeZOTrainer."""
-    print(len(valid_dataset))
-    trainer = MeZOTrainer(
+
+    return MeZOTrainer(
         model=model,
         args=args,
         train_dataset=train_dataset,
-        eval_dataset=valid_dataset,
+        eval_dataset=eval_dataset,
         callbacks=callbacks,
         tokenizer=tokenizer
     )
+
+def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
     
-    if optimizer is not None:
-        trainer.optimizer = optimizer
-        
-    if scheduler is not None:
-        trainer.lr_scheduler = scheduler
-        
-    return trainer
-
-def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, optimizer=None, scheduler=None, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
-
     dataset_ = create_dataset(selected_prompts, tokenizer)
     #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
     
@@ -462,16 +454,23 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
             MIN_NUM_EVAL_EXAMPLES=MIN_NUM_EVAL_EXAMPLES,
             patience=patience, 
             min_perplexity=90,
-            output_dir=training_args.output_dir
+            output_dir=training_args.output_dir,
+            train_epoch_steps=train_epoch_steps
         )
     ]
 
-    trainer = initialize_trainer(training_args, model, train_dataset, valid_dataset, tokenizer, callbacks=callbacks, optimizer=optimizer, scheduler=scheduler)
+    trainer = initialize_trainer(training_args, model, train_dataset, valid_dataset, tokenizer, callbacks=callbacks)
     
     # At the beginning of train_model
+    print('prior_phase_dir:',prior_phase_dir)
     if prior_phase_dir:
-        trainer.optimizer.load_state_dict(torch.load(os.path.join(prior_phase_dir, "optimizer_state.pth")))
-        trainer.scheduler.load_state_dict(torch.load(os.path.join(prior_phase_dir, "scheduler_state.pth")))
+        optimizer_state = torch.load(os.path.join(prior_phase_dir, "optimizer_state.pth"))
+        print(optimizer_state)
+        trainer.optimizer.load_state_dict(optimizer_state)
+        
+        scheduler_state = torch.load(os.path.join(prior_phase_dir, "scheduler_state.pth"))
+        print(scheduler_state)
+        trainer.lr_scheduler.load_state_dict(scheduler_state)
         
     # Attach the trainer to the callback
     for callback in callbacks:
@@ -479,6 +478,7 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
 
     # Train
     trainer.train()
+    print('saving optimizer and scheduler metadata to',output_dir)
     torch.save(trainer.optimizer.state_dict(), os.path.join(output_dir, "optimizer_state.pth"))
     torch.save(trainer.lr_scheduler.state_dict(), os.path.join(output_dir, "scheduler_state.pth"))
     wandb.finish()
@@ -507,7 +507,7 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     model.config.use_cache = False
 
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, valid_dataset, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, valid_dataset, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
         self.valid_dataset = valid_dataset
         self.SUB_SAMPLE = SUB_SAMPLE
@@ -519,10 +519,11 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.best_metric = float('inf')
         self.output_dir = output_dir
         self.eval_subset_size = MIN_NUM_EVAL_EXAMPLES  # Define your eval_subset_size here
+        self.train_epoch_steps = train_epoch_steps
 
     def on_epoch_end(self, args, state, control, **kwargs):
         # Sample a new eval_subset from valid_dataset or train_dataset depending on eval_mode
-        new_eval_subset = random.sample(list(self.valid_dataset), int(min(self.eval_subset_size, len(self.valid_dataset))))
+        new_eval_subset = random.sample(list(self.valid_dataset), max(1, min(self.eval_subset_size, len(self.valid_dataset), self.train_epoch_steps)))
         
         # Update the trainer's eval_dataset
         self.trainer.eval_dataset = new_eval_subset

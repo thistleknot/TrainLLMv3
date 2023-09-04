@@ -27,7 +27,6 @@ default_args = {
     'ADAM_EPSILON': ADAM_EPSILON,
     'MAX_GRAD_NORM': MAX_GRAD_NORM,
     'BATCH_SIZE': BATCH_SIZE,
-    'OPTIM': OPTIM,
     'WARM_RATIO': WARM_RATIO,
     'ZO_EPS': ZO_EPS,
     'STRIDE_LENGTH': STRIDE_LENGTH,
@@ -36,7 +35,6 @@ default_args = {
     'SUB_SAMPLE_RATIO': SUB_SAMPLE_RATIO,
     'MIN_NUM_EVAL_EXAMPLES': MIN_NUM_EVAL_EXAMPLES,
     'SHUFFLE': SHUFFLE,
-    'lr_scheduler_type': LR_SCHEDULER_TYPE,
     'mlm_prob': MLM_PROB,
     'patience': PATIENCE,
     'FINE_TUNE_SAMPLE_SIZE': FINE_TUNE_SAMPLE_SIZE
@@ -177,6 +175,8 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         model=model,
         tokenizer=tokenizer,
         bnb_config=bnb_config,
+        lr_scheduler_type=LR_SCHEDULER_TYPE,
+        OPTIM=OPTIM,
         device_map=device_map,
         **phase_args  # unpack the other args here
     )
@@ -224,7 +224,7 @@ with open('./source/datasets_dict.pkl', 'rb') as f:
     sampled_openai_tldr_prompts = [datasets_dict['openai_summarize_tldr']['pretrain']['summ'][i] for i in sampled_dolly_15k_indices]
 
 # Execute phases
-process_phase("Phase I", './bits', prior_phase_dir=None)
-process_phase("Phase II", './bits-ft', './bits')
-process_phase("Phase III", './bits-ft-I-R', 'bits-ft')
-process_phase("Phase IV", './bits-ft-C-I-R', 'bits-ft-I-R')
+process_phase("Phase I", output_dir='./bits', prior_phase_dir=None)
+process_phase("Phase II", output_dir='./bits-ft', prior_phase_dir='./bits')
+process_phase("Phase III", output_dir='./bits-ft-I-R', prior_phase_dir='bits-ft')
+process_phase("Phase IV", output_dir='./bits-ft-C-I-R', prior_phase_dir='bits-ft-I-R')
