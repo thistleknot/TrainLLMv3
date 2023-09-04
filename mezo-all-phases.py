@@ -79,11 +79,12 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
     
     TAG = phase.replace(' ','-')
     phase_args['TAG'] = TAG
-    
+    phase_args['WARM_RATIO'] = WARM_RATIO
+    phase_args['EVAL_MODE'] = 'train'
     
     if phase == "Phase I":
-        phase_args['WARM_RATIO'] = WARM_RATIO
-        phase_args['EVAL_MODE'] = 'train'
+        
+        
         
         selected_prompts = []
         # Loop through each file in the folder.
@@ -111,8 +112,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         pickle.dump(selected_prompts, open('./selected_prompts_I.pkl', 'wb'))
                         
     elif phase == "Phase II":
-        phase_args['WARM_RATIO'] = None
-        phase_args['EVAL_MODE'] = 'train'
+
         # Load the dataset dictionary
         selected_prompts = [\
         #*sampled_qa_prompts,\
@@ -130,8 +130,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         pickle.dump(selected_prompts, open('./selected_prompts_II.pkl', 'wb'))
 
     elif phase == "Phase III":
-        phase_args['WARM_RATIO'] = None
-        phase_args['EVAL_MODE'] = 'train'
+
         selected_prompts = [\
         #*sampled_qa_prompts,\
         #*sampled_caq_prompts,\
@@ -148,8 +147,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         pickle.dump(selected_prompts, open('./selected_prompts_III.pkl', 'wb'))
 
     elif phase == "Phase IV":
-        phase_args['WARM_RATIO'] = None
-        phase_args['EVAL_MODE'] = 'train'
+
         selected_prompts = [\
         #*sampled_qa_prompts,\
         #*sampled_caq_prompts,\
