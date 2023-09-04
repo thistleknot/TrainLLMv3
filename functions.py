@@ -189,8 +189,13 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     
     print('total_length', total_length)
     
-    train_input_ids, valid_input_ids, train_attention_mask, valid_attention_mask, train_labels, valid_labels = train_test_split(
-        input_ids, attention_mask, labels, train_size=SPLIT_RATIO, shuffle=SHUFFLE)
+    if SPLIT_RATIO == 1 or SPLIT_RATIO == 0:
+        train_input_ids = valid_input_ids = input_ids
+        train_attention_mask = valid_attention_mask = attention_mask
+        train_labels = valid_labels = labels
+    else:
+        train_input_ids, valid_input_ids, train_attention_mask, valid_attention_mask, train_labels, valid_labels = train_test_split(
+            input_ids, attention_mask, labels, train_size=SPLIT_RATIO, shuffle=SHUFFLE)
 
     train_lengths = [len(seq) for seq in train_input_ids]
     valid_lengths = [len(seq) for seq in valid_input_ids]
@@ -539,7 +544,8 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
     def on_epoch_end(self, args, state, control, **kwargs):
         # Sample a new eval_subset from valid_dataset or train_dataset depending on eval_mode
-        new_eval_subset = random.sample(list(self.valid_dataset), max(1, min(self.eval_subset_size, len(self.valid_dataset), self.train_epoch_steps)))
+        #new_eval_subset = random.sample(list(self.valid_dataset), 1max(1, min(self.eval_subset_size, len(self.valid_dataset), self.train_epoch_steps)))
+        new_eval_subset = random.sample(list(self.valid_dataset), 1)
         
         # Update the trainer's eval_dataset
         self.trainer.eval_dataset = new_eval_subset

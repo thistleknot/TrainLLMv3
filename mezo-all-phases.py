@@ -153,11 +153,11 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         selected_prompts = [\
         #*sampled_qa_prompts,\
         #*sampled_caq_prompts,\
-        #*sampled_cqa_prompts,\
+        *sampled_cqa_prompts,\
         #*sampled_dolly_closed_qa_qa_prompts,\
         #*sampled_dolly_closed_qa_caq_prompts,\
         #*sampled_dolly_closed_qa_cqa_prompts,\
-        *sampled_dolly_closed_qa_qca_prompts,\
+        #*sampled_dolly_closed_qa_qca_prompts,\
         #*sampled_dolly_15k_qa_prompts,\
         #*sampled_dolly_15k_caq_prompts,\
         #*sampled_dolly_15k_cqa_prompts,\
@@ -228,3 +228,4 @@ process_phase("Phase I", output_dir='./bits', prior_phase_dir=None)
 process_phase("Phase II", output_dir='./bits-ft', prior_phase_dir='./bits')
 process_phase("Phase III", output_dir='./bits-ft-I-R', prior_phase_dir='bits-ft')
 process_phase("Phase IV", output_dir='./bits-ft-C-I-R', prior_phase_dir='bits-ft-I-R')
+
