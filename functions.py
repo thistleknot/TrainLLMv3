@@ -10,7 +10,8 @@ from datasets import concatenate_datasets, load_dataset
 from torch.utils.data import SequentialSampler, RandomSampler
 from torch.optim.lr_scheduler import LambdaLR
 from pathlib import Path
-
+#sloppy
+from vars import *
 
 def extract_indices(dataset):
     keys_list = list(dataset.keys())
@@ -146,7 +147,7 @@ def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
     
     return shuffled_hierarchical_dataset
 
-def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE):
+def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
     
     eos_token_id = tokenizer.eos_token_id
     #start/stop with eos?
@@ -214,22 +215,9 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     if (SUB_SAMPLE==True):
         train_dataset = train_dataset.select(list(range(int(len(train_dataset) * SUB_SAMPLE_RATIO))))
         valid_dataset = valid_dataset.select(list(range(int(len(valid_dataset) * SUB_SAMPLE_RATIO))))
-        eval_subset = subsample_dataset(valid_dataset, fraction=0.05)
-        if len(eval_subset) < MIN_NUM_EVAL_EXAMPLES:
-            eval_subset = valid_dataset.select(range(1))
-        if len(eval_subset) > 4:
-            eval_subset = eval_subset.select(range(4))
-        #eval_subset = valid_dataset
-    else:
-        #leave train/valid alone
-        eval_subset = subsample_dataset(valid_dataset, fraction=0.05)
-        if len(eval_subset) < MIN_NUM_EVAL_EXAMPLES:
-            eval_subset = valid_dataset.select(range(1))
-        if len(eval_subset) > 4:
-            eval_subset = eval_subset.select(range(4))
 
     print(len(train_dataset), len(valid_dataset))
-    return train_dataset, valid_dataset, eval_subset
+    return train_dataset, valid_dataset
 
 def process_hierarchical_dataset(hierarchical_dataset_dict, SPLIT_RATIO, FINE_TUNE_SAMPLE_SIZE, SHUFFLE):
     hierarchical_split_dataset = {}
@@ -303,7 +291,7 @@ def get_cosine_with_hard_restarts_schedule_with_warmup(optimizer, num_warmup_ste
 
     return LambdaLR(optimizer, lr_lambda, last_epoch)
 
-def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_accumulation_steps, weight_decay, adam_beta1, adam_beta2, adam_epsilon, max_grad_norm, batch_size, optim, block_size, zo_eps, lr_scheduler_type, data_collator, num_train_epochs, output_dir, lora_config=None, warm_ratio=None, train_epoch_steps=None):
+def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_accumulation_steps, weight_decay, adam_beta1, adam_beta2, adam_epsilon, max_grad_norm, batch_size, optim, block_size, zo_eps, lr_scheduler_type, data_collator, num_train_epochs, output_dir, lora_config=None, warm_ratio=None, train_epoch_steps=None, evaluation_strategy='steps'):
     """Generate OurArguments object."""
     lora = True if lora_config else False
     lora_alpha = lora_config.lora_alpha if lora_config else 32
@@ -320,12 +308,13 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
         r=lora_r,
         bias=bias,
         per_device_train_batch_size=batch_size,
+        model_name = MODEL_NAME,
         max_length=block_size,
         learning_rate=learning_rate,
         logging_dir=output_dir,
         logging_steps=1,
         max_steps=max_steps,
-        evaluation_strategy="steps",
+        evaluation_strategy=evaluation_strategy,
         save_strategy="no",
         save_total_limit=1,
         load_best_model_at_end=False,
@@ -347,20 +336,28 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
         data_collator=data_collator
     )
 
-def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, callbacks=None):
+def initialize_trainer(args, model, train_dataset, valid_dataset, tokenizer, callbacks=None, optimizer=None, scheduler=None):
     """Initialize and return MeZOTrainer."""
-
-    return MeZOTrainer(
+    print(len(valid_dataset))
+    trainer = MeZOTrainer(
         model=model,
         args=args,
         train_dataset=train_dataset,
-        eval_dataset=eval_dataset,
+        eval_dataset=valid_dataset,
         callbacks=callbacks,
         tokenizer=tokenizer
     )
-
-def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, WARM_RATIO, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE):
     
+    if optimizer is not None:
+        trainer.optimizer = optimizer
+        
+    if scheduler is not None:
+        trainer.lr_scheduler = scheduler
+        
+    return trainer
+
+def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, optimizer=None, scheduler=None, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
+
     dataset_ = create_dataset(selected_prompts, tokenizer)
     #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
     
@@ -375,10 +372,7 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     with open('./labels.json', 'w') as f:
         json.dump(labels, f, indent=4)
     
-    #dataset_ = shuffle_hierarchical_dataset(hierarchical_dataset)
-    
-    train_dataset, valid_dataset, eval_subset = process_dataset(
-    #train_dataset, valid_dataset, eval_subset = process_hierarchical_dataset(
+    train_dataset, valid_dataset = process_dataset(
         #hierarchical_dataset_dict=dataset_,
         dataset_dict=dataset_,
         tokenizer=tokenizer,
@@ -387,10 +381,14 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
         SPLIT_RATIO=SPLIT_RATIO,
         SUB_SAMPLE=SUB_SAMPLE,
         SUB_SAMPLE_RATIO=SUB_SAMPLE_RATIO,
-        MIN_NUM_EVAL_EXAMPLES=MIN_NUM_EVAL_EXAMPLES,
         SHUFFLE=SHUFFLE,
         #FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
+    
+    if(EVAL_MODE == 'train'):
+        valid_dataset = train_dataset
+    else:
+        pass
 
     # Get number of sequences for each split
     num_train_sequences = len(train_dataset)
@@ -422,6 +420,7 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
         tag=TAG,
         learning_rate=LEARNING_RATE,
         max_steps=max_train_steps,
+        evaluation_strategy="no",
         gradient_accumulation_steps=GRADIENT_ACCUMULATION_STEPS,
         weight_decay=WEIGHT_DECAY,
         adam_beta1=ADAM_BETA1,
@@ -431,7 +430,7 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
         batch_size=BATCH_SIZE,
         num_train_epochs=EPOCHS,
         optim=OPTIM,
-        warm_ratio=WARM_RATIO,
+        warm_ratio=WARM_RATIO if WARM_RATIO is not None else None,
         train_epoch_steps=train_epoch_steps,
         lora_config=lora_config,
         block_size=BLOCK_SIZE,
@@ -454,29 +453,34 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     print('train_epoch_steps:', train_epoch_steps)
     print("Training dataset size:", len(train_dataset))
     print("Validation dataset size:", len(valid_dataset))
-    print("Evaluation subset size:", len(eval_subset))
     
     callbacks = [
         EarlyStoppingCallback_epochs(
-            valid_dataset=valid_dataset, 
+            valid_dataset=valid_dataset,    
             SUB_SAMPLE=True,
             SUB_SAMPLE_RATIO=SUB_SAMPLE_RATIO,
             MIN_NUM_EVAL_EXAMPLES=MIN_NUM_EVAL_EXAMPLES,
             patience=patience, 
             min_perplexity=90,
-            output_dir=training_args.output_dir,
-            num_eval_examples=MIN_NUM_EVAL_EXAMPLES
+            output_dir=training_args.output_dir
         )
     ]
 
-    trainer = initialize_trainer(training_args, model, train_dataset, eval_subset, tokenizer, callbacks=callbacks)
+    trainer = initialize_trainer(training_args, model, train_dataset, valid_dataset, tokenizer, callbacks=callbacks, optimizer=optimizer, scheduler=scheduler)
     
+    # At the beginning of train_model
+    if prior_phase_dir:
+        trainer.optimizer.load_state_dict(torch.load(os.path.join(prior_phase_dir, "optimizer_state.pth")))
+        trainer.scheduler.load_state_dict(torch.load(os.path.join(prior_phase_dir, "scheduler_state.pth")))
+        
     # Attach the trainer to the callback
     for callback in callbacks:
         callback.trainer = trainer
 
     # Train
     trainer.train()
+    torch.save(trainer.optimizer.state_dict(), os.path.join(output_dir, "optimizer_state.pth"))
+    torch.save(trainer.lr_scheduler.state_dict(), os.path.join(output_dir, "scheduler_state.pth"))
     wandb.finish()
     
     from vars import bnb_config, lora_config
@@ -503,28 +507,26 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     model.config.use_cache = False
 
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, valid_dataset, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, num_eval_examples=4, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, valid_dataset, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
         self.valid_dataset = valid_dataset
         self.SUB_SAMPLE = SUB_SAMPLE
         self.SUB_SAMPLE_RATIO = SUB_SAMPLE_RATIO
-        self.MIN_NUM_EVAL_EXAMPLES = MIN_NUM_EVAL_EXAMPLES
         self.patience = patience
         self.min_perplexity = min_perplexity
         self.epoch_counter = 0  # Added an epoch counter
         self.patience_counter = 0
         self.best_metric = float('inf')
         self.output_dir = output_dir
-        self.eval_subset_size = num_eval_examples  # Define your eval_subset_size here
+        self.eval_subset_size = MIN_NUM_EVAL_EXAMPLES  # Define your eval_subset_size here
 
     def on_epoch_end(self, args, state, control, **kwargs):
-        # Sample a new eval_subset from valid_dataset
-        new_eval_subset = random.sample(list(self.valid_dataset), self.eval_subset_size)
+        # Sample a new eval_subset from valid_dataset or train_dataset depending on eval_mode
+        new_eval_subset = random.sample(list(self.valid_dataset), int(min(self.eval_subset_size, len(self.valid_dataset))))
         
         # Update the trainer's eval_dataset
         self.trainer.eval_dataset = new_eval_subset
 
-        # Run evaluation to get metrics
         metrics = self.trainer.evaluate()
 
         # Calculate perplexity from loss
