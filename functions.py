@@ -461,26 +461,42 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
 
     trainer = initialize_trainer(training_args, model, train_dataset, valid_dataset, tokenizer, callbacks=callbacks)
     
-    # At the beginning of train_model
-    print('prior_phase_dir:',prior_phase_dir)
-    if prior_phase_dir:
-        optimizer_state = torch.load(os.path.join(prior_phase_dir, "optimizer_state.pth"))
-        print(optimizer_state)
-        trainer.optimizer.load_state_dict(optimizer_state)
-        
-        scheduler_state = torch.load(os.path.join(prior_phase_dir, "scheduler_state.pth"))
-        print(scheduler_state)
-        trainer.lr_scheduler.load_state_dict(scheduler_state)
-        
+    #always be a warmup.  Need to figure out how to handle breaking early, and how to resume next phase.  Makes sense to start afresh with a new 'task'.
+    if(False):
+        # At the beginning of train_model
+        print('prior_phase_dir:', prior_phase_dir)
+        if prior_phase_dir:
+            # Load model state
+            model.load_state_dict(torch.load(os.path.join(prior_phase_dir, 'model_state.pth')))
+          
+            # Initialize optimizer and load its state
+            optimizer = torch.optim.Adam(model.parameters(), lr=0.001)  # The lr will be overwritten
+            optimizer_state = torch.load(os.path.join(prior_phase_dir, 'optimizer_state.pth'))
+            optimizer.load_state_dict(optimizer_state)
+            print('optimizer_state', optimizer_state)
+
+            # Initialize scheduler based on LR_SCHEDULER_TYPE and load its state
+            # Initialize the scheduler
+            if lr_scheduler_type == 'linear':
+                scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=WARM_RATIO*train_epoch_steps, num_training_steps=train_epoch_steps*EPOCHS)
+            elif lr_scheduler_type == 'cosine':
+                scheduler = get_cosine_schedule_with_warmup(optimizer, num_warmup_steps=WARM_RATIO*train_epoch_steps, num_training_steps=train_epoch_steps*EPOCHS)
+
+            scheduler_state = torch.load(os.path.join(prior_phase_dir, 'scheduler_state.pth'))
+            print('scheduler_state', scheduler_state)
+            scheduler.load_state_dict(scheduler_state)
+            
     # Attach the trainer to the callback
     for callback in callbacks:
         callback.trainer = trainer
 
     # Train
     trainer.train()
-    print('saving optimizer and scheduler metadata to',output_dir)
-    torch.save(trainer.optimizer.state_dict(), os.path.join(output_dir, "optimizer_state.pth"))
-    torch.save(trainer.lr_scheduler.state_dict(), os.path.join(output_dir, "scheduler_state.pth"))
+    #print('saving optimizer and scheduler metadata to',output_dir)
+    #torch.save(model.state_dict(), os.path.join(output_dir, 'model_state.pth'))
+    #torch.save(trainer.optimizer.state_dict(), os.path.join(output_dir, "optimizer_state.pth"))
+    #print('scheduler:',trainer.lr_scheduler.state_dict())
+    #torch.save(trainer.lr_scheduler.state_dict(), os.path.join(output_dir, "scheduler_state.pth"))
     wandb.finish()
     
     from vars import bnb_config, lora_config
@@ -551,6 +567,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         return control
 
     def _save_model(self, output_dir):
+    
         # Save the model
         self.trainer.save_model(output_dir)
         
@@ -560,6 +577,10 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.trainer.state.best_model_checkpoint = self.output_dir
 
     def on_train_begin(self, args, state, control, **kwargs):
+        new_eval_subset = random.sample(list(self.valid_dataset), max(1, min(self.eval_subset_size, len(self.valid_dataset), self.train_epoch_steps)))
+        
+        # Update the trainer's eval_dataset
+        self.trainer.eval_dataset = new_eval_subset
         # Run evaluation to get metrics for the initial model
         metrics = self.trainer.evaluate()
         
