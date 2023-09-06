@@ -22,7 +22,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device_map = {"": 0}
 
 #infer_peft_config = PeftConfig.from_pretrained('bits-ft-C-I-R')
-infer_peft_config = PeftConfig.from_pretrained('bits-ft')
+infer_peft_config = PeftConfig.from_pretrained('bits-ft-C-I-R')
 
 infer_model = AutoModelForCausalLM.from_pretrained(
     infer_peft_config.base_model_name_or_path,
