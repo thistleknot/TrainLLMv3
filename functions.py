@@ -734,20 +734,23 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         
         if self.eval_metric == 'cosine':
             average_similarity = self._compute_cosine_similarity()
+            self.best_metric = float('-inf')
             metric_value = average_similarity
             comparison = lambda a, b: a > b
         elif self.eval_metric == 'eval':
+            self.best_metric = float('inf')
             epoch_eval_loss = metrics.get('eval_loss', 0)
             metric_value = epoch_eval_loss
             comparison = lambda a, b: a < b
         
         # Increment the epoch counter
+        print('self.best_metric',self.best_metric)
         self.epoch_counter += 1
         if self.epoch_counter > 0:
 
-            #if state.best_metric is None or epoch_perplexity < state.best_metric:
-            if state.best_metric is None or comparison(metric_value, state.best_metric):
-                state.best_metric = metric_value
+            #if self.best_metric is None or epoch_perplexity < self.best_metric:
+            if self.best_metric is None or comparison(metric_value, self.best_metric):
+                self.best_metric = metric_value
                 state.best_model_checkpoint = self.output_dir
                 self._save_model(self.output_dir)
                 self.patience_counter = 0
@@ -1346,6 +1349,7 @@ class MeZOTrainer(Trainer):
             
         model.eval()
         if self.args.non_diff:
+            print('non diff')
             # Non-differentiable objective (may require autoregressive generation)
             return self.zo_forward_nondiff(model, inputs)
 
@@ -1384,7 +1388,7 @@ class MeZOTrainer(Trainer):
                     original_loss = self.compute_loss(model, inputs)
                 
                 # Combine the two losses
-                alpha = 0.5  # alpha is a hyperparameter to balance the two terms
+                alpha = 2.5  # alpha is a hyperparameter to balance the two terms
                 composite_loss = original_loss + alpha * cosine_similarity_loss
 
                 if self.args.n_gpu > 1:
