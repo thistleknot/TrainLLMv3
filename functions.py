@@ -152,10 +152,8 @@ def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
 def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
     
     eos_token_id = tokenizer.eos_token_id
-    pad_token_id = tokenizer.pad_token_id
     #start/stop with eos?
     tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist + [eos_token_id])])
-    #tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist)])
     total_length = len(tokenized_text)
 
     # 2. Generate stride lengths dynamically
@@ -177,7 +175,7 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
         # If we're at the last chunk and it's shorter than BLOCK_SIZE
         if end >= len(tokenized_text):
             num_padding = BLOCK_SIZE - len(partial_sequence)
-            padding = [pad_token_id] * num_padding
+            padding = [eos_token_id] * num_padding
             partial_sequence = torch.cat([partial_sequence, torch.tensor(padding, dtype=torch.long)], dim=0)
 
         input_ids_list.append(partial_sequence)
@@ -189,9 +187,7 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     labels_list = input_ids_list.copy()
     input_ids = [seq.tolist() for seq in input_ids_list]
     attention_mask = attention_mask_list
-
-    # Decode the token IDs back to the original text strings for labels
-    labels = [tokenizer.decode(seq, skip_special_tokens=True) for seq in labels_list]
+    labels = [seq.tolist() for seq in labels_list]
     
     print('total_length', total_length)
     
@@ -227,8 +223,7 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
         train_dataset = train_dataset.select(list(range(int(len(train_dataset) * SUB_SAMPLE_RATIO))))
         valid_dataset = valid_dataset.select(list(range(int(len(valid_dataset) * SUB_SAMPLE_RATIO))))
 
-    #print(len(train_dataset), len(valid_dataset))
-    #print(train_dataset['labels'])
+    print(len(train_dataset), len(valid_dataset))
     return train_dataset, valid_dataset
 
 def process_hierarchical_dataset(hierarchical_dataset_dict, SPLIT_RATIO, FINE_TUNE_SAMPLE_SIZE, SHUFFLE):
@@ -584,15 +579,11 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         split_strings = []
         
         for seq in self.valid_dataset:
-            #print(seq)
-            labels = seq['labels']
             
             input_ids = np.array(seq['input_ids'])  # convert to numpy array if not already
             splits = np.where(input_ids == self.trainer.tokenizer.eos_token_id)[0]
-            print('splits',splits)
-            # Initialize an empty list to hold the chopped up sequences
+
             chopped_sequences_seq = []
-            split_strings_seq = []
 
             # Initialize the start index
             start_idx = 0
@@ -601,83 +592,30 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             for end_idx in splits:
                 # Extract the subsequence from start_idx to end_idx (inclusive)
                 sub_seq = input_ids[start_idx:end_idx + 1]
+				# Update start_idx for the next loop iteration
                 start_idx = end_idx + 1
                 
                 if(len(sub_seq)==1):
                     pass
                 else:    
-                    print('sub_seq',sub_seq)
+                    #print('sub_seq',sub_seq)
                     # Append this subsequence to our list of chopped sequences
                     chopped_sequences_seq.append(sub_seq)
-                    
-                    # Update start_idx for the next loop iteration
-
+            
             # Convert to lists if you want the output as lists
             chopped_sequences_seq = chopped_sequences_seq[1:-1]
-            #print(chopped_sequences_seq)
-            
             chopped_sequences.extend(chopped_sequences_seq)
-            
-            # Step 1: Decode to string
-            decoded_string = self.trainer.tokenizer.decode(input_ids)
-            
-            # Step 2: Split by EOS token
-            split_strings = decoded_string.split(eos_token)
-            #reencoded_subsequences.append(self.trainer.tokenizer.encode(p, add_special_tokens=False))
-            #encoded_prompts.extend(reencoded_subsequences)
-            split_strings = split_strings[1:-1]
-            split_strings_seq.extend(split_strings)
-            
-        with open('chopped_sequences.txt', 'w', encoding='utf-8') as f:
-            
-            for string in chopped_sequences:
-                # Write the string to the file, followed by a newline character
-                f.write(f"{string}\n")
-                # If you want to separate each string more clearly, you can add a separator
-                f.write("-----\n")
-                # Now chopped_sequences contains all the subsequences, each ending with an eos_token
-
-            # Add these reencoded subsequences to your list
-            
-        with open('split_strings.txt', 'w', encoding='utf-8') as f:
-            # Iterate through each element in split_strings
-            for string in split_strings:
-                # Write the string to the file, followed by a newline character
-                f.write(f"{string}\n")
-                # If you want to separate each string more clearly, you can add a separator
-                f.write("-----\n")
-        # Find the index of the largest prompt in terms of token length
-        #print(encoded_prompts)
-        #print(len(encoded_prompts))
+                        
         lengths = [len(e) for e in chopped_sequences]
-        #print(lengths)
         max_length_index = np.argmax(lengths)
 
         # Decode the corresponding prompt from encoded_prompts
         largest_prompt_decoded = self.trainer.tokenizer.decode(chopped_sequences[max_length_index])
 
-        # Print the largest decoded prompt
-        #print("The largest prompt is:", largest_prompt_decoded)
         selected_prompts = random.sample(chopped_sequences, 4)
-        # Decode the encoded prompts to get their textual representation and then calculate their lengths
-
-        # Create a DataFrame from the lengths
-        #df = pd.DataFrame(lengths, columns=['Length'])
-
-        # Use the describe method to get summary statistics        
-        
-        #[print(self.trainer.tokenizer.decode(e)) for e in selected_prompts]
-        
-        #[print(len(self.trainer.tokenizer.decode(e))) for e in selected_prompts]
-        
-        #print(df.describe())
-
-        # Create a list to store bootstrapped maximum lengths
         bootstrap_max_lengths = []
         l = len(chopped_sequences)
-        #print('l',l)
         s = int(np.round(l*.50))
-        #print('s',s)
         num_bootstraps = 5
         # Perform bootstrapping
         
@@ -699,7 +637,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
         # Calculate threshold based on mean and standard deviation
         threshold_max_len = int(mean_max_length + 2 * std_max_length)
-        print('threshold_max_len:',threshold_max_len)
         
         # Manually pad each sequence to the maximum length
         padded_prompts = [pad(torch.tensor(seq), (0, threshold_max_len - len(seq)), value=pad_token_id) for seq in selected_prompts]
@@ -735,8 +672,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         
         with torch.no_grad():
             decoded_outputs = self.trainer.model(batch_input_ids, output_hidden_states=True)
-        # Decode and print the generated prompts
-        [print(self.trainer.tokenizer.decode(s)) for s in selected_prompts]
         
         # Select the hidden states (they are at index 2 in the outputs tuple)
         decoded_hidden_states = decoded_outputs.hidden_states
@@ -746,12 +681,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
         # Compute the mean embedding from the last layer's hidden states
         input_embeddings = torch.mean(last_layer_hidden_states, dim=1)
-        
-        #can't print this
-        if(False):
-            for i, input_embedding in enumerate(input_embeddings):
-                decoded_prompt = self.trainer.tokenizer.decode(input_embedding, skip_special_tokens=True)
-                print(f"Generated Prompt {i+1}: {decoded_prompt}")
         
         # Compute the reference_embedding from the mean of all the decoded_mean_embeddings
         input_embedding = torch.mean(input_embeddings, dim=0)
