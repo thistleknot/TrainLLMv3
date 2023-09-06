@@ -565,7 +565,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.min_perplexity = min_perplexity
         self.epoch_counter = 0  # Added an epoch counter
         self.patience_counter = 0
-        self.best_metric = float('inf')
+        self.best_metric = None
         self.output_dir = output_dir
         self.eval_subset_size = MIN_NUM_EVAL_EXAMPLES  # Define your eval_subset_size here
         self.train_epoch_steps = train_epoch_steps
@@ -698,6 +698,11 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         return average_similarity
 
     def on_train_begin(self, args, state, control, **kwargs):
+        if self.eval_metric == 'cosine':
+            self.best_metric = float('-inf')
+        elif self.eval_metric == 'eval':
+            self.best_metric = float('inf')
+        
         average_similarity = self._compute_cosine_similarity()
         initial_lr = self.trainer.optimizer.param_groups[0]['lr']
         new_eval_subset = random.sample(list(self.valid_dataset), 1)
@@ -732,13 +737,12 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         epoch_eval_loss = metrics.get('eval_loss', 0)
         epoch_perplexity = np.exp(epoch_eval_loss)
         
+        print('self.best_metric',self.best_metric)
         if self.eval_metric == 'cosine':
             average_similarity = self._compute_cosine_similarity()
-            self.best_metric = float('-inf')
             metric_value = average_similarity
             comparison = lambda a, b: a > b
         elif self.eval_metric == 'eval':
-            self.best_metric = float('inf')
             epoch_eval_loss = metrics.get('eval_loss', 0)
             metric_value = epoch_eval_loss
             comparison = lambda a, b: a < b
@@ -760,7 +764,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                 print(f'Metrics net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, no save')
                 if self.patience_counter >= self.patience:
                     control.should_training_stop = True
-            
+        print('self.best_metric',self.best_metric)    
         print(f"Best Model Checkpoint after epoch: {state.best_model_checkpoint}")
 
         return control
