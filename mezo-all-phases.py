@@ -37,7 +37,8 @@ default_args = {
     'SHUFFLE': SHUFFLE,
     'mlm_prob': MLM_PROB,
     'patience': PATIENCE,
-    'FINE_TUNE_SAMPLE_SIZE': FINE_TUNE_SAMPLE_SIZE
+    'FINE_TUNE_SAMPLE_SIZE': FINE_TUNE_SAMPLE_SIZE,
+    'EVAL_METRIC': 'eval'
 }
 
 
@@ -146,6 +147,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         pickle.dump(selected_prompts, open('./selected_prompts_III.pkl', 'wb'))
 
     elif phase == "Phase IV":
+        phase_args['EVAL_METRIC'] = 'cosine'
 
         selected_prompts = [\
         #*sampled_qa_prompts,\
@@ -175,7 +177,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         lr_scheduler_type=LR_SCHEDULER_TYPE,
         OPTIM=OPTIM,
         device_map=device_map,
-		phase=phase,
+        phase=phase,
         **phase_args  # unpack the other args here
     )
 

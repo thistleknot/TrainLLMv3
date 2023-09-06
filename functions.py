@@ -15,6 +15,28 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from vars import *
 
+def create_dynamic_batches(prompts, tokenizer, block_size):
+    
+    token_counts = [len(tokenizer.encode(prompt)) for prompt in prompts]
+    batches = []
+    current_batch = []
+    current_token_count = 0
+
+    for prompt, count in zip(prompts, token_counts):
+        
+        if current_token_count + count > block_size:
+            batches.append(current_batch)
+            current_batch = []
+            current_token_count = 0
+        
+        current_batch.append(prompt)
+        current_token_count += count
+
+    if current_batch:
+        batches.append(current_batch)
+
+    return batches
+
 def extract_indices(dataset):
     keys_list = list(dataset.keys())
     return range(0, len(dataset[keys_list[0]]))
@@ -351,11 +373,12 @@ def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, call
         args=args,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
+
         callbacks=callbacks,
         tokenizer=tokenizer
     )
 
-def train_model(selected_prompts, phase, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
+def train_model(selected_prompts, phase, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
     
     dataset_ = create_dataset(selected_prompts, tokenizer)
     #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
@@ -464,7 +487,8 @@ def train_model(selected_prompts, phase, output_dir, BLOCK_SIZE, GRADIENT_ACCUMU
             output_dir=training_args.output_dir,
             train_epoch_steps=train_epoch_steps,
             phase=phase,
-            block_size=BLOCK_SIZE
+            block_size=BLOCK_SIZE,
+            eval_metric=EVAL_METRIC
         )
     ]
 
@@ -531,30 +555,8 @@ def train_model(selected_prompts, phase, output_dir, BLOCK_SIZE, GRADIENT_ACCUMU
     model.resize_token_embeddings(len(tokenizer))
     model.config.use_cache = False
 
-def create_dynamic_batches(prompts, tokenizer, block_size):
-    
-    token_counts = [len(tokenizer.encode(prompt)) for prompt in prompts]
-    batches = []
-    current_batch = []
-    current_token_count = 0
-
-    for prompt, count in zip(prompts, token_counts):
-        
-        if current_token_count + count > block_size:
-            batches.append(current_batch)
-            current_batch = []
-            current_token_count = 0
-        
-        current_batch.append(prompt)
-        current_token_count += count
-
-    if current_batch:
-        batches.append(current_batch)
-
-    return batches
-
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, phase, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, phase, eval_metric, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
         self.valid_dataset = valid_dataset
         self.SUB_SAMPLE = SUB_SAMPLE
@@ -569,6 +571,8 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.train_epoch_steps = train_epoch_steps
         self.phase = phase
         self.block_size = block_size
+        self.eval_metric = eval_metric
+        self.name = 'EarlyStoppingCallback'
     
     def _compute_cosine_similarity(self):
         eos_token_id = self.trainer.tokenizer.eos_token_id
@@ -592,7 +596,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             for end_idx in splits:
                 # Extract the subsequence from start_idx to end_idx (inclusive)
                 sub_seq = input_ids[start_idx:end_idx + 1]
-				# Update start_idx for the next loop iteration
+                # Update start_idx for the next loop iteration
                 start_idx = end_idx + 1
                 
                 if(len(sub_seq)==1):
@@ -692,7 +696,25 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         average_similarity = np.mean(similarities)
 
         return average_similarity
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        average_similarity = self._compute_cosine_similarity()
+        initial_lr = self.trainer.optimizer.param_groups[0]['lr']
+        new_eval_subset = random.sample(list(self.valid_dataset), 1)
         
+        # Update the trainer's eval_dataset
+        self.trainer.eval_dataset = new_eval_subset
+        # Run evaluation to get metrics for the initial model
+        metrics = self.trainer.evaluate()
+        
+        # Calculate perplexity from loss
+        initial_perplexity = np.exp(metrics.get('eval_loss', 0))
+        initial_eval_loss = metrics.get('eval_loss', 0)  # Extracting eval_loss
+
+        # Save the initial model as the best model
+        self._save_model(self.output_dir)
+        print(f'Metrics initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
+
     def on_epoch_end(self, args, state, control, **kwargs):
         current_lr = self.trainer.optimizer.param_groups[0]['lr']
         # Sample a new eval_subset from valid_dataset or train_dataset depending on eval_mode
@@ -710,20 +732,32 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         epoch_eval_loss = metrics.get('eval_loss', 0)
         epoch_perplexity = np.exp(epoch_eval_loss)
         
-        #if state.best_metric is None or epoch_perplexity < state.best_metric:
-        if state.best_metric is None or average_similarity  > state.best_metric:
-            #state.best_metric = epoch_perplexity
-            self.best_metric = average_similarity
-            state.best_model_checkpoint = self.output_dir
-            self._save_model(self.output_dir)
-            self.patience_counter = 0
-            print(f'Perplexity net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved as best model')
-        else:
-            self.patience_counter += 1
-            print(f'Perplexity net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, no save')
-            if self.patience_counter >= self.patience:
-                control.should_training_stop = True
+        if self.eval_metric == 'cosine':
+            average_similarity = self._compute_cosine_similarity()
+            metric_value = average_similarity
+            comparison = lambda a, b: a > b
+        elif self.eval_metric == 'eval':
+            epoch_eval_loss = metrics.get('eval_loss', 0)
+            metric_value = epoch_eval_loss
+            comparison = lambda a, b: a < b
         
+        # Increment the epoch counter
+        self.epoch_counter += 1
+        if self.epoch_counter > 0:
+
+            #if state.best_metric is None or epoch_perplexity < state.best_metric:
+            if state.best_metric is None or comparison(metric_value, state.best_metric):
+                state.best_metric = metric_value
+                state.best_model_checkpoint = self.output_dir
+                self._save_model(self.output_dir)
+                self.patience_counter = 0
+                print(f'Metrics net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved as best model')
+            else:
+                self.patience_counter += 1
+                print(f'Metrics net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, no save')
+                if self.patience_counter >= self.patience:
+                    control.should_training_stop = True
+            
         print(f"Best Model Checkpoint after epoch: {state.best_model_checkpoint}")
 
         return control
@@ -738,29 +772,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             self.trainer.tokenizer.save_pretrained(output_dir)
         self.trainer.state.best_model_checkpoint = self.output_dir
 
-    def on_train_begin(self, args, state, control, **kwargs):
-        average_similarity = self._compute_cosine_similarity()
-        initial_lr = self.trainer.optimizer.param_groups[0]['lr']
-        new_eval_subset = random.sample(list(self.valid_dataset), 1)
-        
-        # Update the trainer's eval_dataset
-        self.trainer.eval_dataset = new_eval_subset
-        # Run evaluation to get metrics for the initial model
-        metrics = self.trainer.evaluate()
-        
-        # Calculate perplexity from loss
-        initial_perplexity = np.exp(metrics.get('eval_loss', 0))
-        initial_eval_loss = metrics.get('eval_loss', 0)  # Extracting eval_loss
-        
-        # If best_metric is not set or the initial perplexity is better, update best_metric and best_model_checkpoint
-        if state.best_metric is None or initial_perplexity < state.best_metric:
-            state.best_metric = initial_perplexity
-            state.best_model_checkpoint = self.output_dir
-
-            # Save the initial model as the best model
-            self._save_model(self.output_dir)
-            print(f'Perplexity net initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved as best model')
-   
     def on_train_end(self, args, state, control, **kwargs):
         state.best_model_checkpoint = self.output_dir
         
@@ -1332,6 +1343,7 @@ class MeZOTrainer(Trainer):
         """
         Get (no gradient) loss from the model. Dropout is turned off too.
         """
+            
         model.eval()
         if self.args.non_diff:
             # Non-differentiable objective (may require autoregressive generation)
@@ -1345,6 +1357,41 @@ class MeZOTrainer(Trainer):
                 # Warning: this is copied from the original Huggingface Trainer. Untested.
                 loss = loss.mean()  # mean() to average on multi-gpu parallel training
         return loss.detach()
+    
+    if(True):
+        def zo_forward(self, model, inputs):
+            """
+            Get (no gradient) loss from the model. Dropout is turned off too.
+            """
+            # Access the specific callback that contains your custom loss
+            
+            cosine_similarity_loss = 0  # Default value if no matching callback is found
+            
+            for callback in self.callback_handler.callbacks:
+                if isinstance(callback, EarlyStoppingCallback_epochs):
+                    # Do something with the callback
+                    cosine_similarity_loss = 1 - callback._compute_cosine_similarity()
+            
+            model.eval()
+            if self.args.non_diff:
+                print('non diff')
+                # Non-differentiable objective (may require autoregressive generation)
+                return self.zo_forward_nondiff(model, inputs)
+
+            with torch.inference_mode():
+                inputs = self._prepare_inputs(inputs)
+                with self.compute_loss_context_manager():
+                    original_loss = self.compute_loss(model, inputs)
+                
+                # Combine the two losses
+                alpha = 0.5  # alpha is a hyperparameter to balance the two terms
+                composite_loss = original_loss + alpha * cosine_similarity_loss
+
+                if self.args.n_gpu > 1:
+                    # Warning: this is copied from the original Huggingface Trainer. Untested.
+                    composite_loss = composite_loss.mean()  # mean() to average on multi-gpu parallel training
+
+            return composite_loss.detach()
 
     def zo_forward_nondiff(self, model, inputs):
         """
