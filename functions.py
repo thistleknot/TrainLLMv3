@@ -10,7 +10,9 @@ from datasets import concatenate_datasets, load_dataset
 from torch.utils.data import SequentialSampler, RandomSampler
 from torch.optim.lr_scheduler import LambdaLR
 from pathlib import Path
-#sloppy
+from torch.nn.functional import pad
+from sklearn.metrics.pairwise import cosine_similarity
+
 from vars import *
 
 def extract_indices(dataset):
@@ -150,8 +152,10 @@ def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
 def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
     
     eos_token_id = tokenizer.eos_token_id
+    pad_token_id = tokenizer.pad_token_id
     #start/stop with eos?
     tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist + [eos_token_id])])
+    #tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist)])
     total_length = len(tokenized_text)
 
     # 2. Generate stride lengths dynamically
@@ -173,7 +177,7 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
         # If we're at the last chunk and it's shorter than BLOCK_SIZE
         if end >= len(tokenized_text):
             num_padding = BLOCK_SIZE - len(partial_sequence)
-            padding = [eos_token_id] * num_padding
+            padding = [pad_token_id] * num_padding
             partial_sequence = torch.cat([partial_sequence, torch.tensor(padding, dtype=torch.long)], dim=0)
 
         input_ids_list.append(partial_sequence)
@@ -185,7 +189,9 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     labels_list = input_ids_list.copy()
     input_ids = [seq.tolist() for seq in input_ids_list]
     attention_mask = attention_mask_list
-    labels = [seq.tolist() for seq in labels_list]
+
+    # Decode the token IDs back to the original text strings for labels
+    labels = [tokenizer.decode(seq, skip_special_tokens=True) for seq in labels_list]
     
     print('total_length', total_length)
     
@@ -221,7 +227,8 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
         train_dataset = train_dataset.select(list(range(int(len(train_dataset) * SUB_SAMPLE_RATIO))))
         valid_dataset = valid_dataset.select(list(range(int(len(valid_dataset) * SUB_SAMPLE_RATIO))))
 
-    print(len(train_dataset), len(valid_dataset))
+    #print(len(train_dataset), len(valid_dataset))
+    #print(train_dataset['labels'])
     return train_dataset, valid_dataset
 
 def process_hierarchical_dataset(hierarchical_dataset_dict, SPLIT_RATIO, FINE_TUNE_SAMPLE_SIZE, SHUFFLE):
@@ -353,7 +360,7 @@ def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, call
         tokenizer=tokenizer
     )
 
-def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
+def train_model(selected_prompts, phase, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
     
     dataset_ = create_dataset(selected_prompts, tokenizer)
     #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
@@ -460,7 +467,9 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
             patience=patience, 
             min_perplexity=90,
             output_dir=training_args.output_dir,
-            train_epoch_steps=train_epoch_steps
+            train_epoch_steps=train_epoch_steps,
+            phase=phase,
+            block_size=BLOCK_SIZE
         )
     ]
 
@@ -527,8 +536,30 @@ def train_model(selected_prompts, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_
     model.resize_token_embeddings(len(tokenizer))
     model.config.use_cache = False
 
+def create_dynamic_batches(prompts, tokenizer, block_size):
+    
+    token_counts = [len(tokenizer.encode(prompt)) for prompt in prompts]
+    batches = []
+    current_batch = []
+    current_token_count = 0
+
+    for prompt, count in zip(prompts, token_counts):
+        
+        if current_token_count + count > block_size:
+            batches.append(current_batch)
+            current_batch = []
+            current_token_count = 0
+        
+        current_batch.append(prompt)
+        current_token_count += count
+
+    if current_batch:
+        batches.append(current_batch)
+
+    return batches
+
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, valid_dataset, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, phase, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
         self.valid_dataset = valid_dataset
         self.SUB_SAMPLE = SUB_SAMPLE
@@ -541,7 +572,198 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.output_dir = output_dir
         self.eval_subset_size = MIN_NUM_EVAL_EXAMPLES  # Define your eval_subset_size here
         self.train_epoch_steps = train_epoch_steps
+        self.phase = phase
+        self.block_size = block_size
+    
+    def _compute_cosine_similarity(self):
+        eos_token_id = self.trainer.tokenizer.eos_token_id
+        eos_token = self.trainer.tokenizer.eos_token
+        pad_token_id = self.trainer.tokenizer.pad_token_id
+        encoded_prompts = []
+        chopped_sequences = []
+        split_strings = []
+        
+        for seq in self.valid_dataset:
+            #print(seq)
+            labels = seq['labels']
+            
+            input_ids = np.array(seq['input_ids'])  # convert to numpy array if not already
+            splits = np.where(input_ids == self.trainer.tokenizer.eos_token_id)[0]
+            print('splits',splits)
+            # Initialize an empty list to hold the chopped up sequences
+            chopped_sequences_seq = []
+            split_strings_seq = []
 
+            # Initialize the start index
+            start_idx = 0
+
+            # Loop through the splits to chop up the sequences
+            for end_idx in splits:
+                # Extract the subsequence from start_idx to end_idx (inclusive)
+                sub_seq = input_ids[start_idx:end_idx + 1]
+                start_idx = end_idx + 1
+                
+                if(len(sub_seq)==1):
+                    pass
+                else:    
+                    print('sub_seq',sub_seq)
+                    # Append this subsequence to our list of chopped sequences
+                    chopped_sequences_seq.append(sub_seq)
+                    
+                    # Update start_idx for the next loop iteration
+
+            # Convert to lists if you want the output as lists
+            chopped_sequences_seq = chopped_sequences_seq[1:-1]
+            #print(chopped_sequences_seq)
+            
+            chopped_sequences.extend(chopped_sequences_seq)
+            
+            # Step 1: Decode to string
+            decoded_string = self.trainer.tokenizer.decode(input_ids)
+            
+            # Step 2: Split by EOS token
+            split_strings = decoded_string.split(eos_token)
+            #reencoded_subsequences.append(self.trainer.tokenizer.encode(p, add_special_tokens=False))
+            #encoded_prompts.extend(reencoded_subsequences)
+            split_strings = split_strings[1:-1]
+            split_strings_seq.extend(split_strings)
+            
+        with open('chopped_sequences.txt', 'w', encoding='utf-8') as f:
+            
+            for string in chopped_sequences:
+                # Write the string to the file, followed by a newline character
+                f.write(f"{string}\n")
+                # If you want to separate each string more clearly, you can add a separator
+                f.write("-----\n")
+                # Now chopped_sequences contains all the subsequences, each ending with an eos_token
+
+            # Add these reencoded subsequences to your list
+            
+        with open('split_strings.txt', 'w', encoding='utf-8') as f:
+            # Iterate through each element in split_strings
+            for string in split_strings:
+                # Write the string to the file, followed by a newline character
+                f.write(f"{string}\n")
+                # If you want to separate each string more clearly, you can add a separator
+                f.write("-----\n")
+        # Find the index of the largest prompt in terms of token length
+        #print(encoded_prompts)
+        #print(len(encoded_prompts))
+        lengths = [len(e) for e in chopped_sequences]
+        #print(lengths)
+        max_length_index = np.argmax(lengths)
+
+        # Decode the corresponding prompt from encoded_prompts
+        largest_prompt_decoded = self.trainer.tokenizer.decode(chopped_sequences[max_length_index])
+
+        # Print the largest decoded prompt
+        #print("The largest prompt is:", largest_prompt_decoded)
+        selected_prompts = random.sample(chopped_sequences, 4)
+        # Decode the encoded prompts to get their textual representation and then calculate their lengths
+
+        # Create a DataFrame from the lengths
+        #df = pd.DataFrame(lengths, columns=['Length'])
+
+        # Use the describe method to get summary statistics        
+        
+        #[print(self.trainer.tokenizer.decode(e)) for e in selected_prompts]
+        
+        #[print(len(self.trainer.tokenizer.decode(e))) for e in selected_prompts]
+        
+        #print(df.describe())
+
+        # Create a list to store bootstrapped maximum lengths
+        bootstrap_max_lengths = []
+        l = len(chopped_sequences)
+        #print('l',l)
+        s = int(np.round(l*.50))
+        #print('s',s)
+        num_bootstraps = 5
+        # Perform bootstrapping
+        
+        for _ in range(num_bootstraps):
+            # Sample a subset of encoded_prompts
+            
+            bootstrap_subset = random.sample(lengths, s)
+            #print('bootstrap_subset',bootstrap_subset)
+
+            # Calculate the maximum length of the bootstrap subset
+            bootstrap_max_length = max(bootstrap_subset)
+            
+            # Append to the list of bootstrapped maximum lengths
+            bootstrap_max_lengths.append(bootstrap_max_length)
+
+        # Calculate mean and standard deviation of bootstrapped maximum lengths
+        mean_max_length = np.mean(bootstrap_max_lengths)
+        std_max_length = np.std(bootstrap_max_lengths)
+
+        # Calculate threshold based on mean and standard deviation
+        threshold_max_len = int(mean_max_length + 2 * std_max_length)
+        print('threshold_max_len:',threshold_max_len)
+        
+        # Manually pad each sequence to the maximum length
+        padded_prompts = [pad(torch.tensor(seq), (0, threshold_max_len - len(seq)), value=pad_token_id) for seq in selected_prompts]
+
+        # Convert the list of padded sequences to a tensor
+        batch_input_ids = torch.stack(padded_prompts)
+        
+        # Pass the batch of input prompts to the model and get the outputs
+        with torch.no_grad():
+            decoded_outputs = self.trainer.model(batch_input_ids, output_hidden_states=True)
+
+        # Select the hidden states (they are at index 2 in the outputs tuple)
+        decoded_hidden_states = decoded_outputs.hidden_states
+
+        # If you want the hidden states from the last layer
+        last_layer_hidden_states = decoded_hidden_states[-1]
+
+        # Compute the mean embedding from the last layer's hidden states
+        reference_embeddings = torch.mean(last_layer_hidden_states, dim=1)
+        
+        reference_embedding = torch.mean(reference_embeddings, dim=0)
+
+        # Step 2: Extract the relevant part of the prompt based on the phase
+        if self.phase == "Phase I" or self.phase == "Phase II":  # Corresponds to your qca_prompt_template
+            split = "Answer:\n\n"
+        elif self.phase == "Phase III":  # Corresponds to your caq_prompt_template
+            split = "Instruction:\n\n"
+        elif self.phase == "Phase IV":  # Corresponds to your cqa_prompt_template
+            split = "Context:\n\n"
+
+        padded_prompts = [pad(torch.tensor(seq), (0, threshold_max_len - len(seq)), value=pad_token_id) for seq in selected_prompts]
+        batch_input_ids = torch.stack(padded_prompts)
+        
+        with torch.no_grad():
+            decoded_outputs = self.trainer.model(batch_input_ids, output_hidden_states=True)
+        # Decode and print the generated prompts
+        [print(self.trainer.tokenizer.decode(s)) for s in selected_prompts]
+        
+        # Select the hidden states (they are at index 2 in the outputs tuple)
+        decoded_hidden_states = decoded_outputs.hidden_states
+
+        # If you want the hidden states from the last layer
+        last_layer_hidden_states = decoded_hidden_states[-1]
+
+        # Compute the mean embedding from the last layer's hidden states
+        input_embeddings = torch.mean(last_layer_hidden_states, dim=1)
+        
+        #can't print this
+        if(False):
+            for i, input_embedding in enumerate(input_embeddings):
+                decoded_prompt = self.trainer.tokenizer.decode(input_embedding, skip_special_tokens=True)
+                print(f"Generated Prompt {i+1}: {decoded_prompt}")
+        
+        # Compute the reference_embedding from the mean of all the decoded_mean_embeddings
+        input_embedding = torch.mean(input_embeddings, dim=0)
+
+        # Compute the cosine similarity between input embeddings and reference_embedding
+        similarities = cosine_similarity(input_embeddings.numpy(), reference_embedding.numpy().reshape(1, -1))
+
+        # Calculate the average similarity
+        average_similarity = np.mean(similarities)
+
+        return average_similarity
+        
     def on_epoch_end(self, args, state, control, **kwargs):
         current_lr = self.trainer.optimizer.param_groups[0]['lr']
         # Sample a new eval_subset from valid_dataset or train_dataset depending on eval_mode
@@ -550,22 +772,26 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         
         # Update the trainer's eval_dataset
         self.trainer.eval_dataset = new_eval_subset
-
+        
+        average_similarity = self._compute_cosine_similarity()
+    
         metrics = self.trainer.evaluate()
 
         # Calculate perplexity from loss
         epoch_eval_loss = metrics.get('eval_loss', 0)
         epoch_perplexity = np.exp(epoch_eval_loss)
         
-        if state.best_metric is None or epoch_perplexity < state.best_metric:
-            state.best_metric = epoch_perplexity
+        #if state.best_metric is None or epoch_perplexity < state.best_metric:
+        if state.best_metric is None or average_similarity  > state.best_metric:
+            #state.best_metric = epoch_perplexity
+            self.best_metric = average_similarity
             state.best_model_checkpoint = self.output_dir
             self._save_model(self.output_dir)
             self.patience_counter = 0
-            print(f'Perplexity net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, saved as best model')
+            print(f'Perplexity net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved as best model')
         else:
             self.patience_counter += 1
-            print(f'Perplexity net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, no save')
+            print(f'Perplexity net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, no save')
             if self.patience_counter >= self.patience:
                 control.should_training_stop = True
         
@@ -584,6 +810,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.trainer.state.best_model_checkpoint = self.output_dir
 
     def on_train_begin(self, args, state, control, **kwargs):
+        average_similarity = self._compute_cosine_similarity()
         initial_lr = self.trainer.optimizer.param_groups[0]['lr']
         new_eval_subset = random.sample(list(self.valid_dataset), 1)
         
@@ -603,7 +830,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
             # Save the initial model as the best model
             self._save_model(self.output_dir)
-            print(f'Perplexity net initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, saved as best model')
+            print(f'Perplexity net initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved as best model')
    
     def on_train_end(self, args, state, control, **kwargs):
         state.best_model_checkpoint = self.output_dir

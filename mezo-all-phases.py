@@ -84,8 +84,6 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
     
     if phase == "Phase I":
         
-        
-        
         selected_prompts = []
         # Loop through each file in the folder.
         """
@@ -109,6 +107,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         #*sampled_dolly_15k_cqa_prompts,\
         #*sampled_openai_tldr_prompts\
         ]
+        #[print(p) for p in selected_prompts]
         pickle.dump(selected_prompts, open('./selected_prompts_I.pkl', 'wb'))
                         
     elif phase == "Phase II":
@@ -176,6 +175,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         lr_scheduler_type=LR_SCHEDULER_TYPE,
         OPTIM=OPTIM,
         device_map=device_map,
+		phase=phase,
         **phase_args  # unpack the other args here
     )
 
@@ -222,8 +222,8 @@ with open('./source/datasets_dict.pkl', 'rb') as f:
     sampled_openai_tldr_prompts = [datasets_dict['openai_summarize_tldr']['pretrain']['summ'][i] for i in sampled_dolly_15k_indices]
 
 # Execute phases
-#process_phase("Phase I", output_dir='./bits', prior_phase_dir=None)
-#process_phase("Phase II", output_dir='./bits-ft', prior_phase_dir='./bits')
-#process_phase("Phase III", output_dir='./bits-ft-I-R', prior_phase_dir='bits-ft')
+process_phase("Phase I", output_dir='./bits', prior_phase_dir=None)
+process_phase("Phase II", output_dir='./bits-ft', prior_phase_dir='./bits')
+process_phase("Phase III", output_dir='./bits-ft-I-R', prior_phase_dir='bits-ft')
 process_phase("Phase IV", output_dir='./bits-ft-C-I-R', prior_phase_dir='bits-ft-I-R')
 
