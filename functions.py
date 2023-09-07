@@ -378,7 +378,7 @@ def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, call
         tokenizer=tokenizer
     )
 
-def train_model(selected_prompts, phase, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
+def train_model(selected_prompts, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
     
     dataset_ = create_dataset(selected_prompts, tokenizer)
     #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
@@ -486,7 +486,7 @@ def train_model(selected_prompts, phase, EVAL_METRIC, output_dir, BLOCK_SIZE, GR
             min_perplexity=90,
             output_dir=training_args.output_dir,
             train_epoch_steps=train_epoch_steps,
-            phase=phase,
+            #phase=phase,
             block_size=BLOCK_SIZE,
             eval_metric=EVAL_METRIC
         )
@@ -556,7 +556,7 @@ def train_model(selected_prompts, phase, EVAL_METRIC, output_dir, BLOCK_SIZE, GR
     model.config.use_cache = False
 
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, phase, eval_metric, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, eval_metric, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
         self.valid_dataset = valid_dataset
         self.SUB_SAMPLE = SUB_SAMPLE
@@ -569,7 +569,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.output_dir = output_dir
         self.eval_subset_size = MIN_NUM_EVAL_EXAMPLES  # Define your eval_subset_size here
         self.train_epoch_steps = train_epoch_steps
-        self.phase = phase
+        #self.phase = phase
         self.block_size = block_size
         self.eval_metric = eval_metric
         self.name = 'EarlyStoppingCallback'
@@ -662,33 +662,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         
         reference_embedding = torch.mean(reference_embeddings, dim=0)
         
-        """
-        # Step 2: Extract the relevant part of the prompt based on the phase
-        if self.phase == "Phase I" or self.phase == "Phase II":  # Corresponds to your qca_prompt_template
-            split = "Instruction:\n\n"
-        elif self.phase == "Phase III":  # Corresponds to your caq_prompt_template
-            split = "Instruction:\n\n"
-        elif self.phase == "Phase IV":  # Corresponds to your cqa_prompt_template
-            split = "Context:\n\n"
-
-        # Here is where you modify your padded_prompts based on the split string
-        new_padded_prompts = []
-        for padded_prompt in padded_prompts:
-            # Decode the padded_prompt to string
-            decoded_prompt = self.trainer.tokenizer.decode(padded_prompt)
-            
-            # Split and take only the part after the split string
-            truncated_prompt = decoded_prompt.split(split + split)[-1]
-            
-            # Re-encode the truncated string
-            truncated_prompt_ids = self.trainer.tokenizer.encode(truncated_prompt, add_special_tokens=False)
-            
-            # Pad the truncated_prompt_ids
-            padded_truncated_prompt = pad(torch.tensor(truncated_prompt_ids), (0, threshold_max_len - len(truncated_prompt_ids)), value=pad_token_id)
-            
-            # Append to new_padded_prompts
-            new_padded_prompts.append(padded_truncated_prompt)
-        """
         # Decode the selected_prompts to strings
         decoded_selected_prompts = [self.trainer.tokenizer.decode(prompt) for prompt in selected_prompts]
 
