@@ -152,11 +152,11 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         selected_prompts = [\
         #*sampled_qa_prompts,\
         #*sampled_caq_prompts,\
-        sampled_qca_prompts,\
+        #sampled_qca_prompts,\
         #*sampled_dolly_closed_qa_qa_prompts,\
         #*sampled_dolly_closed_qa_caq_prompts,\
         #*sampled_dolly_closed_qa_cqa_prompts,\
-        #*sampled_dolly_closed_qa_qca_prompts,\
+        *sampled_dolly_closed_qa_qca_prompts,\
         #*sampled_dolly_15k_qa_prompts,\
         #*sampled_dolly_15k_caq_prompts,\
         #*sampled_dolly_15k_cqa_prompts,\
@@ -207,6 +207,7 @@ with open('./source/datasets_dict.pkl', 'rb') as f:
     #not meant to be caq, some questions have non specific questions about a presumed prior context.
     sampled_caq_prompts = [datasets_dict['squad_v2']['pretrain']['caq'][i] for i in sampled_squad_indices]
     sampled_cqa_prompts = [datasets_dict['squad_v2']['pretrain']['cqa'][i] for i in sampled_squad_indices]
+    sampled_qca_prompts = [datasets_dict['squad_v2']['pretrain']['qca'][i] for i in sampled_squad_indices]
 
     # For Dolly Closed QA
     sampled_dolly_closed_qa_qa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qa'][i] for i in sampled_dolly_closed_qa_indices]

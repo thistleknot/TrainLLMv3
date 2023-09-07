@@ -602,7 +602,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                 if(len(sub_seq)==1):
                     pass
                 else:    
-                    #print('sub_seq',sub_seq)
                     # Append this subsequence to our list of chopped sequences
                     chopped_sequences_seq.append(sub_seq)
             
@@ -662,17 +661,76 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         reference_embeddings = torch.mean(last_layer_hidden_states, dim=1)
         
         reference_embedding = torch.mean(reference_embeddings, dim=0)
-
+        
+        """
         # Step 2: Extract the relevant part of the prompt based on the phase
         if self.phase == "Phase I" or self.phase == "Phase II":  # Corresponds to your qca_prompt_template
-            split = "Answer:\n\n"
+            split = "Instruction:\n\n"
         elif self.phase == "Phase III":  # Corresponds to your caq_prompt_template
             split = "Instruction:\n\n"
         elif self.phase == "Phase IV":  # Corresponds to your cqa_prompt_template
             split = "Context:\n\n"
 
-        padded_prompts = [pad(torch.tensor(seq), (0, threshold_max_len - len(seq)), value=pad_token_id) for seq in selected_prompts]
-        batch_input_ids = torch.stack(padded_prompts)
+        # Here is where you modify your padded_prompts based on the split string
+        new_padded_prompts = []
+        for padded_prompt in padded_prompts:
+            # Decode the padded_prompt to string
+            decoded_prompt = self.trainer.tokenizer.decode(padded_prompt)
+            
+            # Split and take only the part after the split string
+            truncated_prompt = decoded_prompt.split(split + split)[-1]
+            
+            # Re-encode the truncated string
+            truncated_prompt_ids = self.trainer.tokenizer.encode(truncated_prompt, add_special_tokens=False)
+            
+            # Pad the truncated_prompt_ids
+            padded_truncated_prompt = pad(torch.tensor(truncated_prompt_ids), (0, threshold_max_len - len(truncated_prompt_ids)), value=pad_token_id)
+            
+            # Append to new_padded_prompts
+            new_padded_prompts.append(padded_truncated_prompt)
+        """
+        # Decode the selected_prompts to strings
+        decoded_selected_prompts = [self.trainer.tokenizer.decode(prompt) for prompt in selected_prompts]
+
+        # Initialize list to hold new_padded_prompts
+        new_padded_prompts = []
+
+        # Loop through each decoded_selected_prompt
+        for decoded_prompt in decoded_selected_prompts:
+            # Find indices of key phrases
+            idx_context = decoded_prompt.find("Context:\n\n")
+            idx_instruction = decoded_prompt.find("Instruction:\n\n")
+            idx_answer = decoded_prompt.find("Answer:\n\n")
+            
+            # Create a list of (index, key_phrase) and sort it
+            idx_list = [("Context", idx_context), ("Instruction", idx_instruction), ("Answer", idx_answer)]
+            idx_list = sorted(idx_list, key=lambda x: x[1])
+            
+            # Determine the split string based on the sorted order of key phrases
+            if idx_list[-1][0] == "Answer":
+                if idx_list[-2][0] == "Context":
+                    split = "Context:\n\n"
+                else:  # "Instruction"
+                    split = "Instruction:\n\n"
+            elif idx_list[-1][0] == "Instruction":
+                split = "Instruction:\n\n"
+            else:  # "Context"
+                split = "Context:\n\n"
+            
+            # Split and take only the part after the split string
+            truncated_prompt = decoded_prompt.split(split + split)[-1]
+            
+            # Re-encode the truncated string
+            truncated_prompt_ids = self.trainer.tokenizer.encode(truncated_prompt, add_special_tokens=False)
+            
+            # Pad the truncated_prompt_ids
+            padded_truncated_prompt = pad(torch.tensor(truncated_prompt_ids), (0, threshold_max_len - len(truncated_prompt_ids)), value=pad_token_id)
+            
+            # Append to new_padded_prompts
+            new_padded_prompts.append(padded_truncated_prompt)
+
+        # Convert the list of new padded sequences to a tensor
+        batch_input_ids = torch.stack(new_padded_prompts)
         
         with torch.no_grad():
             decoded_outputs = self.trainer.model(batch_input_ids, output_hidden_states=True)
