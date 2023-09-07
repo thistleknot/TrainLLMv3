@@ -84,7 +84,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
     TAG = phase.replace(' ','-')
     phase_args['TAG'] = TAG
     phase_args['WARM_RATIO'] = WARM_RATIO
-    phase_args['EVAL_MODE'] = 'train'
+    #phase_args['EVAL_MODE'] = 'train'
     
     if phase == "Phase I":
         

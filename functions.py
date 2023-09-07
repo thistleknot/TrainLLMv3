@@ -473,6 +473,7 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     
     callbacks = [
         EarlyStoppingCallback_epochs(
+            train_dataset=train_dataset,
             valid_dataset=valid_dataset,    
             SUB_SAMPLE=True,
             SUB_SAMPLE_RATIO=SUB_SAMPLE_RATIO,
@@ -522,9 +523,10 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     model.config.use_cache = False
 
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, min_epochs, eval_metric, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, min_epochs, eval_metric, train_dataset, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
         self.valid_dataset = valid_dataset
+        self.train_dataset = train_dataset
         self.SUB_SAMPLE = SUB_SAMPLE
         self.SUB_SAMPLE_RATIO = SUB_SAMPLE_RATIO
         self.patience = patience
@@ -541,7 +543,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.name = 'EarlyStoppingCallback'
         self.min_epochs = min_epochs
     
-    def _compute_cosine_similarity(self):
+    def _compute_cosine_similarity(self, train=False):
         eos_token_id = self.trainer.tokenizer.eos_token_id
         eos_token = self.trainer.tokenizer.eos_token
         pad_token_id = self.trainer.tokenizer.pad_token_id
@@ -549,7 +551,13 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         chopped_sequences = []
         split_strings = []
         
-        for seq in self.valid_dataset:
+        
+        if(train):
+            data = random.sample(list(self.train_dataset), 4)
+        else:
+            data = self.valid_dataset    
+            
+        for seq in data:
             
             input_ids = np.array(seq['input_ids'])  # convert to numpy array if not already
             splits = np.where(input_ids == self.trainer.tokenizer.eos_token_id)[0]
@@ -1379,7 +1387,7 @@ class MeZOTrainer(Trainer):
             for callback in self.callback_handler.callbacks:
                 if isinstance(callback, EarlyStoppingCallback_epochs):
                     # Do something with the callback
-                    cosine_similarity_loss = 1 - callback._compute_cosine_similarity()
+                    cosine_similarity_loss = 1 - callback._compute_cosine_similarity(train=True)
             
             model.eval()
             if self.args.non_diff:
