@@ -12,6 +12,8 @@ tokenizer.pad_token = tokenizer.eos_token
 tokenizer.add_special_tokens(special_tokens_dict)
 
 device_map = {"": 0}
+
+#inherited by phase_args
 default_args = {
     'BLOCK_SIZE': BLOCK_SIZE,
     'GRADIENT_ACCUMULATION_STEPS': GRADIENT_ACCUMULATION_STEPS,
@@ -38,7 +40,8 @@ default_args = {
     'mlm_prob': MLM_PROB,
     'patience': PATIENCE,
     'FINE_TUNE_SAMPLE_SIZE': FINE_TUNE_SAMPLE_SIZE,
-    'EVAL_METRIC': 'eval'
+    'EVAL_METRIC': 'eval',
+    'min_epochs': 'min_epochs'
 }
 
 

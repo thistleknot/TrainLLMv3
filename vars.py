@@ -39,6 +39,7 @@ ZO_EPS = args['zo_eps']
 LR_SCHEDULER_TYPE = args['lr_scheduler_type']
 MLM_PROB = args['mlm_prob']
 PATIENCE = args['patience']
+min_epochs = args['min_epochs']
 
 #print(ADAM_BETA1)
 quantize_config = BaseQuantizeConfig(

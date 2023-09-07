@@ -378,7 +378,7 @@ def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, call
         tokenizer=tokenizer
     )
 
-def train_model(selected_prompts, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
+def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
     
     dataset_ = create_dataset(selected_prompts, tokenizer)
     #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
@@ -421,15 +421,10 @@ def train_model(selected_prompts, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_
     valid_epoch_steps = int(max(1,np.round(num_valid_sequences / BATCH_SIZE * GRADIENT_ACCUMULATION_STEPS)))
 
     # Calculate max training steps
-    #max_train_steps = int(train_epoch_steps * EPOCHS)
     max_train_steps = int(max(1,np.round(train_epoch_steps)) * EPOCHS)
 
     #1 epoch
     min_steps = int(max(1,np.round(train_epoch_steps*1)))
-
-    #print('perplexity starts counting at:', min_steps, ' eval:', EVAL_STEPS)
-
-    #early_stopping_callback = EarlyStoppingCallback(patience=2, min_perplexity=90, min_steps=min_steps)
 
     # Define data collator
     data_collator = DataCollatorForLanguageModeling(
@@ -488,36 +483,12 @@ def train_model(selected_prompts, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_
             train_epoch_steps=train_epoch_steps,
             #phase=phase,
             block_size=BLOCK_SIZE,
-            eval_metric=EVAL_METRIC
+            eval_metric=EVAL_METRIC,
+            min_epochs=min_epochs
         )
     ]
 
     trainer = initialize_trainer(training_args, model, train_dataset, valid_dataset, tokenizer, callbacks=callbacks)
-    
-    #always be a warmup.  Need to figure out how to handle breaking early, and how to resume next phase.  Makes sense to start afresh with a new 'task'.
-    if(False):
-        # At the beginning of train_model
-        print('prior_phase_dir:', prior_phase_dir)
-        if prior_phase_dir:
-            # Load model state
-            model.load_state_dict(torch.load(os.path.join(prior_phase_dir, 'model_state.pth')))
-          
-            # Initialize optimizer and load its state
-            optimizer = torch.optim.Adam(model.parameters(), lr=0.001)  # The lr will be overwritten
-            optimizer_state = torch.load(os.path.join(prior_phase_dir, 'optimizer_state.pth'))
-            optimizer.load_state_dict(optimizer_state)
-            print('optimizer_state', optimizer_state)
-
-            # Initialize scheduler based on LR_SCHEDULER_TYPE and load its state
-            # Initialize the scheduler
-            if lr_scheduler_type == 'linear':
-                scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=WARM_RATIO*train_epoch_steps, num_training_steps=train_epoch_steps*EPOCHS)
-            elif lr_scheduler_type == 'cosine':
-                scheduler = get_cosine_schedule_with_warmup(optimizer, num_warmup_steps=WARM_RATIO*train_epoch_steps, num_training_steps=train_epoch_steps*EPOCHS)
-
-            scheduler_state = torch.load(os.path.join(prior_phase_dir, 'scheduler_state.pth'))
-            print('scheduler_state', scheduler_state)
-            scheduler.load_state_dict(scheduler_state)
             
     # Attach the trainer to the callback
     for callback in callbacks:
@@ -525,11 +496,6 @@ def train_model(selected_prompts, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_
 
     # Train
     trainer.train()
-    #print('saving optimizer and scheduler metadata to',output_dir)
-    #torch.save(model.state_dict(), os.path.join(output_dir, 'model_state.pth'))
-    #torch.save(trainer.optimizer.state_dict(), os.path.join(output_dir, "optimizer_state.pth"))
-    #print('scheduler:',trainer.lr_scheduler.state_dict())
-    #torch.save(trainer.lr_scheduler.state_dict(), os.path.join(output_dir, "scheduler_state.pth"))
     wandb.finish()
     
     from vars import bnb_config, lora_config
@@ -556,7 +522,7 @@ def train_model(selected_prompts, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_
     model.config.use_cache = False
 
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, eval_metric, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, min_epochs, eval_metric, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
         super().__init__()
         self.valid_dataset = valid_dataset
         self.SUB_SAMPLE = SUB_SAMPLE
@@ -573,6 +539,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.block_size = block_size
         self.eval_metric = eval_metric
         self.name = 'EarlyStoppingCallback'
+        self.min_epochs = min_epochs
     
     def _compute_cosine_similarity(self):
         eos_token_id = self.trainer.tokenizer.eos_token_id
@@ -781,7 +748,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         # Increment the epoch counter
         print('self.best_metric',self.best_metric)
         self.epoch_counter += 1
-        if self.epoch_counter > 0:
+        if self.epoch_counter > self.min_epochs:
 
             #if self.best_metric is None or epoch_perplexity < self.best_metric:
             if self.best_metric is None or comparison(metric_value, self.best_metric):
@@ -795,6 +762,9 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                 print(f'Metrics net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, no save')
                 if self.patience_counter >= self.patience:
                     control.should_training_stop = True
+        else:
+            self._save_model(self.output_dir)
+            print(f'Metrics: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
         print('self.best_metric',self.best_metric)    
         print(f"Best Model Checkpoint after epoch: {state.best_model_checkpoint}")
 
