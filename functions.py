@@ -382,7 +382,7 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     
     dataset_ = create_dataset(selected_prompts, tokenizer)
     #hierarchical_dataset = create_hierarchical_dataset(selected_prompts, tokenizer)
-    
+    print('epochs before checking perplexity (min epochs):',min_epochs)
     patience_counter = 0
     best_eval_perplexity = float('inf')  # start with a high value
     recent_perplexities = []
