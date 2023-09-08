@@ -538,10 +538,10 @@ def chop_sequences(dataset, tokenizer):
     
     return chopped_sequences
 
-def write_sequences_to_txt(sequences, filename):
+def write_sequences_to_txt(sequences, filename, tokenizer):
     with open(filename, 'w') as f:
         for seq in sequences:
-            seq_str = ' '.join(map(str, seq))
+            seq_str = tokenizer.decode(seq, skip_special_tokens=True)
             f.write(f"{seq_str}\n")
 
 def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
@@ -578,8 +578,8 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     valid_chopped_sequences = chop_sequences(valid_dataset, tokenizer)
 
     # Save to text files
-    write_sequences_to_txt(train_chopped_sequences, "train_chopped_sequences.txt")
-    write_sequences_to_txt(valid_chopped_sequences, "valid_chopped_sequences.txt")   
+    write_sequences_to_txt(train_chopped_sequences, "train_chopped_sequences.txt", tokenizer)
+    write_sequences_to_txt(valid_chopped_sequences, "valid_chopped_sequences.txt", tokenizer)
         
     if(EVAL_MODE == 'train'):
         valid_dataset = train_dataset
