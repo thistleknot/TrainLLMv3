@@ -11,7 +11,6 @@ from functions import (
     print_trainable_parameters,
     CustomDataset,
     get_sequences,
-    evaluate,
     CustomTrainer
 )
 
@@ -22,7 +21,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device_map = {"": 0}
 
 #infer_peft_config = PeftConfig.from_pretrained('bits-ft-C-I-R')
-infer_peft_config = PeftConfig.from_pretrained('bits-ft-C-I-R')
+infer_peft_config = PeftConfig.from_pretrained('bits')
 
 infer_model = AutoModelForCausalLM.from_pretrained(
     infer_peft_config.base_model_name_or_path,
@@ -41,7 +40,6 @@ infer_model.config.use_cache = True
 #tokenizer = AutoTokenizer.from_pretrained('bits-ft')
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL, legacy=False)
-tokenizer.pad_token = tokenizer.eos_token
 
 tokenizer.add_special_tokens(special_tokens_dict)
 
@@ -60,7 +58,7 @@ query_text = (
 f"""
 Instruction:
 
-When and why was the plaxton coach production halted?
+What is apartheid, and which country experienced it?
 
 Context:
 
