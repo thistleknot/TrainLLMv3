@@ -239,6 +239,7 @@ def process_dataset_stride(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, S
 
 def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
     eos_token_id = tokenizer.eos_token_id
+    pad_token_id = tokenizer.pad_token_id
     input_ids = dataset_dict['input_ids']
     labels = dataset_dict['labels']
     attention_mask = dataset_dict['attention_mask']
@@ -319,8 +320,6 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
     input_ids_list = []
     attention_mask_list = []
     label_list = []
-    
-    pad_token_id = tokenizer.pad_token_id
 
     for seq in sequences:
         pad_length = optimal_BLOCK_SIZE - len(seq)
@@ -344,6 +343,53 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
     pad_stats = pd.Series(pads_per_sequence).describe()
     print("Padding statistics summary:")
     print(pad_stats)
+    
+    # Initialize lists to store new sequences with redistributed padding,
+    # and their corresponding attention masks
+    new_input_ids_list = []
+    new_attention_mask_list = []
+    new_label_list = []  # Labels will be the same as input_ids in this case
+
+    # Loop through each sequence in label_list
+    for sequence in label_list:
+        
+        # Count the number of padding tokens in the sequence
+        num_pads = sequence.count(pad_token_id)
+        
+        # Use chop_sequences to split the sequence into individual prompts
+        chopped_seq = chop_sequences([{'input_ids': sequence}], tokenizer)
+        
+        # Calculate the weights for redistributing padding tokens
+        weights = [1 / len(prompt) for prompt in chopped_seq]
+        total_weights = sum(weights)
+        normalized_weights = [w / total_weights for w in weights]
+        
+        # Distribute the padding tokens based on the normalized weights
+        pads_to_distribute = np.round(np.array(normalized_weights) * num_pads).astype(int)
+        
+        ## Correct for any rounding errors
+        #while sum(pads_to_distribute) < num_pads:
+            #pads_to_distribute[np.argmin(pads_to_distribute)] += 1
+        
+        # Create new sequence and attention mask with redistributed padding tokens
+        new_sequence = []
+        new_attention_mask = []
+        for prompt, pad_count in zip(chopped_seq, pads_to_distribute):
+            new_sequence.extend(prompt)
+            new_sequence.extend([pad_token_id for _ in range(pad_count)])
+            # For extending new_attention_mask
+            new_attention_mask.extend(1 for _ in range(len(prompt)))
+            new_attention_mask.extend(0 for _ in range(pad_count))
+        
+        # Append to the lists
+        new_input_ids_list.append(new_sequence)
+        new_attention_mask_list.append(new_attention_mask)
+        new_label_list.append(new_sequence)  # Labels are the same as input_ids in this case
+
+    # Overwrite the old lists with the new ones
+    input_ids_list = new_input_ids_list
+    attention_mask_list = new_attention_mask_list
+    label_list = new_label_list
 
     # Splitting the data
     if SPLIT_RATIO == 1 or SPLIT_RATIO == 0:
@@ -531,6 +577,38 @@ def chop_sequences(dataset, tokenizer):
         chopped_sequences.extend(chopped_sequences_seq)
     
     return chopped_sequences
+
+def pad_prompts(chopped_sequences, tokenizer, threshold_max_len):
+    pad_token_id = tokenizer.pad_token_id
+    padded_sequences = []
+    
+    for seq in chopped_sequences:  # Assuming seq is a list of prompts (numpy arrays)
+        total_padding_needed = threshold_max_len - sum(len(prompt) for prompt in seq)
+        
+        # Step 1: Calculate inverse lengths
+        inverse_lengths = [1 / len(prompt) for prompt in seq]
+        
+        # Step 2: Normalize the inverse lengths
+        total_inverse_length = sum(inverse_lengths)
+        normalized_inverse_lengths = [inv_len / total_inverse_length for inv_len in inverse_lengths]
+        
+        # Step 3: Distribute padding tokens
+        padding_tokens_to_add = [int(round(total_padding_needed * norm_inv_len)) for norm_inv_len in normalized_inverse_lengths]
+        
+        # Step 4: Apply padding to each prompt
+        padded_seq = []
+        for i, sub_seq in enumerate(seq):
+            padding_to_add = padding_tokens_to_add[i]
+            padded_sub_seq = np.pad(sub_seq, (0, padding_to_add), constant_values=pad_token_id)
+            padded_seq.extend(padded_sub_seq)
+        
+        # Step 5: Additional padding if needed due to rounding
+        while len(padded_seq) < threshold_max_len:
+            padded_seq.append(pad_token_id)
+        
+        padded_sequences.append(np.array(padded_seq))
+    
+    return padded_sequences
 
 def write_sequences_to_txt(sequences, filename, tokenizer):
     with open(filename, 'w') as f:
@@ -762,33 +840,39 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
         selected_prompts = random.sample(chopped_sequences, 4)
         bootstrap_max_lengths = []
-        l = len(chopped_sequences)
-        s = int(np.round(l*.50))
-        num_bootstraps = 5
-        # Perform bootstrapping
+        # Assuming `lengths` is your original dataset
         
-        for _ in range(num_bootstraps):
-            # Sample a subset of encoded_prompts
-            
-            bootstrap_subset = random.sample(lengths, s)
-            #print('bootstrap_subset',bootstrap_subset)
+        l = len(lengths)
+        s = int(np.round(l * 0.50))
 
+        num_bootstraps = 20  # Increase the number of bootstraps for a better approximation
+        bootstrap_max_lengths = []
+
+        # Perform bootstrapping
+        for _ in range(num_bootstraps):
+            # Sample a subset from `lengths`
+            bootstrap_subset = random.choices(lengths, k=s)  # Using choices for sampling with replacement
             # Calculate the maximum length of the bootstrap subset
             bootstrap_max_length = max(bootstrap_subset)
-            
             # Append to the list of bootstrapped maximum lengths
             bootstrap_max_lengths.append(bootstrap_max_length)
 
-        # Calculate mean and standard deviation of bootstrapped maximum lengths
-        mean_max_length = np.mean(bootstrap_max_lengths)
-        std_max_length = np.std(bootstrap_max_lengths)
+        # Sort the bootstrapped maximum lengths
+        sorted_max_lengths = sorted(bootstrap_max_lengths)
 
-        # Calculate threshold based on mean and standard deviation
-        threshold_max_len = int(min(int(mean_max_length + 2 * std_max_length),self.block_size))
+        # Calculate the 95% Confidence Interval for the maximum length
+        lower_percentile = 2.5
+        upper_percentile = 97.5
+        conf_interval_lower = np.percentile(sorted_max_lengths, lower_percentile)
+        conf_interval_upper = np.percentile(sorted_max_lengths, upper_percentile)
+
+        # Now `conf_interval_lower` and `conf_interval_upper` form the 95% confidence interval for the maximum length
+        threshold_max_len = int(conf_interval_upper)  # You may choose the upper bound as your threshold
+
         #print('threshold_max_len',threshold_max_len)
         # Manually pad each sequence to the maximum length
         padded_prompts = [pad(torch.tensor(seq), (0, threshold_max_len - len(seq)), value=pad_token_id) for seq in selected_prompts]
-
+        
         # Convert the list of padded sequences to a tensor
         batch_input_ids = torch.stack(padded_prompts)
         
@@ -967,6 +1051,12 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
     def on_train_end(self, args, state, control, **kwargs):
         state.best_model_checkpoint = self.output_dir
         
+    def on_step_end(self, args, state, control, **kwargs):
+        current_step = state.global_step
+        if current_step <= len(self.trainer.train_loss_steps):
+            current_loss = self.trainer.train_loss_steps[current_step - 1]
+            print(f"Step: {current_step}, Training Loss: {current_loss}")
+        
 def subsample_dataset(dataset, fraction=0.1):
     """Subsample a given fraction of the dataset."""
     num_samples = len(dataset)
@@ -1075,6 +1165,7 @@ class MeZOTrainer(Trainer):
         self, batch_size=None, args=None, resume_from_checkpoint=None, trial=None, ignore_keys_for_eval=None
     ):
         #self.train_sampler = SequentialSampler(self.train_dataset)
+        self.train_loss_steps = []
         self.train_sampler = RandomSampler(self.train_dataset)
         self.accelerator.free_memory()
         self._train_batch_size = batch_size
@@ -1479,6 +1570,9 @@ class MeZOTrainer(Trainer):
         # add remaining tr_loss
         self._total_loss_scalar += tr_loss.item()
         train_loss = self._total_loss_scalar / self.state.global_step
+        
+        # Append this train_loss to the list
+        self.train_loss_steps.append(train_loss)
 
         metrics = speed_metrics(
             "train", start_time, num_samples=num_train_samples, num_steps=self.state.max_steps)
@@ -1551,7 +1645,7 @@ class MeZOTrainer(Trainer):
                 loss = loss.mean()  # mean() to average on multi-gpu parallel training
         return loss.detach()
     
-    if(True):
+    if(False):
         def zo_forward(self, model, inputs):
             """
             Get (no gradient) loss from the model. Dropout is turned off too.

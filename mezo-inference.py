@@ -55,30 +55,29 @@ print("CLS Token:", tokenizer.cls_token)
 print("MASK Token:", tokenizer.mask_token)
 
 query_text = (
-f"""
-Instruction:
+f"""Instruction:
 
-Where can I find Leptodactylus tapiti?
+What are all the different ways of saying customer lifetime value?
 
 Answer:
 
-Leptodactylus tapiti is a species of frog"""
-)
+Customer lifetime value is commonly referred""")
 torch.manual_seed(SEED)
 
 # attention_mask = torch.ones_like(input_ids)
 generator = pipeline('text-generation', model=infer_model, tokenizer=tokenizer,
                      min_length=50,
-                     max_length=256,
-                     temperature=1,
+                     max_length=512,
+                     temperature=0.7,
                      # attention_mask=attention_mask,
                      do_sample=True,
                      top_k=50,
-                     top_p=1,
+                     top_p=0.9,
                      num_return_sequences=1,
                      no_repeat_ngram_size=2,
-                     num_beams=5,
-                     early_stopping=True)
+                     #num_beams=5,
+                     #early_stopping=True
+)
 
 # results = generator(query_text, do_sample=True, min_length=50, max_length=200)
 results = generator(query_text)

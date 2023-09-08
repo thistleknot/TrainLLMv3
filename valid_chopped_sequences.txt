@@ -1,336 +1,714 @@
-<s> Instruction:
+<s> Context:
 
-What is Pinot Grigio?
-
-Context:
-
-Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot Noir variety, it normally has a grayish-blue fruit, accounting for its name, but the grapes can have a brownish pink to black and even white appearance. The word pinot could have been given to it because the grapes grow in small pinecone-shaped clusters. The wines produced from this grape also vary in color from a deep golden yellow to copper and even a light shade of pink, and it is one of the more popular grapes for skin-contact wine.
-
-Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized. The Alsatian style, often duplicated in New World wine regions such as Marlborough, Tasmania, South Australia, Washington, Oregon, and South Africa tend to have moderate to low acidity, higher alcohol levels and an almost "oily" texture that contributes to the full-bodied nature of the wine. The flavors can range from ripe tropical fruit notes of melon and mango to some botrytis-influenced flavors. In Italy, Pinot grigio grapes are often harvested early to retain the refreshing acidity and minimize some of the overt-fruitiness of the variety, creating a more neutral flavor profile. This style is often imitated in other Old World wine regions, such as Germany, where the grape is known as Ruländer, or more commonly, Grauburgunder.
+Avīci or Avici (Sanskrit and Pali for "without waves"; Chinese: 無間地獄 or 阿鼻地獄; Japanese: 無間地獄 or 阿鼻地獄; Burmese: အဝီစိငရဲ) is one of the hells (naraka) in Hinduism and Buddhism. In Hinduism, it is one of the twenty-eight hells located in the kingdom of Yama, where individuals are reborn for bearing false witness and outright lying while transacting business or giving charity. In Buddhism, it is the lowest level of the Naraka or "hell" realm, with the most suffering, into which the dead who have committed grave misdeeds may be reborn. It is said to be a cube 20,000 yojanas (240,000 to 300,000 kilometers) on each side, buried deep underneath the divine (nonvisible) earth. Avīci is often translated into English as "interminable" or "incessant", referring to suffering without periods of respite, although it is believed to be ultimately impermanent.
 
 Answer:
 
-Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized.
+There was a famous Swedish DJ called Avicii and there is Avici that is one of the hells (naraka) in Hinduism and Buddhism. In Hinduism, it is one of the twenty-eight hells located in the kingdom of Yama, where individuals are reborn for bearing false witness and outright lying while transacting business or giving charity.
 
-</s>
-<s> Context:
-
-After using the Gamebryo engine to create The Elder Scrolls III: Morrowind, The Elder Scrolls IV: Oblivion, and Fallout 3, Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
-
-Following the completion of Skyrim, Bethesda set out to enhance the graphical core of the Creation Engine by first adding a physically based deferred renderer to allow for more dynamic lighting and to paint materials object surfaces with realistic materials. Bethesda worked with technology company Nvidia to implement volumetric lighting through a technique that makes use of hardware tesselation. Additionally the updated version of the Creation Engine powering Bethesda's Fallout 4 offers more advanced character generation.
+In Buddhism, it is the lowest level of the Naraka or "hell" realm, with the most suffering, into which the dead who have committed grave misdeeds may be reborn. It is said to be a cube 20,000 yojanas (240,000 to 300,000 kilometers) on each side, buried deep underneath the divine (nonvisible) earth. Avici is often translated into English as "interminable" or "incessant", referring to suffering without periods of respite, although it is believed to be ultimately impermanent.
 
 Instruction:
 
-What's the game engine used by Bethesda before Creation Engine? And what's the last game make with it?
+What does Avici stand for
+
+</s>
+<PAD><s> Context:
+
+Joseph A. Garcia (born March 21, 1957) is an American lawyer and politician. He served as the 48th Lieutenant Governor of Colorado from January 2011 to May 2016.
+
+Early life, education and career
+Joseph A. Garcia was born on March 21, 1957, in Lafayette, Indiana. He attended Austin E. Lathrop High School in Fairbanks, Alaska from 1973 to 1974 and graduated from T.C. Williams High School in Alexandria, Virginia in 1975. He graduated from the University of Colorado Boulder in 1979 where he received a Bachelor of Science in Business. Garcia then graduated from Harvard Law School in 1983.
+
+After law school, Garcia took a job with the firm of Holme Roberts & Owen, going on to become their first Hispanic partner. Garcia worked with the firm from 1983 to 1993. Garcia was appointed by Governor Romer as the Executive Director of the Department of Regulatory Agencies in 1993. In 1999 Garcia was appointed by the White House as the Regional Director of the Rocky Mountain States for the United States Department of Housing and Urban Development.
 
 Answer:
 
-Gamebryo was the engine used by Bethesda before Creation Engine. It is developed by Gamebase Cot., Ltd and Gamebase USA. Gamebryo is used by numerous companies within the gaming industry.
-
-Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
-
-The last game from Bethesda made with Gamebryo engine is Fallout 3 (2008).
-
-</s>
-<s> Instruction:
-
-Given a reference text about the Dormouse, in which novel is it a character?
-
-Context:
-
-The Dormouse is a character in "A Mad Tea-Party", Chapter VII  from the 1865 novel Alice's Adventures in Wonderland by Lewis Carroll.
-
-The Dormouse sat between the March Hare and the Mad Hatter. They were using him as a cushion while he slept when Alice arrives at the start of the chapter.
-
-The Dormouse is always falling asleep during the scene, waking up every so often, for example to say:
-
-`You might just as well say,' added the Dormouse, who seemed to be talking in his sleep, that "I breathe when I sleep" is the same thing as "I sleep when I breathe"!'
-
-He also tells a story about three young sisters who live in a treacle well, live on treacle, and draw pictures of things beginning with M, such as mousetraps, memory and muchness.
-
-He later appears, equally sleepy, at the Knave of Hearts' trial and voices resentment at Alice for growing, and his last interaction with any character is his being "suppressed" (amongst other things) by the Queen for shouting out that tarts are made of treacle.
-
-Answer:
-
-The Dormouse is a character in the novel "Alice's Adventures in Wonderland".
-
-</s>
-<s> Context:
-
-Guion Stewart Bluford Jr. (born November 22, 1942) is an American aerospace engineer, retired United States Air Force (USAF) officer and fighter pilot, and former NASA astronaut, in which capacity he became the first African American to go to space. While assigned to NASA, he remained a USAF officer rising to the rank of colonel. He participated in four Space Shuttle flights between 1983 and 1992. In 1983, as a member of the crew of the Orbiter Challenger on the mission STS-8, he became the first African American in space as well as the second person of African descent in space, after Cuban cosmonaut Arnaldo Tamayo Méndez.
+Joseph A. Garcia attended Austin E. Lathrop High School and T.C. Williams High School. After high school, he attended the University of Colorado Boulder and Harvard Law School.
 
 Instruction:
 
-Who was the first African American to go to space?
-
-Answer:
-
-Guion Stewart Bluford Jr. was the first African American to go to space.  He was an American aerospace engineer, retired United States Air force officer and fighter pilot, and former NASA astronaut.  He participated in for Space Shuttle flights between 1983 and 1992.
+Given a reference text about Joseph A. Garcia, tell me what high school and college he attended.
 
 </s>
-<s> Instruction:
+<PAD><PAD><s> Instruction:
 
-Who has won the most grand slams in men's singles tennis in open era?
+When was the Stansfeld's death
 
 Context:
 
-The Open Era is the current era of professional tennis. It began in 1968 when the Grand Slam tournaments allowed professional players to compete with amateurs, ending the division that had persisted since the dawn of the sport in the 19th century. The first open tournament was the 1968 British Hard Court Championships held in April, followed by the inaugural open Grand Slam tournament, the 1968 French Open, a month later. Unless otherwise sourced, all records are based on data from the Association of Tennis Professionals (ATP), the International Tennis Federation (ITF), and the official websites of the four Grand Slam tournaments. All rankings-related records are based on ATP rankings, which began in 1973.
+Stansfeld began his career as a civil servant in HM Customs and Excise. In 1877, he moved to Oxford, and later matriculated as a student at Exeter College, where he studied Medicine, attaining his BA in 1889, MA in 1893 and qualified as a doctor in 1897. In 1897 he started the Oxford Medical Misson in Bermondsey, London, where he founded the Stansfeld Oxford & Bermondsey Club in the same year. In 1909, he decided to take Holy Orders and studied part-time at Wycliffe Hall, Oxford. He was appointed Vicar of St Anne's Church, Thoburn Square, Bermondsey in 1910, and then returned to Oxford in 1912 as Rector of St Ebbe's, Oxford then a slum district until his retirement in 1926. Stansfeld died at Spelsbury, Oxfordshire, aged 85 in December 1939. He campaigned successfully for the erection of a children's playground and public baths in St Ebbe's. His philanthropy is commemorated by a blue plaque in Paradise Square, unveiled in June 2009.
 
 Answer:
 
-Rafael Nadal and Novak Djokovic won 22 times.
+Stansfeld died at Spelsbury, Oxfordshire, aged 85 in December 1939
 
 </s>
-<s> Context:
+<PAD><PAD><s> Context:
 
-In 2004, Nintendo released the Nintendo DS, which featured such innovations as dual screens – one of which being a touchscreen – and wireless connectivity for multiplayer play. Throughout its lifetime, more than 154 million units were sold, making it the most successful handheld console and the second best-selling console in history. In 2005, Nintendo released the Game Boy Micro, the last system in the Game Boy line. Sales did not meet Nintendo's expectations, with 2.5 million units being sold by 2007. In mid-2005, the Nintendo World Store was inaugurated in New York City.
+Asia is the largest continent on Earth. It covers 9% of the Earth's total surface area (or 30% of its land area), and has the longest coastline, at 62,800 kilometres (39,022 mi). Asia is generally defined as comprising the eastern four-fifths of Eurasia. It is located to the east of the Suez Canal and the Ural Mountains, and south of the Caucasus Mountains (or the Kuma–Manych Depression) and the Caspian and Black Seas. It is bounded on the east by the Pacific Ocean, on the south by the Indian Ocean and on the north by the Arctic Ocean. Asia is subdivided into 49 countries, five of them (Georgia, Azerbaijan, Russia, Kazakhstan and Turkey) are transcontinental countries lying partly in Europe. Geographically, Russia is partly in Asia, but is considered a European nation, both culturally and politically.
 
 Instruction:
 
-Given this paragraph about video game consoles, when was the Nintendo DS released?
+Given a reference text that provides the geographical description of continent Asia, how many Asian countries have a part of their land in Europe as well?
 
 Answer:
 
-2004
+5
 
 </s>
-<s> Instruction:
+<PAD><PAD><s> Context:
 
-What is TIDB
-
-Context:
-
-TiDB (/’taɪdiːbi:/, "Ti" stands for Titanium) is an open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. It is MySQL compatible and can provide horizontal scalability, strong consistency, and high availability. It is developed and supported primarily by PingCAP, Inc. and licensed under Apache 2.0. TiDB drew its initial design inspiration from Google's Spanner
+The Guided Advanced Tactical Rocket (GATR) is a weapons system under development by Orbital ATK and Elbit Systems. It is intended to provide a low-cost guided missile compatible with existing unguided 70mm rocket launch platforms such as the Hydra 70. The penetrating version of the GATR is equipped with a steel-cased M282 warhead and a programmable fuze. It can be set from the cockpit to detonate on impact or after a delay and is capable of penetrating a triple-brick wall and light-vehicle armor.
 
 Answer:
 
-Database developed by PingCap for hybrid transactional and analytical processing
-
-</s>
-<s> Instruction:
-
-Given these paragraphs about Large language models, what are some examples of emergent abilities?
-
-Context:
-
-A large language model (LLM) is a language model consisting of a neural network with many parameters (typically billions of weights or more), trained on large quantities of unlabelled text using self-supervised learning. LLMs emerged around 2018 and perform well at a wide variety of tasks. This has shifted the focus of natural language processing research away from the previous paradigm of training specialized supervised models for specific tasks.
-
-Properties
-Though the term large language model has no formal definition, it often refers to deep learning models having a parameter count on the order of billions or more. LLMs are general purpose models which excel at a wide range of tasks, as opposed to being trained for one specific task (such as sentiment analysis, named entity recognition, or mathematical reasoning). The skill with which they accomplish tasks, and the range of tasks at which they are capable, seems to be a function of the amount of resources (data, parameter-size, computing power) devoted to them, in a way that is not dependent on additional breakthroughs in design.
-
-Though trained on simple tasks along the lines of predicting the next word in a sentence, neural language models with sufficient training and parameter counts are found to capture much of the syntax and semantics of human language. In addition, large language models demonstrate considerable general knowledge about the world, and are able to "memorize" a great quantity of facts during training.
-
-Hallucinations
-Main article: Hallucination (artificial intelligence)
-In artificial intelligence in general, and in large language models in particular, a "hallucination" is a confident response that does not seem to be justified by the model's training data.
-
-Emergent abilities
-
-On a number of natural language benchmarks involving tasks such as question answering, models perform no better than random chance until they reach a certain scale (in this case, measured by training computation), at which point their performance sharply increases. These are examples of emergent abilities.
-Unpredictable abilities that have been observed in large language models but that were not present in simpler models (and that were not explicitly designed into the model) are usually called "emergent abilities". Researchers note that such abilities "cannot be predicted simply by extrapolating the performance of smaller models". These abilities are discovered rather than programmed-in or designed, in some cases only after the LLM has been publicly deployed. Hundreds of emergent abilities have been described. Examples include multi-step arithmetic, taking college-level exams, identifying the intended meaning of a word, chain-of-thought prompting, decoding the International Phonetic Alphabet, unscrambling a word’s letters, identifying offensive content in paragraphs of Hinglish (a combination of Hindi and English), and generating a similar English equivalent of Kiswahili proverbs.
-
-Architecture and training
-Large language models have most commonly used the transformer architecture, which, since 2018, has become the standard deep learning technique for sequential data (previously, recurrent architectures such as the LSTM were most common). LLMs are trained in an unsupervised manner on unannotated text. A left-to-right transformer is trained to maximize the probability assigned to the next word in the training data, given the previous context. Alternatively, an LLM may use a bidirectional transformer (as in the example of BERT), which assigns a probability distribution over words given access to both preceding and following context. In addition to the task of predicting the next word or "filling in the blanks", LLMs may be trained on auxiliary tasks which test their understanding of the data distribution such as Next Sentence Prediction (NSP), in which pairs of sentences are presented and the model must predict whether they appear side-by-side in the training corpus.
-
-The earliest LLMs were trained on corpora having on the order of billions of words. The first model in OpenAI's GPT series was trained in 2018 on BookCorpus, consisting of 985 million words. In the same year, BERT was trained on a combination of BookCorpus and English Wikipedia, totalling 3.3 billion words. In the years since then, training corpora for LLMs have increased by orders of magnitude, reaching up to hundreds of billions or trillions of tokens.
-
-LLMs are computationally expensive to train. A 2020 study estimated the cost of training a 1.5 billion parameter model (1-2 orders of magnitude smaller than the state of the art at the time) at $1.6 million.
-
-A 2020 analysis found that neural language models' capability (as measured by training loss) increased smoothly in a power law relationship with number of parameters, quantity of training data, and computation used for training. These relationships were tested over a wide range of values (up to seven orders of magnitude) and no attenuation of the relationship was observed at the highest end of the range (including for network sizes up to trillions of parameters).
-
-Application to downstream tasks
-Between 2018 and 2020, the standard method for harnessing an LLM for a specific natural language processing (NLP) task was to fine tune the model with additional task-specific training. It has subsequently been found that more powerful LLMs such as GPT-3 can solve tasks without additional training via "prompting" techniques, in which the problem to be solved is presented to the model as a text prompt, possibly with some textual examples of similar problems and their solutions.
-
-Fine-tuning
-Main article: Fine-tuning (machine learning)
-Fine-tuning is the practice of modifying an existing pretrained language model by training it (in a supervised fashion) on a specific task (e.g. sentiment analysis, named entity recognition, or part-of-speech tagging). It is a form of transfer learning. It generally involves the introduction of a new set of weights connecting the final layer of the language model to the output of the downstream task. The original weights of the language model may be "frozen", such that only the new layer of weights connecting them to the output are learned during training. Alternatively, the original weights may receive small updates (possibly with earlier layers frozen).
-
-Prompting
-See also: Prompt engineering and Few-shot learning (natural language processing)
-In the prompting paradigm, popularized by GPT-3, the problem to be solved is formulated via a text prompt, which the model must solve by providing a completion (via inference). In "few-shot prompting", the prompt includes a small number of examples of similar (problem, solution) pairs. For example, a sentiment analysis task of labelling the sentiment of a movie review could be prompted as follows:
-
-Review: This movie stinks.
-Sentiment: negative
-
-Review: This movie is fantastic!
-Sentiment:
-
-If the model outputs "positive", then it has correctly solved the task. In zero-shot prompting, no solve examples are provided. An example of a zero-shot prompt for the same sentiment analysis task would be "The sentiment associated with the movie review 'This movie is fantastic!' is".
-
-Few-shot performance of LLMs has been shown to achieve competitive results on NLP tasks, sometimes surpassing prior state-of-the-art fine-tuning approaches. Examples of such NLP tasks are translation, question answering, cloze tasks, unscrambling words, and using a novel word in a sentence. The creation and optimisation of such prompts is called prompt engineering.
-
-Instruction tuning
-Instruction tuning is a form of fine-tuning designed to facilitate more natural and accurate zero-shot prompting interactions. Given a text input, a pretrained language model will generate a completion which matches the distribution of text on which it was trained. A naive language model given the prompt "Write an essay about the main themes of Hamlet." might provide a completion such as "A late penalty of 10% per day will be applied to submissions received after March 17." In instruction tuning, the language model is trained on many examples of tasks formulated as natural language instructions, along with appropriate responses. Various techniques for instruction tuning have been applied in practice. OpenAI's InstructGPT protocol involves supervised fine-tuning on a dataset of human-generated (prompt, response) pairs, followed by reinforcement learning from human feedback (RLHF), in which a reward function was learned based on a dataset of human preferences. Another technique, "self-instruct", fine-tunes the language model on a training set of examples which are themselves generated by an LLM (bootstrapped from a small initial set of human-generated examples).
-
-https://en.wikipedia.org/wiki/Large_language_model
-
-Answer:
-
-Examples include multi-step arithmetic, taking college-level exams, identifying the intended meaning of a word, chain-of-thought prompting, decoding the International Phonetic Alphabet, unscrambling a word’s letters, identifying offensive content in paragraphs of Hinglish (a combination of Hindi and English), and generating a similar English equivalent of Kiswahili proverbs.
-
-</s>
-<s> Context:
-
-The Build Back Better Plan or Build Back Better agenda was a legislative framework proposed by U.S. president Joe Biden between 2020 and 2021. Generally viewed as ambitious in size and scope, it sought the largest nationwide public investment in social, infrastructural, and environmental programs since the 1930s Great Depression-era policies of the New Deal.
-
-The Build Back Better plan was divided into three parts:
-
-American Rescue Plan (ARP), a COVID-19 pandemic-relief bill;
-American Jobs Plan (AJP), a proposal to address long-neglected infrastructure needs and reduce America's contributions to destructive effects of climate change; and
-American Families Plan (AFP), a proposal to fund a variety of social policy initiatives, some of which (e.g., paid family leave) had never before been enacted nationally in the U.S.
-The first part was passed as the $1.9 trillion American Rescue Plan Act of 2021, and was signed into law in March 2021. The other two parts were reworked into different bills over the course of extensive negotiations. Aspects of the AJP's infrastructure goals were diverted into the Infrastructure Investment and Jobs Act, which was signed into law in November 2021. Other AJP priorities (e.g., climate change remediation, home health care reform, etc.) were then merged with the AFP to form the Build Back Better Act. The bill passed the Democratic-controlled House of Representatives but struggled to gain the support of Democrats Joe Manchin of West Virginia and Kyrsten Sinema of Arizona in the evenly divided Senate, with unified Republican opposition. Manchin and Sinema negotiated the reduction of Build Back Better Act's size, scope, and cost significantly with Biden and Democratic congressional leaders, but Manchin, widely viewed as the key swing vote needed to pass the bill in the Senate, ultimately rejected it over the procedural tactics used. Continued negotiations between Manchin and Senate Majority Leader Chuck Schumer eventually resulted in the Inflation Reduction Act of 2022, which was signed into law in August 2022, and incorporated some of the Build Back Better Act's climate change, healthcare, and tax reform proposals while excluding its social safety net proposals.
+A Guided Advanced Tactical Rocket (GATR) is a low-cost guided missile equipped with a steel-cased M282 warhead and a programmable fuze.
 
 Instruction:
 
-Given a reference text about the Build Back Better Plan, what are the 3 parts that make up the plan?
+Given the reference text below, what is a GATR?
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Solitary bees, such as leafcutters, do not form colonies. Unlike social insects (ants, yellow jackets, honeybees), leafcutters work alone building isolated nests. Similar to honeybees, female bees perform nearly all essential tasks of brood rearing. These native insects perform essential tasks, pollinating wild plants. The alfalfa leaf cutter bee (Megachile rotundata), native to Europe, has been semi-domesticated for crop pollination. In North America, the species was deliberately imported to assist in the pollination of food crops, but has now become feral and widespread.
 
 Answer:
 
-The three components of the Build Back Better plan are:
-- American Rescue Plan
-- American Jobs Plan
-- American Families Plan
-
-</s>
-<s> Instruction:
-
-How many inhabitants of Lone Pine survived as a result of the earthquake? Tell me how you came to that conclusion.
-
-Context:
-
-The earthquake occurred on a Tuesday morning and leveled almost all the buildings in Lone Pine and nearby settlements. Of the estimated 250–300 inhabitants of Lone Pine, 27 are known to have perished and 52 of the 59 houses were destroyed. One report states that the main buildings were thrown down in almost every town in Inyo County. About 130 kilometers (81 mi) south of Lone Pine, at Indian Wells, adobe houses sustained cracks. Property loss has been estimated at $250,000 (equivalent to $5,654,861 in 2021). As in many earthquakes, adobe, stone and masonry structures fared worse than wooden ones which prompted the closing of nearby Camp Independence which was an adobe structure destroyed in the quake.
-
-Answer:
-
-It is estimated that between 223 and 273 inhabitants of Lone Pine survived the earthquake.
-
-The passage shows that there was "an estimated 250–300 inhabitants of Lone Pine" and that "27 are known to have perished". If we subtract 27 from 250, you get 223, and if we subtract 27 from 300, we get 273. Therefore, it can be estimated that the number of inhabitants that survived the earthquake is between 223 and 273.
-
-</s>
-<s> Context:
-
-Italy Avenue (Spanish: Avenida Italia) is a major thoroughfare in Montevideo, Uruguay. Its name honors the country from whose immigrants about 40% of Uruguayans descend. It runs almost parallel to that of Gral Rivera Avenue, the Rambla and Camino Carrasco, constituting the main arterial road of the city, since it connects with the network of highways that lead to the east of the country.
-
-It extends through several neighborhoods heading east, and ends with the intersection with Avenida Luis Giannattasio (which runs through Ciudad de la Costa and Avenida de las Américas (which leads to the Carrasco International Airport and the Interbalnearia and 101 routes), in the Canelones Department.
-
-In 2017, a project was presented for the construction of a tunnel for Avenida Italia, extended below Centenario Ave. On March 18, 2021, the uneven passage of Italia and Centenario avenues was officially operational, on the path that goes to the Center (westbound). This is the third tunnel in the city, after the one on 8 de Octubre Ave and the City Hall.
+solitary
 
 Instruction:
 
-What direction did Italy Avenue go in Uruguay per this block of text?
+Are leafcutters solitary or social insects?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Instruction:
+
+Who are Industrial Light and Magic?
 
 Answer:
 
-east to west
+Industrial Light and Magic are one of the biggest and most innovative VFX (Visual Effects) and CGI (Computer generated imagery) firms. The company was started by George Lucas.and was acquired by Disney. They have contributed Visual special effects for over 300 films including the Star Wars series, Indiana Jones series and the Jurassic Park series.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+What name is Beijing also known by?
+
+Answer:
+
+Běijīng is alternatively romanized as Peking and is the capital of the People's Republic of China
 
 </s>
 <s> Context:
 
-The electrolytic detector, or liquid barretter, was a type of detector (demodulator) used in early radio receivers. First used by Canadian radio researcher Reginald Fessenden in 1903, it was used until about 1913, after which it was superseded by crystal detectors and vacuum tube detectors such as the Fleming valve and Audion (triode). It was considered very sensitive and reliable compared to other detectors available at the time such as the magnetic detector and the coherer. It was one of the first rectifying detectors, able to receive AM (sound) transmissions. On December 24, 1906, US Naval ships with radio receivers equipped with Fessenden's electrolytic detectors received the first AM radio broadcast from Fessenden's Brant Rock, Massachusetts transmitter, consisting of a program of Christmas music.
+Chinese cuisine encompasses the numerous cuisines originating from China, as well as overseas cuisines created by the Chinese diaspora. Because of the Chinese diaspora and historical power of the country, Chinese cuisine has influenced many other cuisines in Asia and beyond, with modifications made to cater to local palates. Chinese food staples such as rice, soy sauce, noodles, tea, chili oil, and tofu, and utensils such as chopsticks and the wok, can now be found worldwide.
+
+The preferences for seasoning and cooking techniques of Chinese provinces depend on differences in social class, religion, historical background, and ethnic groups. Geographic features including mountains, rivers, forests, and deserts also have a strong effect on the local available ingredients, considering that the climate of China varies from tropical in the south to subarctic in the northeast. Imperial royal and noble preference also plays a role in the change of Chinese cuisine. Because of imperial expansion and trading, ingredients and cooking techniques from other cultures have been integrated into Chinese cuisines over time.
+
+There are numerous regional, religious, and ethnic styles of Chinese cuisine found within China and abroad. Chinese cuisine is highly diverse and most frequently categorized into provincial divisions, although these province-level classifications consist of many more styles within themselves. The most praised Four Great Traditions in Chinese cuisine are Chuan, Lu, Yue, and Huaiyang, representing cuisines of West, North, South, and East China, respectively. The modern Eight Cuisines of China are Anhui (徽菜; Huīcài), Guangdong (粤菜; Yuècài), Fujian (闽菜; Mǐncài), Hunan (湘菜; Xiāngcài), Jiangsu (苏菜; Sūcài), Shandong (鲁菜; Lǔcài), Sichuan (川菜; Chuāncài), and Zhejiang (浙菜; Zhècài) cuisines.
+
+
+A Quanjude cook is slicing Peking roast duck. Peking duck is eaten by rolling pieces of duck with scallion, cucumber and sweet bean sauce using steamed pancakes.
+Color, scent and taste are the three traditional aspects used to describe Chinese food, as well as the meaning, appearance, and nutrition of the food. Cooking should be appraised with respect to the ingredients used, knife work, cooking time, and seasoning.
 
 Instruction:
 
-Given a reference text about the electrolytic detector, when was it replaced and what replaced it?
+Given this paragraph about Chinese cuisine, tell me what are the sub-cuisines, and what made them different.
 
 Answer:
 
-The electrolytic detector was replaced around 1913 by crystal and vacuum tube detectors.
+The modern Chinese cuisine were broken down into 8 different styles of local cuisine, which are Anhui, Guangdong, Fujian, Hunan , Jiangsu , Shandong, Sichuan, and Zhejiang cuisines. They are different because of many reasons, such as geographic features and climate which shaped the locals to specialize in certain ingredients or flavors, as well as religion and ethnic groups.
 
 </s>
-<s> Instruction:
+<PAD><s> Context:
 
-Given this paragraph about magnesium, what is the atomic number of magnesium?
-
-Context:
-
-Magnesium is a chemical element with the symbol Mg and atomic number 12. It is a shiny gray metal having a low density, low melting point and high chemical reactivity. Like the other alkaline earth metals (group 2 of the periodic table) it occurs naturally only in combination with other elements and it almost always has an oxidation state of +2. It reacts readily with air to form a thin passivation coating of magnesium oxide that inhibits further corrosion of the metal. The free metal burns with a brilliant-white light. The metal is obtained mainly by electrolysis of magnesium salts obtained from brine. It is less dense than aluminium and is used primarily as a component in strong and lightweight alloys that contain aluminium.
-
-Answer:
-
-The atomic number of magnesium is 12.
-
-</s>
-<s> Instruction:
-
-Given this paragraph about video game consoles, when was the Nintendo DS released?
-
-Context:
-
-In 2004, Nintendo released the Nintendo DS, which featured such innovations as dual screens – one of which being a touchscreen – and wireless connectivity for multiplayer play. Throughout its lifetime, more than 154 million units were sold, making it the most successful handheld console and the second best-selling console in history. In 2005, Nintendo released the Game Boy Micro, the last system in the Game Boy line. Sales did not meet Nintendo's expectations, with 2.5 million units being sold by 2007. In mid-2005, the Nintendo World Store was inaugurated in New York City.
-
-Answer:
-
-2004
-
-</s>
-<s> Instruction:
-
-Is Horsfieldia nervos a plant or animal?
-
-Context:
-
-Horsfieldia nervosa is a species of plant in the family Myristicaceae. It is a tree endemic to Borneo where it is confined to Sarawak.
-
-Answer:
-
-plant
-
-</s>
-<s> Instruction:
-
-Heres a summary of Gioia Del Colle, a town in Italy that I will be traveling to, how should I pack?
-
-Context:
-
-Gioia del Colle (pronounced [ˈdʒɔːja del ˈkɔlle]; Barese: Sciò) is a town and comune of the Metropolitan City of Bari, Apulia, southern Italy. The town is located on the Murge plateau at 360 metres (1,180 ft) above sea level, between the Adriatic and Ionian Seas.
-
-Physical geography
-Territory
-Gioia del Colle is on the top of a hill at 360 m a.s.l. It is located in the southern part of the Murge, in the "Sella di Gioia del Colle". It is between the North-West Murge and the South-West Murge and the Adriatic Sea and the Ionian Sea. The municipal area has an area of 206.48 km² and it reaches a maximum altitude of 435 m a.s.l. and a minimum of 296 m a.s.l. Its area borders to the North-West with Acquaviva delle Fonti, to the North with Sammichele di Bari, to the North-East with Turi, to the East with Putignano and Noci, to the South-East with Mottola, to the South with Castellaneta, to the South-West with Laterza and to the West with Santeramo in Colle.
-
-Gioia del Colle's orography
-The landscape is characterized by large wooded areas, in which the Macedonian oaks dominate, more than the downy oak. In particular the Bosco Romanazzi and Serra Capece constitute the most conspicuous part of the wooded area of Gioia del Colle and they extend from Mount Sannace archaeological area to the provincial road that leads to Noci.
-
-The western part of the area is part of the North-West Murge, with isoipse that exceed 400 m a.s.l. towards Santeramo and Laterza, while the Eastern one is part of the South-East Murge, with isoipse over 400 m a.s.l. towards Noci. In the middle, on the contrary, there is a depression (saddle) with an average altitude of 340 m a.s.l., interrupted only by the 360-meter hill on which the city lies.
-
-Climate
-Gioia del Colle's climate is mediterranean (Köppen Csa), but it has peaks of continentality due to the altitude and the distance from the sea. Temperature varies between −2 e +12 °C in winter, while it varies between +18 e +35 °C with a high percentage of humidity in summer. Annual rainfall is around 600 mm. It often snows, about once a year, especially if there is cold air of Balkan origin.
-
-Answer:
-
-The climate is mild, and does not go below freezing by much in the winter with tropical weather summers.  Pack for light layers, and adjust for the time of year.
-
-</s>
-<s> Context:
-
-Foley first described the use of a self-retaining balloon catheter in 1929, to be used to achieve hemostasis after cystoscopic prostatectomy. He worked on development of this design for use as an indwelling urinary catheter, to provide continuous drainage of the bladder, in the 1930s. His design incorporated an inflatable balloon towards the tip of the tube which could be inflated inside the bladder to retain the catheter without external taping or strapping. He demonstrated this to the American Urologists Society in 1935, and published a paper describing it in 1937. While he was still developing his catheter, a patent was issued to Paul Raiche of the Davol Rubber Company of Providence, Rhode Island in 1936. Four months later, in October 1936, Foley applied for the patent, and was awarded this after appearing before the patent office Board of Appeals. Raiche appealed this decision in court, and it was overturned, returning the patent to Raiche. A further request for a hearing made by Foley was refused, and so the patent stayed with Raiche.
-https://en.wikipedia.org/wiki/Frederic_Foley
+The Solar System is the gravitationally bound system of the Sun and the objects that orbit it. It formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority (99.86%) of the system's mass is in the Sun, with most of the remaining mass contained in the planet Jupiter. The planetary system around the Sun contains eight planets. The four inner system planets—Mercury, Venus, Earth and Mars—are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially larger and more massive than the terrestrials. The two largest, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the next two, Uranus and Neptune, are ice giants, being composed mostly of volatile substances with relatively high melting points compared with hydrogen and helium, such as water, ammonia, and methane. All eight planets have nearly circular orbits that lie near the plane of Earth's orbit, called the ecliptic.
+https://en.wikipedia.org/wiki/Solar_System
 
 Instruction:
 
-According to this paragraph, did Frederic Foley hold the patent to the Foley catheter?
+Based on this paragraph, which two objects account for the majority of the mass of the Solar System?
 
 Answer:
 
-According to this paragraph, Frederic Foley applied for the patent but it was ultimately awarded to Paul Riache instead.
+Based on this paragraph, the Sun and Jupiter are the two objects that account for the majority of the mass of the Solar System, with the Sun responsible for 99.86% of the total.
+
+</s>
+<PAD><PAD><s> Instruction:
+
+When was HMS Glowworm (H92), a G-class destroyer launched?
+
+Context:
+
+Glowworm, was briefly the name of a coastal destroyer launched on 12 December 1906 and renamed HMS TB7. It was sold in May 1921.
+HMS Glowworm (1916), an Insect-class gunboat, launched on 5 February 1916 and sold in 1928.
+HMS Glowworm (H92), a G-class destroyer launched on 22 July 1935, sunk on 8 April 1940 by the German heavy cruiser Admiral Hipper off Norway.
+Glowworm was allocated to a G-class destroyer under construction at the William Denny shipyard at Dumbarton in 1945. The vessel was originally called HMS Guinevere but was renamed in September 1945 to HMS Glowworm, and renamed again in October to HMS Gift. Construction was cancelled on 1 December 1945 before completion.
+
+Answer:
+
+The HMS Glowworm (H92), a G-class was launched in July 22nd, 1935.
+
+</s>
+<PAD><PAD><s> Instruction:
+
+When did Confinity become eBay ?
+
+Context:
+
+Originally, PayPal was a money-transfer service offered by a company called Confinity which was acquired by X.com in 1999. Later, X.com was renamed PayPal and purchased by eBay in 2002. The original PayPal employees had difficulty adjusting to eBay's more traditional corporate culture and within four years all but 12 of the first 50 employees had left. They remained connected as social and business acquaintances, and a number of them worked together to form new companies and venture firms in subsequent years. This group of PayPal alumni became so prolific that the term PayPal Mafia was coined. The term gained even wider exposure when a 2007 article in Fortune magazine used the phrase in its headline and featured a photo of former PayPal employees in gangster attire.
+
+Answer:
+
+Confinity was acquired by X.com in 1999 which was later renamed to PayPal. PayPal was acquired by eBay in 2002.
+
+</s>
+<PAD><PAD><s> Context:
+
+Svea Kristina Frisch (15 June 1898 in Ramsberg, Örebro county – 1991), known as Kristina Lindstrand, was a Swedish actor, journalist, author, and poet.
+
+Her first marriage was during 1922–1927 with the actor and director Ivar Kåge, and the second (1929–1946) was with the painter Vicke Lindstrand. She moved from Sweden to Italy in 1969.
+
+Answer:
+
+Svea Kristina Frisch (15 June 1898 in Ramsberg, Oerebro county– 1991), known as Kristina Lindstrand, was a Swedish actor, journalist, author, and poet.
+
+Instruction:
+
+Who was Svea Kristina Frisch
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Luigi Fagioli is the oldest winner of a Formula One Grand Prix; he was 53 years and 22 days old when he won the 1951 French Grand Prix
+
+Answer:
+
+The oldest driver to win a Formula 1 race is the Italian named Luigi Fagioli while 53 years and 22 days old, with his only win at the 1951 France Grand Prix.
+
+Instruction:
+
+Who is the oldest driver to win a Formula 1 race?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Instruction:
+
+What is the population of North Carolina?
+
+Answer:
+
+In the 2020 census, the state of North Carolina had a population of 10,439,388. The state is the 28th largest and 9th-most populous of the United States.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given this paragraph on Macquarie University Real Tennis Club, please tell me how many tennis courts the club had.
+
+Answer:
+
+Based on this paragraph, it appears that the Macquarie University Real Tennis Club had only one tennis court.
+
+</s>
+<s> Context:
+
+The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+
+Answer:
+
+The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+
+Lead roles
+This list only includes leading roles and lead ensemble roles, including voice acting. The list is updated as of 12 January 2023.
+
+Rank	Actor	Worldwide total	Top-grossing film	Films	Average
+1	Scarlett Johansson	$14,519,031,650	Avengers: Endgame ($2,794,731,755)	33	$439,970,656
+2	Robert Downey Jr.	$14,393,065,668	Avengers: Endgame ($2,794,731,755)	43	$334,722,457
+3	Samuel L. Jackson	$14,376,505,937	Avengers: Endgame ($2,794,731,755)	64	$224,632,905
+4	Zoe Saldaña	$12,805,874,340	Avatar ($2,899,384,102)	30	$426,862,478
+5	Chris Hemsworth	$11,958,567,765	Avengers: Endgame ($2,794,731,755)	25	$478,342,711
+6	Chris Pratt	$11,742,796,476	Avengers: Endgame ($2,794,731,755)	23	$510,556,369
+7	Tom Cruise	$11,547,725,996	Top Gun: Maverick ($1,487,575,965)	43	$268,551,767
+8	Chris Evans	$11,277,890,989	Avengers: Endgame ($2,794,731,755)	29	$388,892,793
+9	Tom Hanks	$10,704,310,520	Toy Story 4 ($1,073,064,540)	55	$194,623,828
+10	Vin Diesel	$10,537,096,327	Avengers: Infinity War ($2,048,359,754)	27	$390,262,827
+
+Instruction:
+
+List 10 highest-grossing actors in the world.
+
+</s>
+<PAD><s> Context:
+
+Endosymbiosis is any symbiotic relationship in which one symbiont lives within the tissues of the other, either within the cells or extracellularly. Examples include diverse microbiomes: rhizobia, nitrogen-fixing bacteria that live in root nodules on legume roots; actinomycetes, nitrogen-fixing bacteria such as Frankia, which live in alder root nodules; single-celled algae inside reef-building corals; and bacterial endosymbionts that provide essential nutrients to about 10%–15% of insects.[citation needed]
+
+In endosymbiosis, the host cell lacks some of the nutrients which the endosymbiont provides. As a result, the host favors endosymbiont's growth processes within itself by producing some specialized cells. These cells affect the genetic composition of the host in order to regulate the increasing population of the endosymbionts and ensure that these genetic changes are passed onto the offspring via vertical transmission (heredity).
+
+Answer:
+
+No, endosymbiosis is a symbiotic relationship where the internal symbiont or the endosymbiont provides essential nutrients to the host. For example, a bacteria can provide necessary nutrients to an insect.
+
+Instruction:
+
+Is endosymbiosis bad?
+
+</s>
+<PAD><PAD><s> Context:
+
+Robyn Rihanna Fenty (born February 20, 1988) is a Barbadian singer, actress, and businesswoman. Born in Saint Michael and raised in Bridgetown, Barbados, Rihanna auditioned for American record producer Evan Rogers who invited her to the United States to record demo tapes. After signing with Def Jam in 2005, she soon gained recognition with the release of her first two studio albums, Music of the Sun (2005) and A Girl Like Me (2006), both of which were influenced by Caribbean music and peaked within the top ten of the US Billboard 200 chart.
+
+Answer:
+
+Rihanna (Robyn Rihanna Fenty) is a singer, actress, and businesswoman from Barbados. After auditioning with American record producer Evan Rogers, she signed to Def Jam in 2005 and gained worldwide recognition with her first two studio albums, "Music of the Sun" and "A Girl Like Me".
+
+Instruction:
+
+Who is Rihanna?
+
+</s>
+<PAD><PAD><s> Instruction:
+
+Given this short summary of Giovan Battista Cavagna, how long did it take to build the second Monte di Pieta?
+
+Context:
+
+In Naples, he worked in 1572–1577 at the church of San Gregorio Armeno together with Giovanni Vincenzo della Monica. He helped design the Bank in Naples, called the second Monte di Pietà, started in 1539 with goal, according to Sasso, of liberating citizens from the supposed usury of the Jews. By 1597, the building was completed and unified all the banks in the city. In this project, he was aided by Giovanni Giacomo Di Conforto and Giovanni Cola di Franco.
+
+Answer:
+
+It took 58 years.  Started in 1539, completed in 1597.
+
+</s>
+<PAD><PAD><PAD><s> Instruction:
+
+What is Github Copilot?
+
+Context:
+
+GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.
+
+Answer:
+
+GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI
+
+</s>
+<PAD><PAD><PAD><PAD><s> Instruction:
+
+Based on this paragraph, which two objects account for the majority of the mass of the Solar System?
+
+Answer:
+
+Based on this paragraph, the Sun and Jupiter are the two objects that account for the majority of the mass of the Solar System, with the Sun responsible for 99.86% of the total.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Who produced the song Polly?
+
+Context:
+
+The song was written by Sumney with American singer-songwriter Tom Gallo. Sumney also solely produced the track.
+
+Answer:
+
+The song was written and produced by American singer-songwriter Moses Sumney.
+
+</s>
+<s> Context:
+
+Natural hydrogen (known as white hydrogen), is naturally occurring molecular hydrogen on or in Earth (as opposed to hydrogen produced in the laboratory or in industry). The name white hydrogen distinguishes it from green hydrogen, which is produced from renewable energy sources, and from grey, brown or black hydrogen, which is obtained from fossil sources or from the electrolysis of water. Natural hydrogen may be renewable, non-polluting and allows for lower cost operation compared to industrial hydrogen. Natural hydrogen has been identified in many source rocks in areas beyond the sedimentary basins where oil companies typically operate.
+
+Origin of natural hydrogen
+There are several sources of natural hydrogen:
+
+- degassing of deep hydrogen from the Earth's crust and mantle;
+- reaction of water with ultrabasic rocks (serpentinisation);
+- contact of water with reducing agents in the Earth's mantle;
+- interaction of water with freshly exposed rock surfaces (weathering);
+- decomposition of hydroxyl ions in the structure of minerals;
+- Natural radiolysis of water;
+- decomposition of organic matter;
+- biological activity
+- Extraction
+- Natural hydrogen is extracted from wells, mixed with other gases such as nitrogen or helium.
+
+Several sources have been identified in France. Geologists Alain Prinzhofer and Eric Derville have demonstrated the existence of large reservoirs in a dozen countries, including Mali and the United States. However, their potential remains difficult to assess.
+
+Numerous emanations on the ocean floor have been identified but are difficult to exploit. The discovery of a significant emergence in Russia in 2008 suggests the possibility of extracting native hydrogen in geological environments.
+
+Geology
+Natural hydrogen is generated continuously from a variety of natural sources. There are many known hydrogen emergences on mid-ocean ridges. Another of the known reactions, serpentinisation, occurs under the sea floor (in the oceanic crust).
+
+Diagenetic origin (iron oxidation) in the sedimentary basins of cratons, notably in Russia. Other sources are being explored, such as mantle hydrogen, or hydrogen from radiolysis (natural electrolysis) or from bacterial activity. In France, the Alps and Pyrenees are suitable for exploitation. New Caledonia has hyperalkaline sources that show dihydrogen emissions. A large accumulation of natural hydrogen was discovered in Bourakebougou (Mali).
+
+Characteristics
+Dihydrogen is very soluble in fresh water, especially at depth (solubility increases with pressure).
+
+https://en.wikipedia.org/wiki/Natural_hydrogen
+
+Instruction:
+
+Given these paragraphs about Natural hydrogen, what is it?
+
+Answer:
+
+Natural hydrogen (known as white hydrogen), is naturally occurring molecular hydrogen on or in Earth (as opposed to hydrogen produced in the laboratory or in industry).
+
+</s>
+<PAD><s> Context:
+
+Tamil is a Dravidian language natively spoken by the Tamil people of South Asia. Tamil is an official language of the Indian state of Tamil Nadu, the sovereign nations of Sri Lanka and Singapore, and the Indian Union territory of Puducherry. Tamil is also spoken by significant minorities in the four other South Indian states of Kerala, Karnataka, Andhra Pradesh and Telangana, and the Union Territory of the Andaman and Nicobar Islands. It is also spoken by the Tamil diaspora found in many countries, including Malaysia, Myanmar, South Africa, United Kingdom, United States, Canada, Australia and Mauritius. Tamil is also natively spoken by Sri Lankan Moors. One of 22 scheduled languages in the Constitution of India, Tamil was the first to be classified as a classical language of India.
+
+Answer:
+
+Tamil is a Dravidian language natively spoken by the Tamil people of South Asia. It is the official language of the Indian state of Tamil Nadu as well as the union territory Puducherry, as well as the sovereign nations of Sri Lanka and Singapore. Tamil is also spoken by significant minorities in the four other South Indian states of Kerala, Karnataka, Andhra Pradesh and Telangana, and the Union Territory of the Andaman and Nicobar Islands. It is also spoken by the Tamil diaspora found in many countries, including Malaysia, Myanmar, South Africa, United Kingdom, United States, Canada, Australia and Mauritius.
+
+Instruction:
+
+Where is Tamil language spoken?
+
+</s>
+<PAD><PAD><s> Instruction:
+
+Is endosymbiosis bad?
+
+Context:
+
+Endosymbiosis is any symbiotic relationship in which one symbiont lives within the tissues of the other, either within the cells or extracellularly. Examples include diverse microbiomes: rhizobia, nitrogen-fixing bacteria that live in root nodules on legume roots; actinomycetes, nitrogen-fixing bacteria such as Frankia, which live in alder root nodules; single-celled algae inside reef-building corals; and bacterial endosymbionts that provide essential nutrients to about 10%–15% of insects.[citation needed]
+
+In endosymbiosis, the host cell lacks some of the nutrients which the endosymbiont provides. As a result, the host favors endosymbiont's growth processes within itself by producing some specialized cells. These cells affect the genetic composition of the host in order to regulate the increasing population of the endosymbionts and ensure that these genetic changes are passed onto the offspring via vertical transmission (heredity).
+
+Answer:
+
+No, endosymbiosis is a symbiotic relationship where the internal symbiont or the endosymbiont provides essential nutrients to the host. For example, a bacteria can provide necessary nutrients to an insect.
+
+</s>
+<PAD><PAD><s> Context:
+
+Originally, PayPal was a money-transfer service offered by a company called Confinity which was acquired by X.com in 1999. Later, X.com was renamed PayPal and purchased by eBay in 2002. The original PayPal employees had difficulty adjusting to eBay's more traditional corporate culture and within four years all but 12 of the first 50 employees had left. They remained connected as social and business acquaintances, and a number of them worked together to form new companies and venture firms in subsequent years. This group of PayPal alumni became so prolific that the term PayPal Mafia was coined. The term gained even wider exposure when a 2007 article in Fortune magazine used the phrase in its headline and featured a photo of former PayPal employees in gangster attire.
+
+Answer:
+
+Confinity was acquired by X.com in 1999 which was later renamed to PayPal. PayPal was acquired by eBay in 2002.
+
+Instruction:
+
+When did Confinity become eBay ?
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+On 11 April 2001, the Australian and American Samoan national association football teams played each other in an Oceanian qualifying match for the 2002 FIFA World Cup. The match was played at the International Sports Stadium in Coffs Harbour, Australia. Australia set a world record for the largest victory in an international football match, winning the game 31–0. Australia's Archie Thompson also broke the record for most goals scored by a player in an international match by scoring 13 goals. David Zdrilic, the scorer of eight goals in the match, scored the second-highest number of goals in an international match since World War I.
+
+Instruction:
+
+How many goals did Archie Thompson's team mates score?
+
+Answer:
+
+Since Archie Thompson scored 13 goals, his teammates scored 18 goals
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+The Tesla Model 3 became the world's all-time best-selling electric car in early 2020, and in June 2021 became the first electric car to pass 1 million global sales. Together with other emerging automotive technologies such as autonomous driving, connected vehicles and shared mobility, electric cars form a future mobility vision called Autonomous, Connected, Electric and Shared (ACES) Mobility.
+
+Answer:
+
+June 2021
+
+Instruction:
+
+When was the Tesla Model 3 unit one million sold?
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Araber Rahaman (died 28 April 2013) was an Indian politician. He was the Tripura MLA for Boxanagar from 1978–1988.
+
+Answer:
+
+He was a politician.
+
+Instruction:
+
+What was the profession of Araber Rahaman?
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given the following paragraph on siliceous ooze, how are oozes defined?
+
+Answer:
+
+Oozes are defined as sediments which contain at least 30 percent skeletal remains of pelagic microorganisms.
 
 </s>
 <s> Instruction:
 
-Given this paragraph about KITS, tell me what station it's on and where its radio tower is located.
+List 10 highest-grossing actors in the world.
 
 Context:
 
-KITS (105.3 FM, "105.3 Dave FM") is a commercial radio station in San Francisco, California. Owned by Audacy, Inc., it broadcasts an adult hits radio format. The studios and offices are co-located with formerly co-owned KPIX-TV on Battery Street in the North Beach district of San Francisco.
-
-KITS's transmitter is located on Radio Road, at San Bruno Mountain in Daly City. It has an effective radiated power (ERP) of 15,000 watts, from a tower at 366 meters (1,201 feet) in height above average terrain. KITS broadcasts in the HD Radio format. Its HD2 subchannel formerly aired a gold-based modern rock format as Classic Live 105, inspired by its previous long-time tenure in the format as Live 105. The HD3 subchannel formerly carried "Radio Zindagi," a South Asian radio service. These subchannels have since been turned off.
+The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
 
 Answer:
 
-KITS plays on 105.3FM in San Francisco, California. Its radio tower is located on Radio Road at San Bruno Mountain in Daly City.
+The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+
+Lead roles
+This list only includes leading roles and lead ensemble roles, including voice acting. The list is updated as of 12 January 2023.
+
+Rank	Actor	Worldwide total	Top-grossing film	Films	Average
+1	Scarlett Johansson	$14,519,031,650	Avengers: Endgame ($2,794,731,755)	33	$439,970,656
+2	Robert Downey Jr.	$14,393,065,668	Avengers: Endgame ($2,794,731,755)	43	$334,722,457
+3	Samuel L. Jackson	$14,376,505,937	Avengers: Endgame ($2,794,731,755)	64	$224,632,905
+4	Zoe Saldaña	$12,805,874,340	Avatar ($2,899,384,102)	30	$426,862,478
+5	Chris Hemsworth	$11,958,567,765	Avengers: Endgame ($2,794,731,755)	25	$478,342,711
+6	Chris Pratt	$11,742,796,476	Avengers: Endgame ($2,794,731,755)	23	$510,556,369
+7	Tom Cruise	$11,547,725,996	Top Gun: Maverick ($1,487,575,965)	43	$268,551,767
+8	Chris Evans	$11,277,890,989	Avengers: Endgame ($2,794,731,755)	29	$388,892,793
+9	Tom Hanks	$10,704,310,520	Toy Story 4 ($1,073,064,540)	55	$194,623,828
+10	Vin Diesel	$10,537,096,327	Avengers: Infinity War ($2,048,359,754)	27	$390,262,827
+
+</s>
+<PAD><s> Context:
+
+The game's English name derives from the Balti language, from its word for 'ball', polo. It is cognate with the Standard Tibetan pulu, also meaning 'ball'.
+
+Although the exact origins of the game are not certain, many scholars suggest it most likely began as a simple game played by Iranic and Turkic equestrian nomads in Central Asia. An archaic variation of polo, regionally referred to as buzkashi or kokpar, is still played in parts of Central Asia. It was developed and formalised in Ancient Iran (Persia) as "chovgan" (čowgān), becoming a national sport played extensively by the nobility. Women played as well as men. During the period of the Parthian Empire (247 BC to 224 AD), the sport had great patronage under the kings and noblemen. According to The Oxford Dictionary of Late Antiquity, the Persian ball game was an important pastime in the court of the Sasanian Empire (224–651). It was also part of the royal education for the Sasanian ruling class. Emperor Shapur II learnt to play polo at age seven in 316 AD.
+
+Instruction:
+
+During which year Emperor Shapur II learned to play polo?
+
+Answer:
+
+316 AD
+
+</s>
+<PAD><PAD><s> Instruction:
+
+Which fictional LAPD detective is Titus Welliver known for playing?
+
+Context:
+
+Detective Hieronymus "Harry" Bosch is a fictional character created by American author Michael Connelly. Bosch debuted as the lead character in the 1992 novel The Black Echo, the first in a best-selling police procedural series now numbering 24 novels.
+
+The novels are more or less coincident in timeframe with the year in which they were published. Harry, as he is commonly known by his associates, is a veteran police homicide detective with the Los Angeles Police Department. He was named after the 15th-century Dutch artist Hieronymus Bosch.
+
+Titus Welliver portrayed the title character from 2015 to 2021 in Bosch, a television series adapted from the novels, and from 2022 in its spin-off series Bosch: Legacy.
+
+Answer:
+
+Titus Welliver played Harry Bosch in the TV series Bosch and also in spin off Bosch:Legacy.
+
+</s>
+<PAD><PAD><s> Context:
+
+Sly and the Family Stone was an American funk rock band originated from San Francisco, California. Active from 1966 to 1983, they were pivotal in the development of funk, soul, rock, and psychedelic music. Their core line-up was led by singer-songwriter, record producer, and multi-instrumentalist Sly Stone, and included Stone's brother and singer/guitarist Freddie Stone, sister and singer/keyboardist Rose Stone, trumpeter Cynthia Robinson, drummer Greg Errico, saxophonist Jerry Martini, and bassist Larry Graham. The band was the first major American rock group to have a racially integrated, male and female lineup.
+
+Instruction:
+
+Where did Sly and the Family Stone come from?
+
+Answer:
+
+Sly and the Family Stone originated from San Francisco, California.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+On 17 March 1773, Auguste’s spouse succeeded as the 4th Prince of Thurn and Taxis. The marriage was at that point severely deteriorated. Auguste left Karl Anselm and settled in Paris. Rumours claimed that she lived with a lover. However, she was tormented by economical problems, ran out of funds and was hounded by creditors.
+
+Answer:
+
+Auguste’s marriage was severely deteriorated and she had debt problems.
+
+Instruction:
+
+Given this paragraph about Duchess Auguste of Württemberg, what happened to personal life?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Instruction:
+
+Given this reference text, tell me what the foundational BJJ concept was
+
+Answer:
+
+BJJ focuses on the concept that smaller and weaker practitioners can defend against larger and bigger opponents by taking the fight to the ground. Once on the ground, a BJJ practitioner can use leverage and weight distribution to defeat their opponent.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+what is use of cryogenics in virology ?
+
+Answer:
+
+Certain vaccines must be only stored at cryogenic temperature (ultra low temperatures of order -90 to -60 degree celcius / -130 F to -76 F)
+
+</s>
+<s> Instruction:
+
+what is use of cryogenics in virology ?
+
+Context:
+
+Nuclear magnetic resonance (NMR) is one of the most common methods to determine the physical and chemical properties of atoms by detecting the radio frequency absorbed and subsequent relaxation of nuclei in a magnetic field. This is one of the most commonly used characterisation techniques and has applications in numerous fields. Primarily, the strong magnetic fields are generated by supercooling electromagnets, although there are spectrometers that do not require cryogens. In traditional superconducting solenoids, liquid helium is used to cool the inner coils because it has a boiling point of around 4 K at ambient pressure. Cheap metallic superconductors can be used for the coil wiring. So-called high-temperature superconducting compounds can be made to super conduct with the use of liquid nitrogen, which boils at around 77 K.
+Magnetic resonance imaging (MRI) is a complex application of NMR where the geometry of the resonances is deconvoluted and used to image objects by detecting the relaxation of protons that have been perturbed by a radio-frequency pulse in the strong magnetic field. This is most commonly used in health applications.
+In large cities, it is difficult to transmit power by overhead cables, so underground cables are used. But underground cables get heated and the resistance of the wire increases, leading to waste of power. Superconductors could be used to increase power throughput, although they would require cryogenic liquids such as nitrogen or helium to cool special alloy-containing cables to increase power transmission. Several feasibility studies have been performed and the field is the subject of an agreement within the International Energy Agency.
+
+Cryogenic gases delivery truck at a supermarket, Ypsilanti, Michigan
+Cryogenic gases are used in transportation and storage of large masses of frozen food. When very large quantities of food must be transported to regions like war zones, earthquake hit regions, etc., they must be stored for a long time, so cryogenic food freezing is used. Cryogenic food freezing is also helpful for large scale food processing industries.
+Many infrared (forward looking infrared) cameras require their detectors to be cryogenically cooled.
+Certain rare blood groups are stored at low temperatures, such as −165 °C, at blood banks.
+Cryogenics technology using liquid nitrogen and CO2 has been built into nightclub effect systems to create a chilling effect and white fog that can be illuminated with colored lights.
+Cryogenic cooling is used to cool the tool tip at the time of machining in manufacturing process. It increases the tool life. Oxygen is used to perform several important functions in the steel manufacturing process.
+Many rockets use cryogenic gases as propellants. These include liquid oxygen, liquid hydrogen, and liquid methane.
+By freezing the automobile or truck tire in liquid nitrogen, the rubber is made brittle and can be crushed into small particles. These particles can be used again for other items.
+Experimental research on certain physics phenomena, such as spintronics and magnetotransport properties, requires cryogenic temperatures for the effects to be observed.
+Certain vaccines must be stored at cryogenic temperatures. For example, the Pfizer–BioNTech COVID-19 vaccine must be stored at temperatures of −90 to −60 °C (−130 to −76 °F). (See cold chain.)
+
+Answer:
+
+Certain vaccines must be only stored at cryogenic temperature (ultra low temperatures of order -90 to -60 degree celcius / -130 F to -76 F)
+
+</s>
+<s> Instruction:
+
+Based on this paragraph, which two objects account for the majority of the mass of the Solar System?
+
+Context:
+
+The Solar System is the gravitationally bound system of the Sun and the objects that orbit it. It formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority (99.86%) of the system's mass is in the Sun, with most of the remaining mass contained in the planet Jupiter. The planetary system around the Sun contains eight planets. The four inner system planets—Mercury, Venus, Earth and Mars—are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially larger and more massive than the terrestrials. The two largest, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the next two, Uranus and Neptune, are ice giants, being composed mostly of volatile substances with relatively high melting points compared with hydrogen and helium, such as water, ammonia, and methane. All eight planets have nearly circular orbits that lie near the plane of Earth's orbit, called the ecliptic.
+https://en.wikipedia.org/wiki/Solar_System
+
+Answer:
+
+Based on this paragraph, the Sun and Jupiter are the two objects that account for the majority of the mass of the Solar System, with the Sun responsible for 99.86% of the total.
 
 </s>
 <s> Context:
+
+The leaves are usually large and imposing, often lobed or deeply cut, and may be more or less pinnate. They can also be oval, spear-shaped, or in many other possible shape variations. The leaves are borne alternately on the stem. A quality of philodendrons is that they do not have a single type of leaf on the same plant. Instead, they have juvenile leaves and adult leaves, which can be drastically different from one another. The leaves of seedling philodendrons are usually heart-shaped early in the life of the plant. But after it has matured past the seedling stage, the leaves will acquire the typical juvenile leaf's shape and size. Later in the philodendron's life, it starts producing adult leaves, a process called metamorphosis. Most philodendrons go through metamorphosis gradually; there is no immediately distinct difference between juvenile and adult leaves. Aside from being typically much bigger than the juvenile leaves, the shape of adult leaves can be significantly different. In fact, considerable taxonomic difficulty has occurred in the past due to these differences, causing juvenile and adult plants to mistakenly be classified as different species.
+
+Instruction:
+
+What shape are Philodendron leaves?
+
+Answer:
+
+They are spear-shaped
+
+</s>
+<s> Context:
+
+Thor (from Old Norse: Þórr) is a prominent god in Germanic paganism. In Norse mythology, he is a hammer-wielding god associated with lightning, thunder, storms, sacred groves and trees, strength, the protection of humankind, hallowing, and fertility. Besides Old Norse Þórr, the deity occurs in Old English as Þunor, in Old Frisian as Thuner, in Old Saxon as Thunar, and in Old High German as Donar, all ultimately stemming from the Proto-Germanic theonym *Þun(a)raz, meaning 'Thunder'.
+
+Answer:
+
+Thor is the god of thunder in Norse mythology. He wields a powerful hammer that only he can pick up. Thor has appeared as a character in Marvel comic books since 1962 and in at least 10 movies.
+
+Instruction:
+
+Who is Thor?
+
+</s>
+<s> Context:
+
+Club Africain (Arabic: النادي الإفريقي) is a Tunisian football club based in Tunis that competes in the Tunisian Championship. It fields several sports teams, including football, handball, basketball, swimming and volleyball. The football team was the first Tunisian club to win an international trophy, when they won the Maghreb Cup Winners Cup in 1971. Twenty years later, in 1991, Club Africain became the first Tunisian team to win the African Champions League.
+
+Answer:
+
+The Maghreb Cup Winners Cup
+
+Instruction:
+
+What international trophy did the Club Africain football team won in 1971 ?
+
+</s>
+<s> Context:
+
+Massimo Bray is an academic publisher and a magazine editor. He was on the editorial board of the Italian Institute of Human Sciences until 1994. He is the cofounder of Notte della Taranta, which is among the most popular music festivals in Europe. He launched a blog on the Italian-language version of the Huffington Post.
+
+Answer:
+
+Massimo Bray likely writes in Italian.
+
+Instruction:
+
+Based on this paragraph about Massimo Bray, what language do you think he writes in?
+
+</s>
+<s> Context:
+
+The song was written by Sumney with American singer-songwriter Tom Gallo. Sumney also solely produced the track.
+
+Instruction:
+
+Who produced the song Polly?
+
+Answer:
+
+The song was written and produced by American singer-songwriter Moses Sumney.
+
+</s>
+<PAD><s> Instruction:
+
+Who founded the city of Price, Quebec?
+
+Answer:
+
+The Price Brothers and Company
+
+</s>
+<s> Context:
+
+The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+
+Instruction:
+
+List 10 highest-grossing actors in the world.
+
+Answer:
+
+The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+
+Lead roles
+This list only includes leading roles and lead ensemble roles, including voice acting. The list is updated as of 12 January 2023.
+
+Rank	Actor	Worldwide total	Top-grossing film	Films	Average
+1	Scarlett Johansson	$14,519,031,650	Avengers: Endgame ($2,794,731,755)	33	$439,970,656
+2	Robert Downey Jr.	$14,393,065,668	Avengers: Endgame ($2,794,731,755)	43	$334,722,457
+3	Samuel L. Jackson	$14,376,505,937	Avengers: Endgame ($2,794,731,755)	64	$224,632,905
+4	Zoe Saldaña	$12,805,874,340	Avatar ($2,899,384,102)	30	$426,862,478
+5	Chris Hemsworth	$11,958,567,765	Avengers: Endgame ($2,794,731,755)	25	$478,342,711
+6	Chris Pratt	$11,742,796,476	Avengers: Endgame ($2,794,731,755)	23	$510,556,369
+7	Tom Cruise	$11,547,725,996	Top Gun: Maverick ($1,487,575,965)	43	$268,551,767
+8	Chris Evans	$11,277,890,989	Avengers: Endgame ($2,794,731,755)	29	$388,892,793
+9	Tom Hanks	$10,704,310,520	Toy Story 4 ($1,073,064,540)	55	$194,623,828
+10	Vin Diesel	$10,537,096,327	Avengers: Infinity War ($2,048,359,754)	27	$390,262,827
+
+</s>
+<PAD><s> Context:
+
+Optimus, also known as Tesla Bot, is a conceptual general-purpose robotic humanoid under development by Tesla, Inc. It was announced at the company's Artificial Intelligence (AI) Day event on August 19, 2021. CEO Elon Musk claimed during the event that Tesla would likely build a prototype by 2022. Musk is on record having said that he thinks Optimus "has the potential to be more significant than the vehicle business over time."
+
+Tesla Bot is planned to measure 5 ft 8 in (173 cm) tall and weigh 125 lb (57 kg). According to the presentation made during the first AI Day event, a Tesla Bot will be "controlled by the same AI system Tesla is developing for the advanced driver-assistance system used in its cars" and have a carrying capacity of 45 lb (20 kg). Proposed tasks for the product are ones that are "dangerous, repetitive and boring", such as providing manufacturing assistance.
+
+https://en.wikipedia.org/wiki/Optimus_(robot)
+
+Answer:
+
+Proposed tasks for the Tesla Bot are ones that are "dangerous, repetitive and boring", such as providing manufacturing assistance.
+
+Instruction:
+
+Given these paragraphs about the Tesla bot, what kind of tasks is it expected to perform?
+
+</s>
+<PAD><PAD><s> Context:
 
 Robyn Rihanna Fenty (born February 20, 1988) is a Barbadian singer, actress, and businesswoman. Born in Saint Michael and raised in Bridgetown, Barbados, Rihanna auditioned for American record producer Evan Rogers who invited her to the United States to record demo tapes. After signing with Def Jam in 2005, she soon gained recognition with the release of her first two studio albums, Music of the Sun (2005) and A Girl Like Me (2006), both of which were influenced by Caribbean music and peaked within the top ten of the US Billboard 200 chart.
 
@@ -343,253 +721,164 @@ Answer:
 Rihanna (Robyn Rihanna Fenty) is a singer, actress, and businesswoman from Barbados. After auditioning with American record producer Evan Rogers, she signed to Def Jam in 2005 and gained worldwide recognition with her first two studio albums, "Music of the Sun" and "A Girl Like Me".
 
 </s>
-<s> Context:
+<PAD><PAD><PAD><s> Context:
 
-Run Towards the Danger is a 2022 Canadian essay collection by Sarah Polley, a former child star, director, and screenwriter.
+Sly and the Family Stone was an American funk rock band originated from San Francisco, California. Active from 1966 to 1983, they were pivotal in the development of funk, soul, rock, and psychedelic music. Their core line-up was led by singer-songwriter, record producer, and multi-instrumentalist Sly Stone, and included Stone's brother and singer/guitarist Freddie Stone, sister and singer/keyboardist Rose Stone, trumpeter Cynthia Robinson, drummer Greg Errico, saxophonist Jerry Martini, and bassist Larry Graham. The band was the first major American rock group to have a racially integrated, male and female lineup.
 
-The six essays in the collection examine aspects of Polley's career on stage, screen, and on film detailing her roles in a Stratford Festival production of Alice Through the Looking Glass, as well as her breakout roles in The Adventures of Baron Munchausen and the TV series Road to Avonlea. The book also revealed for the first time that Polley had been a victim of Jian Ghomeshi who sexually and physically assaulted her when she was 16 and he was 28.
+Answer:
+
+Sly and the Family Stone originated from San Francisco, California.
 
 Instruction:
 
-Given a reference text about Run Towards the Danger, tell me how many essays are part of the collection.
-
-Answer:
-
-Six essays are part of the Run Towards the Danger essay collection.
+Where did Sly and the Family Stone come from?
 
 </s>
-<s> Context:
+<PAD><PAD><PAD><s> Instruction:
 
-Geling Yan (simplified Chinese: 严歌苓; traditional Chinese: 嚴歌苓; pinyin: Yán Gēlíng; born 16 November 1958]) is a Chinese-American author and screenwriter. Yan began performing as a dancer at age 12. She served in the People's Liberation Army in Chengdu, during the Cultural Revolution in Tibet and later as a journalist in the Sino-Vietnamese War, achieving a rank equivalent to lieutenant colonel.
-
-Instruction:
-
-What career did  GeLing Yan have?
-
-Answer:
-
-She is an author, screenwriter, and once was a dancer and a journalist.
-
-</s>
-<s> Instruction:
-
-Given this paragraph about Password-authenticated key exchange, what year were the first provably-secure protocols created?
+Who wrote Howl's Moving Castle?
 
 Context:
 
-The first successful password-authenticated key agreement methods were Encrypted Key Exchange methods described by Steven M. Bellovin and Michael Merritt in 1992. Although several of the first methods were flawed, the surviving and enhanced forms of EKE effectively amplify a shared password into a shared key, which can then be used for encryption and/or message authentication. The first provably-secure PAKE protocols were given in work by M. Bellare, D. Pointcheval, and P. Rogaway (Eurocrypt 2000) and V. Boyko, P. MacKenzie, and S. Patel (Eurocrypt 2000). These protocols were proven secure in the so-called random oracle model (or even stronger variants), and the first protocols proven secure under standard assumptions were those of O. Goldreich and Y. Lindell (Crypto 2001) which serves as a plausibility proof but is not efficient, and J. Katz, R. Ostrovsky, and M. Yung (Eurocrypt 2001) which is practical.
-
-The first password-authenticated key retrieval methods were described by Ford and Kaliski in 2000.
-
-A considerable number of alternative, secure PAKE protocols were given in work by M. Bellare, D. Pointcheval, and P. Rogaway, variations, and security proofs have been proposed in this growing class of password-authenticated key agreement methods. Current standards for these methods include IETF RFC 2945, RFC 5054, RFC 5931, RFC 5998, RFC 6124, RFC 6617, RFC 6628 and RFC 6631, IEEE Std 1363.2-2008, ITU-T X.1035 and ISO-IEC 11770-4:2006.
+Howl's Moving Castle is a fantasy novel by British author Diana Wynne Jones, first published in 1986 by Greenwillow Books of New York. It was a runner-up for the annual Boston Globe–Horn Book Award, and won the Phoenix Award twenty years later. It was adapted into a critically acclaimed 2004 animated film of the same name, which was nominated for the Academy Award for Best Animated Feature.
 
 Answer:
 
-The first provably-secure protocols for Password-authenticated key exchanges(PAKE) were presented in 2000 at "Eurocrypt 2000" by two groups Mihir Bellare, David Pointcheval and Phillip Rogaway, and Victor Boyko, Philip MacKenzie and Sarvar Patel.
+Howl's Moving Castle is a fantasy novel by British author Diana Wynne Jones.
 
 </s>
-<s> Instruction:
+<PAD><PAD><PAD><PAD><PAD><s> Instruction:
 
-What's the game engine used by Bethesda before Creation Engine? And what's the last game make with it?
+What was the profession of Araber Rahaman?
 
 Context:
 
-After using the Gamebryo engine to create The Elder Scrolls III: Morrowind, The Elder Scrolls IV: Oblivion, and Fallout 3, Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
-
-Following the completion of Skyrim, Bethesda set out to enhance the graphical core of the Creation Engine by first adding a physically based deferred renderer to allow for more dynamic lighting and to paint materials object surfaces with realistic materials. Bethesda worked with technology company Nvidia to implement volumetric lighting through a technique that makes use of hardware tesselation. Additionally the updated version of the Creation Engine powering Bethesda's Fallout 4 offers more advanced character generation.
+Araber Rahaman (died 28 April 2013) was an Indian politician. He was the Tripura MLA for Boxanagar from 1978–1988.
 
 Answer:
 
-Gamebryo was the engine used by Bethesda before Creation Engine. It is developed by Gamebase Cot., Ltd and Gamebase USA. Gamebryo is used by numerous companies within the gaming industry.
-
-Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
-
-The last game from Bethesda made with Gamebryo engine is Fallout 3 (2008).
+He was a politician.
 
 </s>
-<s> Instruction:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
 
-Given a reference text about Giovanni Dominici, when was he beatified?
-
-Context:
-
-Giovanni Dominici (c. 1355 – 10 June 1419) was an Italian Catholic prelate and Dominican who became a cardinal. His ideas had a profound influence on the art of Fra Angelico who entered the order through him. But he once encountered difficulties becoming a friar due to a speech impairment that his superiors believed would rule him ineligible for both profession and the priesthood. Dominici became a noted theologian and preacher and was tireless in establishing monasteries and convents in cities such as Fiesole and Lucca.
-
-He attempted to resign his cardinalate in 1415 during the Council of Constance after he succeeded in convincing the pope to abdicate in order to end the Western Schism. But the Council refused to accept his resignation though he had resigned from the archbishopric that he held. He spent the remainder of his life as a papal legate for Pope Martin V until he died in Buda.
-
-He had been first named as a Blessed since 1622 though he had not been recognized as such until he was beatified on 9 April 1832.[
+Given a reference text about Isabel Emily Jay, tell me where she studied and how old she was when she retired.
 
 Answer:
 
-Giovanni Dominici was beatified on April 9, 1832.
+Isabel Emily Jay studied at the Royal Academy of Music and retired at 31 years old.
 
 </s>
 <s> Context:
 
-The population of Puerto Rico according to the 2020 census was 3,285,874, an 11.8% decrease since the 2010 United States Census. The commonwealth's population peaked in 2000, when it was 3,808,610, before declining (for the first time in census history) to 3,725,789 in 2010. Emigration due to economic difficulties and natural disasters, coupled with a low birth rate, have caused the population decline to continue in recent years.
+Nuclear magnetic resonance (NMR) is one of the most common methods to determine the physical and chemical properties of atoms by detecting the radio frequency absorbed and subsequent relaxation of nuclei in a magnetic field. This is one of the most commonly used characterisation techniques and has applications in numerous fields. Primarily, the strong magnetic fields are generated by supercooling electromagnets, although there are spectrometers that do not require cryogens. In traditional superconducting solenoids, liquid helium is used to cool the inner coils because it has a boiling point of around 4 K at ambient pressure. Cheap metallic superconductors can be used for the coil wiring. So-called high-temperature superconducting compounds can be made to super conduct with the use of liquid nitrogen, which boils at around 77 K.
+Magnetic resonance imaging (MRI) is a complex application of NMR where the geometry of the resonances is deconvoluted and used to image objects by detecting the relaxation of protons that have been perturbed by a radio-frequency pulse in the strong magnetic field. This is most commonly used in health applications.
+In large cities, it is difficult to transmit power by overhead cables, so underground cables are used. But underground cables get heated and the resistance of the wire increases, leading to waste of power. Superconductors could be used to increase power throughput, although they would require cryogenic liquids such as nitrogen or helium to cool special alloy-containing cables to increase power transmission. Several feasibility studies have been performed and the field is the subject of an agreement within the International Energy Agency.
+
+Cryogenic gases delivery truck at a supermarket, Ypsilanti, Michigan
+Cryogenic gases are used in transportation and storage of large masses of frozen food. When very large quantities of food must be transported to regions like war zones, earthquake hit regions, etc., they must be stored for a long time, so cryogenic food freezing is used. Cryogenic food freezing is also helpful for large scale food processing industries.
+Many infrared (forward looking infrared) cameras require their detectors to be cryogenically cooled.
+Certain rare blood groups are stored at low temperatures, such as −165 °C, at blood banks.
+Cryogenics technology using liquid nitrogen and CO2 has been built into nightclub effect systems to create a chilling effect and white fog that can be illuminated with colored lights.
+Cryogenic cooling is used to cool the tool tip at the time of machining in manufacturing process. It increases the tool life. Oxygen is used to perform several important functions in the steel manufacturing process.
+Many rockets use cryogenic gases as propellants. These include liquid oxygen, liquid hydrogen, and liquid methane.
+By freezing the automobile or truck tire in liquid nitrogen, the rubber is made brittle and can be crushed into small particles. These particles can be used again for other items.
+Experimental research on certain physics phenomena, such as spintronics and magnetotransport properties, requires cryogenic temperatures for the effects to be observed.
+Certain vaccines must be stored at cryogenic temperatures. For example, the Pfizer–BioNTech COVID-19 vaccine must be stored at temperatures of −90 to −60 °C (−130 to −76 °F). (See cold chain.)
+
+Answer:
+
+Certain vaccines must be only stored at cryogenic temperature (ultra low temperatures of order -90 to -60 degree celcius / -130 F to -76 F)
 
 Instruction:
 
-How much has the population of Puerto Rico been growing?
-
-Answer:
-
-The population of Puerto Rico decreased 11.8% between 2010 and 2020, from 3,725,789 in 2010 to 3,285,874 in 2020, according to the United States Census. Emigration due to economic difficulties and natural disasters, coupled with a low birth rate, have caused the population decline to continue in recent years.
-
-</s>
-<s> Instruction:
-
-What is an string instrument that is similar to a Violin, but larger in size and with a lower and deeper sound?
-
-Context:
-
-The viola (/viˈoʊlə/ vee-OH-lə, also UK: /vaɪˈoʊlə/ vy-OH-lə, Italian: [ˈvjɔːla, viˈɔːla]) is a string instrument that is bowed, plucked, or played with varying techniques. Slightly larger than a violin, it has a lower and deeper sound. Since the 18th century, it has been the middle or alto voice of the violin family, between the violin (which is tuned a perfect fifth above) and the cello (which is tuned an octave below). The strings from low to high are typically tuned to C3, G3, D4, and A4.
-
-Answer:
-
-The instrument you are looking for is a Viola.
+what is use of cryogenics in virology ?
 
 </s>
 <s> Context:
 
-Galaga is a 1981 fixed shooter arcade video game developed and published by Namco. In North America, it was released by Midway Manufacturing. It is the sequel to Galaxian (1979), Namco's first major video game hit in arcades. Controlling a starship, the player is tasked with destroying the Galaga forces in each stage while avoiding enemies and projectiles. Some enemies can capture a player's ship via a tractor beam, which can be rescued to transform the player into a "dual fighter" with additional firepower.
+Kolkata also known as Calcutta (the official name until 2001) is the capital of the Indian state of West Bengal, on the eastern bank of the Hooghly River 80 km (50 mi) west of the border with Bangladesh. It is the primary business, commercial, and financial hub of Eastern India and the main port of communication for North-East India. According to the 2011 Indian census, Kolkata is the seventh-most populous city in India, with a population of 45 lakh (4.5 million) residents within the city. It is a part of Kolkata Metropolitan Area (or known as Greater Kolkata) which has a population of over 1.41 crore (14.1 million) residents making it the third-most populous metropolitan area in India. In 2021, the Kolkata metropolitan area crossed 1.5 crore (15 million) registered voters. The Port of Kolkata is India's oldest operating port and its sole major riverine port. Kolkata is regarded as the cultural capital of India. Kolkata is the second largest Bengali-speaking city after Dhaka. It has the highest number of nobel laureates among all cities in India.
 
 Instruction:
 
-When was Galaga released?
+How many years has it been since the city of Calcutta was officially renamed Kolkata?
 
 Answer:
 
-Galaga was released in 1981 as a fixed shooter arcade video game developed and published by Namco.
-
-</s>
-<s> Instruction:
-
-Given this paragraph, who wrote "August?"
-
-Context:
-
-August (2001), is the first novel by author Gerard Woodward. It was shortlisted for Whitbread Book Award (2001).
-
-Answer:
-
-Gerard Woodward
-
-</s>
-<s> Instruction:
-
-Given this paragraph about Dartmouth College traditions, which homecoming-related traditions are illegal?
-
-Context:
-
-Dartmouth Night starts the college's traditional "Homecoming" weekend with an evening of speeches, a parade, and a bonfire. Traditionally, the freshman class builds the bonfire and then runs around it a set number of times in concordance with their class year; the class of 2009 performed 109 circuits, the class of 1999 performed 99, etc. The College officially discourages a number of student traditions of varying degrees of antiquity. During the circling of the bonfire, upperclassmen encourage the freshmen to "touch the fire", an action legally considered trespassing and prohibited by police officials present. At halftime of the Homecoming football game on the Saturday of the weekend, some upperclassmen encourage freshman to "rush the field", although no upperclassman has seen a significant rush since several injuries sustained during the 1986 rush prompted the school to ban the practice. Among the two or three students who sometimes run across the field, those who are arrested are charged with trespassing (the independent newspaper The Dartmouth Review claimed to set up a fund to automatically pay any fines associated with freshman who rush the field.) However, in 2012 this was proven false when two students rushed the field and were arrested for disorderly conduct. The Dartmouth Review ignored their emails until finally replying and denying that this fund had ever existed. These students then had to pay $300 fines out of pocket. For the 2011 Homecoming game, however, over 40 members of the Class of 2015 rushed the field at homecoming without any action taken by Safety and Security or the Hanover Police Department.
-
-Answer:
-
-Touching the bonfire, and rushing the football field during halftime of the homecoming game
-
-</s>
-<s> Instruction:
-
-Based on this paragraph, how many times was Barros traded during his professional basketball career?
-
-Context:
-
-The 5' 11" (1.80 m), 165 lb (75 kg) point guard, began his professional career in 1989 when he was selected in the first round of the NBA draft by the Seattle SuperSonics with the 16th pick. Most of his time spent in Seattle was as a backup to point guard Gary Payton, who was considered to be a much more competent ball handler and defender, as Barros was deemed more usable at shooting guard. Prior to the 1993–94 season, the Sonics traded Barros to the Charlotte Hornets in exchange for Kendall Gill. Two days later, Charlotte traded Barros, Sidney Green, and their 1993 draft choice, Greg Graham, to the Philadelphia 76ers for Hersey Hawkins. Barros became a free agent at the end of the 1994-95 NBA season. He signed with his hometown Boston Celtics, and remained for five seasons as a role player alongside David Wesley and Dee Brown and mentor to younger players such as Antoine Walker and Paul Pierce. In the offseason of 2000, Barros was traded to the Dallas Mavericks as part of a four-team deal that also involved the Utah Jazz and Golden State Warriors. By the time the 2000–01 season had commenced, the Mavs had traded Barros to the Detroit Pistons, where he played 89 games over two seasons, averaging 7.5 points per game, until waiving him in 2002.
-
-Answer:
-
-Based on this paragraph, Barros was traded four times while in the NBA (from Seattle to Charlotte; from Charlotte to Philadelphia; from Boston to Dallas; from Dallas to Detroit).
-
-</s>
-<s> Instruction:
-
-What is disadvantage of naive algorithm of simple random sampling?
-
-Context:
-
-Several efficient algorithms for simple random sampling have been developed. A naive algorithm is the draw-by-draw algorithm where at each step we remove the item at that step from the set with equal probability and put the item in the sample. We continue until we have sample of desired size 
-�
-k. The drawback of this method is that it requires random access in the set.
-
-The selection-rejection algorithm developed by Fan et al. in 1962 requires a single pass over data; however, it is a sequential algorithm and requires knowledge of total count of items 
-�
-n, which is not available in streaming scenarios.
-
-A very simple random sort algorithm was proved by Sunter in 1977. The algorithm simply assigns a random number drawn from uniform distribution 
-(
-0
-,
-1
-)
-(0,1) as a key to each item, then sorts all items using the key and selects the smallest 
-�
-k items.
-
-J. Vitter in 1985 proposed reservoir sampling algorithms, which are widely used. This algorithm does not require knowledge of the size of the population 
-�
-n in advance, and uses constant space.
-
-Random sampling can also be accelerated by sampling from the distribution of gaps between samples and skipping over the gaps.
-
-Answer:
-
-The drawback of this method is that it requires random access in the set.
+It has been 22 years since Calcutta was renamed Kolkata.
 
 </s>
 <s> Context:
 
-"The book explores imagination and the imaginable through the descriptions of cities by an explorer, Marco Polo. The book is framed as a conversation between the elderly and busy emperor Kublai Khan, who constantly has merchants coming to describe the state of his expanding and vast empire, and Polo. The majority of the book consists of brief prose poems describing 55 fictitious cities that are narrated by Polo, many of which can be read as parables or meditations on culture, language, time, memory, death, or the general nature of human experience.
-
-Short dialogues between Kublai and Polo are interspersed every five to ten cities discussing these topics. These interludes between the two characters are no less poetically constructed than the cities, and form a framing device that plays with the natural complexity of language and stories. In one key exchange in the middle of the book, Kublai prods Polo to tell him of the one city he has never mentioned directly—h"
-
-Instruction:
-
-Who is the protagonist in Italo Calvino's Invisible Cities?
+The Cycle Messenger World Championships, or CMWCs, are an annual urban cycling competition whereby cycle messengers and cycling enthusiasts showcase their skills in an array of events, many of which simulate everyday tasks for a cycle messenger. Each year, the CMWCs are held in a different city around the world, with each host city designing its own unique course. The highlight of the CMWCs is the main race in which cyclists are given manifests and must pickup and deliver items to various locations around the host city as quickly and efficiently as possible. The total number of pickups and deliveries, or "drop offs" is unknown to the messengers before the race, but has been known to reach up to 100 stops and usually takes between 3–4 hours to complete. The cyclist who completes all of the assigned deliveries in the least amount of time wins the race. In addition to the main race there are also several side events which have become increasingly popular over the past few years. These events change yearly depending on the discretion of the host city but usually include backward circles, bike polo, bunnyhop, cargo race, longest skid, sprints, and trackstand.
 
 Answer:
 
-The book explores imagination and the imaginable through the descriptions of cities by an explorer, Marco Polo.
+The Cycle Messenger World Championships
+
+Instruction:
+
+What does CMWCs stand for?
 
 </s>
 <s> Context:
 
-The bulk of dried spaghetti is produced in factories using auger extruders. While essentially simple, the process requires attention to detail to ensure that the mixing and kneading of the ingredients produces a homogeneous mix, without air bubbles. The forming dies have to be water cooled to prevent spoiling of the pasta by overheating. Drying of the newly formed spaghetti has to be carefully controlled to prevent strands sticking together, and to leave it with sufficient moisture so that it is not too brittle. Packaging for protection and display has developed from paper wrapping to plastic bags and boxes.
+Swarcliffe Hall is a large hall that was constructed in 1800 in Birstwith, near Harrogate, England. The current house was built by John Greenwood in 1850, who engaged Major Rohde Hawkins as his architect, and is a Grade II listed building.
+
+The original Swarcliffe Hall was built on the site c1800 by the Blessard family, however the current hall which was built by the Greenwood family was completed in 1850. Charlotte Brontë was employed as a governess at the hall in 1839 and it is said her time spent there helped inspire her novel Jane Eyre.
+
+Prince Albert Victor, Duke of Clarence and Avondale visited the hall in 1888 and again during the following year whilst opening the New Bath Hospital in nearby Harrogate.
+
+Answer:
+
+Charlotte Brontë
 
 Instruction:
 
-Given a reference text about dried spaghetti production, what is required to produce spaghetti without errors?
-
-Answer:
-
-Spaghetti production is straight-forward, but requires the maker to ensure the mixture is homogenous and without air bubbles before starting the drying process. The drying process itself needs to be monitored to ensure that the individual spaghetti strands do not stick together but also do not dry out so much that they become brittle
+Who wrote Jane Eyre?
 
 </s>
 <s> Instruction:
 
-Given a reference text about Run Towards the Danger, tell me how many essays are part of the collection.
+What is use of bezier curve in Robotics?
 
 Context:
 
-Run Towards the Danger is a 2022 Canadian essay collection by Sarah Polley, a former child star, director, and screenwriter.
-
-The six essays in the collection examine aspects of Polley's career on stage, screen, and on film detailing her roles in a Stratford Festival production of Alice Through the Looking Glass, as well as her breakout roles in The Adventures of Baron Munchausen and the TV series Road to Avonlea. The book also revealed for the first time that Polley had been a victim of Jian Ghomeshi who sexually and physically assaulted her when she was 16 and he was 28.
+Bézier curves can be used in robotics to produce trajectories of an end-effector due to the virtue of the control polygon’s ability to give a clear indication of whether the path is colliding with any nearby obstacle or object. Furthermore, joint space trajectories can be accurately differentiated using Bézier curves. Consequently, the derivatives of joint space trajectories are used in the calculation of the dynamics and control effort (torque profiles) of the robotic manipulator.
 
 Answer:
 
-Six essays are part of the Run Towards the Danger essay collection.
+Bézier curves can be used in robotics to produce trajectories of an end-effector due to the virtue of the control polygon’s ability to give a clear indication of whether the path is colliding with any nearby obstacle or object.
 
 </s>
 <s> Instruction:
 
-Extract the occupations of Elie Wiesel from the text.
-
-Context:
-
-Elie Wiesel (/ˈɛli viːˈzɛl/, born Eliezer Wiesel, Yiddish: אליעזר װיזעל Eliezer Vizel; September 30, 1928 – July 2, 2016) was a Romanian-born American writer, professor, political activist, Nobel laureate, and Holocaust survivor.
+Based on this passage, what is the median number of people per family in Zangisheh?
 
 Answer:
 
-Elie Weisel's listed professions were: writer, professor, and political activist.
+This passage does not give enough information to conclude what the median number of people per family in Zangisheh is as it only mentions the total population and number of families. We could calculate the arithmetic mean of the number of people per family from this information by dividing the total number of people by the number of families, but the information in the passage is not sufficient to determine the median number of people per family.
+
+</s>
+<s> Context:
+
+The song was written by Sumney with American singer-songwriter Tom Gallo. Sumney also solely produced the track.
+
+Answer:
+
+The song was written and produced by American singer-songwriter Moses Sumney.
+
+Instruction:
+
+Who produced the song Polly?
+
+</s>
+<PAD><s> Instruction:
+
+What does CMWCs stand for?
+
+Answer:
+
+The Cycle Messenger World Championships
 
 </s>
