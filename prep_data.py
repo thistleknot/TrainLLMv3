@@ -93,7 +93,7 @@ quote_prompt_template = "Prompt:\n\n{quote_prompt}\n\n{tags}\n\n<QT><preferred>R
 
 caq_prompt_template = "Context:\n\n{context}\n\nAnswer:\n\n{response}\n\nInstruction:\n\n{prompt}\n\n"
 cqa_prompt_template = "Context:\n\n{context}\n\nInstruction:\n\n{prompt}\n\nAnswer:\n\n{response}\n\n"
-qca_prompt_template = "Instruction:\n\n{prompt}Context:\n\n{context}\n\nAnswer:\n\n{response}\n\n"
+qca_prompt_template = "Instruction:\n\n{prompt}\n\nContext:\n\n{context}\n\nAnswer:\n\n{response}\n\n"
 qa_prompt_template = "Instruction:\n\n{prompt}\n\nAnswer:\n\n{response}\n\n"
 summ_prompt_template = "Context:\n\n{context}\n\nPrompt:\n\n{prompt}\n\nResponse:\n\n{response}\n\n"
 quote_prompt_template = "Prompt:\n\n{quote_prompt}\n\n{tags}Response:\n\n{quote}-{author}\n\n"

@@ -207,6 +207,7 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
 
     # 5. Use the same tokenized sequences for labels
     labels_list = input_ids_list.copy()
+    labels_list = dataset_dict["original_strings"]
     input_ids = [seq.tolist() for seq in input_ids_list]
     attention_mask = attention_mask_list
     labels = [seq.tolist() for seq in labels_list]
@@ -216,10 +217,10 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     if SPLIT_RATIO == 1 or SPLIT_RATIO == 0:
         train_input_ids = valid_input_ids = input_ids
         train_attention_mask = valid_attention_mask = attention_mask
-        train_labels = valid_labels = labels
+        train_labels = valid_labels = dataset_dict["labels"]
     else:
         train_input_ids, valid_input_ids, train_attention_mask, valid_attention_mask, train_labels, valid_labels = train_test_split(
-            input_ids, attention_mask, labels, train_size=SPLIT_RATIO, shuffle=SHUFFLE)
+            input_ids, attention_mask, dataset_dict["labels"], train_size=SPLIT_RATIO, shuffle=SHUFFLE)
 
     train_lengths = [len(seq) for seq in train_input_ids]
     valid_lengths = [len(seq) for seq in valid_input_ids]
@@ -271,6 +272,12 @@ def process_hierarchical_dataset(hierarchical_dataset_dict, SPLIT_RATIO, FINE_TU
 
     return hierarchical_split_dataset
     
+def write_labels_to_txt(dataset, filename):
+    labels = dataset.map(lambda example: example['labels'], remove_columns=['input_ids', 'attention_mask'])
+    with open(filename, 'w') as f:
+        for label in labels:
+            f.write(f"{label}\n")            
+            
 def create_dataset(text_list, tokenizer):
     input_ids_list = []
     attention_mask_list = []
@@ -344,6 +351,9 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
         logging_steps=1,
         max_steps=max_steps,
         evaluation_strategy=evaluation_strategy,
+        #I do this to avoid doing any evaluation using trainer because 1. I don't want it to train on the full valid_dataset, as I'm shuffling and subsampling from it during callback to do my evaluation metrics.
+        eval_steps=train_epoch_steps*num_train_epochs,
+        logging_strategy='steps',
         save_strategy="no",
         save_total_limit=1,
         load_best_model_at_end=False,
@@ -407,6 +417,9 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
         #FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
     
+    write_labels_to_txt(train_dataset, "train_labels.txt")
+    write_labels_to_txt(valid_dataset, "valid_labels.txt")
+    
     if(EVAL_MODE == 'train'):
         valid_dataset = train_dataset
     else:
@@ -437,7 +450,7 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
         tag=TAG,
         learning_rate=LEARNING_RATE,
         max_steps=max_train_steps,
-        evaluation_strategy="no",
+        evaluation_strategy="steps",
         gradient_accumulation_steps=GRADIENT_ACCUMULATION_STEPS,
         weight_decay=WEIGHT_DECAY,
         adam_beta1=ADAM_BETA1,
@@ -777,6 +790,17 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         print(f"Best Model Checkpoint after epoch: {state.best_model_checkpoint}")
 
         return control
+        
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if "loss" in logs:
+            print(f"Training loss: {logs['loss']}")
+
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if logs:
+            # Log the training loss
+            train_loss = logs.get("loss", None)
+            if train_loss is not None:
+                print(f"Training loss: {train_loss}")
 
     def _save_model(self, output_dir):
     
@@ -1675,7 +1699,8 @@ def get_sequences(text, tokenizer, seq_length=768, stride_ratio=0.5):
 
     return sequences
 
-
+#why labels?  I'm told to compare to ground truth...
+"""
 def evaluate(model, dataloader, device, max_eval_steps):
     model.eval()
     losses = []
@@ -1698,7 +1723,7 @@ def evaluate(model, dataloader, device, max_eval_steps):
     except OverflowError:
         perplexity = torch.tensor(float("inf"))
     return loss.item(), perplexity.item()
-
+"""
 
 class CustomTrainer(Trainer):
     def __init__(self, *args, max_eval_steps=0, **kwargs):
