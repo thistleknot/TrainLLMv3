@@ -730,7 +730,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             
             input_ids = np.array(seq['input_ids'])  # convert to numpy array if not already
             splits = np.where(input_ids == self.trainer.tokenizer.eos_token_id)[0]
-            print(splits)
+            #print(splits)
 
             chopped_sequences_seq = []
 
@@ -784,8 +784,8 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         std_max_length = np.std(bootstrap_max_lengths)
 
         # Calculate threshold based on mean and standard deviation
-        threshold_max_len = int(mean_max_length + 2 * std_max_length)
-        
+        threshold_max_len = int(min(int(mean_max_length + 2 * std_max_length),self.block_size))
+        #print('threshold_max_len',threshold_max_len)
         # Manually pad each sequence to the maximum length
         padded_prompts = [pad(torch.tensor(seq), (0, threshold_max_len - len(seq)), value=pad_token_id) for seq in selected_prompts]
 
@@ -953,13 +953,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
     def on_log(self, args, state, control, logs=None, **kwargs):
         if "loss" in logs:
             print(f"Training loss: {logs['loss']}")
-
-    def on_log(self, args, state, control, logs=None, **kwargs):
-        if logs:
-            # Log the training loss
-            train_loss = logs.get("loss", None)
-            if train_loss is not None:
-                print(f"Training loss: {train_loss}")
 
     def _save_model(self, output_dir):
     

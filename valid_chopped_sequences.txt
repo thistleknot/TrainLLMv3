@@ -1,146 +1,595 @@
-Instruction:
+<s> Instruction:
 
-Given a reference text about the wraparound process, tell me what is included in a wraparound plan.
-
-Context:
-
-The wraparound process is an intensive, individualized care management process for youths with serious or complex needs. Wraparound was initially developed in the 1980s as a means for maintaining youth with the most serious emotional and behavioral problems in their home and community. During the wraparound process, a team of individuals who are relevant to the well-being of the child or youth (e.g., family members, other natural supports, service providers, and agency representatives) collaboratively develop an individualized plan of care, implement this plan, and evaluate success over time. The wraparound plan typically includes formal services and interventions, together with community services and interpersonal support and assistance provided by friends, kin, and other people drawn from the family's social networks. The team convenes frequently to measure the plan's components against relevant indicators of success. Plan components and strategies are revised when outcomes are not being achieved.
-
-The process of engaging the family, convening the team, developing the plan, implementing the plan, and transitioning the youth out of formal wraparound is typically facilitated by a trained care manager or “wraparound facilitator,” sometimes with the assistance of a family support worker. The wraparound process, and the plan itself, is designed to be culturally competent, strengths based, and organized around family members’ own perceptions of needs, goals, and likelihood of success of specific strategies.
-
-Answer:
-
-A wraparound plan usually includes formal services and interventions along with community services and interpersonal support.
-
+What is Pinot Grigio?
 
 Context:
 
-The King's Building is a Grade I listed building that forms part of the Strand Campus of King's College London in the United Kingdom. Originally named the College Building, the King's Building was designed by Sir Robert Smirke in the course of the College's foundation in 1829. As the founding building, it was built between 1829 and 1831 on land granted to King's College by the Government to complete the riverside frontage of Somerset House.
+Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot Noir variety, it normally has a grayish-blue fruit, accounting for its name, but the grapes can have a brownish pink to black and even white appearance. The word pinot could have been given to it because the grapes grow in small pinecone-shaped clusters. The wines produced from this grape also vary in color from a deep golden yellow to copper and even a light shade of pink, and it is one of the more popular grapes for skin-contact wine.
 
-There are today a total of eight floors in the King's Building: Basement level, Ground level, Levels 1 to 4, Level 4U and Level 6. The King's Building houses a number of administrative departments (Estates & Facilities Offices, Admissions Office, Accommodation and Cashiers' Office), lecture theatres (most notably the Edmond J. Safra Lecture Theatre and Anatomy Lecture Theatre), the College Chapel, the Great Hall, various function rooms (Old Council Room, Committee Room, River Room, Somerset Room, St David's Room), study rooms and a catering outlet.
-
-Instruction:
-
-What is the top floor of the King's Building based on this article? What floor is found below that?
+Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized. The Alsatian style, often duplicated in New World wine regions such as Marlborough, Tasmania, South Australia, Washington, Oregon, and South Africa tend to have moderate to low acidity, higher alcohol levels and an almost "oily" texture that contributes to the full-bodied nature of the wine. The flavors can range from ripe tropical fruit notes of melon and mango to some botrytis-influenced flavors. In Italy, Pinot grigio grapes are often harvested early to retain the refreshing acidity and minimize some of the overt-fruitiness of the variety, creating a more neutral flavor profile. This style is often imitated in other Old World wine regions, such as Germany, where the grape is known as Ruländer, or more commonly, Grauburgunder.
 
 Answer:
 
-The top floor is Level 6, and below that is level 4U.
+Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized.
 
+</s>
+<s> Context:
+
+After using the Gamebryo engine to create The Elder Scrolls III: Morrowind, The Elder Scrolls IV: Oblivion, and Fallout 3, Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
+
+Following the completion of Skyrim, Bethesda set out to enhance the graphical core of the Creation Engine by first adding a physically based deferred renderer to allow for more dynamic lighting and to paint materials object surfaces with realistic materials. Bethesda worked with technology company Nvidia to implement volumetric lighting through a technique that makes use of hardware tesselation. Additionally the updated version of the Creation Engine powering Bethesda's Fallout 4 offers more advanced character generation.
 
 Instruction:
 
-Given this paragraph about the dimensions of a volleyball court, is there a difference between the hight of the net for men's competitions vs women's competitions?
+What's the game engine used by Bethesda before Creation Engine? And what's the last game make with it?
+
+Answer:
+
+Gamebryo was the engine used by Bethesda before Creation Engine. It is developed by Gamebase Cot., Ltd and Gamebase USA. Gamebryo is used by numerous companies within the gaming industry.
+
+Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
+
+The last game from Bethesda made with Gamebryo engine is Fallout 3 (2008).
+
+</s>
+<s> Instruction:
+
+Given a reference text about the Dormouse, in which novel is it a character?
 
 Context:
 
-A volleyball court is 9 m × 18 m (29.5 ft × 59.1 ft), divided into equal square halves by a net with a width of one meter (39.4 in). The top of the net is 2.43 m (7 ft 11+11⁄16 in) above the centre of the court for men's competition, and 2.24 m (7 ft 4+3⁄16 in) for women's competition, varied for veterans and junior competitions.
+The Dormouse is a character in "A Mad Tea-Party", Chapter VII  from the 1865 novel Alice's Adventures in Wonderland by Lewis Carroll.
+
+The Dormouse sat between the March Hare and the Mad Hatter. They were using him as a cushion while he slept when Alice arrives at the start of the chapter.
+
+The Dormouse is always falling asleep during the scene, waking up every so often, for example to say:
+
+`You might just as well say,' added the Dormouse, who seemed to be talking in his sleep, that "I breathe when I sleep" is the same thing as "I sleep when I breathe"!'
+
+He also tells a story about three young sisters who live in a treacle well, live on treacle, and draw pictures of things beginning with M, such as mousetraps, memory and muchness.
+
+He later appears, equally sleepy, at the Knave of Hearts' trial and voices resentment at Alice for growing, and his last interaction with any character is his being "suppressed" (amongst other things) by the Queen for shouting out that tarts are made of treacle.
 
 Answer:
 
-The net is 19 cm higher for men's competitions (243 cm) than for women's competitions (224 cm).
+The Dormouse is a character in the novel "Alice's Adventures in Wonderland".
 
+</s>
+<s> Context:
 
-Context:
-
-He enrolled in University of California, Davis (UC Davis) initially studying biology, followed by anthropology, and ending with a focus on fine art. While attending UC Davis, Gilhooly served as artist Robert Arneson's assistant starting in 1963. He graduated from UC Davis with a BA degree in 1965, and an MA degree in 1967.
+Guion Stewart Bluford Jr. (born November 22, 1942) is an American aerospace engineer, retired United States Air Force (USAF) officer and fighter pilot, and former NASA astronaut, in which capacity he became the first African American to go to space. While assigned to NASA, he remained a USAF officer rising to the rank of colonel. He participated in four Space Shuttle flights between 1983 and 1992. In 1983, as a member of the crew of the Orbiter Challenger on the mission STS-8, he became the first African American in space as well as the second person of African descent in space, after Cuban cosmonaut Arnaldo Tamayo Méndez.
 
 Instruction:
 
-What college did David Gilhooly go to?
+Who was the first African American to go to space?
 
 Answer:
 
-David Gilhooly went to the University of California, Davis (UC Davis).
+Guion Stewart Bluford Jr. was the first African American to go to space.  He was an American aerospace engineer, retired United States Air force officer and fighter pilot, and former NASA astronaut.  He participated in for Space Shuttle flights between 1983 and 1992.
 
+</s>
+<s> Instruction:
+
+Who has won the most grand slams in men's singles tennis in open era?
 
 Context:
 
-After decades of development, ASML shipped the first production extreme ultraviolet lithography machine in 2013. These machines produce light in the 13.5 nm wavelength range when a high-energy laser is focused on microscopic droplets of molten tin to produce a plasma, which then emits EUV light. The light is bounced off Zeiss mirrors that are the flattest mirrors in the world, on to the surface of a silicon wafer to deliver the designs for the chip. ASML's best-selling EUV product has been the Twinscan NXE:3600D, which costs up to $200 million. Shipping the machine requires 40 shipping containers, 20 trucks and three Boeing 747s. As of 2022, ASML has shipped around 140 EUV systems, and it is the only company to manufacture them.
-
-ASML is working on the next generation of EUV systems, with the first shipments to customers for R&D purposes expected to take place at the end of 2023. The platform is designated High-NA as it will increase the numerical aperture (NA) from 0.33 to 0.55, and each system is expected to cost $300 million.
-
-Instruction:
-
-Based on this passage, how many Boeing 747s are required to ship 10 of ASML's best-selling EUVs?
+The Open Era is the current era of professional tennis. It began in 1968 when the Grand Slam tournaments allowed professional players to compete with amateurs, ending the division that had persisted since the dawn of the sport in the 19th century. The first open tournament was the 1968 British Hard Court Championships held in April, followed by the inaugural open Grand Slam tournament, the 1968 French Open, a month later. Unless otherwise sourced, all records are based on data from the Association of Tennis Professionals (ATP), the International Tennis Federation (ITF), and the official websites of the four Grand Slam tournaments. All rankings-related records are based on ATP rankings, which began in 1973.
 
 Answer:
 
-The best-selling EUV is the Twinscan NXE:3600D, and it takes 3 Boeing 747s per EUV, so 30 Boeing 747s are required to ship ten Twinscan NXE:3600Ds.
+Rafael Nadal and Novak Djokovic won 22 times.
 
+</s>
+<s> Context:
+
+In 2004, Nintendo released the Nintendo DS, which featured such innovations as dual screens – one of which being a touchscreen – and wireless connectivity for multiplayer play. Throughout its lifetime, more than 154 million units were sold, making it the most successful handheld console and the second best-selling console in history. In 2005, Nintendo released the Game Boy Micro, the last system in the Game Boy line. Sales did not meet Nintendo's expectations, with 2.5 million units being sold by 2007. In mid-2005, the Nintendo World Store was inaugurated in New York City.
 
 Instruction:
 
-Based on the following paragraph about the campuses of the University of Georgia, which types of trees can be found on the campus?
+Given this paragraph about video game consoles, when was the Nintendo DS released?
+
+Answer:
+
+2004
+
+</s>
+<s> Instruction:
+
+What is TIDB
 
 Context:
 
-The campuses' dominant architectural themes are Federal, Classical and Antebellum style. Though there have been many additions, changes, and augmentations, the University of Georgia's campus maintains its historic character. In 2000, the entire campus was designated as an arboretum, the University of Georgia Campus Arboretum. It is estimated to be home to about 9,000 trees with over 154 identified species including native trees such magnolias, red oaks, white oaks, and beeches, as well as non-native trees such as the North Africa Atlas cedar, the Chinese parasol and royal paulownia, and the Japanese zelkova and black pine
+TiDB (/’taɪdiːbi:/, "Ti" stands for Titanium) is an open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. It is MySQL compatible and can provide horizontal scalability, strong consistency, and high availability. It is developed and supported primarily by PingCAP, Inc. and licensed under Apache 2.0. TiDB drew its initial design inspiration from Google's Spanner
 
 Answer:
 
-On the campuses of the University of Georgia one can find native tree species such as magnolias, red oaks, white oaks, and beeches. There are also non-native tree species to be found such as the North Africa Atlas cedar, the Chinese parasol and royal paulownia, and the Japanese zelkova and black pine.
+Database developed by PingCap for hybrid transactional and analytical processing
 
+</s>
+<s> Instruction:
+
+Given these paragraphs about Large language models, what are some examples of emergent abilities?
 
 Context:
 
-Drangajökull (pronounced [ˈtrauŋkaˌjœːkʏtl̥], regionally also [ˈtraŋk-]) is the northernmost glacier of Iceland. It is situated southwest of the peninsula Hornstrandir in the Westfjords region. The glacier covers an area of 160–200 km2 (62–77 sq mi), at an altitude of up to 925 m (3,035 ft). It is the only Icelandic glacier which lies entirely below an altitude of 1000 metres and also the only one that has not shrunk in recent years.
+A large language model (LLM) is a language model consisting of a neural network with many parameters (typically billions of weights or more), trained on large quantities of unlabelled text using self-supervised learning. LLMs emerged around 2018 and perform well at a wide variety of tasks. This has shifted the focus of natural language processing research away from the previous paradigm of training specialized supervised models for specific tasks.
 
-Instruction:
+Properties
+Though the term large language model has no formal definition, it often refers to deep learning models having a parameter count on the order of billions or more. LLMs are general purpose models which excel at a wide range of tasks, as opposed to being trained for one specific task (such as sentiment analysis, named entity recognition, or mathematical reasoning). The skill with which they accomplish tasks, and the range of tasks at which they are capable, seems to be a function of the amount of resources (data, parameter-size, computing power) devoted to them, in a way that is not dependent on additional breakthroughs in design.
 
-Given this paragraph about Drangajökull, tell me where it's located.
+Though trained on simple tasks along the lines of predicting the next word in a sentence, neural language models with sufficient training and parameter counts are found to capture much of the syntax and semantics of human language. In addition, large language models demonstrate considerable general knowledge about the world, and are able to "memorize" a great quantity of facts during training.
+
+Hallucinations
+Main article: Hallucination (artificial intelligence)
+In artificial intelligence in general, and in large language models in particular, a "hallucination" is a confident response that does not seem to be justified by the model's training data.
+
+Emergent abilities
+
+On a number of natural language benchmarks involving tasks such as question answering, models perform no better than random chance until they reach a certain scale (in this case, measured by training computation), at which point their performance sharply increases. These are examples of emergent abilities.
+Unpredictable abilities that have been observed in large language models but that were not present in simpler models (and that were not explicitly designed into the model) are usually called "emergent abilities". Researchers note that such abilities "cannot be predicted simply by extrapolating the performance of smaller models". These abilities are discovered rather than programmed-in or designed, in some cases only after the LLM has been publicly deployed. Hundreds of emergent abilities have been described. Examples include multi-step arithmetic, taking college-level exams, identifying the intended meaning of a word, chain-of-thought prompting, decoding the International Phonetic Alphabet, unscrambling a word’s letters, identifying offensive content in paragraphs of Hinglish (a combination of Hindi and English), and generating a similar English equivalent of Kiswahili proverbs.
+
+Architecture and training
+Large language models have most commonly used the transformer architecture, which, since 2018, has become the standard deep learning technique for sequential data (previously, recurrent architectures such as the LSTM were most common). LLMs are trained in an unsupervised manner on unannotated text. A left-to-right transformer is trained to maximize the probability assigned to the next word in the training data, given the previous context. Alternatively, an LLM may use a bidirectional transformer (as in the example of BERT), which assigns a probability distribution over words given access to both preceding and following context. In addition to the task of predicting the next word or "filling in the blanks", LLMs may be trained on auxiliary tasks which test their understanding of the data distribution such as Next Sentence Prediction (NSP), in which pairs of sentences are presented and the model must predict whether they appear side-by-side in the training corpus.
+
+The earliest LLMs were trained on corpora having on the order of billions of words. The first model in OpenAI's GPT series was trained in 2018 on BookCorpus, consisting of 985 million words. In the same year, BERT was trained on a combination of BookCorpus and English Wikipedia, totalling 3.3 billion words. In the years since then, training corpora for LLMs have increased by orders of magnitude, reaching up to hundreds of billions or trillions of tokens.
+
+LLMs are computationally expensive to train. A 2020 study estimated the cost of training a 1.5 billion parameter model (1-2 orders of magnitude smaller than the state of the art at the time) at $1.6 million.
+
+A 2020 analysis found that neural language models' capability (as measured by training loss) increased smoothly in a power law relationship with number of parameters, quantity of training data, and computation used for training. These relationships were tested over a wide range of values (up to seven orders of magnitude) and no attenuation of the relationship was observed at the highest end of the range (including for network sizes up to trillions of parameters).
+
+Application to downstream tasks
+Between 2018 and 2020, the standard method for harnessing an LLM for a specific natural language processing (NLP) task was to fine tune the model with additional task-specific training. It has subsequently been found that more powerful LLMs such as GPT-3 can solve tasks without additional training via "prompting" techniques, in which the problem to be solved is presented to the model as a text prompt, possibly with some textual examples of similar problems and their solutions.
+
+Fine-tuning
+Main article: Fine-tuning (machine learning)
+Fine-tuning is the practice of modifying an existing pretrained language model by training it (in a supervised fashion) on a specific task (e.g. sentiment analysis, named entity recognition, or part-of-speech tagging). It is a form of transfer learning. It generally involves the introduction of a new set of weights connecting the final layer of the language model to the output of the downstream task. The original weights of the language model may be "frozen", such that only the new layer of weights connecting them to the output are learned during training. Alternatively, the original weights may receive small updates (possibly with earlier layers frozen).
+
+Prompting
+See also: Prompt engineering and Few-shot learning (natural language processing)
+In the prompting paradigm, popularized by GPT-3, the problem to be solved is formulated via a text prompt, which the model must solve by providing a completion (via inference). In "few-shot prompting", the prompt includes a small number of examples of similar (problem, solution) pairs. For example, a sentiment analysis task of labelling the sentiment of a movie review could be prompted as follows:
+
+Review: This movie stinks.
+Sentiment: negative
+
+Review: This movie is fantastic!
+Sentiment:
+
+If the model outputs "positive", then it has correctly solved the task. In zero-shot prompting, no solve examples are provided. An example of a zero-shot prompt for the same sentiment analysis task would be "The sentiment associated with the movie review 'This movie is fantastic!' is".
+
+Few-shot performance of LLMs has been shown to achieve competitive results on NLP tasks, sometimes surpassing prior state-of-the-art fine-tuning approaches. Examples of such NLP tasks are translation, question answering, cloze tasks, unscrambling words, and using a novel word in a sentence. The creation and optimisation of such prompts is called prompt engineering.
+
+Instruction tuning
+Instruction tuning is a form of fine-tuning designed to facilitate more natural and accurate zero-shot prompting interactions. Given a text input, a pretrained language model will generate a completion which matches the distribution of text on which it was trained. A naive language model given the prompt "Write an essay about the main themes of Hamlet." might provide a completion such as "A late penalty of 10% per day will be applied to submissions received after March 17." In instruction tuning, the language model is trained on many examples of tasks formulated as natural language instructions, along with appropriate responses. Various techniques for instruction tuning have been applied in practice. OpenAI's InstructGPT protocol involves supervised fine-tuning on a dataset of human-generated (prompt, response) pairs, followed by reinforcement learning from human feedback (RLHF), in which a reward function was learned based on a dataset of human preferences. Another technique, "self-instruct", fine-tunes the language model on a training set of examples which are themselves generated by an LLM (bootstrapped from a small initial set of human-generated examples).
+
+https://en.wikipedia.org/wiki/Large_language_model
 
 Answer:
 
-Drangajökull is located in Iceland in the Westfjords region.
+Examples include multi-step arithmetic, taking college-level exams, identifying the intended meaning of a word, chain-of-thought prompting, decoding the International Phonetic Alphabet, unscrambling a word’s letters, identifying offensive content in paragraphs of Hinglish (a combination of Hindi and English), and generating a similar English equivalent of Kiswahili proverbs.
 
+</s>
+<s> Context:
+
+The Build Back Better Plan or Build Back Better agenda was a legislative framework proposed by U.S. president Joe Biden between 2020 and 2021. Generally viewed as ambitious in size and scope, it sought the largest nationwide public investment in social, infrastructural, and environmental programs since the 1930s Great Depression-era policies of the New Deal.
+
+The Build Back Better plan was divided into three parts:
+
+American Rescue Plan (ARP), a COVID-19 pandemic-relief bill;
+American Jobs Plan (AJP), a proposal to address long-neglected infrastructure needs and reduce America's contributions to destructive effects of climate change; and
+American Families Plan (AFP), a proposal to fund a variety of social policy initiatives, some of which (e.g., paid family leave) had never before been enacted nationally in the U.S.
+The first part was passed as the $1.9 trillion American Rescue Plan Act of 2021, and was signed into law in March 2021. The other two parts were reworked into different bills over the course of extensive negotiations. Aspects of the AJP's infrastructure goals were diverted into the Infrastructure Investment and Jobs Act, which was signed into law in November 2021. Other AJP priorities (e.g., climate change remediation, home health care reform, etc.) were then merged with the AFP to form the Build Back Better Act. The bill passed the Democratic-controlled House of Representatives but struggled to gain the support of Democrats Joe Manchin of West Virginia and Kyrsten Sinema of Arizona in the evenly divided Senate, with unified Republican opposition. Manchin and Sinema negotiated the reduction of Build Back Better Act's size, scope, and cost significantly with Biden and Democratic congressional leaders, but Manchin, widely viewed as the key swing vote needed to pass the bill in the Senate, ultimately rejected it over the procedural tactics used. Continued negotiations between Manchin and Senate Majority Leader Chuck Schumer eventually resulted in the Inflation Reduction Act of 2022, which was signed into law in August 2022, and incorporated some of the Build Back Better Act's climate change, healthcare, and tax reform proposals while excluding its social safety net proposals.
+
+Instruction:
+
+Given a reference text about the Build Back Better Plan, what are the 3 parts that make up the plan?
+
+Answer:
+
+The three components of the Build Back Better plan are:
+- American Rescue Plan
+- American Jobs Plan
+- American Families Plan
+
+</s>
+<s> Instruction:
+
+How many inhabitants of Lone Pine survived as a result of the earthquake? Tell me how you came to that conclusion.
 
 Context:
 
-Tiramisu appears to have been invented in the 1960s, but where and when exactly is unclear.
-
-The recipe for tiramisu is not found in cookbooks before the 1960s. It is mentioned in a Sydney Morning Herald restaurant column published in 1978. It is not mentioned in encyclopedias and dictionaries of the 1970s, first appearing in an Italian dictionary in 1980, and in English in 1982. It is mentioned in a 1983 cookbook devoted to cooking of the Veneto.
-
-Obituaries for the restaurateur Ado Campeol (1928–2021) reported that it was invented at his restaurant Le Beccherie in Treviso on 24 December 1969 by his wife Alba di Pillo (1929–2021) and the pastry chef Roberto Linguanotto. The dish was added to its menu in 1972. Accounts by Carminantonio Iannaccone claim the tiramisu sold at Le Beccherie was made by him in his bakery, created on 24 December 1969.
-
-It has been claimed that tiramisu has aphrodisiac effects and was concocted by a 19th-century Treviso brothel madam, as the Accademia Del Tiramisù explains, to "solve the problems they may have had with their conjugal duties on their return to their wives".
-
-There is evidence of a "Tiremesù" semi-frozen dessert served by the Vetturino restaurant in Pieris, in the Friuli Venezia Giulia, since 1938. This may be the name's origin, while the recipe for Tiramisu may have originated as a variation of another layered dessert, Zuppa Inglese. Others claim it was created towards the end of the 17th century in Siena in honour of Grand Duke Cosimo III.
-
-On 29 July 2017, Tiramisu was entered by the Ministry of Agricultural, Food and Forestry Policies on the list of traditional Friulian and Giulian agri-food products in the Friuli Venezia Giulia region. In 2013, Luca Zaia, governor of Veneto sought European Union Protected Status certification for the dessert, based on the ingredients used in 1970, so substitute ingredients, such as strawberries, could not be used in a dish called tiramisu
-
-Instruction:
-
-What is better: Tiramisu with chocolate or with Strawberries ?
+The earthquake occurred on a Tuesday morning and leveled almost all the buildings in Lone Pine and nearby settlements. Of the estimated 250–300 inhabitants of Lone Pine, 27 are known to have perished and 52 of the 59 houses were destroyed. One report states that the main buildings were thrown down in almost every town in Inyo County. About 130 kilometers (81 mi) south of Lone Pine, at Indian Wells, adobe houses sustained cracks. Property loss has been estimated at $250,000 (equivalent to $5,654,861 in 2021). As in many earthquakes, adobe, stone and masonry structures fared worse than wooden ones which prompted the closing of nearby Camp Independence which was an adobe structure destroyed in the quake.
 
 Answer:
 
-Tiramisu with strawberries can not be called Tiramisu. Only with chocolate.
+It is estimated that between 223 and 273 inhabitants of Lone Pine survived the earthquake.
 
+The passage shows that there was "an estimated 250–300 inhabitants of Lone Pine" and that "27 are known to have perished". If we subtract 27 from 250, you get 223, and if we subtract 27 from 300, we get 273. Therefore, it can be estimated that the number of inhabitants that survived the earthquake is between 223 and 273.
+
+</s>
+<s> Context:
+
+Italy Avenue (Spanish: Avenida Italia) is a major thoroughfare in Montevideo, Uruguay. Its name honors the country from whose immigrants about 40% of Uruguayans descend. It runs almost parallel to that of Gral Rivera Avenue, the Rambla and Camino Carrasco, constituting the main arterial road of the city, since it connects with the network of highways that lead to the east of the country.
+
+It extends through several neighborhoods heading east, and ends with the intersection with Avenida Luis Giannattasio (which runs through Ciudad de la Costa and Avenida de las Américas (which leads to the Carrasco International Airport and the Interbalnearia and 101 routes), in the Canelones Department.
+
+In 2017, a project was presented for the construction of a tunnel for Avenida Italia, extended below Centenario Ave. On March 18, 2021, the uneven passage of Italia and Centenario avenues was officially operational, on the path that goes to the Center (westbound). This is the third tunnel in the city, after the one on 8 de Octubre Ave and the City Hall.
 
 Instruction:
 
-What is apartheid, and which country experienced it?
+What direction did Italy Avenue go in Uruguay per this block of text?
+
+Answer:
+
+east to west
+
+</s>
+<s> Context:
+
+The electrolytic detector, or liquid barretter, was a type of detector (demodulator) used in early radio receivers. First used by Canadian radio researcher Reginald Fessenden in 1903, it was used until about 1913, after which it was superseded by crystal detectors and vacuum tube detectors such as the Fleming valve and Audion (triode). It was considered very sensitive and reliable compared to other detectors available at the time such as the magnetic detector and the coherer. It was one of the first rectifying detectors, able to receive AM (sound) transmissions. On December 24, 1906, US Naval ships with radio receivers equipped with Fessenden's electrolytic detectors received the first AM radio broadcast from Fessenden's Brant Rock, Massachusetts transmitter, consisting of a program of Christmas music.
+
+Instruction:
+
+Given a reference text about the electrolytic detector, when was it replaced and what replaced it?
+
+Answer:
+
+The electrolytic detector was replaced around 1913 by crystal and vacuum tube detectors.
+
+</s>
+<s> Instruction:
+
+Given this paragraph about magnesium, what is the atomic number of magnesium?
 
 Context:
 
-Portugal's overseas presence in sub-Saharan Africa (most notably in Angola, Cape Verde, Mozambique, Guinea-Bissau, and São Tomé and Príncipe) lasted from the 16th century to 1975, after the Estado Novo regime was overthrown in a military coup in Lisbon. Rhodesia unilaterally declared independence from the United Kingdom in 1965, under the white minority government of Ian Smith, but was not internationally recognized as an independent state (as Zimbabwe) until 1980, when black nationalists gained power after a bitter guerrilla war. Although South Africa was one of the first African countries to gain independence, the state remained under the control of the country's white minority through a system of racial segregation known as apartheid until 1994.
+Magnesium is a chemical element with the symbol Mg and atomic number 12. It is a shiny gray metal having a low density, low melting point and high chemical reactivity. Like the other alkaline earth metals (group 2 of the periodic table) it occurs naturally only in combination with other elements and it almost always has an oxidation state of +2. It reacts readily with air to form a thin passivation coating of magnesium oxide that inhibits further corrosion of the metal. The free metal burns with a brilliant-white light. The metal is obtained mainly by electrolysis of magnesium salts obtained from brine. It is less dense than aluminium and is used primarily as a component in strong and lightweight alloys that contain aluminium.
 
 Answer:
 
-Apartheid is a system of racial segregation in South Africa.
+The atomic number of magnesium is 12.
 
+</s>
+<s> Instruction:
+
+Given this paragraph about video game consoles, when was the Nintendo DS released?
 
 Context:
 
-Artificial intelligence (AI) is intelligence demonstrated by machines, as opposed to intelligence of humans and other animals. Example tasks in which this is done include speech recognition, computer vision, translation between (natural) languages, as well as other mappings of inputs.
-
-Instruction:
-
-What are some examples of tasks performed by AI?
+In 2004, Nintendo released the Nintendo DS, which featured such innovations as dual screens – one of which being a touchscreen – and wireless connectivity for multiplayer play. Throughout its lifetime, more than 154 million units were sold, making it the most successful handheld console and the second best-selling console in history. In 2005, Nintendo released the Game Boy Micro, the last system in the Game Boy line. Sales did not meet Nintendo's expectations, with 2.5 million units being sold by 2007. In mid-2005, the Nintendo World Store was inaugurated in New York City.
 
 Answer:
 
-Examples of tasks performed by AI include speech recognition, computer vision, translation between (natural) languages, and other mappings of inputs.
+2004
 
+</s>
+<s> Instruction:
 
+Is Horsfieldia nervos a plant or animal?
+
+Context:
+
+Horsfieldia nervosa is a species of plant in the family Myristicaceae. It is a tree endemic to Borneo where it is confined to Sarawak.
+
+Answer:
+
+plant
+
+</s>
+<s> Instruction:
+
+Heres a summary of Gioia Del Colle, a town in Italy that I will be traveling to, how should I pack?
+
+Context:
+
+Gioia del Colle (pronounced [ˈdʒɔːja del ˈkɔlle]; Barese: Sciò) is a town and comune of the Metropolitan City of Bari, Apulia, southern Italy. The town is located on the Murge plateau at 360 metres (1,180 ft) above sea level, between the Adriatic and Ionian Seas.
+
+Physical geography
+Territory
+Gioia del Colle is on the top of a hill at 360 m a.s.l. It is located in the southern part of the Murge, in the "Sella di Gioia del Colle". It is between the North-West Murge and the South-West Murge and the Adriatic Sea and the Ionian Sea. The municipal area has an area of 206.48 km² and it reaches a maximum altitude of 435 m a.s.l. and a minimum of 296 m a.s.l. Its area borders to the North-West with Acquaviva delle Fonti, to the North with Sammichele di Bari, to the North-East with Turi, to the East with Putignano and Noci, to the South-East with Mottola, to the South with Castellaneta, to the South-West with Laterza and to the West with Santeramo in Colle.
+
+Gioia del Colle's orography
+The landscape is characterized by large wooded areas, in which the Macedonian oaks dominate, more than the downy oak. In particular the Bosco Romanazzi and Serra Capece constitute the most conspicuous part of the wooded area of Gioia del Colle and they extend from Mount Sannace archaeological area to the provincial road that leads to Noci.
+
+The western part of the area is part of the North-West Murge, with isoipse that exceed 400 m a.s.l. towards Santeramo and Laterza, while the Eastern one is part of the South-East Murge, with isoipse over 400 m a.s.l. towards Noci. In the middle, on the contrary, there is a depression (saddle) with an average altitude of 340 m a.s.l., interrupted only by the 360-meter hill on which the city lies.
+
+Climate
+Gioia del Colle's climate is mediterranean (Köppen Csa), but it has peaks of continentality due to the altitude and the distance from the sea. Temperature varies between −2 e +12 °C in winter, while it varies between +18 e +35 °C with a high percentage of humidity in summer. Annual rainfall is around 600 mm. It often snows, about once a year, especially if there is cold air of Balkan origin.
+
+Answer:
+
+The climate is mild, and does not go below freezing by much in the winter with tropical weather summers.  Pack for light layers, and adjust for the time of year.
+
+</s>
+<s> Context:
+
+Foley first described the use of a self-retaining balloon catheter in 1929, to be used to achieve hemostasis after cystoscopic prostatectomy. He worked on development of this design for use as an indwelling urinary catheter, to provide continuous drainage of the bladder, in the 1930s. His design incorporated an inflatable balloon towards the tip of the tube which could be inflated inside the bladder to retain the catheter without external taping or strapping. He demonstrated this to the American Urologists Society in 1935, and published a paper describing it in 1937. While he was still developing his catheter, a patent was issued to Paul Raiche of the Davol Rubber Company of Providence, Rhode Island in 1936. Four months later, in October 1936, Foley applied for the patent, and was awarded this after appearing before the patent office Board of Appeals. Raiche appealed this decision in court, and it was overturned, returning the patent to Raiche. A further request for a hearing made by Foley was refused, and so the patent stayed with Raiche.
+https://en.wikipedia.org/wiki/Frederic_Foley
+
+Instruction:
+
+According to this paragraph, did Frederic Foley hold the patent to the Foley catheter?
+
+Answer:
+
+According to this paragraph, Frederic Foley applied for the patent but it was ultimately awarded to Paul Riache instead.
+
+</s>
+<s> Instruction:
+
+Given this paragraph about KITS, tell me what station it's on and where its radio tower is located.
+
+Context:
+
+KITS (105.3 FM, "105.3 Dave FM") is a commercial radio station in San Francisco, California. Owned by Audacy, Inc., it broadcasts an adult hits radio format. The studios and offices are co-located with formerly co-owned KPIX-TV on Battery Street in the North Beach district of San Francisco.
+
+KITS's transmitter is located on Radio Road, at San Bruno Mountain in Daly City. It has an effective radiated power (ERP) of 15,000 watts, from a tower at 366 meters (1,201 feet) in height above average terrain. KITS broadcasts in the HD Radio format. Its HD2 subchannel formerly aired a gold-based modern rock format as Classic Live 105, inspired by its previous long-time tenure in the format as Live 105. The HD3 subchannel formerly carried "Radio Zindagi," a South Asian radio service. These subchannels have since been turned off.
+
+Answer:
+
+KITS plays on 105.3FM in San Francisco, California. Its radio tower is located on Radio Road at San Bruno Mountain in Daly City.
+
+</s>
+<s> Context:
+
+Robyn Rihanna Fenty (born February 20, 1988) is a Barbadian singer, actress, and businesswoman. Born in Saint Michael and raised in Bridgetown, Barbados, Rihanna auditioned for American record producer Evan Rogers who invited her to the United States to record demo tapes. After signing with Def Jam in 2005, she soon gained recognition with the release of her first two studio albums, Music of the Sun (2005) and A Girl Like Me (2006), both of which were influenced by Caribbean music and peaked within the top ten of the US Billboard 200 chart.
+
+Instruction:
+
+Who is Rihanna?
+
+Answer:
+
+Rihanna (Robyn Rihanna Fenty) is a singer, actress, and businesswoman from Barbados. After auditioning with American record producer Evan Rogers, she signed to Def Jam in 2005 and gained worldwide recognition with her first two studio albums, "Music of the Sun" and "A Girl Like Me".
+
+</s>
+<s> Context:
+
+Run Towards the Danger is a 2022 Canadian essay collection by Sarah Polley, a former child star, director, and screenwriter.
+
+The six essays in the collection examine aspects of Polley's career on stage, screen, and on film detailing her roles in a Stratford Festival production of Alice Through the Looking Glass, as well as her breakout roles in The Adventures of Baron Munchausen and the TV series Road to Avonlea. The book also revealed for the first time that Polley had been a victim of Jian Ghomeshi who sexually and physically assaulted her when she was 16 and he was 28.
+
+Instruction:
+
+Given a reference text about Run Towards the Danger, tell me how many essays are part of the collection.
+
+Answer:
+
+Six essays are part of the Run Towards the Danger essay collection.
+
+</s>
+<s> Context:
+
+Geling Yan (simplified Chinese: 严歌苓; traditional Chinese: 嚴歌苓; pinyin: Yán Gēlíng; born 16 November 1958]) is a Chinese-American author and screenwriter. Yan began performing as a dancer at age 12. She served in the People's Liberation Army in Chengdu, during the Cultural Revolution in Tibet and later as a journalist in the Sino-Vietnamese War, achieving a rank equivalent to lieutenant colonel.
+
+Instruction:
+
+What career did  GeLing Yan have?
+
+Answer:
+
+She is an author, screenwriter, and once was a dancer and a journalist.
+
+</s>
+<s> Instruction:
+
+Given this paragraph about Password-authenticated key exchange, what year were the first provably-secure protocols created?
+
+Context:
+
+The first successful password-authenticated key agreement methods were Encrypted Key Exchange methods described by Steven M. Bellovin and Michael Merritt in 1992. Although several of the first methods were flawed, the surviving and enhanced forms of EKE effectively amplify a shared password into a shared key, which can then be used for encryption and/or message authentication. The first provably-secure PAKE protocols were given in work by M. Bellare, D. Pointcheval, and P. Rogaway (Eurocrypt 2000) and V. Boyko, P. MacKenzie, and S. Patel (Eurocrypt 2000). These protocols were proven secure in the so-called random oracle model (or even stronger variants), and the first protocols proven secure under standard assumptions were those of O. Goldreich and Y. Lindell (Crypto 2001) which serves as a plausibility proof but is not efficient, and J. Katz, R. Ostrovsky, and M. Yung (Eurocrypt 2001) which is practical.
+
+The first password-authenticated key retrieval methods were described by Ford and Kaliski in 2000.
+
+A considerable number of alternative, secure PAKE protocols were given in work by M. Bellare, D. Pointcheval, and P. Rogaway, variations, and security proofs have been proposed in this growing class of password-authenticated key agreement methods. Current standards for these methods include IETF RFC 2945, RFC 5054, RFC 5931, RFC 5998, RFC 6124, RFC 6617, RFC 6628 and RFC 6631, IEEE Std 1363.2-2008, ITU-T X.1035 and ISO-IEC 11770-4:2006.
+
+Answer:
+
+The first provably-secure protocols for Password-authenticated key exchanges(PAKE) were presented in 2000 at "Eurocrypt 2000" by two groups Mihir Bellare, David Pointcheval and Phillip Rogaway, and Victor Boyko, Philip MacKenzie and Sarvar Patel.
+
+</s>
+<s> Instruction:
+
+What's the game engine used by Bethesda before Creation Engine? And what's the last game make with it?
+
+Context:
+
+After using the Gamebryo engine to create The Elder Scrolls III: Morrowind, The Elder Scrolls IV: Oblivion, and Fallout 3, Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
+
+Following the completion of Skyrim, Bethesda set out to enhance the graphical core of the Creation Engine by first adding a physically based deferred renderer to allow for more dynamic lighting and to paint materials object surfaces with realistic materials. Bethesda worked with technology company Nvidia to implement volumetric lighting through a technique that makes use of hardware tesselation. Additionally the updated version of the Creation Engine powering Bethesda's Fallout 4 offers more advanced character generation.
+
+Answer:
+
+Gamebryo was the engine used by Bethesda before Creation Engine. It is developed by Gamebase Cot., Ltd and Gamebase USA. Gamebryo is used by numerous companies within the gaming industry.
+
+Bethesda decided that Gamebryo's capabilities were becoming too outdated and began work on the Creation Engine for their next game, The Elder Scrolls V: Skyrim, by forking the codebase used for Fallout 3.
+
+The last game from Bethesda made with Gamebryo engine is Fallout 3 (2008).
+
+</s>
+<s> Instruction:
+
+Given a reference text about Giovanni Dominici, when was he beatified?
+
+Context:
+
+Giovanni Dominici (c. 1355 – 10 June 1419) was an Italian Catholic prelate and Dominican who became a cardinal. His ideas had a profound influence on the art of Fra Angelico who entered the order through him. But he once encountered difficulties becoming a friar due to a speech impairment that his superiors believed would rule him ineligible for both profession and the priesthood. Dominici became a noted theologian and preacher and was tireless in establishing monasteries and convents in cities such as Fiesole and Lucca.
+
+He attempted to resign his cardinalate in 1415 during the Council of Constance after he succeeded in convincing the pope to abdicate in order to end the Western Schism. But the Council refused to accept his resignation though he had resigned from the archbishopric that he held. He spent the remainder of his life as a papal legate for Pope Martin V until he died in Buda.
+
+He had been first named as a Blessed since 1622 though he had not been recognized as such until he was beatified on 9 April 1832.[
+
+Answer:
+
+Giovanni Dominici was beatified on April 9, 1832.
+
+</s>
+<s> Context:
+
+The population of Puerto Rico according to the 2020 census was 3,285,874, an 11.8% decrease since the 2010 United States Census. The commonwealth's population peaked in 2000, when it was 3,808,610, before declining (for the first time in census history) to 3,725,789 in 2010. Emigration due to economic difficulties and natural disasters, coupled with a low birth rate, have caused the population decline to continue in recent years.
+
+Instruction:
+
+How much has the population of Puerto Rico been growing?
+
+Answer:
+
+The population of Puerto Rico decreased 11.8% between 2010 and 2020, from 3,725,789 in 2010 to 3,285,874 in 2020, according to the United States Census. Emigration due to economic difficulties and natural disasters, coupled with a low birth rate, have caused the population decline to continue in recent years.
+
+</s>
+<s> Instruction:
+
+What is an string instrument that is similar to a Violin, but larger in size and with a lower and deeper sound?
+
+Context:
+
+The viola (/viˈoʊlə/ vee-OH-lə, also UK: /vaɪˈoʊlə/ vy-OH-lə, Italian: [ˈvjɔːla, viˈɔːla]) is a string instrument that is bowed, plucked, or played with varying techniques. Slightly larger than a violin, it has a lower and deeper sound. Since the 18th century, it has been the middle or alto voice of the violin family, between the violin (which is tuned a perfect fifth above) and the cello (which is tuned an octave below). The strings from low to high are typically tuned to C3, G3, D4, and A4.
+
+Answer:
+
+The instrument you are looking for is a Viola.
+
+</s>
+<s> Context:
+
+Galaga is a 1981 fixed shooter arcade video game developed and published by Namco. In North America, it was released by Midway Manufacturing. It is the sequel to Galaxian (1979), Namco's first major video game hit in arcades. Controlling a starship, the player is tasked with destroying the Galaga forces in each stage while avoiding enemies and projectiles. Some enemies can capture a player's ship via a tractor beam, which can be rescued to transform the player into a "dual fighter" with additional firepower.
+
+Instruction:
+
+When was Galaga released?
+
+Answer:
+
+Galaga was released in 1981 as a fixed shooter arcade video game developed and published by Namco.
+
+</s>
+<s> Instruction:
+
+Given this paragraph, who wrote "August?"
+
+Context:
+
+August (2001), is the first novel by author Gerard Woodward. It was shortlisted for Whitbread Book Award (2001).
+
+Answer:
+
+Gerard Woodward
+
+</s>
+<s> Instruction:
+
+Given this paragraph about Dartmouth College traditions, which homecoming-related traditions are illegal?
+
+Context:
+
+Dartmouth Night starts the college's traditional "Homecoming" weekend with an evening of speeches, a parade, and a bonfire. Traditionally, the freshman class builds the bonfire and then runs around it a set number of times in concordance with their class year; the class of 2009 performed 109 circuits, the class of 1999 performed 99, etc. The College officially discourages a number of student traditions of varying degrees of antiquity. During the circling of the bonfire, upperclassmen encourage the freshmen to "touch the fire", an action legally considered trespassing and prohibited by police officials present. At halftime of the Homecoming football game on the Saturday of the weekend, some upperclassmen encourage freshman to "rush the field", although no upperclassman has seen a significant rush since several injuries sustained during the 1986 rush prompted the school to ban the practice. Among the two or three students who sometimes run across the field, those who are arrested are charged with trespassing (the independent newspaper The Dartmouth Review claimed to set up a fund to automatically pay any fines associated with freshman who rush the field.) However, in 2012 this was proven false when two students rushed the field and were arrested for disorderly conduct. The Dartmouth Review ignored their emails until finally replying and denying that this fund had ever existed. These students then had to pay $300 fines out of pocket. For the 2011 Homecoming game, however, over 40 members of the Class of 2015 rushed the field at homecoming without any action taken by Safety and Security or the Hanover Police Department.
+
+Answer:
+
+Touching the bonfire, and rushing the football field during halftime of the homecoming game
+
+</s>
+<s> Instruction:
+
+Based on this paragraph, how many times was Barros traded during his professional basketball career?
+
+Context:
+
+The 5' 11" (1.80 m), 165 lb (75 kg) point guard, began his professional career in 1989 when he was selected in the first round of the NBA draft by the Seattle SuperSonics with the 16th pick. Most of his time spent in Seattle was as a backup to point guard Gary Payton, who was considered to be a much more competent ball handler and defender, as Barros was deemed more usable at shooting guard. Prior to the 1993–94 season, the Sonics traded Barros to the Charlotte Hornets in exchange for Kendall Gill. Two days later, Charlotte traded Barros, Sidney Green, and their 1993 draft choice, Greg Graham, to the Philadelphia 76ers for Hersey Hawkins. Barros became a free agent at the end of the 1994-95 NBA season. He signed with his hometown Boston Celtics, and remained for five seasons as a role player alongside David Wesley and Dee Brown and mentor to younger players such as Antoine Walker and Paul Pierce. In the offseason of 2000, Barros was traded to the Dallas Mavericks as part of a four-team deal that also involved the Utah Jazz and Golden State Warriors. By the time the 2000–01 season had commenced, the Mavs had traded Barros to the Detroit Pistons, where he played 89 games over two seasons, averaging 7.5 points per game, until waiving him in 2002.
+
+Answer:
+
+Based on this paragraph, Barros was traded four times while in the NBA (from Seattle to Charlotte; from Charlotte to Philadelphia; from Boston to Dallas; from Dallas to Detroit).
+
+</s>
+<s> Instruction:
+
+What is disadvantage of naive algorithm of simple random sampling?
+
+Context:
+
+Several efficient algorithms for simple random sampling have been developed. A naive algorithm is the draw-by-draw algorithm where at each step we remove the item at that step from the set with equal probability and put the item in the sample. We continue until we have sample of desired size 
+�
+k. The drawback of this method is that it requires random access in the set.
+
+The selection-rejection algorithm developed by Fan et al. in 1962 requires a single pass over data; however, it is a sequential algorithm and requires knowledge of total count of items 
+�
+n, which is not available in streaming scenarios.
+
+A very simple random sort algorithm was proved by Sunter in 1977. The algorithm simply assigns a random number drawn from uniform distribution 
+(
+0
+,
+1
+)
+(0,1) as a key to each item, then sorts all items using the key and selects the smallest 
+�
+k items.
+
+J. Vitter in 1985 proposed reservoir sampling algorithms, which are widely used. This algorithm does not require knowledge of the size of the population 
+�
+n in advance, and uses constant space.
+
+Random sampling can also be accelerated by sampling from the distribution of gaps between samples and skipping over the gaps.
+
+Answer:
+
+The drawback of this method is that it requires random access in the set.
+
+</s>
+<s> Context:
+
+"The book explores imagination and the imaginable through the descriptions of cities by an explorer, Marco Polo. The book is framed as a conversation between the elderly and busy emperor Kublai Khan, who constantly has merchants coming to describe the state of his expanding and vast empire, and Polo. The majority of the book consists of brief prose poems describing 55 fictitious cities that are narrated by Polo, many of which can be read as parables or meditations on culture, language, time, memory, death, or the general nature of human experience.
+
+Short dialogues between Kublai and Polo are interspersed every five to ten cities discussing these topics. These interludes between the two characters are no less poetically constructed than the cities, and form a framing device that plays with the natural complexity of language and stories. In one key exchange in the middle of the book, Kublai prods Polo to tell him of the one city he has never mentioned directly—h"
+
+Instruction:
+
+Who is the protagonist in Italo Calvino's Invisible Cities?
+
+Answer:
+
+The book explores imagination and the imaginable through the descriptions of cities by an explorer, Marco Polo.
+
+</s>
+<s> Context:
+
+The bulk of dried spaghetti is produced in factories using auger extruders. While essentially simple, the process requires attention to detail to ensure that the mixing and kneading of the ingredients produces a homogeneous mix, without air bubbles. The forming dies have to be water cooled to prevent spoiling of the pasta by overheating. Drying of the newly formed spaghetti has to be carefully controlled to prevent strands sticking together, and to leave it with sufficient moisture so that it is not too brittle. Packaging for protection and display has developed from paper wrapping to plastic bags and boxes.
+
+Instruction:
+
+Given a reference text about dried spaghetti production, what is required to produce spaghetti without errors?
+
+Answer:
+
+Spaghetti production is straight-forward, but requires the maker to ensure the mixture is homogenous and without air bubbles before starting the drying process. The drying process itself needs to be monitored to ensure that the individual spaghetti strands do not stick together but also do not dry out so much that they become brittle
+
+</s>
+<s> Instruction:
+
+Given a reference text about Run Towards the Danger, tell me how many essays are part of the collection.
+
+Context:
+
+Run Towards the Danger is a 2022 Canadian essay collection by Sarah Polley, a former child star, director, and screenwriter.
+
+The six essays in the collection examine aspects of Polley's career on stage, screen, and on film detailing her roles in a Stratford Festival production of Alice Through the Looking Glass, as well as her breakout roles in The Adventures of Baron Munchausen and the TV series Road to Avonlea. The book also revealed for the first time that Polley had been a victim of Jian Ghomeshi who sexually and physically assaulted her when she was 16 and he was 28.
+
+Answer:
+
+Six essays are part of the Run Towards the Danger essay collection.
+
+</s>
+<s> Instruction:
+
+Extract the occupations of Elie Wiesel from the text.
+
+Context:
+
+Elie Wiesel (/ˈɛli viːˈzɛl/, born Eliezer Wiesel, Yiddish: אליעזר װיזעל Eliezer Vizel; September 30, 1928 – July 2, 2016) was a Romanian-born American writer, professor, political activist, Nobel laureate, and Holocaust survivor.
+
+Answer:
+
+Elie Weisel's listed professions were: writer, professor, and political activist.
+
+</s>

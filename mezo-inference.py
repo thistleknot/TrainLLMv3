@@ -58,11 +58,11 @@ query_text = (
 f"""
 Instruction:
 
-What is apartheid, and which country experienced it?
+Where can I find Leptodactylus tapiti?
 
-Context:
+Answer:
 
-"""
+Leptodactylus tapiti is a species of frog"""
 )
 torch.manual_seed(SEED)
 
