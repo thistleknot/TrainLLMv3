@@ -206,11 +206,10 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     attention_mask_list = [[1] * BLOCK_SIZE for _ in input_ids_list]
 
     # 5. Use the same tokenized sequences for labels
-    labels_list = input_ids_list.copy()
-    labels_list = dataset_dict["original_strings"]
+    #labels_list = input_ids_list.copy()
     input_ids = [seq.tolist() for seq in input_ids_list]
     attention_mask = attention_mask_list
-    labels = [seq.tolist() for seq in labels_list]
+    #labels = [seq.tolist() for seq in labels_list]
     
     print('total_length', total_length)
     
