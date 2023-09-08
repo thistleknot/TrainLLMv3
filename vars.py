@@ -74,7 +74,8 @@ lora_config = LoraConfig(
 
 special_tokens_dict = {
     'additional_special_tokens': ['<SUMM>','</SUMM>', '<CQ>','</CQ>', '<QCA>','</QCA>','<CQA>','</CQA>', '<QA>','</QA>', '<QT>','</QT>', '<preferred>','</preferred>', '<dispreferred>','</dispreferred>'],
-    'mask_token': '<MASK>'
+    'mask_token': '<MASK>',
+    'pad_token': '<PAD>'
 }
 
 datasets_info = [

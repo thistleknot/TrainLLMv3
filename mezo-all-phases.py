@@ -7,9 +7,9 @@ import datasets
 os.environ['LD_LIBRARY_PATH'] += ":/home/user/env/lib/python3.11/site-packages/nvidia/cusparse/lib/"
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL, legacy=False)
-tokenizer.pad_token = tokenizer.eos_token
-
 tokenizer.add_special_tokens(special_tokens_dict)
+
+print(tokenizer.pad_token)
 
 device_map = {"": 0}
 

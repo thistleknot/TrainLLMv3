@@ -14,55 +14,16 @@ from torch.nn.functional import pad
 from sklearn.metrics.pairwise import cosine_similarity
 
 from vars import *
+from typing import Optional, List
 
-def create_dynamic_batches(prompts, tokenizer, block_size):
-    
-    token_counts = [len(tokenizer.encode(prompt)) for prompt in prompts]
-    batches = []
-    current_batch = []
-    current_token_count = 0
+import torch.distributed as dist
+from torch.utils.data import Sampler
 
-    for prompt, count in zip(prompts, token_counts):
-        
-        if current_token_count + count > block_size:
-            batches.append(current_batch)
-            current_batch = []
-            current_token_count = 0
-        
-        current_batch.append(prompt)
-        current_token_count += count
+import numpy as np
+import numba
+import math
 
-    if current_batch:
-        batches.append(current_batch)
-
-    return batches
-
-def extract_indices(dataset):
-    keys_list = list(dataset.keys())
-    return range(0, len(dataset[keys_list[0]]))
-
-def clear_model(model, path):
-    model.save_pretrained(path)
-    del model
-    torch.cuda.empty_cache()
-    torch.cuda.synchronize()
-
-def find_target_modules(model):
-    # Initialize a Set to Store Unique Layers
-    unique_layers = set()
-    
-    # Iterate Over All Named Modules in the Model
-    for name, module in model.named_modules():
-        # Check if the Module Type Contains 'Linear4bit'
-        if "Linear4bit" in str(type(module)):
-            # Extract the Type of the Layer
-            layer_type = name.split('.')[-1]
-            
-            # Add the Layer Type to the Set of Unique Layers
-            unique_layers.add(layer_type)
-
-    # Return the Set of Unique Layers Converted to a List
-    return list(unique_layers)
+max_tokens = 14336
 
 from transformers.trainer_utils import (
     PREFIX_CHECKPOINT_DIR,
@@ -146,6 +107,33 @@ if is_accelerate_available():
             save_fsdp_optimizer,
         )
 
+def extract_indices(dataset):
+    keys_list = list(dataset.keys())
+    return range(0, len(dataset[keys_list[0]]))
+
+def clear_model(model, path):
+    model.save_pretrained(path)
+    del model
+    torch.cuda.empty_cache()
+    torch.cuda.synchronize()
+
+def find_target_modules(model):
+    # Initialize a Set to Store Unique Layers
+    unique_layers = set()
+    
+    # Iterate Over All Named Modules in the Model
+    for name, module in model.named_modules():
+        # Check if the Module Type Contains 'Linear4bit'
+        if "Linear4bit" in str(type(module)):
+            # Extract the Type of the Layer
+            layer_type = name.split('.')[-1]
+            
+            # Add the Layer Type to the Set of Unique Layers
+            unique_layers.add(layer_type)
+
+    # Return the Set of Unique Layers Converted to a List
+    return list(unique_layers)
+
 def shuffle_dataset(dataset_dict):
     indices = list(range(len(next(iter(dataset_dict.values())))))
     random.shuffle(indices)
@@ -171,7 +159,7 @@ def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
     
     return shuffled_hierarchical_dataset
 
-def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
+def process_dataset_stride(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
     
     eos_token_id = tokenizer.eos_token_id
     #start/stop with eos?
@@ -206,20 +194,21 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
     attention_mask_list = [[1] * BLOCK_SIZE for _ in input_ids_list]
 
     # 5. Use the same tokenized sequences for labels
-    #labels_list = input_ids_list.copy()
+    #I would like to store the original labels (maybe by decoding them)
+    labels_list = input_ids_list.copy()
     input_ids = [seq.tolist() for seq in input_ids_list]
     attention_mask = attention_mask_list
-    #labels = [seq.tolist() for seq in labels_list]
+    labels = [seq.tolist() for seq in labels_list]
     
     print('total_length', total_length)
     
     if SPLIT_RATIO == 1 or SPLIT_RATIO == 0:
         train_input_ids = valid_input_ids = input_ids
         train_attention_mask = valid_attention_mask = attention_mask
-        train_labels = valid_labels = dataset_dict["labels"]
+        train_labels = valid_labels = labels
     else:
         train_input_ids, valid_input_ids, train_attention_mask, valid_attention_mask, train_labels, valid_labels = train_test_split(
-            input_ids, attention_mask, dataset_dict["labels"], train_size=SPLIT_RATIO, shuffle=SHUFFLE)
+            input_ids, attention_mask, labels, train_size=SPLIT_RATIO, shuffle=SHUFFLE)
 
     train_lengths = [len(seq) for seq in train_input_ids]
     valid_lengths = [len(seq) for seq in valid_input_ids]
@@ -247,6 +236,145 @@ def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RA
 
     print(len(train_dataset), len(valid_dataset))
     return train_dataset, valid_dataset
+
+def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
+    eos_token_id = tokenizer.eos_token_id
+    input_ids = dataset_dict['input_ids']
+    labels = dataset_dict['labels']
+    attention_mask = dataset_dict['attention_mask']
+    
+    by_size_filter = np.where([1 if len(i) < BLOCK_SIZE else 0 for i in input_ids])[0]
+    #print(by_size_filter)
+    
+    input_ids = [list(input_ids)[i] for i in by_size_filter]
+    labels = [list(labels)[i] for i in by_size_filter]
+    attention_mask = [list(attention_mask)[i] for i in by_size_filter]
+    
+    labels = input_ids.copy()
+    
+    # Initialize variables to store padding statistics
+    total_pads = 0
+    pads_per_sequence = []
+
+    # Calculate the sum of tokenized prompt lengths and the number of sequences
+    sum_of_lengths = sum([len(seq) for seq in input_ids])
+    num_of_seq = len(input_ids)
+
+    # Find the maximum length of any individual prompt
+    max_len = max([len(seq) for seq in input_ids])
+    print(f"Maximum sequence length: {max_len}")
+
+    # Initialize divisors starting from the given BLOCK_SIZE
+    divisors = [BLOCK_SIZE]
+    while divisors[-1] > 1:
+        divisors.append(divisors[-1] // 2)
+    
+    divisors = [x for x in divisors if x > (max_len + 1)]
+    # Find the optimal BLOCK_SIZE that maximizes the modulus
+    
+    optimal_BLOCK_SIZE = min(divisors, key=lambda x: sum_of_lengths % x)
+
+    modulus = sum_of_lengths % optimal_BLOCK_SIZE
+
+    print(f"Optimally derived BLOCK_SIZE: {optimal_BLOCK_SIZE}")
+    print(f"Modulus: {modulus}")
+
+    # Initialize variables to store padding statistics
+    total_pads = 0
+    pads_per_sequence = []
+
+    # Calculate the sum of tokenized prompt lengths and the number of sequences
+    sum_of_lengths = sum([len(seq) for seq in input_ids])
+    print('sum_of_lengths',sum_of_lengths)
+    num_of_seq = len(input_ids)
+
+    # Calculate the average length of a sequence
+    average_length = sum_of_lengths / num_of_seq
+
+    # Estimate the number of sequences needed
+    estimated_num_sequences = math.ceil(sum_of_lengths / optimal_BLOCK_SIZE)
+    print(f"Estimated number of sequences: {estimated_num_sequences}")
+
+    # Initialize empty sequences (bins)
+    sequences = [[] for _ in range(estimated_num_sequences)]  # Initialize with empty lists
+    remaining_space = [optimal_BLOCK_SIZE] * estimated_num_sequences  # Initialize with estimated number of sequences
+    prompt_lengths = [(len(i), i) for i in input_ids]
+    prompt_lengths.sort(key=lambda x: x[0], reverse=True)
+    # Sort prompts by length
+
+    # Insert prompts into sequences
+    for length, prompt in prompt_lengths:
+        
+        # Find the sequence with the most remaining space
+        max_space_idx = remaining_space.index(max(remaining_space))
+        
+        # Try to insert into the sequence with the most remaining space
+        if remaining_space[max_space_idx] >= length:
+            sequences[max_space_idx].extend(prompt)
+            remaining_space[max_space_idx] -= length
+            
+    print([s.count(eos_token_id) for s in sequences])
+
+    # Initialize lists for input_ids, attention_mask, and labels
+    input_ids_list = []
+    attention_mask_list = []
+    label_list = []
+    
+    pad_token_id = tokenizer.pad_token_id
+
+    for seq in sequences:
+        pad_length = optimal_BLOCK_SIZE - len(seq)
+        padded_seq = seq + [pad_token_id] * pad_length
+        input_ids_list.append(padded_seq)
+        attention_mask_list.append([1 if i != pad_token_id else 0 for i in padded_seq])
+
+        # Update padding statistics
+        total_pads += pad_length
+        pads_per_sequence.append(pad_length)
+
+        label_list.append(padded_seq)
+
+    # Calculate padding efficiency statistics
+    avg_pads = total_pads / len(sequences)
+    print(f"Total number of padding tokens: {total_pads}")
+    print(f"Average number of padding tokens per sequence: {avg_pads}")
+    print(f"Padding tokens by sequence position: {pads_per_sequence}")
+
+    # Use pandas to describe the padding statistics
+    pad_stats = pd.Series(pads_per_sequence).describe()
+    print("Padding statistics summary:")
+    print(pad_stats)
+
+    # Splitting the data
+    if SPLIT_RATIO == 1 or SPLIT_RATIO == 0:
+        train_input_ids = valid_input_ids = input_ids_list
+        train_attention_mask = valid_attention_mask = attention_mask_list
+        train_labels = valid_labels = label_list
+    else:
+        train_input_ids, valid_input_ids, train_attention_mask, valid_attention_mask, train_labels, valid_labels = train_test_split(
+            input_ids_list, attention_mask_list, label_list, train_size=SPLIT_RATIO, shuffle=SHUFFLE)
+
+    # Create Dataset objects
+    train_dataset = datasets.Dataset.from_dict({
+        "input_ids": train_input_ids,
+        "attention_mask": train_attention_mask,
+        "labels": train_labels  # Include labels here
+    })
+
+    valid_dataset = datasets.Dataset.from_dict({
+        "input_ids": valid_input_ids,
+        "attention_mask": valid_attention_mask,
+        "labels": valid_labels  # Include labels here
+    })
+
+    # Sub-sample if needed
+    if SUB_SAMPLE:
+        train_dataset = train_dataset.select(list(range(int(len(train_dataset) * SUB_SAMPLE_RATIO))))
+        valid_dataset = valid_dataset.select(list(range(int(len(valid_dataset) * SUB_SAMPLE_RATIO))))
+    
+    BATCH_SIZE = max_tokens // optimal_BLOCK_SIZE
+    #print(len(train_dataset),len(valid_dataset))
+    return train_dataset, valid_dataset, optimal_BLOCK_SIZE, BATCH_SIZE
 
 def process_hierarchical_dataset(hierarchical_dataset_dict, SPLIT_RATIO, FINE_TUNE_SAMPLE_SIZE, SHUFFLE):
     hierarchical_split_dataset = {}
@@ -283,7 +411,7 @@ def create_dataset(text_list, tokenizer):
     labels_list = []
 
     for text in text_list:
-        tokenized_text = tokenizer.encode(text[0], add_special_tokens=True, return_tensors='pt').squeeze()
+        tokenized_text = tokenizer.encode(text[0]+tokenizer.eos_token, add_special_tokens=True, return_tensors='pt').squeeze()
         attention_mask = [1] * len(tokenized_text) # Adjusting for variable lengths
 
         input_ids_list.append(tokenized_text.tolist())  # Truncate or pad as needed
@@ -386,6 +514,35 @@ def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, call
         callbacks=callbacks,
         tokenizer=tokenizer
     )
+    
+def chop_sequences(dataset, tokenizer):
+    chopped_sequences = []
+    data = [item for item in dataset]
+    
+    for seq in data:
+        input_ids = np.array(seq['input_ids'])
+        splits = np.where(input_ids == tokenizer.eos_token_id)[0]
+        
+        chopped_sequences_seq = []
+        start_idx = 0
+        
+        for end_idx in splits:
+            sub_seq = input_ids[start_idx:end_idx + 1]
+            start_idx = end_idx + 1
+            
+            if len(sub_seq) > 1:
+                chopped_sequences_seq.append(sub_seq)
+        
+        #chopped_sequences_seq = chopped_sequences_seq[1:-1]
+        chopped_sequences.extend(chopped_sequences_seq)
+    
+    return chopped_sequences
+
+def write_sequences_to_txt(sequences, filename):
+    with open(filename, 'w') as f:
+        for seq in sequences:
+            seq_str = ' '.join(map(str, seq))
+            f.write(f"{seq_str}\n")
 
 def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS, TASK, MODEL_NAME, TAG, LEARNING_RATE, WEIGHT_DECAY, ADAM_BETA1, ADAM_BETA2, ADAM_EPSILON, MAX_GRAD_NORM, BATCH_SIZE, OPTIM, ZO_EPS, STRIDE_LENGTH, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, SHUFFLE, lora_config, model, tokenizer, bnb_config, device_map, lr_scheduler_type, mlm_prob, patience, FINE_TUNE_SAMPLE_SIZE, prior_phase_dir=None, WARM_RATIO=None, EVAL_MODE='valid'):
     
@@ -396,18 +553,18 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     best_eval_perplexity = float('inf')  # start with a high value
     recent_perplexities = []
     print("LEARNING_RATE:",LEARNING_RATE)
-
+    
     dataset_ = shuffle_dataset(dataset_)
     
     labels = [str(x) for x in dataset_['labels']]
     with open('./labels.json', 'w') as f:
         json.dump(labels, f, indent=4)
     
-    train_dataset, valid_dataset = process_dataset(
+    train_dataset, valid_dataset, BLOCK_SIZE, BATCH_SIZE = process_dataset(
         #hierarchical_dataset_dict=dataset_,
         dataset_dict=dataset_,
         tokenizer=tokenizer,
-        STRIDE_LENGTH=STRIDE_LENGTH,
+        #STRIDE_LENGTH=STRIDE_LENGTH,
         BLOCK_SIZE=BLOCK_SIZE,
         SPLIT_RATIO=SPLIT_RATIO,
         SUB_SAMPLE=SUB_SAMPLE,
@@ -416,9 +573,14 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
         #FINE_TUNE_SAMPLE_SIZE=FINE_TUNE_SAMPLE_SIZE
     )
     
-    write_labels_to_txt(train_dataset, "train_labels.txt")
-    write_labels_to_txt(valid_dataset, "valid_labels.txt")
-    
+    # Assuming you have train_dataset and valid_dataset
+    train_chopped_sequences = chop_sequences(train_dataset, tokenizer)
+    valid_chopped_sequences = chop_sequences(valid_dataset, tokenizer)
+
+    # Save to text files
+    write_sequences_to_txt(train_chopped_sequences, "train_chopped_sequences.txt")
+    write_sequences_to_txt(valid_chopped_sequences, "valid_chopped_sequences.txt")   
+        
     if(EVAL_MODE == 'train'):
         valid_dataset = train_dataset
     else:
@@ -563,7 +725,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         chopped_sequences = []
         split_strings = []
         
-        
         if(train):
             data = random.sample(list(self.train_dataset), 4)
         else:
@@ -573,6 +734,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             
             input_ids = np.array(seq['input_ids'])  # convert to numpy array if not already
             splits = np.where(input_ids == self.trainer.tokenizer.eos_token_id)[0]
+            print(splits)
 
             chopped_sequences_seq = []
 
@@ -593,7 +755,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                     chopped_sequences_seq.append(sub_seq)
             
             # Convert to lists if you want the output as lists
-            chopped_sequences_seq = chopped_sequences_seq[1:-1]
+            #chopped_sequences_seq = chopped_sequences_seq[1:-1]
             chopped_sequences.extend(chopped_sequences_seq)
                         
         lengths = [len(e) for e in chopped_sequences]
@@ -716,6 +878,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         return average_similarity
 
     def on_train_begin(self, args, state, control, **kwargs):
+        print('len(self.valid_dataset))',len(self.valid_dataset))
         if self.eval_metric == 'cosine':
             self.best_metric = float('-inf')
         elif self.eval_metric == 'eval':
@@ -723,6 +886,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         
         average_similarity = self._compute_cosine_similarity()
         initial_lr = self.trainer.optimizer.param_groups[0]['lr']
+    
         new_eval_subset = random.sample(list(self.valid_dataset), 1)
         
         # Update the trainer's eval_dataset

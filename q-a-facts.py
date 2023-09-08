@@ -23,7 +23,7 @@ import openai
 
 # Initialize tokenizer
 tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-1.4b-deduped")
-tokenizer.pad_token = tokenizer.eos_token
+#tokenizer.pad_token = tokenizer.eos_token
 
 # Function to read data
 def read_data(input_file):
