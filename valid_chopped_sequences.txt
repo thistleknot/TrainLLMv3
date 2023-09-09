@@ -1,86 +1,98 @@
 <s> Context:
 
-Simón José Antonio de la Santísima Trinidad Bolívar y Palacios (24 July 1783 – 17 December 1830) was a Venezuelan military and political leader who led what are currently the countries of Colombia, Venezuela, Ecuador, Peru, Panama and Bolivia to independence from the Spanish Empire. He is known colloquially as El Libertador, or the Liberator of America. Simón Bolívar was born in Caracas in the Captaincy General of Venezuela into a wealthy family of American-born Spaniards (criollo), but lost both parents as a child. Bolívar was educated abroad and lived in Spain, as was common for men of upper-class families in his day. While living in Madrid from 1800 to 1802, he was introduced to Enlightenment philosophy and married María Teresa Rodríguez del Toro y Alaysa, who died in Venezuela from yellow fever in 1803. From 1803 to 1805, Bolívar embarked on a Grand Tour that ended in Rome, where he swore to end the Spanish rule in the Americas. In 1807, Bolívar returned to Venezuela and proposed gaining Venezuelan independence to other wealthy creoles. When the Spanish authority in the Americas weakened due to Napoleon's Peninsular War, Bolívar became a zealous combatant and politician in the Spanish American wars of independence.
+As an amateur, Fury represented both England and Ireland. Fury represented Ireland three times at international level. He was based out of the Holy Family Boxing Club in Belfast, Northern Ireland, and later switched to the Smithboro Club in County Monaghan, Ireland. In a double international match against an experienced Polish team in 2007, the Irish team lost 12–6 overall; Fury, however, was victorious in both his fights in Rzeszów and Białystok. In another Irish match against the US, Fury won his bout by knockout. He won bronze at the AIBA Youth World Boxing Championships in 2006.
+
+In England, while representing Jimmy Egan's Boxing Academy in Wythenshawe, Manchester, he participated in the senior national championships in 2006 but was beaten by David Price 22–8. In May 2007, he won the EU Junior Championship, defeating Istvan Bernath in the final. In July 2007 he won silver at the European Junior Championship, losing to Maxim Babanin in the final.
+
+As a junior, Fury was ranked number three in the world behind the Russians Maxim Babanin and Andrey Volkov, but did not get the chance to represent Great Britain at the 2008 Olympics because each country is restricted to one boxer per weight division and David Price was selected. Price came up through the amateur Olympic programme. Fury also unsuccessfully tried to qualify for Ireland. Speaking in 2011, Fury said "I should have gone to the Olympic games in 2008 and won a gold medal for Ireland, but I was denied the chance to go and do it" He was also forced to withdraw from the Irish national championships after officials from the Holy Trinity Boxing Club in West Belfast, the club of the then Irish amateur heavyweight champion, submitted a protest regarding his eligibility as he was not born in Ireland.
+
+Fury won the ABA super-heavyweight title in 2008 by defeating Damien Campbell 19:1. He turned professional later that year. Feeling disillusioned with amateur boxing, he decided not to wait for the 2012 Olympics. He finished with an amateur record of 31–4 (26 KOs).
 
 Instruction:
 
-Given this paragraph about Simon Bolivar, tell me when and where they were born, and what they are known for
+What was Tyson Fury's fight record as an amateur?
 
 Answer:
 
-Simon Bolivar was born in Caracas, Venezuela on 24 July 1783. He is known for leading the wars of independence from the Spanish Empire from what are currently the countries of Colombia, Venezuela, Ecuador, Peru, Panama and Bolivia
+He finished with an amateur record of 31–4 (26 KOs
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><s> Context:
 
-ASML produces the photolithography machines used in the production of computer chips. In these machines, patterns are optically imaged onto a silicon wafer that is covered with a film of light-sensitive material (photoresist). This procedure is repeated dozens of times on a single wafer. The photoresist is then further processed to create the actual electronic circuits on the silicon. The optical imaging that ASML's machines deal with is used in the fabrication of nearly all integrated circuits and, as of 2011, ASML had 67 percent of the worldwide sales of lithography machines.
+Ingwelala is a private stakeholder nature reserve on the bank of the Nhlaralumi River in the heart of the lowveld, about 65 km from the town of Hoedspruit. The reserve of some 3,000 hectares forms part of the Bushbuckridge Municipality, and adjoins the Umbabat Nature Reserve and the unfenced Kruger National Park.
 
-ASML's competition consisted of Ultratech, Canon and Nikon, MKS Instruments, Lam Research and Cadence Design Systems.[citation needed]
+Ingwelala includes the following game farms:
+
+Argyle – 1,499 ha registered as Ingwelala Shareblock Ltd.
+Buffelsbed – 1,018 ha registered as Buffelsbed Shareblock Ltd.
+Goedehoop – 372 ha registered as Ingwelala Holdings Ltd.
+Si Bon – 257 ha registered as Si Bon Property Holdings Ltd
 
 Instruction:
 
-According to this passage, what percent of the lithography machine market do Ultratech, Canon and Nikon, MKS Instruments, Lam Research and Cadence Design Systems have in aggregate?
+Given a reference text about Ingwelala, tell me which game farms are on the reserve.
 
 Answer:
 
-If ASML has 67 percent of the worldwide sales of lithography machines and if Ultratech, Canon and Nikon, MKS Instruments, Lam Research and Cadence Design Systems represent their sole competition, than these companies must share the remaining 33 percent of the market.
+Argyle, Buffelsbed, Goedehoop, and Si Bon are the game farms on Ingwelala.
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Heat shock proteins (HSP) are a family of proteins produced by cells in response to exposure to stressful conditions. They were first described in relation to heat shock, but are now known to also be expressed during other stresses including exposure to cold, UV light and during wound healing or tissue remodeling. Many members of this group perform chaperone functions by stabilizing new proteins to ensure correct folding or by helping to refold proteins that were damaged by the cell stress. This increase in expression is transcriptionally regulated. The dramatic upregulation of the heat shock proteins is a key part of the heat shock response and is induced primarily by heat shock factor (HSF). HSPs are found in virtually all living organisms, from bacteria to humans.
+The TV series was starred and created by Justin Fletcher, who plays the characters in all of the comedy sketches and also wrote a few sketches in its first series. Some of the sketches are filmed in the studio, while other sketches are filmed outside; for example, one is filmed at Portmeirion, used for the fictional town of Wiggyville where Captain Adorable's sketches are set from Series 1 to 2. The show is interspersed with a selection of children called the Gigglekids, who tell jokes to Justin himself, in their own section called 'Giggle Box'.
 
 Instruction:
 
-What are Heat Shock proteins?
+What happens during the section called "Giggle Box"?
 
 Answer:
 
-Heat shock proteins (HSP) are a family of proteins produced by cells in response to exposure to stressful conditions.
+Children called the Gigglekids tell jokes to Justin.
 
 </s>
 <s> Context:
 
-Twitch is an American video live streaming service that focuses on video game live streaming, including broadcasts of esports competitions, in addition to offering music broadcasts, creative content, and "in real life" streams. Twitch is operated by Twitch Interactive, a subsidiary of Amazon.com, Inc. It was introduced in June 2011 as a spin-off of the general-interest streaming platform Justin.tv. Content on the site can be viewed either live or via video on demand. The games shown on Twitch's current homepage are listed according to audience preference and include genres such as real-time strategy games (RTS), fighting games, racing games, and first-person shooters.
+Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot Noir variety, it normally has a grayish-blue fruit, accounting for its name, but the grapes can have a brownish pink to black and even white appearance. The word pinot could have been given to it because the grapes grow in small pinecone-shaped clusters. The wines produced from this grape also vary in color from a deep golden yellow to copper and even a light shade of pink, and it is one of the more popular grapes for skin-contact wine.
 
-The popularity of Twitch eclipsed that of its general-interest counterpart. In October 2013, the website had 45 million unique viewers, and by February 2014, it was considered the fourth-largest source of peak Internet traffic in the United States. At the same time, Justin.tv's parent company was re-branded as Twitch Interactive to represent the shift in focus – Justin.tv was shut down in August 2014. That month, the service was acquired by Amazon for US$970 million, which later led to the introduction of synergies with the company's subscription service Amazon Prime. Twitch acquired Curse LLC in 2016, an operator of online video gaming communities and introduced means to purchase games through links on streams along with a program allowing streamers to receive commissions on the sales of games that they play.
-
-By 2015, Twitch had more than 100 million viewers per month. In 2017, Twitch remained the leading live streaming video service for video games in the US, and had an advantage over YouTube Gaming, which shut down its standalone app in May 2019. As of February 2020, it had 3 million broadcasters monthly and 15 million daily active users, with 1.4 million average concurrent users. As of May 2018, Twitch had over 27,000 partner channels.[1
+Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized. The Alsatian style, often duplicated in New World wine regions such as Marlborough, Tasmania, South Australia, Washington, Oregon, and South Africa tend to have moderate to low acidity, higher alcohol levels and an almost "oily" texture that contributes to the full-bodied nature of the wine. The flavors can range from ripe tropical fruit notes of melon and mango to some botrytis-influenced flavors. In Italy, Pinot grigio grapes are often harvested early to retain the refreshing acidity and minimize some of the overt-fruitiness of the variety, creating a more neutral flavor profile. This style is often imitated in other Old World wine regions, such as Germany, where the grape is known as Ruländer, or more commonly, Grauburgunder.
 
 Instruction:
 
-Given this paragraph about Twitch Interactive, in what year did Amazon acquire them?
+What is Pinot Grigio?
 
 Answer:
 
-Amazon acquired Twitch in the year 2014.
+Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized.
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Slater is also a fundraiser and spokesperson for suicide prevention awareness. He has surfed in celebrity events for Surfers Against Suicide, telling sports website 'Athletes Talk': "I've lost a couple of friends myself to suicide and it's just a horrible thing that can be prevented. People get in this dark place and they don't know what to do so it's always nice to see a non-profit that isn't turning into anything else other than just trying to help people."
+The Driftwood River is a 15.5-mile-long (24.9 km) tributary of the East Fork of the White River in central Indiana in the United States. Via the White, Wabash and Ohio rivers, it is part of the watershed of the Mississippi River. It is a short river, formed by the confluence of two longer streams a short distance upstream of its mouth.
 
-Slater is passionate about preserving oceans globally and protecting temperate reefs in California through his relationship with Reef Check. Slater is on the Board of Advisors (the Ocean Advocacy Advisory Board) of ocean conservation organization Sea Shepherd Conservation Society.
+Course
+The Driftwood River is formed in southeastern Johnson County, 1 mile (1.6 km) west of Edinburgh, by the confluence of Sugar Creek and the Big Blue River. It flows generally southwardly through northwestern Bartholomew County to Columbus, where it joins the Flatrock River to form the East Fork of the White River.
+
+Near Edinburgh, IN, Driftwood River has a mean annual discharge of 1,210 cubic feet per second.[
 
 Instruction:
 
-Based on the paragraph below, please list out the 2 major causes supported by Kelly Slater.
+Given a reference text about the Driftwood River, tell me what main river it is part of.
 
 Answer:
 
-Kelly Slater's main activism has been directed towards suicide prevention and ocean conservation.
+The Driftwood River is part of the Mississippi River.
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Elizabeth II (Elizabeth Alexandra Mary; 21 April 1926 – 8 September 2022) was Queen of the United Kingdom and other Commonwealth realms from 6 February 1952 until her death in 2022. She was queen regnant of 32 sovereign states during her lifetime and was head of state of 15 realms at the time of her death. Her reign of 70 years and 214 days was the longest of any British monarch and the longest verified reign of any female monarch in history.
+Until the last ice age, the basin which is now filled by the San Francisco Bay was a large linear valley with small hills, similar to most of the valleys of the Coast Ranges. As the great ice sheets began to melt, around 11,000 years ago, the sea level started to rise. By 5000 BC the sea level rose 300 feet (90 m), filling the valley with water from the Pacific. The valley became a bay, and the small hills became islands.
 
 Instruction:
 
-Who was Elizabeth II?
+How was the San Francisco bay created?
 
 Answer:
 
-Elizabeth II was the queen of the United Kingdom and the longest-reigning monarch.
+Around 11,000 years ago the earth began to wam and melt the great ice sheets, raising sea levels and filling the valley that the San Francisco Bay now lives in.
 
 </s>

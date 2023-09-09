@@ -1,294 +1,267 @@
 <s> Context:
 
-The Kubernetes master node handles the Kubernetes control plane of the cluster, managing its workload and directing communication across the system. The Kubernetes control plane consists of various components, each its own process, that can run both on a single master node or on multiple masters supporting high-availability clusters. The various components of the Kubernetes control plane are as follows:
+Stanley Franklin Browne, DFC & Bar (29 October 1919 – 13 January 2011) was a New Zealand flying ace of the Royal New Zealand Air Force (RNZAF) during the Second World War. He was officially credited with at least five aerial victories.
 
-etcd is a persistent, lightweight, distributed, key-value data store that CoreOS has developed. It reliably stores the configuration data of the cluster, representing the overall state of the cluster at any given point of time. etcd favors consistency over availability in the event of a network partition (see CAP theorem). The consistency is crucial for correctly scheduling and operating services.
-The API server serves the Kubernetes API using JSON over HTTP, which provides both the internal and external interface to Kubernetes. The API server processes and validates REST requests and updates the state of the API objects in etcd, thereby allowing clients to configure workloads and containers across worker nodes. The API server uses etcd's watch API to monitor the cluster, roll out critical configuration changes, or restore any divergences of the state of the cluster back to what the deployer declared. As an example, the deployer may specify that three instances of a particular "pod" (see below) need to be running. etcd stores this fact. If the Deployment Controller finds that only two instances are running (conflicting with the etcd declaration), it schedules the creation of an additional instance of that pod.
-The scheduler is the extensible component that selects on which node an unscheduled pod (the basic entity managed by the scheduler) runs, based on resource availability. The scheduler tracks resource use on each node to ensure that workload is not scheduled in excess of available resources. For this purpose, the scheduler must know the resource requirements, resource availability, and other user-provided constraints or policy directives such as quality-of-service, affinity vs. anti-affinity requirements, and data locality. The scheduler's role is to match resource "supply" to workload "demand".
-A controller is a reconciliation loop that drives the actual cluster state toward the desired state, communicating with the API server to create, update, and delete the resources it manages (e.g., pods or service endpoints). One kind of controller is a Replication Controller, which handles replication and scaling by running a specified number of copies of a pod across the cluster. It also handles creating replacement pods if the underlying node fails. Other controllers that are part of the core Kubernetes system include a DaemonSet Controller for running exactly one pod on every machine (or some subset of machines), and a Job Controller for running pods that run to completion (e.g., as part of a batch job). Labels selectors that are part of the controller's definition specify the set of pods that a controller manages.
-The controller manager is a process that manages a set of core Kubernetes controllers.
+Born in Wellington, Browne was a university student when he joined the RNZAF in March 1941. Once his flight training in New Zealand was completed, he proceeded to the United Kingdom to serve with the Royal Air Force. He was posted to No. 485 Squadron in early 1942 but was shot down later in the year over Germany-occupied France. With the help of the French Resistance he avoided the Germans and made his way to the south of France. He was caught when crossing the border into Vichy France and was interned for several weeks. He escaped captivity and eventually back to the United Kingdom. He was transferred to the Middle East where he ferried aircraft before being posted to No. 93 Squadron. He flew Supermarine Spitfires in the Tunisian campaign and in the Allied invasion of Sicily, shooting down a number of German aircraft before being rested in December 1943. After a spell on instructing duties he returned to operational flying with No. 485 Squadron during the final stages of the war in Europe. He briefly commanded the squadron before it was disbanded in August 1945.
+
+Returning to civilian life after the war, he returned to his university studies, becoming a chemist. He briefly served in the New Zealand Territorial Air Force and later became a farmer and then a teacher. He died in 2011, aged 91, at Tauranga.
 
 Instruction:
 
-Given this paragraph about kubernetes, what is the storage layer of Kubernetes control plane?
+Given a reference text about Stanley Franklin Browne, how many aerial victories during World War II did he have and what did he do when he returned from the war.
 
 Answer:
 
-ETCD
+Stanley Franklin Browne was credited with five aerial victories during World War II. After the war, he returned to university and became a chemist.
 
 </s>
-<PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Akins graduated from Union Grove High School in McDonough, Georgia. He earned All-State honors as both a junior and senior, as well as All-Conference as a sophomore. He committed and signed to play football for the UCF Knights, choosing the Knights over schools such as LSU and Georgia. However, after being drafted by the Texas Rangers in the third round of the 2010 MLB Draft, he chose to pursue a baseball career instead of attending UCF and signed with the Rangers. Akins struggled in the minor leagues, hitting .218 over four seasons and never rising above high-A ball. He retired from baseball after the 2013 season and returned to play football at UCF.
+Pandemonium 2 is a psychedelic 2.5D game; specifically, it renders characters and environments with polygons and uses a 3D camera to create the appearance of 3-D, while gameplay is actually on a 2-D plane. Players can choose to be either Nikki or Fargus - who each have different specialties - with the option to change for each level. The player characters' abilities have been expanded over those in Pandemonium! with the ability to climb ropes, crawl, and pull themselves up ledges. During the quest, players can earn extra lives by collecting treasure.
 
-Instruction:
-
-What did Jordan Akins do after retiring from baseball?
-
-Answer:
-
-Jordan Akins retired baseball after the 2013 season and returned to play football at UCF.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
-
-Bullimore is a surname. Notable people with the surname include:
-
-Tony Bullimore (1939–2018), English sailor and businessman
-Wayne Bullimore (born 1970), English footballer
+Unique powers collected during gameplay may replace, extend or add to previous powers, depending on which character is in play and which power has been obtained. The characters handle the unique powers differently. For instance, collecting the "fire power" allows Nikki to shoot destructive fireballs, while it grants Fargus invincibility and a deadly touch, but requires him to constantly move forward. Machines and equipment are also available throughout the game, although they are tied to certain areas.
 
 Instruction:
 
-Is Bullimore a first name?
+How does the "fire power" help Fargus?
 
 Answer:
 
-No, it is a surname.
-
-</s>
-<s> Context:
-
-Hawaii (/həˈwaɪi/ (listen) hə-WY-ee; Hawaiian: Hawaiʻi [həˈvɐjʔi] or [həˈwɐjʔi]) is a state in the Western United States, about 2,000 miles (3,200 km) from the U.S. mainland in the Pacific Ocean. It is the only U.S. state outside North America, the only state that is an archipelago, and the only state in the tropics.
-
-Hawaii comprises nearly the entire Hawaiian archipelago, 137 volcanic islands spanning 1,500 miles (2,400 km) that are physiographically and ethnologically part of the Polynesian subregion of Oceania. The state's ocean coastline is consequently the fourth-longest in the U.S., at about 750 miles (1,210 km). The eight main islands, from northwest to southeast, are Niʻihau, Kauaʻi, Oʻahu, Molokaʻi, Lānaʻi, Kahoʻolawe, Maui, and Hawaiʻi—the last of these, after which the state is named, is often called the "Big Island" or "Hawaii Island" to avoid confusion with the state or archipelago. The uninhabited Northwestern Hawaiian Islands make up most of the Papahānaumokuākea Marine National Monument, the United States' largest protected area and the fourth-largest in the world.
-
-Instruction:
-
-According to this paragraph, what is the only state in North America that is an archpelago?
-
-Answer:
-
-Hawaii is the only state in North America that is an archipelago, according to this text.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
-
-ECharts Java is a lightweight but comprehensive library for Java developers to easily use JavaScript visualization library Apache ECharts. The simple chart mode facilitates users to write visualization fast and easily, empowered by the clean APIs provided by ECharts Java. The advanced mode helps create an Option object and its Json representation in chainable Java codes, which includes almost all the features defined in Apache ECharts. Now ECharts Java supports Apache ECharts version 5.x.
-
-Features
-
-- Simple, clean and organized APIs, supporting method chaining
-- Full coverage of Apache ECharts functionalities
-- Easily integrate with Web Frameworks
-- Flexible export format, including HTML and images
-- Complete and detailed documentation and examples
-
-Instruction:
-
-What is ECharts Java?
-
-Answer:
-
-ECharts Java is a lightweight, comprehensive library for Java developers to easily integrate JavaScript visualization library Apache ECharts into their web frameworks. The simple and clean APIs facilitate users to develop visualization components fast and easily. For complex and advanced usage, it allows developers to create an Option object and its Json representation. It is compatible with Apache ECharts version 5.x and provides almost full coverage of Apache ECharts functionalities. 
-
-Here are some highlights of ECharts Java:
-
-- Simple, clean, organized APIs with method chaining
-- Full coverage of Apache ECharts functionalities
-- Easily integrate with Web Frameworks
-- Flexible export format, including HTML and images
-- Complete and detailed documentation and examples
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
-
-Nintendo was founded in 1889 as Nintendo Karuta by craftsman Fusajiro Yamauchi and originally produced handmade hanafuda playing cards. After venturing into various lines of business during the 1960s and acquiring a legal status as a public company, Nintendo distributed its first console, the Color TV-Game, in 1977. It gained international recognition with the release of Donkey Kong in 1981 and the Nintendo Entertainment System and Super Mario Bros. in 1985.
-
-Instruction:
-
-Given this reference text about a video game, when was Donkey Kong released?
-
-Answer:
-
-1981
-
-</s>
-<s> Context:
-
-In the United States, the Recording Industry Association of America (RIAA) awards certification based on the number of albums and singles sold through retail and other ancillary markets. Other countries have similar awards (see music recording certification). Certification is not automatic; for an award to be made, the record label must first request certification. The audit is conducted against net shipments after returns (most often an artist's royalty statement is used), which includes albums sold directly to retailers and one-stops, direct-to-consumer sales (music clubs and mail order) and other outlets.
-
-Description and qualifications
-
-A platinum award for the album GHV2 of Madonna
-A Gold record is a song or album that sells 500,000 units (records, tapes, and compact discs). The award was launched in 1958; originally, the requirement for a Gold single was one million units sold and a Gold album represented $1 million in sales (at wholesale value, around a third of the list price). In 1975, the additional requirement of 500,000 units sold was added for Gold albums. Reflecting growth in record sales, the Platinum award was added in 1976, for albums able to sell one million units, and singles selling two million units. The Multi-Platinum award was introduced in 1984, signifying multiple Platinum levels of albums and singles. In 1989, the sales thresholds for singles were reduced to 500,000 for Gold and 1,000,000 for Platinum, reflecting a decrease in sales of singles. In 1992, RIAA began counting each disc in a multi-disc set as one unit toward certification. Reflecting additional growth in music sales, the Diamond award was instituted in 1999 for albums or singles selling ten million units. Because of these changes in criteria, the sales level associated with a particular award depends on when the award was made.
-
-Instruction:
-
-Given a reference text about the Recording Industry Association of America (RIAA) awards, tell me how many albums need to be sold to get an award.
-
-Answer:
-
-As of 1989, a song or album needed to exceed a sales threshold of 500,000 for Gold and 1,000,000 for Platinum. In 1999 after a growth in music sales, the Diamond award was introduced for songs or albums that sold over 10,000,000 units.
-
-</s>
-<PAD><PAD><s> Context:
-
-Robyn Rihanna Fenty NH (/riˈænə/ (listen) ree-AN-ə;[n 1] born February 20, 1988) is a Barbadian singer, actress, and businesswoman. Born in Saint Michael and raised in Bridgetown, Barbados, Rihanna auditioned for American record producer Evan Rogers who invited her to the United States to record demo tapes. After signing with Def Jam in 2005, she soon gained recognition with the release of her first two studio albums, Music of the Sun (2005) and A Girl Like Me (2006), both of which were influenced by Caribbean music and peaked within the top ten of the US Billboard 200 chart.
-
-Instruction:
-
-Given this paragraph about a singer, what was Rihanna's first album?
-
-Answer:
-
-Music of the Sun (2005)
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
-
-As of 2023 the SR-71 holds the world record it set in 1976 as the fastest air-breathing manned aircraft.
-
-Instruction:
-
-What is the fastest air-breathing manned aircraft?
-
-Answer:
-
-As of 2023 the SR-71 is the fastest air-breathing manned aircraft. It can reach a maximum speed of Mach 3.3
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
-
-Palm Cove is located in Far North Queensland on the Australian coast. It has a long sandy beach along most of its seafront except for the rocky headland around Buchan Point in the north of the suburb.
-
-Instruction:
-
-Where in Australia is Palm Cove located?
-
-Answer:
-
-Palm Cove is located in Far North Queensland on the Australian coast.
-
-</s>
-<s> Context:
-
-There are ten different eye layouts—indeed every technological method of capturing an optical image commonly used by human beings, with the exceptions of zoom and Fresnel lenses, occur in nature. Eye types can be categorised into "simple eyes", with one concave photoreceptive surface, and "compound eyes", which comprise a number of individual lenses laid out on a convex surface. Note that "simple" does not imply a reduced level of complexity or acuity. Indeed, any eye type can be adapted for almost any behaviour or environment. The only limitations specific to eye types are that of resolution—the physics of compound eyes prevents them from achieving a resolution better than 1°. Also, superposition eyes can achieve greater sensitivity than apposition eyes, so are better suited to dark-dwelling creatures. Eyes also fall into two groups on the basis of their photoreceptor's cellular construction, with the photoreceptor cells either being cilliated (as in the vertebrates) or rhabdomeric. These two groups are not monophyletic; the cnidaria also possess cilliated cells,  and some gastropods, as well as some annelids possess both.
-
-Some organisms have photosensitive cells that do nothing but detect whether the surroundings are light or dark, which is sufficient for the entrainment of circadian rhythms. These are not considered eyes because they lack enough structure to be considered an organ, and do not produce an image.
-
-Instruction:
-
-Given this paragraph about different types of eyes, how are eye types categorized and why?
-
-Answer:
-
-Eyes are categorized into two types, "simple eyes" and "compound eyes". In this case, "simple eyes" do not mean that they have reduced complexity or acuity, but rather that they have one concave photoreceptive surface. This is in contrast to "compound eyes" which are comprised of a number of individual lenses on a convex surface. In other words, eyes fall into two groups based on their photoreceptor's cellular construction either being cilliated (as in the vertebrates) or rhabdomeric.
+It grants Fargus invincibility and a deadly touch.
 
 </s>
 <PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Zoom Video Communications, Inc. (commonly shortened to Zoom, and stylized as zoom) is a communications technology company headquartered in San Jose, California. It provides videotelephony and online chat services through a cloud-based peer-to-peer software platform used for video communications (Meetings), messaging (Chat), voice calls (Phone), conference rooms for video meetings (Rooms), virtual events (Events) and contact centers (Contact Center), and offers an open platform allowing third-party developers to build custom applications on its unified communications platform (Developer Platform). The company was founded in 2011 by Eric Yuan, a former Cisco engineer and executive. It launched its software in 2013.
+Round	Circuit	Date
+1	United States Circuit of the Americas, Elroy, Texas	2–3 March
+2	United States Virginia International Raceway, Alton, Virginia	27–28 April
+3	Canada Canadian Tire Motorsport Park, Bowmanville, Ontario	18–19 May
+4	United States Sonoma Raceway, Sonoma, California	8–9 June
+5	United States Watkins Glen International, Watkins Glen, New York	31 August–1 September
+6	United States Road America, Elkhart Lake, Wisconsin	21–22 September
+7	United States Las Vegas Motor Speedway, Las Vegas, Nevada	19–20 October
 
 Instruction:
 
-Given this paragraph about Zoom, where is the company based and when was the Zoom software released?
+Given this table of races and dates, how many races took place after July? Give the answer as a number.
 
 Answer:
 
-Zoom Video Communications, Inc is based in San Jose, California. The software launched by the company was released in 2013.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
-
-The 149th Boat Race took place on 6 April 2003. Held annually, the Boat Race is a side-by-side rowing race between crews from the Universities of Oxford (in dark blue) and Cambridge (in light greenish blue) along a 4.2-mile (6.8 km) tidal stretch of the River Thames in south-west London. The lead changed twice during the race, which Oxford won by one foot (30 cm), the smallest margin of victory in the history of the event. The close race has been described as "epic", while Olympic gold medallist Steve Redgrave suggested that the race was the "greatest we will see in our lifetimes".
-
-Instruction:
-
-Based on the reference paragraph, when was the 149th Boat Race?
-
-Answer:
-
-April 6, 2003
+3
 
 </s>
 <s> Context:
 
-Aloy (Ashly Burch) is cast out from the Nora tribe at birth and raised by a fellow outcast named Rost (JB Blanc). As a child (Ava Potter), Aloy obtains a Focus, an augmented reality device that gives her special perceptive abilities. Aloy becomes curious about her origins and is told by Rost that if she wins the Proving, a competition to earn the right to become a member of the Nora, the tribe's Matriarchs might concede this information. Aloy spends some years training in combat and survival under Rost's instruction. After coming of age, Aloy participates in the Proving; she wins the competition, but masked cultists attack the Nora. Rost sacrifices himself to save Aloy from their leader, Helis (Crispin Freeman). When Aloy awakens, the Matriarchs explain that Aloy was found as an infant before a sealed door within the Nora's sacred mountain and that these suspicious origins were the reason for her being an outcast. The Matriarchs name Aloy a "Seeker," allowing her to leave their lands in pursuit of the cultists. Aloy eventually learns that the cultists are part of a splinter Carja faction called the Eclipse and that Aloy was targeted due to her resemblance to an Old World scientist named Elisabet Sobeck (also voiced by Burch). Aloy locates the ruined corporate campus of Faro Automated Solutions and discovers that the Old World was destroyed nearly a thousand years ago after Faro lost control of its automated peacekeeper military robots. The robots, which could self-replicate and consume biomass, overran the planet and engulfed the biosphere, stripping Earth of life. Zero Dawn, a project spearheaded by Sobeck, was initiated to create an automated terraforming system to deactivate the robots and restore life to Earth.
+The system was proclaimed complete in 1992, but two of the original Interstates—I-95 and I-70—were not continuous: both of these discontinuities were due to local opposition, which blocked efforts to build the necessary connections to fully complete the system. I-95 was made a continuous freeway in 2018, and thus I-70 remains the only original Interstate with a discontinuity.
+
+I-95 was discontinuous in New Jersey because of the cancellation of the Somerset Freeway. This situation was remedied when the construction of the Pennsylvania Turnpike/Interstate 95 Interchange Project started in 2010 and partially opened on September 22, 2018, which was already enough to fill the gap.
+
+However, I-70 remains discontinuous in Pennsylvania, because of the lack of a direct interchange with the Pennsylvania Turnpike at the eastern end of the concurrency near Breezewood. Traveling in either direction, I-70 traffic must exit the freeway and use a short stretch of US-30 (which includes a number of roadside services) to rejoin I-70. The interchange was not originally built because of a legacy federal funding rule, since relaxed, which restricted the use of federal funds to improve roads financed with tolls. Solutions have been proposed to eliminate the discontinuity, but they have been blocked by local opposition, fearing a loss of business.
 
 Instruction:
 
-Based on the given passage tell me who masked cultists are?
+Given this paragraph, which two US interstates were not originally continuous? Have they now been made continuous?
 
 Answer:
 
-The masked cultists attacked the Nora when Aloy won the proving competition. Their leader was named Helis. The cultists were part of a splinter Carja faction called the Eclipse and wanted to kill Aloy due to her resemblance to an Old World scientist named Elisabet Sobeck.
+The two discontinuous interstates were the I-95 and the I-70. The I-95 was discontinuous up until September 22, 2018 when the construction of the Pennsylvania Turnpike/Interstate was completed. The I-70, however, remains discontinuous.
 
 </s>
 <PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-After the Russo-Japanese War, the First Treaty was signed on 30 July 1907 by Motono Ichirō, the Japanese Ambassador in Moscow, and Alexander Izvolsky, the Foreign Minister of Russian. The treaty was divided into two parts: one is open agreement, which respected the treaties concluded between the two countries and China, respected China's independence, promoted open doors, and achieved equal opportunities and another is secret agreement, which defined the scope of Japan's interests in Southern Manchuria and Russia's interests in Northern Manchuria and Japan recognized Russia's interests in Outer Mongolia, and Russia recognized Japan's interests in the Korean Peninsula.
+The winners were announced during the awards ceremony on February 26, 2017. Moonlight became the first film with an all-black cast and the first LGBT-themed film to win Best Picture. In an event unprecedented in the history of the Oscars, La La Land was incorrectly announced as the Best Picture, and, a few minutes later, the error was corrected and Moonlight was declared the winner. O.J.: Made in America, at 467 minutes, became the longest film to win an Academy Award, surpassing the 431-minute long War and Peace, which won the Academy Award for Best Foreign Language Film in 1969. Following the five-part documentary's win, new academy rules barred any "multi-part or limited series" from being eligible for documentary categories. With Casey Affleck winning the Oscar for Best Actor, he and his older brother, Ben Affleck, became the 16th pair of siblings to win Academy Awards. Mahershala Ali became the first Muslim actor to win an Oscar. Viola Davis became the first black person to achieve the Triple Crown of Acting with her Oscar, Emmy, and Tony wins.
 
 Instruction:
 
-Given this paragraph about the First Treaty that was signed after the Russo-Japanese War, was there a secret component?
+How many parts did O.J.: Made in America have, and could a documentary with the same length win an Oscar today?
 
 Answer:
 
-Yes. The second part of the First Treaty contained a secret agreement which defined the political scope of each party's interest.
+O.J.: Made in America had 5 parts. Today, documentaries cannot be multi part, so a 5 part documentary could no longer win an Oscar.
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Mohammed Shah I (reigned 1358–1375) was the second ruler of the Bahmani Sultanate, a late medieval kingdom of India. He succeeded his father Ala-ud-Din Bahman Shah. His reign was marked by a series of wars between his kingdom and two neighboring kingdoms, the Vijayanagara and the Warangal under Kapaya Nayaka. He was succeeded by his son Alauddin Mujahid Shah.
+The Battle of Kuningtou or Battle of Guningtou, also known as the Battle of Kinmen, was a battle fought over Kinmen in the Taiwan Strait during the Chinese Civil War in 1949. The failure of the Communists to take the island left it in the hands of the Kuomintang (Nationalists) and crushed their chances of taking Taiwan to destroy the Nationalists completely in the war.
 
 Instruction:
 
-Based on this article, what was the relationship between Ala-ud-Din Bahman Shah and Alauddin Mujahid Shah?
+Who were fighting each other in this battle and what's the consequence of it
 
 Answer:
 
-Alauddin Mujahid Shah was the grandson of Ala-ud-Din Bahman Shah by his son Mohammed Shah I.
+Chinese Nationalist and Chinese Communists fought this battle during Chinese Civil War in 1949. Chinese Nationalist won the battle which deterred Chinese Communists from taking over Taiwan, the last stronghold of Chinese Nationalist government fled from mainland in 1949 until today.
 
 </s>
 <s> Context:
 
-Easter eggs, also called Paschal eggs, are eggs that are decorated for the Christian feast of Easter, which celebrates the resurrection of Jesus. As such, Easter eggs are common during the season of Eastertide (Easter season). The oldest tradition, which continues to be used in Central and Eastern Europe, is to use dyed and painted chicken eggs.
-
-Although eggs, in general, were a traditional symbol of fertility and rebirth, in Christianity, for the celebration of Eastertide, Easter eggs symbolize the empty tomb of Jesus, from which Jesus was resurrected. In addition, one ancient tradition was the staining of Easter eggs with the colour red "in memory of the blood of Christ, shed as at that time of his crucifixion."
-
-This custom of the Easter egg, according to many sources, can be traced to early Christians of Mesopotamia, and from there it spread into Eastern Europe and Siberia through the Orthodox Churches, and later into Europe through the Catholic and Protestant Churches. Additionally, the widespread usage of Easter eggs, according to mediaevalist scholars, is due to the prohibition of eggs during Lent after which, on Easter, they have been blessed for the occasion.
-
-A modern custom in some places is to substitute chocolate eggs wrapped in coloured foil, hand-carved wooden eggs, or plastic eggs filled with confectionery such as chocolate.
+Simón José Antonio de la Santísima Trinidad Bolívar y Palacios (24 July 1783 – 17 December 1830) was a Venezuelan military and political leader who led what are currently the countries of Colombia, Venezuela, Ecuador, Peru, Panama and Bolivia to independence from the Spanish Empire. He is known colloquially as El Libertador, or the Liberator of America. Simón Bolívar was born in Caracas in the Captaincy General of Venezuela into a wealthy family of American-born Spaniards (criollo), but lost both parents as a child. Bolívar was educated abroad and lived in Spain, as was common for men of upper-class families in his day. While living in Madrid from 1800 to 1802, he was introduced to Enlightenment philosophy and married María Teresa Rodríguez del Toro y Alaysa, who died in Venezuela from yellow fever in 1803. From 1803 to 1805, Bolívar embarked on a Grand Tour that ended in Rome, where he swore to end the Spanish rule in the Americas. In 1807, Bolívar returned to Venezuela and proposed gaining Venezuelan independence to other wealthy creoles. When the Spanish authority in the Americas weakened due to Napoleon's Peninsular War, Bolívar became a zealous combatant and politician in the Spanish American wars of independence.
 
 Instruction:
 
-Given a reference text about Easter eggs, tell me what they are, what they symbolize, and where they originated from?
+Given this paragraph about Simon Bolivar, tell me when and where they were born, and what they are known for
 
 Answer:
 
-Easter eggs are decorated eggs celebrating the Christian holiday of Easter. They symbolize the empty tomb of Jesus. They originated in Mesopotamia.
+Simon Bolivar was born in Caracas, Venezuela on 24 July 1783. He is known for leading the wars of independence from the Spanish Empire from what are currently the countries of Colombia, Venezuela, Ecuador, Peru, Panama and Bolivia
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Enrico Silvestrin (born 30 May 1972) is an Italian actor, television and radio presenter and musician.
-
-Life and career
-Born in Rome, after a supporting role in Michele Placido's Close Friends, in 1994 Silvestrin started working as a VJ on MTV Europe, and later on MTV Italy. In 2000, he refused the Gabriele Muccino's offer of starring in The Last Kiss preferring a role in the Italia 1 sitcom Via Zanardi 33, which eventually turned to be a flop.
-
-In 2005 Silvestrin left MTV as to focus on his acting career. He then appeared in a number of films and TV-series, getting a personal success with the role of Alessandro Berti in the Canale 5 crime series Distretto di Polizia. In 2007 he presented the Festivalbar. In 2018 he competed in Grande Fratello VIP, the Italian adaptation of Celebrity Big Brother. He was the third contestant to be evicted on day 22.
-
-Silvestrin is also active as a musician. He has been part of the musical groups Agony in Cage, Tempus Fugit, Ilor and Silv3man. He is nephew on his mother's side of actor and playwright Peppino De Filippo.
+The domestication of cattle in Africa preceded agriculture and seems to have existed alongside hunter-gatherer cultures. It is speculated that by 6000 BCE, cattle were domesticated in North Africa. In the Sahara-Nile complex, people domesticated many animals, including the donkey and a small screw-horned goat which was common from Algeria to Nubia.
+Between 10,000 and 9,000 BCE, pottery was independently invented in the region of Mali in the savannah of West Africa.
+In the steppes and savannahs of the Sahara and Sahel in Northern West Africa, people possibly ancestral to modern Nilo-Saharan and Mandé cultures started to collect wild millet, around 8000 to 6000 BCE. Later, gourds, watermelons, castor beans, and cotton were also collected. Sorghum was first domesticated in Eastern Sudan around 4000 BCE, in one of the earliest instances of agriculture in human history. Its cultivation would gradually spread across Africa, before spreading to India around 2000 BCE.
 
 Instruction:
 
-given this article about Enrico Silvestrin, what year did he get evicted from Celebrity Big Brother?
+In Africa, were cattle domesticated before or after agriculture?
 
 Answer:
 
-2018
+In Africa, cattle were domesticated before agriculture.
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
 
-Geling Yan (simplified Chinese: 严歌苓; traditional Chinese: 嚴歌苓; pinyin: Yán Gēlíng; born 16 November 1958]) is a Chinese-American author and screenwriter. Yan began performing as a dancer at age 12. She served in the People's Liberation Army in Chengdu, during the Cultural Revolution in Tibet and later as a journalist in the Sino-Vietnamese War, achieving a rank equivalent to lieutenant colonel.
+The franchise was founded in Philadelphia in 1883, replacing the team from Worcester, Massachusetts, in the National League. The team has played at several stadiums in the city, beginning with Recreation Park (1883–1886) and continuing at Baker Bowl (1887–1938); Shibe Park (which was renamed Connie Mack Stadium in 1953 in honor of the longtime Philadelphia Athletics manager Connie Mack) (1938–1970); Veterans Stadium (1971–2003), and now Citizens Bank Park (2004-present).
 
 Instruction:
 
-What career did  GeLing Yan have?
+Given this reference text about the Philadelphia Phillies, how many stadiums have they had and where do they play currently?
 
 Answer:
 
-She is an author, screenwriter, and once was a dancer and a journalist.
+The Phillies have played in five different stadium throughout their history in Philadelphia. They currently play at Citizens Bank Park.
+
+</s>
+<s> Context:
+
+Sean Dunphy (30 November 1937 – 17 May 2011) was an Irish singer who represented Ireland at the 1967 Eurovision Song Contest, achieving second place with "If I Could Choose". He was also the first Irish singer to record in Nashville.
+
+Career
+Born in Whitehall, Dublin, Dunphy first became famous in his home country as lead singer with The Hoedowners, a showband led by trumpeter Earl Gill. Between 1966 and 1973, fourteen singles by Sean Dunphy and The Hoedowners entered the Irish Charts including, in 1969, two number ones: "Lonely Woods of Upton" and "When The Fields Were White With Daisies". In the late 1970s, Dunphy went on to have two further hits as a solo artist.
+
+Despite undergoing a quadruple heart bypass operation in 2007, Sean Dunphy continued to give live performances. In March 2009, he sang many of his greatest hits in a one-off concert at Dublin's National Concert Hall. His last public engagement was at a charity event twenty-four hours before his death.
+
+Dunphy died at his home in Baldoyle, County Dublin and is buried at Greenogue cemetery in Ashbourne, County Meath.
+
+Sean Dunphy and his wife Lily had four children. His son Brian is a member of the Irish band, The High Kings.
+
+Instruction:
+
+Given a reference text about Sean Dunphy, tell me where he is buried.
+
+Answer:
+
+Sean Dunphy is buried at Greenogue cemetery in Ashbourne, County Meath.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Blockchains are typically managed by a peer-to-peer (P2P) computer network for use as a public distributed ledger, where nodes collectively adhere to a consensus algorithm protocol to add and validate new transaction blocks. Although blockchain records are not unalterable, since blockchain forks are possible, blockchains may be considered secure by design and exemplify a distributed computing system with high Byzantine fault tolerance. A blockchain was created by a person (or group of people) using the name (or pseudonym) Satoshi Nakamoto in 2008 to serve as the public distributed ledger for bitcoin cryptocurrency transactions, based on previous work by Stuart Haber, W. Scott Stornetta, and Dave Bayer. The implementation of the blockchain within bitcoin made it the first digital currency to solve the double-spending problem without the need of a trusted authority or central server. The bitcoin design has inspired other applications and blockchains that are readable by the public and are widely used by cryptocurrencies. The blockchain may be considered a type of payment rail.
+
+Instruction:
+
+Given this paragraph about blockchain, how did blockchain influence bitcoin cryptocurrency?
+
+Answer:
+
+Blockchain is the technology that enables the existence of cryptocurrency and bitcoin is the name of the best-known cryptocurrency. The implementation of bitcoin using blockchain made it the first digital currency to solve the double-spending problem without the need of a trusted authority or central server. Bitcoin has inspired other applications and blockchains that are highly available, public, and are widely used by cryptocurrencies.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+"Chard or Swiss chard (/tʃɑːrd/; Beta vulgaris subsp. vulgaris, Cicla Group and Flavescens Group) is a green leafy vegetable. In the cultivars of the Flavescens Group, the leaf stalks are large and often prepared separately from the leaf blade; the Cicla Group is the leafy spinach beet. The leaf blade can be green or reddish; the leaf stalks are usually white, yellow or red.
+
+Chard, like other green leafy vegetables, has highly nutritious leaves. Chard has been used in cooking for centuries, but because it is the same species as beetroot, the common names that cooks and cultures have used for chard may be confusing; it has many common names, such as silver beet, perpetual spinach, beet spinach, seakale beet, or leaf beet."
+
+Instruction:
+
+What color is Perpetual Spinach?
+
+Answer:
+
+The leaf blade can be green or reddish; the leaf stalks are usually white, yellow or red.
+
+</s>
+<s> Context:
+
+Chinese cuisine encompasses the numerous cuisines originating from China, as well as overseas cuisines created by the Chinese diaspora. Because of the Chinese diaspora and historical power of the country, Chinese cuisine has influenced many other cuisines in Asia and beyond, with modifications made to cater to local palates. Chinese food staples such as rice, soy sauce, noodles, tea, chili oil, and tofu, and utensils such as chopsticks and the wok, can now be found worldwide.
+
+The preferences for seasoning and cooking techniques of Chinese provinces depend on differences in social class, religion, historical background, and ethnic groups. Geographic features including mountains, rivers, forests, and deserts also have a strong effect on the local available ingredients, considering that the climate of China varies from tropical in the south to subarctic in the northeast. Imperial royal and noble preference also plays a role in the change of Chinese cuisine. Because of imperial expansion and trading, ingredients and cooking techniques from other cultures have been integrated into Chinese cuisines over time.
+
+There are numerous regional, religious, and ethnic styles of Chinese cuisine found within China and abroad. Chinese cuisine is highly diverse and most frequently categorized into provincial divisions, although these province-level classifications consist of many more styles within themselves. The most praised Four Great Traditions in Chinese cuisine are Chuan, Lu, Yue, and Huaiyang, representing cuisines of West, North, South, and East China, respectively. The modern Eight Cuisines of China are Anhui (徽菜; Huīcài), Guangdong (粤菜; Yuècài), Fujian (闽菜; Mǐncài), Hunan (湘菜; Xiāngcài), Jiangsu (苏菜; Sūcài), Shandong (鲁菜; Lǔcài), Sichuan (川菜; Chuāncài), and Zhejiang (浙菜; Zhècài) cuisines.
+
+
+A Quanjude cook is slicing Peking roast duck. Peking duck is eaten by rolling pieces of duck with scallion, cucumber and sweet bean sauce using steamed pancakes.
+Color, scent and taste are the three traditional aspects used to describe Chinese food, as well as the meaning, appearance, and nutrition of the food. Cooking should be appraised with respect to the ingredients used, knife work, cooking time, and seasoning.
+
+Instruction:
+
+Given this paragraph about Chinese cuisine, tell me what are the sub-cuisines, and what made them different.
+
+Answer:
+
+The modern Chinese cuisine were broken down into 8 different styles of local cuisine, which are Anhui, Guangdong, Fujian, Hunan , Jiangsu , Shandong, Sichuan, and Zhejiang cuisines. They are different because of many reasons, such as geographic features and climate which shaped the locals to specialize in certain ingredients or flavors, as well as religion and ethnic groups.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+With sales of over 250 million records worldwide, Rihanna is the second-best-selling female music artist of all time. She has earned 14 number-ones and 32 top-ten singles in the US and 31 top-ten entries in the UK. Her accolades include nine Grammy Awards, 13 American Music Awards (including the Icon Award), 12 Billboard Music Awards, six Guinness World Records, the NAACP's President's Award, and an Academy Award nomination. Time named her one of the 100 most influential people in the world in 2012 and 2018. Forbes ranked her among the top ten highest-paid celebrities in 2012 and 2014. As of 2023, she is the wealthiest female musician, with an estimated net worth of $1.4 billion.
+
+Instruction:
+
+Based on this paragraph about a singer, how many top-ten singles has Rihanna had in the United States?
+
+Answer:
+
+32
+
+</s>
+<s> Context:
+
+Although Rome was successful in the first two Punic Wars, as it vied for dominance with the seafaring Punic city-state of Carthage in North Africa (now Tunisia), it suffered a number of humiliations and damaging reverses in the course of these engagements, especially at the Battle of Cannae in 216 BC. Rome nonetheless managed to win the Second Punic War thanks to Scipio Africanus in 201 BC. After its defeat, Carthage ceased to be a threat to Rome and was reduced to a small territory that was equivalent to what is now northeastern Tunisia.
+
+However, Cato the Censor visited Carthage in 152 BC as a member of a senatorial embassy, which was sent to arbitrate a conflict between the Punic city and Massinissa, the king of Numidia. Cato, a veteran of the Second Punic War, was shocked by Carthage's wealth, which he considered dangerous for Rome. He then relentlessly called for its destruction and ended all of his speeches with the phrase, even when the debate was on a completely different matter. The Senate refused to follow him though, especially Publius Cornelius Scipio Nasica Corculum, the son-in-law of Scipio Africanus and the most influential senator. Corculum opposed the war to preserve Roman unity and argued that the fear of a common enemy was necessary to keep the people in check. Like Cato, he ended all his speeches with the same phrase, "Carthage must be saved" (Carthago servanda est).
+
+Instruction:
+
+Why did Cato think that Carthage must be destroyed?
+
+Answer:
+
+Cato felt that Carthage had bounced back too quickly from its defeats in the first two Punic wars, and would have remembered the disastrous defeat at Cannae. He thought that only completely destroying Carthage would remove it as a threat to Rome.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Founded in 1902 as Madrid Football Club, the club has traditionally worn a white home kit since its inception. The honorific title real is Spanish for "royal" and was bestowed to the club by King Alfonso XIII in 1920 together with the royal crown in the emblem. Real Madrid have played their home matches in the 81,044-capacity Santiago Bernabéu Stadium in downtown Madrid since 1947. Unlike most European sporting entities, Real Madrid's members (socios) have owned and operated the club throughout its history. The club is one of the most widely supported in the world, and was estimated to be worth $5.1 billion in 2022, making it the world's most valuable football team. In 2021, it was the second highest-earning football club in the world, with an annual revenue of €640.7 million.
+
+Instruction:
+
+Given a reference text about the history of Real Madrid Football Club, tell me the year it was founded and the name of its current stadium.
+
+Answer:
+
+Real Madrid was founded in 1902 as Madrid Football Club. Its current stadium, where they play their home matches, is Santiago Bernabeu Stadium.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Samuel Barry Jones (8 July 1923 – 26 January 1999) was an Australian politician. He was a member of the New South Wales Legislative Assembly from 1965 until 1984 and a member of the ALP.
+
+Early life
+Samuel Barry Jones was born in Newcastle. He was the son of a steelworker and a brother of Charlie Jones. He was educated to intermediate level at Newcastle Boys' High School and trained as a fitter and turner. He was an office-holder in the Amalgamated Engineering Union.
+
+Political career
+Sam Jones joined the Labor Party in 1945 and served as vice president and secretary of Tighes Hill branch, vice president of Newcastle and Waratah State Electorate Councils and secretary of Newcastle Federal Electorate Council.
+
+Instruction:
+
+Which party Sam Jones was part of?
+
+Answer:
+
+Sam Jones (Samuel Barry Jones) served as vice president and secretary of the Labor Party in 1945.
 
 </s>

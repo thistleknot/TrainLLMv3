@@ -763,14 +763,14 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     
     from vars import bnb_config, lora_config
     # Explicitly reloading the best model at the end
-    best_model_checkpoint = trainer.state.best_model_checkpoint  # Get the best model checkpoint path
-    print(f"Reloading the best model from checkpoint: {best_model_checkpoint}")
+    
+    print(f"Reloading the best [saved] model from checkpoint: {training_args.output_dir}")
 
     # Reload the model
     from vars import lora_config, bnb_config  # Assuming you're importing these configurations
 
     # Load the model configuration and model itself
-    peft_config = PeftConfig.from_pretrained(best_model_checkpoint)
+    peft_config = PeftConfig.from_pretrained(training_args.output_dir)
     model = AutoModelForCausalLM.from_pretrained(
         peft_config.base_model_name_or_path,
         quantization_config=bnb_config,
@@ -822,7 +822,10 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             data = random.sample(list(self.train_dataset), 4)
         else:
             data = self.valid_dataset    
-            
+        
+        #print('num seq',len(data))
+        #print(data)
+        
         for seq in data:
             
             input_ids = np.array(seq['input_ids'])  # convert to numpy array if not already
@@ -852,6 +855,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             chopped_sequences.extend(chopped_sequences_seq)
                         
         lengths = [len(e) for e in chopped_sequences]
+        #print('# prompts',len(lengths))
         max_length_index = np.argmax(lengths)
 
         # Decode the corresponding prompt from encoded_prompts
@@ -999,7 +1003,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
         # Save the initial model as the best model
         print('save self.output_dir',self.output_dir)
-        self._save_model(self.output_dir)
+        self._save_model()
         print(f'Metrics initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
 
     def on_epoch_end(self, args, state, control, **kwargs):
@@ -1019,7 +1023,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         epoch_eval_loss = metrics.get('eval_loss', 0)
         epoch_perplexity = np.exp(epoch_eval_loss)
         
-        print('self.best_metric',self.best_metric)
+        print("self.best_metric",self.best_metric)
         if self.eval_metric == 'cosine':
             average_similarity = self._compute_cosine_similarity()
             metric_value = average_similarity
@@ -1030,16 +1034,16 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             comparison = lambda a, b: a < b
         
         # Increment the epoch counter
-        print('self.best_metric',self.best_metric)
+        
         self.epoch_counter += 1
         if self.epoch_counter > self.min_epochs:
 
             #if self.best_metric is None or epoch_perplexity < self.best_metric:
             if self.best_metric is None or self.best_metric == float('-inf') or self.best_metric == float('inf') or comparison(metric_value, self.best_metric):
                 self.best_metric = metric_value
-                print('best metric self.output_dir',self.output_dir)
-                state.best_model_checkpoint = self.output_dir
-                self._save_model(self.output_dir)
+                #print('best metric self.output_dir',self.output_dir)
+                
+                self._save_model()
                 self.patience_counter = 0
                 print(f'Metrics net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved as best model')
             else:
@@ -1048,27 +1052,27 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                 if self.patience_counter >= self.patience:
                     control.should_training_stop = True
         else:
-            print('else best metric self.output_dir',self.output_dir)
-            self._save_model(self.output_dir)
+            #print('else best metric self.output_dir',self.output_dir)
+            self._save_model()
             print(f'Metrics: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
+        
         print('self.best_metric',self.best_metric)    
-        print(f"Best Model Checkpoint after epoch: {state.best_model_checkpoint}")
-
+        
         return control
         
     def on_log(self, args, state, control, logs=None, **kwargs):
         if "loss" in logs:
             print(f"Training loss: {logs['loss']}")
 
-    def _save_model(self, output_dir):
+    def _save_model(self):
     
         # Save the model
-        self.trainer.save_model(output_dir)
+        #print('save model self.output_dir',self.output_dir)
+        self.trainer.save_model(self.output_dir)
         
         # Optionally, save the tokenizer and other resources
         if self.trainer.is_world_process_zero():
-            self.trainer.tokenizer.save_pretrained(output_dir)
-        self.trainer.state.best_model_checkpoint = self.output_dir
+            self.trainer.tokenizer.save_pretrained(self.output_dir)
         
 def subsample_dataset(dataset, fraction=0.1):
     """Subsample a given fraction of the dataset."""
@@ -1524,7 +1528,7 @@ class MeZOTrainer(Trainer):
                     model.zero_grad()
                     self.state.global_step += 1
                     self.state.epoch = epoch + (step + 1 + steps_skipped) / steps_in_epoch
-                    print(f"Step {self.state.global_step}, Individual Step Loss: {tr_loss_step.item()}")
+                    print(f"Step {self.state.global_step}, Training Step Loss: {tr_loss_step.item()}")
                     # Log the training loss to WandB
                     wandb.log({"Training Loss": tr_loss_step.item(), "Step": self.state.global_step})
                     self.control = self.callback_handler.on_step_end(
