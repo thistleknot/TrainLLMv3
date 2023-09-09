@@ -65,7 +65,7 @@ def load_model(quantized, prior_phase_dir, tokenizer):
         model.gradient_checkpointing_enable()
         model = prepare_model_for_kbit_training(model)
         model = get_peft_model(model, lora_config)
-        model.resize_token_embeddings(len(tokenizer),pad_to_multiple_of=8)
+        model.resize_token_embeddings(len(tokenizer))
         model.config.use_cache = False
     else:
         # Unquantized model loading code here
