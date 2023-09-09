@@ -12,7 +12,6 @@ from torch.optim.lr_scheduler import LambdaLR
 from pathlib import Path
 from torch.nn.functional import pad
 from sklearn.metrics.pairwise import cosine_similarity
-
 from vars import *
 from typing import Optional, List
 
@@ -143,6 +142,31 @@ def shuffle_dataset(dataset_dict):
         shuffled_dataset[key] = [values[i] for i in indices]
 
     return shuffled_dataset
+    
+def shuffle_prompts(sequence, eos_token_id, pad_token_id):
+    # Initialize an empty list to store individual prompts
+    prompts = []
+    start_idx = 0
+    
+    # Loop through the sequence to find EOS tokens and slice the prompts
+    for i, token in enumerate(sequence):
+        if token == eos_token_id:
+            # Slice from start_idx to i+1 to include the EOS token
+            prompt = sequence[start_idx:i+1]
+            prompts.append(prompt)
+            start_idx = i + 1
+    
+    # Shuffle the list of prompts
+    shuffle(prompts)
+    
+    # Reconstruct the sequence from the shuffled prompts
+    shuffled_sequence = [token for prompt in prompts for token in prompt]
+    
+    # Add any remaining padding tokens
+    pad_count = sequence.count(pad_token_id)
+    shuffled_sequence.extend([pad_token_id] * pad_count)
+    
+    return shuffled_sequence
     
 def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
     shuffled_hierarchical_dataset = {}
@@ -403,20 +427,28 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
             pads_to_distribute[pads_to_distribute.index(min(pads_to_distribute))] += (num_pads - sum(pads_to_distribute))
         
         # Create new sequence and attention mask with redistributed padding tokens
+        
+        prompts = []
+        #
+        for prompt, pad_count in zip(chopped_seq, pads_to_distribute):
+            internal_prompt = []
+            prompts.append([prompt,pad_count])
+            
+        random.shuffle(prompts)
+        
         new_sequence = []
         new_attention_mask = []
-        for prompt, pad_count in zip(chopped_seq, pads_to_distribute):
+        for prompt, pad_count in prompts:
             new_sequence.extend(prompt)
             new_sequence.extend([pad_token_id for _ in range(pad_count)])
             # For extending new_attention_mask
             new_attention_mask.extend(1 for _ in range(len(prompt)))
             new_attention_mask.extend(0 for _ in range(pad_count))
         
-        # Append to the lists
         new_input_ids_list.append(new_sequence)
         new_attention_mask_list.append(new_attention_mask)
-        new_label_list.append(new_sequence)  # Labels are the same as input_ids in this case
-
+        new_label_list.append(new_sequence)
+        
     print([len(s) for s in new_label_list])
     
     # Overwrite the old lists with the new ones
@@ -534,7 +566,7 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
     lora_r = lora_config.r if lora_config else 8
     lora_dropout = lora_config.lora_dropout if lora_config else 0.05
     bias = lora_config.bias if lora_config else None
-    warmup = max(1, int(train_epoch_steps * warm_ratio)) if warm_ratio and train_epoch_steps else 1
+    warmup = max(1, int(train_epoch_steps * warm_ratio)) if (warm_ratio > 0) and train_epoch_steps else 0
     print('train_epoch_steps:',train_epoch_steps)
     print('warm_ratio:',warm_ratio)
     print('warmup:',warmup)
@@ -786,9 +818,6 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     
     print(f"Reloading the best [saved] model from checkpoint: {training_args.output_dir}")
 
-    # Reload the model
-    from vars import lora_config, bnb_config  # Assuming you're importing these configurations
-
     # Load the model configuration and model itself
     peft_config = PeftConfig.from_pretrained(training_args.output_dir)
     model = AutoModelForCausalLM.from_pretrained(
@@ -801,11 +830,10 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     model.gradient_checkpointing_enable()
     model = prepare_model_for_kbit_training(model)
     model = get_peft_model(model, lora_config)
-    model.resize_token_embeddings(len(tokenizer))
     model.config.use_cache = False
 
 class EarlyStoppingCallback_epochs(TrainerCallback):
-    def __init__(self, min_epochs, eval_metric, train_dataset, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=100):
+    def __init__(self, min_epochs, eval_metric, train_dataset, valid_dataset, block_size, SUB_SAMPLE, SUB_SAMPLE_RATIO, MIN_NUM_EVAL_EXAMPLES, train_epoch_steps, output_dir=None, patience=3, min_perplexity=90):
         super().__init__()
         self.valid_dataset = valid_dataset
         self.train_dataset = train_dataset

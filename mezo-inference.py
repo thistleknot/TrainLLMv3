@@ -66,13 +66,11 @@ Why is free climbing called free climbing?
 Answer:""")
 
 query_text2 = (
-f"""Context:
+f"""Instruction:
 
+what is the mascot of Garfield High School in Seattle?
 
-
-Instruction:
-
-Give me a list of the teenage mutant ninja turtles
+Context:
 
 Answer:""")
 torch.manual_seed(SEED+1)
@@ -104,5 +102,5 @@ generator = pipeline('text-generation', model=infer_model, tokenizer=tokenizer,
 )
 
 # results = generator(query_text, do_sample=True, min_length=50, max_length=200)
-results = generator(query_text1)
+results = generator(query_text2)
 print(results[0]['generated_text'])
