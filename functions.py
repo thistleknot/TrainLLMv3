@@ -1005,8 +1005,9 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         print('save self.output_dir',self.output_dir)
         self._save_model()
 
-        metric_value = initial_eval_loss*((((average_similarity)+1)/2)-1)*-1
-        print(f'Metrics initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, both:, {metric_value}, saved')
+        inverted_cosine = (((((average_similarity)+1)/2)-1)*-1)
+        metric_value = initial_eval_loss*inverted_cosine
+        print(f'Metrics initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {metric_value}, saved')
 
     def on_epoch_end(self, args, state, control, **kwargs):
         current_lr = self.trainer.optimizer.param_groups[0]['lr']
@@ -1037,7 +1038,8 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         elif self.eval_metric == 'both':
             average_similarity = self._compute_cosine_similarity()
             epoch_eval_loss = metrics.get('eval_loss', 0)
-            metric_value = ((((average_similarity)+1)/2)-1)*-1
+            inverted_cosine = (((((average_similarity)+1)/2)-1)*-1)
+            metric_value = inverted_cosine*epoch_eval_loss
             comparison = lambda a, b: a < b
         
         # Increment the epoch counter
@@ -1052,16 +1054,16 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                 
                 self._save_model()
                 self.patience_counter = 0
-                print(f'Metrics net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved as best model')
+                print(f'Metrics net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {metric_value}, saved as best model')
             else:
                 self.patience_counter += 1
-                print(f'Metrics net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, no save')
+                print(f'Metrics net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {metric_value}, no save')
                 if self.patience_counter >= self.patience:
                     control.should_training_stop = True
         else:
             #print('else best metric self.output_dir',self.output_dir)
             self._save_model()
-            print(f'Metrics: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
+            print(f'Metrics: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience_counter, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {metric_value}, saved')
         
         print('self.best_metric',self.best_metric)    
         
@@ -1673,19 +1675,19 @@ class MeZOTrainer(Trainer):
                 loss = loss.mean()  # mean() to average on multi-gpu parallel training
         return loss.detach()
     
-    if(True):
+    if(False):
         def zo_forward(self, model, inputs):
             """
             Get (no gradient) loss from the model. Dropout is turned off too.
             """
             # Access the specific callback that contains your custom loss
             
-            cosine_similarity_loss = 0  # Default value if no matching callback is found
+            average_similarity = 0  # Default value if no matching callback is found
             
             for callback in self.callback_handler.callbacks:
                 if isinstance(callback, EarlyStoppingCallback_epochs):
                     # Do something with the callback
-                    cosine_similarity_loss = callback._compute_cosine_similarity(train=True)
+                    average_similarity = callback._compute_cosine_similarity(train=True)
                     
             model.eval()
             if self.args.non_diff:
@@ -1699,10 +1701,10 @@ class MeZOTrainer(Trainer):
                     original_loss = self.compute_loss(model, inputs)
                 
                 # Combine the two losses
-                metric_value = ((((cosine_similarity_loss)+1)/2)-1)*-1
+                inverted_cosine = (((((average_similarity)+1)/2)-1)*-1)
                 
-                composite_loss = original_loss * metric_value
-                print('Train:','Cosine_metric_value:',metric_value,'Original_loss',original_loss,'Product:',composite_loss)
+                composite_loss = original_loss * inverted_cosine
+                print(f'Train: loss: {original_loss}, average_similarity: {average_similarity}, inverted cosine: {inverted_cosine}, composite_loss: {composite_loss}')
 
                 if self.args.n_gpu > 1:
                     # Warning: this is copied from the original Huggingface Trainer. Untested.

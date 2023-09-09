@@ -40,7 +40,7 @@ default_args = {
     'mlm_prob': MLM_PROB,
     'patience': PATIENCE,
     'FINE_TUNE_SAMPLE_SIZE': FINE_TUNE_SAMPLE_SIZE,
-    'EVAL_METRIC': 'both',
+    'EVAL_METRIC': 'eval',
     'min_epochs': min_epochs
 }
 
