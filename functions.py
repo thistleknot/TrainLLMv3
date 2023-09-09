@@ -1608,8 +1608,6 @@ class MeZOTrainer(Trainer):
         self._memory_tracker.stop_and_update_metrics(metrics)
 
         self.log(metrics)
-
-        print("State Best Model Checkpoint: ", self.state.best_model_checkpoint)
         
         run_dir = self._get_output_dir(trial)
         print("Run Dir: ", run_dir)

@@ -1,98 +1,196 @@
 <s> Context:
 
-As an amateur, Fury represented both England and Ireland. Fury represented Ireland three times at international level. He was based out of the Holy Family Boxing Club in Belfast, Northern Ireland, and later switched to the Smithboro Club in County Monaghan, Ireland. In a double international match against an experienced Polish team in 2007, the Irish team lost 12–6 overall; Fury, however, was victorious in both his fights in Rzeszów and Białystok. In another Irish match against the US, Fury won his bout by knockout. He won bronze at the AIBA Youth World Boxing Championships in 2006.
+Hendrik "Erik" Dekker (born 21 August 1970) is a retired Dutch professional road racing cyclist active from 1992 until 2006. He was a member of the Rabobank cycling team from 1992 till 2006. From 2007 to 2015 he was one of Rabobank's team managers.
 
-In England, while representing Jimmy Egan's Boxing Academy in Wythenshawe, Manchester, he participated in the senior national championships in 2006 but was beaten by David Price 22–8. In May 2007, he won the EU Junior Championship, defeating Istvan Bernath in the final. In July 2007 he won silver at the European Junior Championship, losing to Maxim Babanin in the final.
+Cycling career
+Amateur career
+Dekker rode his first race at eight, and soon became successful. In 1985 he was invited to join the national selection for juniors. As an amateur, his most important results were second places at the youth world championships in Bergamo in 1987 and at the road race in the 1992 Summer Olympics. In that Olympic road race, Dekker got away at 30 km before the finish, together with Fabio Casartelli and Dainis Ozols. Dekker was outsprinted by Casartelli, but was so happy that he won a medal that he also finished with his arms in the air.
 
-As a junior, Fury was ranked number three in the world behind the Russians Maxim Babanin and Andrey Volkov, but did not get the chance to represent Great Britain at the 2008 Olympics because each country is restricted to one boxer per weight division and David Price was selected. Price came up through the amateur Olympic programme. Fury also unsuccessfully tried to qualify for Ireland. Speaking in 2011, Fury said "I should have gone to the Olympic games in 2008 and won a gold medal for Ireland, but I was denied the chance to go and do it" He was also forced to withdraw from the Irish national championships after officials from the Holy Trinity Boxing Club in West Belfast, the club of the then Irish amateur heavyweight champion, submitted a protest regarding his eligibility as he was not born in Ireland.
+Directly after the Olympic Games, he became professional, and rode his first race a few weeks later in the Tour de l'Avenir.
 
-Fury won the ABA super-heavyweight title in 2008 by defeating Damien Campbell 19:1. He turned professional later that year. Feeling disillusioned with amateur boxing, he decided not to wait for the 2012 Olympics. He finished with an amateur record of 31–4 (26 KOs).
+Professional career
+His first win as a professional was a stage of the Tour of the Basque Country of 1994, the year he rode his first Tour de France. In 1997 Dekker won the Ronde van Nederland, but a large part of 1998 was lost because of injuries.
+
+The year 2000 was Dekker's best. He won three stages in the 2000 Tour de France, although neither a sprinter nor a favourite for the overall win, and was voted most combative cyclist. In the autumn of that year, Dekker won his first classic, the Clásica de San Sebastián.
+
+In 2001 Dekker won the Amstel Gold Race and the UCI Road World Cup. In the 2001 Tour de France he took a stage, after having helped his teammate Marc Wauters to a stage win. At the end of the year he was named Dutch Sportsman of the year.
+
+The years 2002 and 2003 were less successful because of injuries. He came back in 2004 in the spring classics and a victory in Paris–Tours. He had announced his retirement for the autumn of 2006, but he crashed heavily in the 2006 Tour de France and decided to stop.
+
+Managing career
+In 2007, Dekker started as team manager of the Rabobank team. At the end of the 2015 season, he left the team.
 
 Instruction:
 
-What was Tyson Fury's fight record as an amateur?
+Tell me about the career of Erik Dekker
 
 Answer:
 
-He finished with an amateur record of 31–4 (26 KOs
+Hendrik "Erik" Dekker (born 21 August 1970) is a retired Dutch professional road racing cyclist active from 1992 until 2006. He was a member of the Rabobank cycling team from 1992 till 2006. From 2007 to 2015 he was one of Rabobank's team managers.
+
+Cycling career
+Amateur career
+Dekker rode his first race at eight, and soon became successful. In 1985 he was invited to join the national selection for juniors. As an amateur, his most important results were second places at the youth world championships in Bergamo in 1987 and at the road race in the 1992 Summer Olympics. In that Olympic road race, Dekker got away at 30 km before the finish, together with Fabio Casartelli and Dainis Ozols. Dekker was outsprinted by Casartelli, but was so happy that he won a medal that he also finished with his arms in the air.
+
+Directly after the Olympic Games, he became professional, and rode his first race a few weeks later in the Tour de l'Avenir.
+
+Professional career
+His first win as a professional was a stage of the Tour of the Basque Country of 1994, the year he rode his first Tour de France. In 1997 Dekker won the Ronde van Nederland, but a large part of 1998 was lost because of injuries.
+
+The year 2000 was Dekker's best. He won three stages in the 2000 Tour de France, although neither a sprinter nor a favourite for the overall win, and was voted most combative cyclist. In the autumn of that year, Dekker won his first classic, the Clásica de San Sebastián.
+
+In 2001 Dekker won the Amstel Gold Race and the UCI Road World Cup. In the 2001 Tour de France he took a stage, after having helped his teammate Marc Wauters to a stage win. At the end of the year he was named Dutch Sportsman of the year.
+
+The years 2002 and 2003 were less successful because of injuries. He came back in 2004 in the spring classics and a victory in Paris–Tours. He had announced his retirement for the autumn of 2006, but he crashed heavily in the 2006 Tour de France and decided to stop.
+
+Managing career
+In 2007, Dekker started as team manager of the Rabobank team. At the end of the 2015 season, he left the team.
 
 </s>
-<PAD><PAD><PAD><PAD><s> Context:
+<PAD><s> Context:
 
-Ingwelala is a private stakeholder nature reserve on the bank of the Nhlaralumi River in the heart of the lowveld, about 65 km from the town of Hoedspruit. The reserve of some 3,000 hectares forms part of the Bushbuckridge Municipality, and adjoins the Umbabat Nature Reserve and the unfenced Kruger National Park.
+"Mazzy Star is an American alternative rock band formed in 1988 in Santa Monica, California, from remnants of the group Opal. Founding member David Roback's friend Hope Sandoval became the group's vocalist when Kendra Smith left Opal.
 
-Ingwelala includes the following game farms:
-
-Argyle – 1,499 ha registered as Ingwelala Shareblock Ltd.
-Buffelsbed – 1,018 ha registered as Buffelsbed Shareblock Ltd.
-Goedehoop – 372 ha registered as Ingwelala Holdings Ltd.
-Si Bon – 257 ha registered as Si Bon Property Holdings Ltd
+Mazzy Star is best known for the song ""Fade into You"", which brought the band some success in the mid-1990s and was the group's biggest mainstream hit, earning extensive exposure on MTV, VH1, and radio airplay. Roback and Sandoval were the creative center of the band, with Sandoval as lyricist and Roback as composer of the majority of the band's material until his death in Los Angeles on February 24, 2020, from metastatic cancer. Mazzy Star's founding drummer Keith Mitchell, originally part of Opal, died on May 14, 2017 from cancer."
 
 Instruction:
 
-Given a reference text about Ingwelala, tell me which game farms are on the reserve.
+Where was Mazzy Star formed?
 
 Answer:
 
-Argyle, Buffelsbed, Goedehoop, and Si Bon are the game farms on Ingwelala.
+Mazzy Star was formed in Santa Monica, California in 1988
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><s> Context:
 
-The TV series was starred and created by Justin Fletcher, who plays the characters in all of the comedy sketches and also wrote a few sketches in its first series. Some of the sketches are filmed in the studio, while other sketches are filmed outside; for example, one is filmed at Portmeirion, used for the fictional town of Wiggyville where Captain Adorable's sketches are set from Series 1 to 2. The show is interspersed with a selection of children called the Gigglekids, who tell jokes to Justin himself, in their own section called 'Giggle Box'.
+Oak Island has been a subject for treasure hunters ever since the late 1700s, with rumours that Captain Kidd's treasure was buried there. While there is little evidence to support what went on during the early excavations, stories began to be published and documented as early as 1856. Since that time there have been many theories that extend beyond that of Captain Kidd which include among others religious artifacts, manuscripts, and Marie Antoinette's jewels. The "treasure" has also been prone to criticism by those who have dismissed search areas as natural phenomena.
 
 Instruction:
 
-What happens during the section called "Giggle Box"?
+What is hidden at Oak Island?
 
 Answer:
 
-Children called the Gigglekids tell jokes to Justin.
+Oak Island is rumored to have Captain Kidd's treasure buried. However despite numerous excavation attempts over the past 100 years nothing has been discovered. There are other theories which claim religious artifacts, manuscripts, or Marie Antionette's jewels are hidden at Oak Island.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+In the United States between 1973 and 1999, September 16 is the most common birthday in the United States and December 25 the least common birthday (other than February 29, because of leap years). In 2011, October 5 and 6 were reported as the most frequently occurring birthdays.
+
+Instruction:
+
+What is the least common birthday in the US other than Feb 29?
+
+Answer:
+
+The least common birthday in the United States between 1973 and 1999, excluding February 29, is December 25.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><s> Context:
+
+David Leatherbarrow is Professor of Architecture and Chair of the Graduate Group in Architecture at the University of Pennsylvania School of Design, Philadelphia, where he has taught since 1984. He received his B.Arch. from the University of Kentucky and holds a Ph.D. in Art from the University of Essex. He has also taught in England, at Cambridge University and the University of Westminster (formerly the Polytechnic of Central London).
+
+Instruction:
+
+Where did David Leatherbarrow receive his PhD from?
+
+Answer:
+
+University of Essex
 
 </s>
 <s> Context:
 
-Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Thought to be a mutant clone of the Pinot Noir variety, it normally has a grayish-blue fruit, accounting for its name, but the grapes can have a brownish pink to black and even white appearance. The word pinot could have been given to it because the grapes grow in small pinecone-shaped clusters. The wines produced from this grape also vary in color from a deep golden yellow to copper and even a light shade of pink, and it is one of the more popular grapes for skin-contact wine.
-
-Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized. The Alsatian style, often duplicated in New World wine regions such as Marlborough, Tasmania, South Australia, Washington, Oregon, and South Africa tend to have moderate to low acidity, higher alcohol levels and an almost "oily" texture that contributes to the full-bodied nature of the wine. The flavors can range from ripe tropical fruit notes of melon and mango to some botrytis-influenced flavors. In Italy, Pinot grigio grapes are often harvested early to retain the refreshing acidity and minimize some of the overt-fruitiness of the variety, creating a more neutral flavor profile. This style is often imitated in other Old World wine regions, such as Germany, where the grape is known as Ruländer, or more commonly, Grauburgunder.
+Don't Starve is a survival video game developed by the Canadian indie video game developer Klei Entertainment. The game was initially released for Microsoft Windows, OS X, and Linux on April 23, 2013. A PlayStation 4 port, renamed Don't Starve: Giant Edition, became available the following year (with PlayStation Vita and PlayStation 3 versions released in September 2014 and June 2015 respectively, and an Xbox One version released in August 2015). Don't Starve for iOS, renamed Don't Starve: Pocket Edition was released on July 9, 2015. An Android version was released on October 20, 2016. Downloadable content titled Reign of Giants was released on April 30, 2014, and a multiplayer standalone expansion called Don't Starve Together became free for existing users on June 3, 2015. On Steam, this game is able to be purchased with a free copy for a friend. A Nintendo Switch port came out on April 12, 2018.
+The game follows a scientist named Wilson who finds himself in a dark, dreary parallel world known as the Constant and must survive as long as possible. To this end, the player must keep Wilson alive, fed, and mentally stable as he avoids a variety of surreal and supernatural enemies that will try to kill and devour him. The game's Adventure mode adds depth to the sparse plot and pits Wilson against the game's supposed antagonist, Maxwell.
+Don't Starve was Klei's first foray into the survival genre. Conceived during the height of a game industry trend of dropping players into a world with few instructions and a goal of survival, the game was influenced by Minecraft which spearheaded this trend as well as by filmmaker Tim Burton. The game received positive reviews from critics, commended for its original art style, music, and variety of ways for the player to die, although its high level of difficulty and implementation of permanent death were less warmly received.
 
 Instruction:
 
-What is Pinot Grigio?
+What is Don’t Starve Together?
 
 Answer:
 
-Pinot Gris, Pinot Grigio (US: /ˈpiːnoʊ ˈɡriːdʒioʊ, -dʒoʊ/, UK: /ˈɡrɪdʒioʊ/) or Grauburgunder is a white wine grape variety of the species Vitis vinifera. Pinot Gris is grown around the globe, with the "spicy" full-bodied Alsatian and lighter-bodied, more acidic Italian styles being most widely recognized.
+Don't Starve Together is a cooperative multiplayer survival game developed by Klei Entertainment, where up to six players can play together online or offline. Players take on the role of a band of characters in a harsh wilderness world, and must work together to keep alive, fed, and mentally stable as they avoid a variety of surreal and supernatural enemies that will try to kill and devour them. The game features a unique hand-drawn art style, as well as randomly generated worlds, providing a new experience with each playthrough.
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><s> Context:
 
-The Driftwood River is a 15.5-mile-long (24.9 km) tributary of the East Fork of the White River in central Indiana in the United States. Via the White, Wabash and Ohio rivers, it is part of the watershed of the Mississippi River. It is a short river, formed by the confluence of two longer streams a short distance upstream of its mouth.
-
-Course
-The Driftwood River is formed in southeastern Johnson County, 1 mile (1.6 km) west of Edinburgh, by the confluence of Sugar Creek and the Big Blue River. It flows generally southwardly through northwestern Bartholomew County to Columbus, where it joins the Flatrock River to form the East Fork of the White River.
-
-Near Edinburgh, IN, Driftwood River has a mean annual discharge of 1,210 cubic feet per second.[
+Due to the demand for the toy, Squishmallows are often sold by resellers for an increased price. The average resell price for a Squishmallow depends on the size, condition, and rarity of the specific item. Some limited edition or high-demand Squishmallows are sold by resellers and collectors for hundreds or thousands of dollars. Jack the Black Cat, known for its closed white eyes and white whiskers, is one of the rarest Squishmallows sold to date. KellyToys introduced the limited edition stuffed animal on their website in 2020, where it sold out within two hours. Third party websites like eBay host listings for Jack the Black Cat valued at nearly $2,000. Among the many Squishmallows that are sold, some of the most popular include Connor the Cow, Malcolm the Mushroom, Archie the Axolotl, and Philippe the Frog. There are reports that resellers are harassed and doxxed by the community.
 
 Instruction:
 
-Given a reference text about the Driftwood River, tell me what main river it is part of.
+What makes a Squishmallow resellable?
 
 Answer:
 
-The Driftwood River is part of the Mississippi River.
+Squishmallows are a highly demanded toy and also often are sold as limited edition items. As a result, Squishmallows that are more unique and rare can often be sold or higher value later. One example is Jack the Black Cat which has been listed on eBay for nearly $2,000.
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+<PAD><PAD><PAD><s> Context:
 
-Until the last ice age, the basin which is now filled by the San Francisco Bay was a large linear valley with small hills, similar to most of the valleys of the Coast Ranges. As the great ice sheets began to melt, around 11,000 years ago, the sea level started to rise. By 5000 BC the sea level rose 300 feet (90 m), filling the valley with water from the Pacific. The valley became a bay, and the small hills became islands.
+Africa is the world's second-largest and second-most populous continent, after Asia in both aspects. At about 30.3 million km2 (11.7 million square miles) including adjacent islands, it covers 20% of Earth's land area and 6% of its total surface area. With 1.4 billion people as of 2021, it accounts for about 18% of the world's human population. Africa's population is the youngest amongst all the continents; the median age in 2012 was 19.7, when the worldwide median age was 30.4. Despite a wide range of natural resources, Africa is the least wealthy continent per capita and second-least wealthy by total wealth, behind Oceania. Scholars have attributed this to different factors including geography, climate, tribalism, colonialism, the Cold War, neocolonialism, lack of democracy, and corruption. Despite this low concentration of wealth, recent economic expansion and the large and young population make Africa an important economic market in the broader global context.
 
 Instruction:
 
-How was the San Francisco bay created?
+Given this paragraph about Africa, why Africa's per capita  GDP is low?
 
 Answer:
 
-Around 11,000 years ago the earth began to wam and melt the great ice sheets, raising sea levels and filling the valley that the San Francisco Bay now lives in.
+While there are several reasons high population growth, corruption and colonialism and neocolonialism are some of the the factors.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Peru, officially the Republic of Peru (Spanish: República del Perú (help·info)), is a country in western South America. It is bordered in the north by Ecuador and Colombia, in the east by Brazil, in the southeast by Bolivia, in the south by Chile, and in the south and west by the Pacific Ocean. Peru is a megadiverse country with habitats ranging from the arid plains of the Pacific coastal region in the west to the peaks of the Andes mountains extending from the north to the southeast of the country to the tropical Amazon basin rainforest in the east with the Amazon River. Peru has a population of over 34 million, and its capital and largest city is Lima. At 1,285,216 km2 (496,225 sq mi), Peru is the 19th largest country in the world, and the third largest in South America.
+
+Instruction:
+
+Given this paragraph that describes the country of Peru, what is its population size?
+
+Answer:
+
+Peru has a population of over 34 million people.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+In 1899 the Great Central Railway completed its main line to London through the southernmost part of the parish. The nearest station was Finmere for Buckingham, which was just over the Oxfordshire county boundary on the main road between Buckingham and Bicester and only 3⁄4 mile (1.2 km) from Barton Hartshorn. The station was 5 miles (8 km) from Buckingham, more than 1 mile (1.6 km) from Finmere and was actually in Shelswell parish next to the village of Newton Purcell. In about 1922 the Great Central renamed the station Finmere. British Railways closed the station in 1963 and the line in 1966.
+
+Instruction:
+
+Of the cities listed, which was furthest from the station?
+
+Answer:
+
+Buckingham city was the furthest, 5 miles from the station.
+
+</s>
+<PAD><PAD><PAD><PAD><s> Context:
+
+Fyre Festival was a fraudulent luxury music festival founded by con artist Billy McFarland and rapper Ja Rule. It was created with the intent of promoting the company's Fyre app for booking music talent. The festival was scheduled to take place on April 28–30 and May 5–7, 2017, on the Bahamian island of Great Exuma.
+
+Instruction:
+
+Given this paragraph about Fyre Festival, would you say that it was a successful event?
+
+Answer:
+
+No, Fyre Festival was a fraudulent luxury music festival founded by con artist Billy McFarland and rapper Ja Rule
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Artificial intelligence (AI) is intelligence demonstrated by machines, as opposed to intelligence of humans and other animals. Example tasks in which this is done include speech recognition, computer vision, translation between (natural) languages, as well as other mappings of inputs.
+
+Instruction:
+
+What are some examples of tasks performed by AI?
+
+Answer:
+
+Examples of tasks performed by AI include speech recognition, computer vision, translation between (natural) languages, and other mappings of inputs.
 
 </s>
