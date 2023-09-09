@@ -55,13 +55,17 @@ print("CLS Token:", tokenizer.cls_token)
 print("MASK Token:", tokenizer.mask_token)
 
 query_text = (
-f"""Instruction:
+f"""Context:
 
-What are all the different ways of saying customer lifetime value?
+Most of the climbing done in modern times is considered free climbing—climbing using one's own physical strength, with equipment used solely as protection and not as support—as opposed to aid climbing, the gear-dependent form of climbing that was dominant in the sport's earlier days. Free climbing is typically divided into several styles that differ from one another depending on the choice of equipment used and the configurations of their belay, rope and anchor systems.
+
+Instruction:
+
+Why is free climbing called free climbing?
 
 Answer:
 
-Customer lifetime value is commonly referred""")
+Free climbing is named""")
 torch.manual_seed(SEED)
 
 # attention_mask = torch.ones_like(input_ids)

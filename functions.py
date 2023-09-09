@@ -1004,7 +1004,9 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         # Save the initial model as the best model
         print('save self.output_dir',self.output_dir)
         self._save_model()
-        print(f'Metrics initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
+
+        metric_value = initial_eval_loss*((((average_similarity)+1)/2)-1)*-1
+        print(f'Metrics initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, both:, {metric_value}, saved')
 
     def on_epoch_end(self, args, state, control, **kwargs):
         current_lr = self.trainer.optimizer.param_groups[0]['lr']
@@ -1032,11 +1034,16 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
             epoch_eval_loss = metrics.get('eval_loss', 0)
             metric_value = epoch_eval_loss
             comparison = lambda a, b: a < b
+        elif self.eval_metric == 'both':
+            average_similarity = self._compute_cosine_similarity()
+            epoch_eval_loss = metrics.get('eval_loss', 0)
+            metric_value = ((((average_similarity)+1)/2)-1)*-1
+            comparison = lambda a, b: a < b
         
         # Increment the epoch counter
         
         self.epoch_counter += 1
-        if self.epoch_counter > self.min_epochs:
+        if self.epoch_counter >= self.min_epochs:
 
             #if self.best_metric is None or epoch_perplexity < self.best_metric:
             if self.best_metric is None or self.best_metric == float('-inf') or self.best_metric == float('inf') or comparison(metric_value, self.best_metric):
@@ -1666,7 +1673,7 @@ class MeZOTrainer(Trainer):
                 loss = loss.mean()  # mean() to average on multi-gpu parallel training
         return loss.detach()
     
-    if(False):
+    if(True):
         def zo_forward(self, model, inputs):
             """
             Get (no gradient) loss from the model. Dropout is turned off too.
@@ -1678,8 +1685,8 @@ class MeZOTrainer(Trainer):
             for callback in self.callback_handler.callbacks:
                 if isinstance(callback, EarlyStoppingCallback_epochs):
                     # Do something with the callback
-                    cosine_similarity_loss = 1 - callback._compute_cosine_similarity(train=True)
-            
+                    cosine_similarity_loss = callback._compute_cosine_similarity(train=True)
+                    
             model.eval()
             if self.args.non_diff:
                 print('non diff')
@@ -1692,13 +1699,15 @@ class MeZOTrainer(Trainer):
                     original_loss = self.compute_loss(model, inputs)
                 
                 # Combine the two losses
-                alpha = 2.5  # alpha is a hyperparameter to balance the two terms
-                composite_loss = original_loss + alpha * cosine_similarity_loss
+                metric_value = ((((cosine_similarity_loss)+1)/2)-1)*-1
+                
+                composite_loss = original_loss * metric_value
+                print('Train:','Cosine_metric_value:',metric_value,'Original_loss',original_loss,'Product:',composite_loss)
 
                 if self.args.n_gpu > 1:
                     # Warning: this is copied from the original Huggingface Trainer. Untested.
                     composite_loss = composite_loss.mean()  # mean() to average on multi-gpu parallel training
-
+            
             return composite_loss.detach()
 
     def zo_forward_nondiff(self, model, inputs):
