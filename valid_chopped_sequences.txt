@@ -1,884 +1,913 @@
-<s> Context:
+<s> Instruction:
 
-Avīci or Avici (Sanskrit and Pali for "without waves"; Chinese: 無間地獄 or 阿鼻地獄; Japanese: 無間地獄 or 阿鼻地獄; Burmese: အဝီစိငရဲ) is one of the hells (naraka) in Hinduism and Buddhism. In Hinduism, it is one of the twenty-eight hells located in the kingdom of Yama, where individuals are reborn for bearing false witness and outright lying while transacting business or giving charity. In Buddhism, it is the lowest level of the Naraka or "hell" realm, with the most suffering, into which the dead who have committed grave misdeeds may be reborn. It is said to be a cube 20,000 yojanas (240,000 to 300,000 kilometers) on each side, buried deep underneath the divine (nonvisible) earth. Avīci is often translated into English as "interminable" or "incessant", referring to suffering without periods of respite, although it is believed to be ultimately impermanent.
+per this reference text about Delaware Route 16, how many times does the road change between being a divided highway and undivided?
+
+Context:
+
+In Saint Johnstown, the road becomes a divided highway and DE 36 splits from DE 16 by heading to the northeast on Shawnee Road. DE 16 soon becomes undivided again and continues east through agricultural areas and woods with some residences, crossing Toms Dam Branch and running through the community of Owens. Farther east, the road passes through the community of Oakley and crosses West Branch Gum Branch and then Gum Branch. The route comes to an intersection with US 113 near a few businesses, where it is briefly a divided highway. Past this intersection, the name changes to Milton Ellendale Highway and the two-lane undivided road enters the town of Ellendale, where it becomes Main Street. In Ellendale, DE 16 runs past several homes, crossing the Delmarva Central Railroad's Indian River Subdivision line at-grade. The road leaves the town and becomes Milton Ellendale Highway again, turning southeast. The route heads through woodland and farms, running immediately to the north of the Delmarva Central Railroad's Milton Industrial Track line. DE 16 turns east away from the railroad tracks and comes to an intersection with DE 30. At this point, DE 5 Alternate (DE 5 Alt.), which runs south along DE 30, heads east along with DE 16. The road reaches the town of Milton, where it passes homes and businesses. DE 16 comes to an intersection with DE 5, where DE 5 Alt. ends and the road name changes to Broadkill Road. The route leaves Milton and continues into farmland with a few residences, turning to the northeast. The road intersects DE 1 and passes north of a golf course before it runs through a mix of farms and woods with some homes. DE 16 turns east and northeast through marshland within the Prime Hook National Wildlife Refuge before crossing Broadkill Sound and reaching the community of Broadkill Beach. Here, the route intersects Bay Shore Drive before ending at a dead end on the Delaware Bay.
 
 Answer:
 
-There was a famous Swedish DJ called Avicii and there is Avici that is one of the hells (naraka) in Hinduism and Buddhism. In Hinduism, it is one of the twenty-eight hells located in the kingdom of Yama, where individuals are reborn for bearing false witness and outright lying while transacting business or giving charity.
-
-In Buddhism, it is the lowest level of the Naraka or "hell" realm, with the most suffering, into which the dead who have committed grave misdeeds may be reborn. It is said to be a cube 20,000 yojanas (240,000 to 300,000 kilometers) on each side, buried deep underneath the divine (nonvisible) earth. Avici is often translated into English as "interminable" or "incessant", referring to suffering without periods of respite, although it is believed to be ultimately impermanent.
-
-Instruction:
-
-What does Avici stand for
+DE Route 16 changes 3 times between divided and undivided highways per the information provided.
 
 </s>
 <PAD><s> Context:
 
-Joseph A. Garcia (born March 21, 1957) is an American lawyer and politician. He served as the 48th Lieutenant Governor of Colorado from January 2011 to May 2016.
-
-Early life, education and career
-Joseph A. Garcia was born on March 21, 1957, in Lafayette, Indiana. He attended Austin E. Lathrop High School in Fairbanks, Alaska from 1973 to 1974 and graduated from T.C. Williams High School in Alexandria, Virginia in 1975. He graduated from the University of Colorado Boulder in 1979 where he received a Bachelor of Science in Business. Garcia then graduated from Harvard Law School in 1983.
-
-After law school, Garcia took a job with the firm of Holme Roberts & Owen, going on to become their first Hispanic partner. Garcia worked with the firm from 1983 to 1993. Garcia was appointed by Governor Romer as the Executive Director of the Department of Regulatory Agencies in 1993. In 1999 Garcia was appointed by the White House as the Regional Director of the Rocky Mountain States for the United States Department of Housing and Urban Development.
-
-Answer:
-
-Joseph A. Garcia attended Austin E. Lathrop High School and T.C. Williams High School. After high school, he attended the University of Colorado Boulder and Harvard Law School.
+Telangana (/ˌtɛlənˈɡɑːnə/ (listen); Telugu: [ˈtelaŋɡaːɳa], Urdu: [ˈtɪləŋɡɑːna] (listen)) is a state in India situated on the south-central stretch of the Indian peninsula on the high Deccan Plateau. It is the eleventh-largest state and the twelfth-most populated state in India with a geographical area of 112,077 km2 (43,273 sq mi) and 35,193,978 residents as per 2011 census. On 2 June 2014, the area was separated from the northwestern part of Andhra Pradesh as the newly formed state of Telangana, with Hyderabad as its capital. Its other major cities include Warangal, Nizamabad, Khammam, Karimnagar and Ramagundam. Telangana is bordered by the states of Maharashtra to the north, Chhattisgarh to the northeast, Karnataka to the west, and Andhra Pradesh to the east and south. The terrain of Telangana consists mostly of the Deccan Plateau with dense forests covering an area of 27,292 km2 (10,538 sq mi). As of 2019, the state of Telangana is divided into 33 districts.
 
 Instruction:
 
-Given a reference text about Joseph A. Garcia, tell me what high school and college he attended.
-
-</s>
-<PAD><PAD><s> Instruction:
-
-When was the Stansfeld's death
-
-Context:
-
-Stansfeld began his career as a civil servant in HM Customs and Excise. In 1877, he moved to Oxford, and later matriculated as a student at Exeter College, where he studied Medicine, attaining his BA in 1889, MA in 1893 and qualified as a doctor in 1897. In 1897 he started the Oxford Medical Misson in Bermondsey, London, where he founded the Stansfeld Oxford & Bermondsey Club in the same year. In 1909, he decided to take Holy Orders and studied part-time at Wycliffe Hall, Oxford. He was appointed Vicar of St Anne's Church, Thoburn Square, Bermondsey in 1910, and then returned to Oxford in 1912 as Rector of St Ebbe's, Oxford then a slum district until his retirement in 1926. Stansfeld died at Spelsbury, Oxfordshire, aged 85 in December 1939. He campaigned successfully for the erection of a children's playground and public baths in St Ebbe's. His philanthropy is commemorated by a blue plaque in Paradise Square, unveiled in June 2009.
+When was Telangana created?
 
 Answer:
 
-Stansfeld died at Spelsbury, Oxfordshire, aged 85 in December 1939
-
-</s>
-<PAD><PAD><s> Context:
-
-Asia is the largest continent on Earth. It covers 9% of the Earth's total surface area (or 30% of its land area), and has the longest coastline, at 62,800 kilometres (39,022 mi). Asia is generally defined as comprising the eastern four-fifths of Eurasia. It is located to the east of the Suez Canal and the Ural Mountains, and south of the Caucasus Mountains (or the Kuma–Manych Depression) and the Caspian and Black Seas. It is bounded on the east by the Pacific Ocean, on the south by the Indian Ocean and on the north by the Arctic Ocean. Asia is subdivided into 49 countries, five of them (Georgia, Azerbaijan, Russia, Kazakhstan and Turkey) are transcontinental countries lying partly in Europe. Geographically, Russia is partly in Asia, but is considered a European nation, both culturally and politically.
-
-Instruction:
-
-Given a reference text that provides the geographical description of continent Asia, how many Asian countries have a part of their land in Europe as well?
-
-Answer:
-
-5
-
-</s>
-<PAD><PAD><s> Context:
-
-The Guided Advanced Tactical Rocket (GATR) is a weapons system under development by Orbital ATK and Elbit Systems. It is intended to provide a low-cost guided missile compatible with existing unguided 70mm rocket launch platforms such as the Hydra 70. The penetrating version of the GATR is equipped with a steel-cased M282 warhead and a programmable fuze. It can be set from the cockpit to detonate on impact or after a delay and is capable of penetrating a triple-brick wall and light-vehicle armor.
-
-Answer:
-
-A Guided Advanced Tactical Rocket (GATR) is a low-cost guided missile equipped with a steel-cased M282 warhead and a programmable fuze.
-
-Instruction:
-
-Given the reference text below, what is a GATR?
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-Solitary bees, such as leafcutters, do not form colonies. Unlike social insects (ants, yellow jackets, honeybees), leafcutters work alone building isolated nests. Similar to honeybees, female bees perform nearly all essential tasks of brood rearing. These native insects perform essential tasks, pollinating wild plants. The alfalfa leaf cutter bee (Megachile rotundata), native to Europe, has been semi-domesticated for crop pollination. In North America, the species was deliberately imported to assist in the pollination of food crops, but has now become feral and widespread.
-
-Answer:
-
-solitary
-
-Instruction:
-
-Are leafcutters solitary or social insects?
-
-</s>
-<PAD><PAD><PAD><PAD><s> Instruction:
-
-Who are Industrial Light and Magic?
-
-Answer:
-
-Industrial Light and Magic are one of the biggest and most innovative VFX (Visual Effects) and CGI (Computer generated imagery) firms. The company was started by George Lucas.and was acquired by Disney. They have contributed Visual special effects for over 300 films including the Star Wars series, Indiana Jones series and the Jurassic Park series.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-What name is Beijing also known by?
-
-Answer:
-
-Běijīng is alternatively romanized as Peking and is the capital of the People's Republic of China
+2014
 
 </s>
 <s> Context:
 
-Chinese cuisine encompasses the numerous cuisines originating from China, as well as overseas cuisines created by the Chinese diaspora. Because of the Chinese diaspora and historical power of the country, Chinese cuisine has influenced many other cuisines in Asia and beyond, with modifications made to cater to local palates. Chinese food staples such as rice, soy sauce, noodles, tea, chili oil, and tofu, and utensils such as chopsticks and the wok, can now be found worldwide.
-
-The preferences for seasoning and cooking techniques of Chinese provinces depend on differences in social class, religion, historical background, and ethnic groups. Geographic features including mountains, rivers, forests, and deserts also have a strong effect on the local available ingredients, considering that the climate of China varies from tropical in the south to subarctic in the northeast. Imperial royal and noble preference also plays a role in the change of Chinese cuisine. Because of imperial expansion and trading, ingredients and cooking techniques from other cultures have been integrated into Chinese cuisines over time.
-
-There are numerous regional, religious, and ethnic styles of Chinese cuisine found within China and abroad. Chinese cuisine is highly diverse and most frequently categorized into provincial divisions, although these province-level classifications consist of many more styles within themselves. The most praised Four Great Traditions in Chinese cuisine are Chuan, Lu, Yue, and Huaiyang, representing cuisines of West, North, South, and East China, respectively. The modern Eight Cuisines of China are Anhui (徽菜; Huīcài), Guangdong (粤菜; Yuècài), Fujian (闽菜; Mǐncài), Hunan (湘菜; Xiāngcài), Jiangsu (苏菜; Sūcài), Shandong (鲁菜; Lǔcài), Sichuan (川菜; Chuāncài), and Zhejiang (浙菜; Zhècài) cuisines.
-
-
-A Quanjude cook is slicing Peking roast duck. Peking duck is eaten by rolling pieces of duck with scallion, cucumber and sweet bean sauce using steamed pancakes.
-Color, scent and taste are the three traditional aspects used to describe Chinese food, as well as the meaning, appearance, and nutrition of the food. Cooking should be appraised with respect to the ingredients used, knife work, cooking time, and seasoning.
+Marie Salomea Skłodowska–Curie (/ˈkjʊəri/ KURE-ee, French pronunciation: ​[maʁi kyʁi], Polish pronunciation: [ˈmarja skwɔˈdɔfska kʲiˈri]; born Maria Salomea Skłodowska, Polish: [ˈmarja salɔˈmɛa skwɔˈdɔfska]; 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize, the first person to win a Nobel Prize twice, and the only person to win a Nobel Prize in two scientific fields. Her husband, Pierre Curie, was a co-winner of her first Nobel Prize, making them the first-ever married couple to win the Nobel Prize and launching the Curie family legacy of five Nobel Prizes. She was, in 1906, the first woman to become a professor at the University of Paris.
 
 Instruction:
 
-Given this paragraph about Chinese cuisine, tell me what are the sub-cuisines, and what made them different.
+Who was the first couple to win the Nobel prize?
 
 Answer:
 
-The modern Chinese cuisine were broken down into 8 different styles of local cuisine, which are Anhui, Guangdong, Fujian, Hunan , Jiangsu , Shandong, Sichuan, and Zhejiang cuisines. They are different because of many reasons, such as geographic features and climate which shaped the locals to specialize in certain ingredients or flavors, as well as religion and ethnic groups.
-
-</s>
-<PAD><s> Context:
-
-The Solar System is the gravitationally bound system of the Sun and the objects that orbit it. It formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority (99.86%) of the system's mass is in the Sun, with most of the remaining mass contained in the planet Jupiter. The planetary system around the Sun contains eight planets. The four inner system planets—Mercury, Venus, Earth and Mars—are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially larger and more massive than the terrestrials. The two largest, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the next two, Uranus and Neptune, are ice giants, being composed mostly of volatile substances with relatively high melting points compared with hydrogen and helium, such as water, ammonia, and methane. All eight planets have nearly circular orbits that lie near the plane of Earth's orbit, called the ecliptic.
-https://en.wikipedia.org/wiki/Solar_System
-
-Instruction:
-
-Based on this paragraph, which two objects account for the majority of the mass of the Solar System?
-
-Answer:
-
-Based on this paragraph, the Sun and Jupiter are the two objects that account for the majority of the mass of the Solar System, with the Sun responsible for 99.86% of the total.
-
-</s>
-<PAD><PAD><s> Instruction:
-
-When was HMS Glowworm (H92), a G-class destroyer launched?
-
-Context:
-
-Glowworm, was briefly the name of a coastal destroyer launched on 12 December 1906 and renamed HMS TB7. It was sold in May 1921.
-HMS Glowworm (1916), an Insect-class gunboat, launched on 5 February 1916 and sold in 1928.
-HMS Glowworm (H92), a G-class destroyer launched on 22 July 1935, sunk on 8 April 1940 by the German heavy cruiser Admiral Hipper off Norway.
-Glowworm was allocated to a G-class destroyer under construction at the William Denny shipyard at Dumbarton in 1945. The vessel was originally called HMS Guinevere but was renamed in September 1945 to HMS Glowworm, and renamed again in October to HMS Gift. Construction was cancelled on 1 December 1945 before completion.
-
-Answer:
-
-The HMS Glowworm (H92), a G-class was launched in July 22nd, 1935.
-
-</s>
-<PAD><PAD><s> Instruction:
-
-When did Confinity become eBay ?
-
-Context:
-
-Originally, PayPal was a money-transfer service offered by a company called Confinity which was acquired by X.com in 1999. Later, X.com was renamed PayPal and purchased by eBay in 2002. The original PayPal employees had difficulty adjusting to eBay's more traditional corporate culture and within four years all but 12 of the first 50 employees had left. They remained connected as social and business acquaintances, and a number of them worked together to form new companies and venture firms in subsequent years. This group of PayPal alumni became so prolific that the term PayPal Mafia was coined. The term gained even wider exposure when a 2007 article in Fortune magazine used the phrase in its headline and featured a photo of former PayPal employees in gangster attire.
-
-Answer:
-
-Confinity was acquired by X.com in 1999 which was later renamed to PayPal. PayPal was acquired by eBay in 2002.
-
-</s>
-<PAD><PAD><s> Context:
-
-Svea Kristina Frisch (15 June 1898 in Ramsberg, Örebro county – 1991), known as Kristina Lindstrand, was a Swedish actor, journalist, author, and poet.
-
-Her first marriage was during 1922–1927 with the actor and director Ivar Kåge, and the second (1929–1946) was with the painter Vicke Lindstrand. She moved from Sweden to Italy in 1969.
-
-Answer:
-
-Svea Kristina Frisch (15 June 1898 in Ramsberg, Oerebro county– 1991), known as Kristina Lindstrand, was a Swedish actor, journalist, author, and poet.
-
-Instruction:
-
-Who was Svea Kristina Frisch
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-Luigi Fagioli is the oldest winner of a Formula One Grand Prix; he was 53 years and 22 days old when he won the 1951 French Grand Prix
-
-Answer:
-
-The oldest driver to win a Formula 1 race is the Italian named Luigi Fagioli while 53 years and 22 days old, with his only win at the 1951 France Grand Prix.
-
-Instruction:
-
-Who is the oldest driver to win a Formula 1 race?
-
-</s>
-<PAD><PAD><PAD><PAD><s> Instruction:
-
-What is the population of North Carolina?
-
-Answer:
-
-In the 2020 census, the state of North Carolina had a population of 10,439,388. The state is the 28th largest and 9th-most populous of the United States.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Given this paragraph on Macquarie University Real Tennis Club, please tell me how many tennis courts the club had.
-
-Answer:
-
-Based on this paragraph, it appears that the Macquarie University Real Tennis Club had only one tennis court.
+Marie Curie and Pierre Curie are the first couple to win the Nobel prize.
 
 </s>
 <s> Context:
 
-The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+A multinational venture, the film was made on a US$17 million budget, and was produced by Edko Films and Zoom Hunt Productions in collaboration with China Film Co-productions Corporation and Asian Union Film & Entertainment for Columbia Pictures Film Production Asia in association with Good Machine International. With dialogue in Standard Chinese, subtitled for various markets, Crouching Tiger, Hidden Dragon became a surprise international success, grossing $213.5 million worldwide. It grossed US$128 million in the United States, becoming the highest-grossing foreign-language film produced overseas in American history. The film was the first foreign-language film to break the $100 million mark in the United States.
 
 Answer:
 
-The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
-
-Lead roles
-This list only includes leading roles and lead ensemble roles, including voice acting. The list is updated as of 12 January 2023.
-
-Rank	Actor	Worldwide total	Top-grossing film	Films	Average
-1	Scarlett Johansson	$14,519,031,650	Avengers: Endgame ($2,794,731,755)	33	$439,970,656
-2	Robert Downey Jr.	$14,393,065,668	Avengers: Endgame ($2,794,731,755)	43	$334,722,457
-3	Samuel L. Jackson	$14,376,505,937	Avengers: Endgame ($2,794,731,755)	64	$224,632,905
-4	Zoe Saldaña	$12,805,874,340	Avatar ($2,899,384,102)	30	$426,862,478
-5	Chris Hemsworth	$11,958,567,765	Avengers: Endgame ($2,794,731,755)	25	$478,342,711
-6	Chris Pratt	$11,742,796,476	Avengers: Endgame ($2,794,731,755)	23	$510,556,369
-7	Tom Cruise	$11,547,725,996	Top Gun: Maverick ($1,487,575,965)	43	$268,551,767
-8	Chris Evans	$11,277,890,989	Avengers: Endgame ($2,794,731,755)	29	$388,892,793
-9	Tom Hanks	$10,704,310,520	Toy Story 4 ($1,073,064,540)	55	$194,623,828
-10	Vin Diesel	$10,537,096,327	Avengers: Infinity War ($2,048,359,754)	27	$390,262,827
+This film was directed by Ang Lee and stars Chow Yun-fat, Michelle Yeoh, Zhang Ziyi, and Chang Chen. In the 73rd Academy Awards in 2001, it won Best Foreign Language Film, Best Art Direction, Best Original Score, and Best Cinematography.
 
 Instruction:
 
-List 10 highest-grossing actors in the world.
-
-</s>
-<PAD><s> Context:
-
-Endosymbiosis is any symbiotic relationship in which one symbiont lives within the tissues of the other, either within the cells or extracellularly. Examples include diverse microbiomes: rhizobia, nitrogen-fixing bacteria that live in root nodules on legume roots; actinomycetes, nitrogen-fixing bacteria such as Frankia, which live in alder root nodules; single-celled algae inside reef-building corals; and bacterial endosymbionts that provide essential nutrients to about 10%–15% of insects.[citation needed]
-
-In endosymbiosis, the host cell lacks some of the nutrients which the endosymbiont provides. As a result, the host favors endosymbiont's growth processes within itself by producing some specialized cells. These cells affect the genetic composition of the host in order to regulate the increasing population of the endosymbionts and ensure that these genetic changes are passed onto the offspring via vertical transmission (heredity).
-
-Answer:
-
-No, endosymbiosis is a symbiotic relationship where the internal symbiont or the endosymbiont provides essential nutrients to the host. For example, a bacteria can provide necessary nutrients to an insect.
-
-Instruction:
-
-Is endosymbiosis bad?
-
-</s>
-<PAD><PAD><s> Context:
-
-Robyn Rihanna Fenty (born February 20, 1988) is a Barbadian singer, actress, and businesswoman. Born in Saint Michael and raised in Bridgetown, Barbados, Rihanna auditioned for American record producer Evan Rogers who invited her to the United States to record demo tapes. After signing with Def Jam in 2005, she soon gained recognition with the release of her first two studio albums, Music of the Sun (2005) and A Girl Like Me (2006), both of which were influenced by Caribbean music and peaked within the top ten of the US Billboard 200 chart.
-
-Answer:
-
-Rihanna (Robyn Rihanna Fenty) is a singer, actress, and businesswoman from Barbados. After auditioning with American record producer Evan Rogers, she signed to Def Jam in 2005 and gained worldwide recognition with her first two studio albums, "Music of the Sun" and "A Girl Like Me".
-
-Instruction:
-
-Who is Rihanna?
-
-</s>
-<PAD><PAD><s> Instruction:
-
-Given this short summary of Giovan Battista Cavagna, how long did it take to build the second Monte di Pieta?
-
-Context:
-
-In Naples, he worked in 1572–1577 at the church of San Gregorio Armeno together with Giovanni Vincenzo della Monica. He helped design the Bank in Naples, called the second Monte di Pietà, started in 1539 with goal, according to Sasso, of liberating citizens from the supposed usury of the Jews. By 1597, the building was completed and unified all the banks in the city. In this project, he was aided by Giovanni Giacomo Di Conforto and Giovanni Cola di Franco.
-
-Answer:
-
-It took 58 years.  Started in 1539, completed in 1597.
-
-</s>
-<PAD><PAD><PAD><s> Instruction:
-
-What is Github Copilot?
-
-Context:
-
-GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI to assist users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers, the tool was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go.
-
-Answer:
-
-GitHub Copilot is a cloud-based artificial intelligence tool developed by GitHub and OpenAI
-
-</s>
-<PAD><PAD><PAD><PAD><s> Instruction:
-
-Based on this paragraph, which two objects account for the majority of the mass of the Solar System?
-
-Answer:
-
-Based on this paragraph, the Sun and Jupiter are the two objects that account for the majority of the mass of the Solar System, with the Sun responsible for 99.86% of the total.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Who produced the song Polly?
-
-Context:
-
-The song was written by Sumney with American singer-songwriter Tom Gallo. Sumney also solely produced the track.
-
-Answer:
-
-The song was written and produced by American singer-songwriter Moses Sumney.
-
-</s>
-<s> Context:
-
-Natural hydrogen (known as white hydrogen), is naturally occurring molecular hydrogen on or in Earth (as opposed to hydrogen produced in the laboratory or in industry). The name white hydrogen distinguishes it from green hydrogen, which is produced from renewable energy sources, and from grey, brown or black hydrogen, which is obtained from fossil sources or from the electrolysis of water. Natural hydrogen may be renewable, non-polluting and allows for lower cost operation compared to industrial hydrogen. Natural hydrogen has been identified in many source rocks in areas beyond the sedimentary basins where oil companies typically operate.
-
-Origin of natural hydrogen
-There are several sources of natural hydrogen:
-
-- degassing of deep hydrogen from the Earth's crust and mantle;
-- reaction of water with ultrabasic rocks (serpentinisation);
-- contact of water with reducing agents in the Earth's mantle;
-- interaction of water with freshly exposed rock surfaces (weathering);
-- decomposition of hydroxyl ions in the structure of minerals;
-- Natural radiolysis of water;
-- decomposition of organic matter;
-- biological activity
-- Extraction
-- Natural hydrogen is extracted from wells, mixed with other gases such as nitrogen or helium.
-
-Several sources have been identified in France. Geologists Alain Prinzhofer and Eric Derville have demonstrated the existence of large reservoirs in a dozen countries, including Mali and the United States. However, their potential remains difficult to assess.
-
-Numerous emanations on the ocean floor have been identified but are difficult to exploit. The discovery of a significant emergence in Russia in 2008 suggests the possibility of extracting native hydrogen in geological environments.
-
-Geology
-Natural hydrogen is generated continuously from a variety of natural sources. There are many known hydrogen emergences on mid-ocean ridges. Another of the known reactions, serpentinisation, occurs under the sea floor (in the oceanic crust).
-
-Diagenetic origin (iron oxidation) in the sedimentary basins of cratons, notably in Russia. Other sources are being explored, such as mantle hydrogen, or hydrogen from radiolysis (natural electrolysis) or from bacterial activity. In France, the Alps and Pyrenees are suitable for exploitation. New Caledonia has hyperalkaline sources that show dihydrogen emissions. A large accumulation of natural hydrogen was discovered in Bourakebougou (Mali).
-
-Characteristics
-Dihydrogen is very soluble in fresh water, especially at depth (solubility increases with pressure).
-
-https://en.wikipedia.org/wiki/Natural_hydrogen
-
-Instruction:
-
-Given these paragraphs about Natural hydrogen, what is it?
-
-Answer:
-
-Natural hydrogen (known as white hydrogen), is naturally occurring molecular hydrogen on or in Earth (as opposed to hydrogen produced in the laboratory or in industry).
-
-</s>
-<PAD><s> Context:
-
-Tamil is a Dravidian language natively spoken by the Tamil people of South Asia. Tamil is an official language of the Indian state of Tamil Nadu, the sovereign nations of Sri Lanka and Singapore, and the Indian Union territory of Puducherry. Tamil is also spoken by significant minorities in the four other South Indian states of Kerala, Karnataka, Andhra Pradesh and Telangana, and the Union Territory of the Andaman and Nicobar Islands. It is also spoken by the Tamil diaspora found in many countries, including Malaysia, Myanmar, South Africa, United Kingdom, United States, Canada, Australia and Mauritius. Tamil is also natively spoken by Sri Lankan Moors. One of 22 scheduled languages in the Constitution of India, Tamil was the first to be classified as a classical language of India.
-
-Answer:
-
-Tamil is a Dravidian language natively spoken by the Tamil people of South Asia. It is the official language of the Indian state of Tamil Nadu as well as the union territory Puducherry, as well as the sovereign nations of Sri Lanka and Singapore. Tamil is also spoken by significant minorities in the four other South Indian states of Kerala, Karnataka, Andhra Pradesh and Telangana, and the Union Territory of the Andaman and Nicobar Islands. It is also spoken by the Tamil diaspora found in many countries, including Malaysia, Myanmar, South Africa, United Kingdom, United States, Canada, Australia and Mauritius.
-
-Instruction:
-
-Where is Tamil language spoken?
-
-</s>
-<PAD><PAD><s> Instruction:
-
-Is endosymbiosis bad?
-
-Context:
-
-Endosymbiosis is any symbiotic relationship in which one symbiont lives within the tissues of the other, either within the cells or extracellularly. Examples include diverse microbiomes: rhizobia, nitrogen-fixing bacteria that live in root nodules on legume roots; actinomycetes, nitrogen-fixing bacteria such as Frankia, which live in alder root nodules; single-celled algae inside reef-building corals; and bacterial endosymbionts that provide essential nutrients to about 10%–15% of insects.[citation needed]
-
-In endosymbiosis, the host cell lacks some of the nutrients which the endosymbiont provides. As a result, the host favors endosymbiont's growth processes within itself by producing some specialized cells. These cells affect the genetic composition of the host in order to regulate the increasing population of the endosymbionts and ensure that these genetic changes are passed onto the offspring via vertical transmission (heredity).
-
-Answer:
-
-No, endosymbiosis is a symbiotic relationship where the internal symbiont or the endosymbiont provides essential nutrients to the host. For example, a bacteria can provide necessary nutrients to an insect.
-
-</s>
-<PAD><PAD><s> Context:
-
-Originally, PayPal was a money-transfer service offered by a company called Confinity which was acquired by X.com in 1999. Later, X.com was renamed PayPal and purchased by eBay in 2002. The original PayPal employees had difficulty adjusting to eBay's more traditional corporate culture and within four years all but 12 of the first 50 employees had left. They remained connected as social and business acquaintances, and a number of them worked together to form new companies and venture firms in subsequent years. This group of PayPal alumni became so prolific that the term PayPal Mafia was coined. The term gained even wider exposure when a 2007 article in Fortune magazine used the phrase in its headline and featured a photo of former PayPal employees in gangster attire.
-
-Answer:
-
-Confinity was acquired by X.com in 1999 which was later renamed to PayPal. PayPal was acquired by eBay in 2002.
-
-Instruction:
-
-When did Confinity become eBay ?
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-On 11 April 2001, the Australian and American Samoan national association football teams played each other in an Oceanian qualifying match for the 2002 FIFA World Cup. The match was played at the International Sports Stadium in Coffs Harbour, Australia. Australia set a world record for the largest victory in an international football match, winning the game 31–0. Australia's Archie Thompson also broke the record for most goals scored by a player in an international match by scoring 13 goals. David Zdrilic, the scorer of eight goals in the match, scored the second-highest number of goals in an international match since World War I.
-
-Instruction:
-
-How many goals did Archie Thompson's team mates score?
-
-Answer:
-
-Since Archie Thompson scored 13 goals, his teammates scored 18 goals
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-The Tesla Model 3 became the world's all-time best-selling electric car in early 2020, and in June 2021 became the first electric car to pass 1 million global sales. Together with other emerging automotive technologies such as autonomous driving, connected vehicles and shared mobility, electric cars form a future mobility vision called Autonomous, Connected, Electric and Shared (ACES) Mobility.
-
-Answer:
-
-June 2021
-
-Instruction:
-
-When was the Tesla Model 3 unit one million sold?
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><s> Context:
-
-Araber Rahaman (died 28 April 2013) was an Indian politician. He was the Tripura MLA for Boxanagar from 1978–1988.
-
-Answer:
-
-He was a politician.
-
-Instruction:
-
-What was the profession of Araber Rahaman?
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Given the following paragraph on siliceous ooze, how are oozes defined?
-
-Answer:
-
-Oozes are defined as sediments which contain at least 30 percent skeletal remains of pelagic microorganisms.
+Given a reference text about a film, tell me who directed it, the main cast, and the Academy Awards it won.
 
 </s>
 <s> Instruction:
 
-List 10 highest-grossing actors in the world.
+Given this paragraph about the JW Marriott building in Downtown Houston, what was the framing made of and how tall was it?
 
 Context:
 
-The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+Samuel Fain Carter, the founder of Lumberman's Bank in Houston, commissioned the architecture firm of Sanguinet and Staats to design a sixteen-floor, steel-framed building on Main Street at the corner of Rusk Street in Houston. The Fort Worth-based Sanguinet and Staats had already been building skyscrapers in various cities in Texas, and was building a reputation for this type of structure.In 1909, the building had an estimated cost of $650,000. Carter planned to finance construction through issues of equity and debt, stipulating that he would restrict bonds to $400,000 in value. The Rice Institute agreed to purchase up to $200,000 in bonds.
 
 Answer:
 
-The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
+The building used steel framing and was 16 floors.
 
-Lead roles
-This list only includes leading roles and lead ensemble roles, including voice acting. The list is updated as of 12 January 2023.
+</s>
+<s> Instruction:
 
-Rank	Actor	Worldwide total	Top-grossing film	Films	Average
-1	Scarlett Johansson	$14,519,031,650	Avengers: Endgame ($2,794,731,755)	33	$439,970,656
-2	Robert Downey Jr.	$14,393,065,668	Avengers: Endgame ($2,794,731,755)	43	$334,722,457
-3	Samuel L. Jackson	$14,376,505,937	Avengers: Endgame ($2,794,731,755)	64	$224,632,905
-4	Zoe Saldaña	$12,805,874,340	Avatar ($2,899,384,102)	30	$426,862,478
-5	Chris Hemsworth	$11,958,567,765	Avengers: Endgame ($2,794,731,755)	25	$478,342,711
-6	Chris Pratt	$11,742,796,476	Avengers: Endgame ($2,794,731,755)	23	$510,556,369
-7	Tom Cruise	$11,547,725,996	Top Gun: Maverick ($1,487,575,965)	43	$268,551,767
-8	Chris Evans	$11,277,890,989	Avengers: Endgame ($2,794,731,755)	29	$388,892,793
-9	Tom Hanks	$10,704,310,520	Toy Story 4 ($1,073,064,540)	55	$194,623,828
-10	Vin Diesel	$10,537,096,327	Avengers: Infinity War ($2,048,359,754)	27	$390,262,827
+Who is Bill Gates?
+
+Context:
+
+William Henry Gates III (born October 28, 1955) is an American business magnate, philanthropist and investor. He is a co-founder of Microsoft, along with his late childhood friend Paul Allen. During his career at Microsoft, Gates held the positions of chairman, chief executive officer (CEO), president and chief software architect, while also being the largest individual shareholder until May 2014. He was a major entrepreneur of the microcomputer revolution of the 1970s and 1980s.
+
+Answer:
+
+Bill Gates is an American business mogul and co-founder of Microsoft.
 
 </s>
 <PAD><s> Context:
 
-The game's English name derives from the Balti language, from its word for 'ball', polo. It is cognate with the Standard Tibetan pulu, also meaning 'ball'.
-
-Although the exact origins of the game are not certain, many scholars suggest it most likely began as a simple game played by Iranic and Turkic equestrian nomads in Central Asia. An archaic variation of polo, regionally referred to as buzkashi or kokpar, is still played in parts of Central Asia. It was developed and formalised in Ancient Iran (Persia) as "chovgan" (čowgān), becoming a national sport played extensively by the nobility. Women played as well as men. During the period of the Parthian Empire (247 BC to 224 AD), the sport had great patronage under the kings and noblemen. According to The Oxford Dictionary of Late Antiquity, the Persian ball game was an important pastime in the court of the Sasanian Empire (224–651). It was also part of the royal education for the Sasanian ruling class. Emperor Shapur II learnt to play polo at age seven in 316 AD.
-
-Instruction:
-
-During which year Emperor Shapur II learned to play polo?
+Born in Chicago, Illinois, Brazelton initially played basketball for the Rich East High School, but transferred to the rival Rich Central High School during his senior year. He led the latter team to a championship in the Big Dipper tournament and was named as the most valuable player of the tournament.
 
 Answer:
 
-316 AD
+Tyrone Brazelton attended Rich East High School and then transferred to Rich Central High School for his senior year.
+
+Instruction:
+
+What high school did Tyrone Brazelton go to?
+
+</s>
+<PAD><s> Instruction:
+
+Given this paragraph about autonomous buildings, why would they be safer during a military attack?
+
+Answer:
+
+Autonomous buildings often rely on less civil services and are therefore safer and more comfortable during civil disasters or military attacks.
 
 </s>
 <PAD><PAD><s> Instruction:
 
-Which fictional LAPD detective is Titus Welliver known for playing?
+Who is Bill Gates?
+
+Answer:
+
+Bill Gates is an American business mogul and co-founder of Microsoft.
+
+</s>
+<s> Context:
+
+In Saint Johnstown, the road becomes a divided highway and DE 36 splits from DE 16 by heading to the northeast on Shawnee Road. DE 16 soon becomes undivided again and continues east through agricultural areas and woods with some residences, crossing Toms Dam Branch and running through the community of Owens. Farther east, the road passes through the community of Oakley and crosses West Branch Gum Branch and then Gum Branch. The route comes to an intersection with US 113 near a few businesses, where it is briefly a divided highway. Past this intersection, the name changes to Milton Ellendale Highway and the two-lane undivided road enters the town of Ellendale, where it becomes Main Street. In Ellendale, DE 16 runs past several homes, crossing the Delmarva Central Railroad's Indian River Subdivision line at-grade. The road leaves the town and becomes Milton Ellendale Highway again, turning southeast. The route heads through woodland and farms, running immediately to the north of the Delmarva Central Railroad's Milton Industrial Track line. DE 16 turns east away from the railroad tracks and comes to an intersection with DE 30. At this point, DE 5 Alternate (DE 5 Alt.), which runs south along DE 30, heads east along with DE 16. The road reaches the town of Milton, where it passes homes and businesses. DE 16 comes to an intersection with DE 5, where DE 5 Alt. ends and the road name changes to Broadkill Road. The route leaves Milton and continues into farmland with a few residences, turning to the northeast. The road intersects DE 1 and passes north of a golf course before it runs through a mix of farms and woods with some homes. DE 16 turns east and northeast through marshland within the Prime Hook National Wildlife Refuge before crossing Broadkill Sound and reaching the community of Broadkill Beach. Here, the route intersects Bay Shore Drive before ending at a dead end on the Delaware Bay.
+
+Answer:
+
+DE Route 16 changes 3 times between divided and undivided highways per the information provided.
+
+Instruction:
+
+per this reference text about Delaware Route 16, how many times does the road change between being a divided highway and undivided?
+
+</s>
+<PAD><s> Context:
+
+The Underground Railroad was a network of clandestine routes and safe houses established in the United States during the early- to the mid-19th century. It was used by enslaved African Americans primarily to escape into free states and Canada. The network was assisted by abolitionists and others sympathetic to the cause of the escapees. The enslaved persons who risked escape and those who aided them are also collectively referred to as the "Underground Railroad". Various other routes led to Mexico, where slavery had been abolished, and to islands in the Caribbean that were not part of the slave trade. An earlier escape route running south toward Florida, then a Spanish possession (except 1763–1783), existed from the late 17th century until approximately 1790. However, the network now generally known as the Underground Railroad began in the late 18th century. It ran north and grew steadily until the Emancipation Proclamation was signed by President Abraham Lincoln. One estimate suggests that by 1850, approximately 100,000 enslaved people had escaped to freedom via the network
+
+Instruction:
+
+What was the Underground Railroad?
+
+Answer:
+
+The Underground Railroad was a secret network of routes and safe houses in the United States established in the early 19th century that led to free states, Canada, Mexico and other overseas areas. Black slaves used the Underground Railroad to escape from slavery. It is estimated that by 1850, about 100,000 slaves had escaped to freedom by the "Railroad".
+
+</s>
+<s> Context:
+
+Joseph Robinette Biden Jr. was born on November 20, 1942, at St. Mary's Hospital in Scranton, Pennsylvania, to Catherine Eugenia "Jean" Biden (née Finnegan) and Joseph Robinette Biden Sr. The oldest child in a Catholic family, he has a sister, Valerie, and two brothers, Francis and James. Jean was of Irish descent, while Joseph Sr. had English, Irish, and French Huguenot ancestry. Biden's paternal line has been traced to stonemason William Biden, who was born in 1789 in Westbourne, England, and emigrated to Maryland in the United States by 1820.
+https://en.wikipedia.org/wiki/Joe_Biden
+
+Instruction:
+
+Based on this paragraph, what was Joe Biden's mother's maiden's name, what city was he born in, how many siblings did he have growing up, and what religion was he as a child?
+
+Answer:
+
+Based on this paragraph, Joe Biden's mother's maiden name was Finnegan, he was born in the city of Stranton, he had three siblings (a younger sister and two younger brothers), and he was raised as a member of the Catholic church.
+
+</s>
+<s> Context:
+
+Justice League Dark is a 2017 American adult animated science fantasy superhero film produced by Warner Bros. Animation and distributed by Warner Home Video. Featuring the DC Comics team of the same name created by Peter Milligan and Mikel Janín, the film is the 27th of the DC Universe Animated Original Movies and the eighth of the DC Animated Movie Universe. Unlike most installments in the DC Animated Universe Movies series, Justice League Dark features an original premise. The film stars Matt Ryan as John Constantine and Jason O'Mara as Batman, reprising their respective roles from previous media. It was released on Digital HD on January 24, 2017, and on DVD and Blu-ray on February 7.
+
+A sequel, Justice League Dark: Apokolips War, was released in May 2020.
+
+Instruction:
+
+Given a reference text about Justice League Dark, tell me who the main actors are and what roles they played.
+
+Answer:
+
+The main actors in Justice League Dark were Matt Ryan and Jason O'Mara. In the film, Matt Ryan is John Constantine and Jason O'Mara is Batman.
+
+</s>
+<s> Context:
+
+Combat readiness is a condition of the armed forces and their constituent units and formations, warships, aircraft, weapon systems or other military technology and equipment to perform during combat military operations, or functions consistent with the purpose for which they are organized or designed, or the managing of resources and personnel training in preparation for combat.
+
+Most armed forces maintain varying levels of readiness by the troops to engage in combat due to economic considerations which vary from minutes to months. In modern armed forces troops designated special forces are usually those kept at the highest state of readiness for combat, and are often alerted only a few hours before being committed to combat. Where time is of the essence in military action being initiated, the troops, such as pilots of interceptor aircraft, may be kept in constant state of combat readiness.
+
+Answer:
+
+Designated special forces are normally kept at the highest state of readiness for combat.
+
+Instruction:
+
+Given a reference text about combat readiness, tell me which troops are kept most ready for combat.
+
+</s>
+<s> Context:
+
+William Henry Gates III (born October 28, 1955) is an American business magnate, philanthropist and investor. He is a co-founder of Microsoft, along with his late childhood friend Paul Allen. During his career at Microsoft, Gates held the positions of chairman, chief executive officer (CEO), president and chief software architect, while also being the largest individual shareholder until May 2014. He was a major entrepreneur of the microcomputer revolution of the 1970s and 1980s.
+
+Answer:
+
+Bill Gates is an American business mogul and co-founder of Microsoft.
+
+Instruction:
+
+Who is Bill Gates?
+
+</s>
+<PAD><s> Instruction:
+
+What high school did Tyrone Brazelton go to?
 
 Context:
 
-Detective Hieronymus "Harry" Bosch is a fictional character created by American author Michael Connelly. Bosch debuted as the lead character in the 1992 novel The Black Echo, the first in a best-selling police procedural series now numbering 24 novels.
+Born in Chicago, Illinois, Brazelton initially played basketball for the Rich East High School, but transferred to the rival Rich Central High School during his senior year. He led the latter team to a championship in the Big Dipper tournament and was named as the most valuable player of the tournament.
 
-The novels are more or less coincident in timeframe with the year in which they were published. Harry, as he is commonly known by his associates, is a veteran police homicide detective with the Los Angeles Police Department. He was named after the 15th-century Dutch artist Hieronymus Bosch.
+Answer:
 
-Titus Welliver portrayed the title character from 2015 to 2021 in Bosch, a television series adapted from the novels, and from 2022 in its spin-off series Bosch: Legacy.
+Tyrone Brazelton attended Rich East High School and then transferred to Rich Central High School for his senior year.
+
+</s>
+<PAD><s> Instruction:
+
+Which fictional LAPD detective is Titus Welliver known for playing?
 
 Answer:
 
 Titus Welliver played Harry Bosch in the TV series Bosch and also in spin off Bosch:Legacy.
 
 </s>
-<PAD><PAD><s> Context:
+<PAD><PAD><s> Instruction:
 
-Sly and the Family Stone was an American funk rock band originated from San Francisco, California. Active from 1966 to 1983, they were pivotal in the development of funk, soul, rock, and psychedelic music. Their core line-up was led by singer-songwriter, record producer, and multi-instrumentalist Sly Stone, and included Stone's brother and singer/guitarist Freddie Stone, sister and singer/keyboardist Rose Stone, trumpeter Cynthia Robinson, drummer Greg Errico, saxophonist Jerry Martini, and bassist Larry Graham. The band was the first major American rock group to have a racially integrated, male and female lineup.
-
-Instruction:
-
-Where did Sly and the Family Stone come from?
+How many seasons was Jeff Fisher the head coach of the Titans while they were not in Tennessee?
 
 Answer:
 
-Sly and the Family Stone originated from San Francisco, California.
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-On 17 March 1773, Auguste’s spouse succeeded as the 4th Prince of Thurn and Taxis. The marriage was at that point severely deteriorated. Auguste left Karl Anselm and settled in Paris. Rumours claimed that she lived with a lover. However, she was tormented by economical problems, ran out of funds and was hounded by creditors.
-
-Answer:
-
-Auguste’s marriage was severely deteriorated and she had debt problems.
-
-Instruction:
-
-Given this paragraph about Duchess Auguste of Württemberg, what happened to personal life?
-
-</s>
-<PAD><PAD><PAD><PAD><s> Instruction:
-
-Given this reference text, tell me what the foundational BJJ concept was
-
-Answer:
-
-BJJ focuses on the concept that smaller and weaker practitioners can defend against larger and bigger opponents by taking the fight to the ground. Once on the ground, a BJJ practitioner can use leverage and weight distribution to defeat their opponent.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-what is use of cryogenics in virology ?
-
-Answer:
-
-Certain vaccines must be only stored at cryogenic temperature (ultra low temperatures of order -90 to -60 degree celcius / -130 F to -76 F)
+3 seasons
 
 </s>
 <s> Instruction:
 
-what is use of cryogenics in virology ?
+Based on the following paragraph on squat lobster fisheries, where do such fisheries exist today?
 
 Context:
 
-Nuclear magnetic resonance (NMR) is one of the most common methods to determine the physical and chemical properties of atoms by detecting the radio frequency absorbed and subsequent relaxation of nuclei in a magnetic field. This is one of the most commonly used characterisation techniques and has applications in numerous fields. Primarily, the strong magnetic fields are generated by supercooling electromagnets, although there are spectrometers that do not require cryogens. In traditional superconducting solenoids, liquid helium is used to cool the inner coils because it has a boiling point of around 4 K at ambient pressure. Cheap metallic superconductors can be used for the coil wiring. So-called high-temperature superconducting compounds can be made to super conduct with the use of liquid nitrogen, which boils at around 77 K.
-Magnetic resonance imaging (MRI) is a complex application of NMR where the geometry of the resonances is deconvoluted and used to image objects by detecting the relaxation of protons that have been perturbed by a radio-frequency pulse in the strong magnetic field. This is most commonly used in health applications.
-In large cities, it is difficult to transmit power by overhead cables, so underground cables are used. But underground cables get heated and the resistance of the wire increases, leading to waste of power. Superconductors could be used to increase power throughput, although they would require cryogenic liquids such as nitrogen or helium to cool special alloy-containing cables to increase power transmission. Several feasibility studies have been performed and the field is the subject of an agreement within the International Energy Agency.
-
-Cryogenic gases delivery truck at a supermarket, Ypsilanti, Michigan
-Cryogenic gases are used in transportation and storage of large masses of frozen food. When very large quantities of food must be transported to regions like war zones, earthquake hit regions, etc., they must be stored for a long time, so cryogenic food freezing is used. Cryogenic food freezing is also helpful for large scale food processing industries.
-Many infrared (forward looking infrared) cameras require their detectors to be cryogenically cooled.
-Certain rare blood groups are stored at low temperatures, such as −165 °C, at blood banks.
-Cryogenics technology using liquid nitrogen and CO2 has been built into nightclub effect systems to create a chilling effect and white fog that can be illuminated with colored lights.
-Cryogenic cooling is used to cool the tool tip at the time of machining in manufacturing process. It increases the tool life. Oxygen is used to perform several important functions in the steel manufacturing process.
-Many rockets use cryogenic gases as propellants. These include liquid oxygen, liquid hydrogen, and liquid methane.
-By freezing the automobile or truck tire in liquid nitrogen, the rubber is made brittle and can be crushed into small particles. These particles can be used again for other items.
-Experimental research on certain physics phenomena, such as spintronics and magnetotransport properties, requires cryogenic temperatures for the effects to be observed.
-Certain vaccines must be stored at cryogenic temperatures. For example, the Pfizer–BioNTech COVID-19 vaccine must be stored at temperatures of −90 to −60 °C (−130 to −76 °F). (See cold chain.)
+Flesh from these animals is often commercially sold in restaurants as "langostino" or sometimes dishonestly called "lobster" when incorporated in seafood dishes. As well as being used for human consumption, there is demand for squat lobster meat to be used as feed in fish farms and shrimp or prawn farms. This is in part because they contain astaxanthin, a pigment that helps to colour the meat of farmed salmon and trout.
+Despite their worldwide distribution and great abundance, there are few functioning fisheries for squat lobsters. Experimental fisheries have occurred in several countries, including Argentina, Mexico, and New Zealand, but commercial exploitation is currently restricted to Latin America, and chiefly to Chile. The main target species are Pleuroncodes monodon, P. planipes, and Cervimunida johni.
+In Central America, the primary species of squat lobster targeted by fisheries is a species of Pleuroncodes. There is a great deal of confusion over both scientific names and common names, and the exact species is often unknown. In El Salvador, for instance, the commercial catch is generally referred to as "P. planipes", but is in fact P. monodon. Commercial fishing for squat lobsters in El Salvador began in the early 1980s; production increased markedly in the 2001 season, and has continued to grow, now making up 98% of the demersal resources landed in El Salvador, with annual catches peaking at 13,708 t in 2005. In Costa Rica, aggregations of squat lobsters are avoided, as the fishermen fear the squat lobsters will clog their nets. In Nicaragua, squat lobsters are heavily exploited, especially following a large increase in fishing effort in the 2007 season. In Panama, production reached 492 t in 2008. Chilean squat lobster fisheries initially targeted Cervimunida johni, beginning in 1953. By the mid-1960s, effort had largely switched to P. monodon. In an effort to conserve stocks, the Chilean government instituted quotas for squat lobsters, and the fishery is closely monitored. In New Zealand, Munida gregaria has been considered as a potential fisheries resource, particularly to feed farmed Chinook salmon (Oncorhynchus tshawytscha).
 
 Answer:
 
-Certain vaccines must be only stored at cryogenic temperature (ultra low temperatures of order -90 to -60 degree celcius / -130 F to -76 F)
+Commercial fisheries for squat lobsters currently exist only in Latin America, mainly in Chile due to the restriction on commercial exploitation of these animals. There are, however, a number of experimental fisheries in countries such as Argentina, Mexico, and New Zealand.
 
 </s>
 <s> Instruction:
 
-Based on this paragraph, which two objects account for the majority of the mass of the Solar System?
+Who was the first to record the Needles and Pins song?
 
 Context:
 
-The Solar System is the gravitationally bound system of the Sun and the objects that orbit it. It formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority (99.86%) of the system's mass is in the Sun, with most of the remaining mass contained in the planet Jupiter. The planetary system around the Sun contains eight planets. The four inner system planets—Mercury, Venus, Earth and Mars—are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially larger and more massive than the terrestrials. The two largest, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the next two, Uranus and Neptune, are ice giants, being composed mostly of volatile substances with relatively high melting points compared with hydrogen and helium, such as water, ammonia, and methane. All eight planets have nearly circular orbits that lie near the plane of Earth's orbit, called the ecliptic.
-https://en.wikipedia.org/wiki/Solar_System
+"Needles and Pins" is a rock song credited to American writers Jack Nitzsche and Sonny Bono. Jackie DeShannon recorded it in 1963 and other versions followed. The most successful ones were by the Searchers, whose version reached No. 1 on the UK singles chart in 1964, and Smokie, who had a worldwide hit in 1977. Others who recorded the song include the Ramones, Gene Clark, and Tom Petty and the Heartbreakers with Stevie Nicks.
+
+Jackie DeShannon version (1963)
+In his autobiography, Bono states that he sang along with Nitzsche's guitar-playing, thus creating both the tune and the lyrics, being guided by the chord progressions. However, Jackie DeShannon claims that the song was written at the piano, and that she was a full participant in the song's creation, along with Nitzsche and Bono, although she did not get formal credit.
+
+DeShannon was the first to record the song; in the US it peaked at number 84 on the Billboard Hot 100 singles chart in May 1963. Though it was only a minor US hit, DeShannon's recording of the song topped the charts in Canada, hitting number one on the CHUM Chart in July 1963
 
 Answer:
 
-Based on this paragraph, the Sun and Jupiter are the two objects that account for the majority of the mass of the Solar System, with the Sun responsible for 99.86% of the total.
-
-</s>
-<s> Context:
-
-The leaves are usually large and imposing, often lobed or deeply cut, and may be more or less pinnate. They can also be oval, spear-shaped, or in many other possible shape variations. The leaves are borne alternately on the stem. A quality of philodendrons is that they do not have a single type of leaf on the same plant. Instead, they have juvenile leaves and adult leaves, which can be drastically different from one another. The leaves of seedling philodendrons are usually heart-shaped early in the life of the plant. But after it has matured past the seedling stage, the leaves will acquire the typical juvenile leaf's shape and size. Later in the philodendron's life, it starts producing adult leaves, a process called metamorphosis. Most philodendrons go through metamorphosis gradually; there is no immediately distinct difference between juvenile and adult leaves. Aside from being typically much bigger than the juvenile leaves, the shape of adult leaves can be significantly different. In fact, considerable taxonomic difficulty has occurred in the past due to these differences, causing juvenile and adult plants to mistakenly be classified as different species.
-
-Instruction:
-
-What shape are Philodendron leaves?
-
-Answer:
-
-They are spear-shaped
-
-</s>
-<s> Context:
-
-Thor (from Old Norse: Þórr) is a prominent god in Germanic paganism. In Norse mythology, he is a hammer-wielding god associated with lightning, thunder, storms, sacred groves and trees, strength, the protection of humankind, hallowing, and fertility. Besides Old Norse Þórr, the deity occurs in Old English as Þunor, in Old Frisian as Thuner, in Old Saxon as Thunar, and in Old High German as Donar, all ultimately stemming from the Proto-Germanic theonym *Þun(a)raz, meaning 'Thunder'.
-
-Answer:
-
-Thor is the god of thunder in Norse mythology. He wields a powerful hammer that only he can pick up. Thor has appeared as a character in Marvel comic books since 1962 and in at least 10 movies.
-
-Instruction:
-
-Who is Thor?
-
-</s>
-<s> Context:
-
-Club Africain (Arabic: النادي الإفريقي) is a Tunisian football club based in Tunis that competes in the Tunisian Championship. It fields several sports teams, including football, handball, basketball, swimming and volleyball. The football team was the first Tunisian club to win an international trophy, when they won the Maghreb Cup Winners Cup in 1971. Twenty years later, in 1991, Club Africain became the first Tunisian team to win the African Champions League.
-
-Answer:
-
-The Maghreb Cup Winners Cup
-
-Instruction:
-
-What international trophy did the Club Africain football team won in 1971 ?
-
-</s>
-<s> Context:
-
-Massimo Bray is an academic publisher and a magazine editor. He was on the editorial board of the Italian Institute of Human Sciences until 1994. He is the cofounder of Notte della Taranta, which is among the most popular music festivals in Europe. He launched a blog on the Italian-language version of the Huffington Post.
-
-Answer:
-
-Massimo Bray likely writes in Italian.
-
-Instruction:
-
-Based on this paragraph about Massimo Bray, what language do you think he writes in?
-
-</s>
-<s> Context:
-
-The song was written by Sumney with American singer-songwriter Tom Gallo. Sumney also solely produced the track.
-
-Instruction:
-
-Who produced the song Polly?
-
-Answer:
-
-The song was written and produced by American singer-songwriter Moses Sumney.
-
-</s>
-<PAD><s> Instruction:
-
-Who founded the city of Price, Quebec?
-
-Answer:
-
-The Price Brothers and Company
-
-</s>
-<s> Context:
-
-The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
-
-Instruction:
-
-List 10 highest-grossing actors in the world.
-
-Answer:
-
-The following are non-definitive lists of the actors with the highest career-film grosses. There are box-office gross revenue lists, which are not adjusted for inflation, as well as lists for the number of box-office ticket sales. Because of the long-term effects of inflation on movie theater ticket prices, a list unadjusted for inflation gives far more weight to later actors. Therefore, the gross revenue lists are largely meaningless for comparing acting careers widely separated in time, as many actors from earlier eras will never appear on a modern unadjusted list, despite their films' achieving higher commercial success when adjusted for price increases.
-
-Lead roles
-This list only includes leading roles and lead ensemble roles, including voice acting. The list is updated as of 12 January 2023.
-
-Rank	Actor	Worldwide total	Top-grossing film	Films	Average
-1	Scarlett Johansson	$14,519,031,650	Avengers: Endgame ($2,794,731,755)	33	$439,970,656
-2	Robert Downey Jr.	$14,393,065,668	Avengers: Endgame ($2,794,731,755)	43	$334,722,457
-3	Samuel L. Jackson	$14,376,505,937	Avengers: Endgame ($2,794,731,755)	64	$224,632,905
-4	Zoe Saldaña	$12,805,874,340	Avatar ($2,899,384,102)	30	$426,862,478
-5	Chris Hemsworth	$11,958,567,765	Avengers: Endgame ($2,794,731,755)	25	$478,342,711
-6	Chris Pratt	$11,742,796,476	Avengers: Endgame ($2,794,731,755)	23	$510,556,369
-7	Tom Cruise	$11,547,725,996	Top Gun: Maverick ($1,487,575,965)	43	$268,551,767
-8	Chris Evans	$11,277,890,989	Avengers: Endgame ($2,794,731,755)	29	$388,892,793
-9	Tom Hanks	$10,704,310,520	Toy Story 4 ($1,073,064,540)	55	$194,623,828
-10	Vin Diesel	$10,537,096,327	Avengers: Infinity War ($2,048,359,754)	27	$390,262,827
+The first artist to record Needles and Pins song was DeShannon.
 
 </s>
 <PAD><s> Context:
 
-Optimus, also known as Tesla Bot, is a conceptual general-purpose robotic humanoid under development by Tesla, Inc. It was announced at the company's Artificial Intelligence (AI) Day event on August 19, 2021. CEO Elon Musk claimed during the event that Tesla would likely build a prototype by 2022. Musk is on record having said that he thinks Optimus "has the potential to be more significant than the vehicle business over time."
-
-Tesla Bot is planned to measure 5 ft 8 in (173 cm) tall and weigh 125 lb (57 kg). According to the presentation made during the first AI Day event, a Tesla Bot will be "controlled by the same AI system Tesla is developing for the advanced driver-assistance system used in its cars" and have a carrying capacity of 45 lb (20 kg). Proposed tasks for the product are ones that are "dangerous, repetitive and boring", such as providing manufacturing assistance.
-
-https://en.wikipedia.org/wiki/Optimus_(robot)
-
-Answer:
-
-Proposed tasks for the Tesla Bot are ones that are "dangerous, repetitive and boring", such as providing manufacturing assistance.
+Seinfeld (/ˈsaɪnfɛld/ SYNE-feld) is an American television sitcom created by Larry David and Jerry Seinfeld. It aired on NBC from July 5, 1989, to May 14, 1998, over nine seasons and 180 episodes. It stars Seinfeld as a fictionalized version of himself and focuses on his personal life with three of his friends: best friend George Costanza (Jason Alexander), former girlfriend Elaine Benes (Julia Louis-Dreyfus) and his neighbor from across the hall, Cosmo Kramer (Michael Richards). It is set mostly in an apartment building in Manhattan's Upper West Side in New York City. It has been described as "a show about nothing", often focusing on the minutiae of daily life. Interspersed in earlier episodes are moments of stand-up comedy from the fictional Jerry Seinfeld, frequently using the episode's events for material.
 
 Instruction:
 
-Given these paragraphs about the Tesla bot, what kind of tasks is it expected to perform?
-
-</s>
-<PAD><PAD><s> Context:
-
-Robyn Rihanna Fenty (born February 20, 1988) is a Barbadian singer, actress, and businesswoman. Born in Saint Michael and raised in Bridgetown, Barbados, Rihanna auditioned for American record producer Evan Rogers who invited her to the United States to record demo tapes. After signing with Def Jam in 2005, she soon gained recognition with the release of her first two studio albums, Music of the Sun (2005) and A Girl Like Me (2006), both of which were influenced by Caribbean music and peaked within the top ten of the US Billboard 200 chart.
-
-Instruction:
-
-Who is Rihanna?
+Who is the main cast in Seinfeld TV show?
 
 Answer:
 
-Rihanna (Robyn Rihanna Fenty) is a singer, actress, and businesswoman from Barbados. After auditioning with American record producer Evan Rogers, she signed to Def Jam in 2005 and gained worldwide recognition with her first two studio albums, "Music of the Sun" and "A Girl Like Me".
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-Sly and the Family Stone was an American funk rock band originated from San Francisco, California. Active from 1966 to 1983, they were pivotal in the development of funk, soul, rock, and psychedelic music. Their core line-up was led by singer-songwriter, record producer, and multi-instrumentalist Sly Stone, and included Stone's brother and singer/guitarist Freddie Stone, sister and singer/keyboardist Rose Stone, trumpeter Cynthia Robinson, drummer Greg Errico, saxophonist Jerry Martini, and bassist Larry Graham. The band was the first major American rock group to have a racially integrated, male and female lineup.
-
-Answer:
-
-Sly and the Family Stone originated from San Francisco, California.
-
-Instruction:
-
-Where did Sly and the Family Stone come from?
-
-</s>
-<PAD><PAD><PAD><s> Instruction:
-
-Who wrote Howl's Moving Castle?
-
-Context:
-
-Howl's Moving Castle is a fantasy novel by British author Diana Wynne Jones, first published in 1986 by Greenwillow Books of New York. It was a runner-up for the annual Boston Globe–Horn Book Award, and won the Phoenix Award twenty years later. It was adapted into a critically acclaimed 2004 animated film of the same name, which was nominated for the Academy Award for Best Animated Feature.
-
-Answer:
-
-Howl's Moving Castle is a fantasy novel by British author Diana Wynne Jones.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-What was the profession of Araber Rahaman?
-
-Context:
-
-Araber Rahaman (died 28 April 2013) was an Indian politician. He was the Tripura MLA for Boxanagar from 1978–1988.
-
-Answer:
-
-He was a politician.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Given a reference text about Isabel Emily Jay, tell me where she studied and how old she was when she retired.
-
-Answer:
-
-Isabel Emily Jay studied at the Royal Academy of Music and retired at 31 years old.
-
-</s>
-<s> Context:
-
-Nuclear magnetic resonance (NMR) is one of the most common methods to determine the physical and chemical properties of atoms by detecting the radio frequency absorbed and subsequent relaxation of nuclei in a magnetic field. This is one of the most commonly used characterisation techniques and has applications in numerous fields. Primarily, the strong magnetic fields are generated by supercooling electromagnets, although there are spectrometers that do not require cryogens. In traditional superconducting solenoids, liquid helium is used to cool the inner coils because it has a boiling point of around 4 K at ambient pressure. Cheap metallic superconductors can be used for the coil wiring. So-called high-temperature superconducting compounds can be made to super conduct with the use of liquid nitrogen, which boils at around 77 K.
-Magnetic resonance imaging (MRI) is a complex application of NMR where the geometry of the resonances is deconvoluted and used to image objects by detecting the relaxation of protons that have been perturbed by a radio-frequency pulse in the strong magnetic field. This is most commonly used in health applications.
-In large cities, it is difficult to transmit power by overhead cables, so underground cables are used. But underground cables get heated and the resistance of the wire increases, leading to waste of power. Superconductors could be used to increase power throughput, although they would require cryogenic liquids such as nitrogen or helium to cool special alloy-containing cables to increase power transmission. Several feasibility studies have been performed and the field is the subject of an agreement within the International Energy Agency.
-
-Cryogenic gases delivery truck at a supermarket, Ypsilanti, Michigan
-Cryogenic gases are used in transportation and storage of large masses of frozen food. When very large quantities of food must be transported to regions like war zones, earthquake hit regions, etc., they must be stored for a long time, so cryogenic food freezing is used. Cryogenic food freezing is also helpful for large scale food processing industries.
-Many infrared (forward looking infrared) cameras require their detectors to be cryogenically cooled.
-Certain rare blood groups are stored at low temperatures, such as −165 °C, at blood banks.
-Cryogenics technology using liquid nitrogen and CO2 has been built into nightclub effect systems to create a chilling effect and white fog that can be illuminated with colored lights.
-Cryogenic cooling is used to cool the tool tip at the time of machining in manufacturing process. It increases the tool life. Oxygen is used to perform several important functions in the steel manufacturing process.
-Many rockets use cryogenic gases as propellants. These include liquid oxygen, liquid hydrogen, and liquid methane.
-By freezing the automobile or truck tire in liquid nitrogen, the rubber is made brittle and can be crushed into small particles. These particles can be used again for other items.
-Experimental research on certain physics phenomena, such as spintronics and magnetotransport properties, requires cryogenic temperatures for the effects to be observed.
-Certain vaccines must be stored at cryogenic temperatures. For example, the Pfizer–BioNTech COVID-19 vaccine must be stored at temperatures of −90 to −60 °C (−130 to −76 °F). (See cold chain.)
-
-Answer:
-
-Certain vaccines must be only stored at cryogenic temperature (ultra low temperatures of order -90 to -60 degree celcius / -130 F to -76 F)
-
-Instruction:
-
-what is use of cryogenics in virology ?
-
-</s>
-<s> Context:
-
-Kolkata also known as Calcutta (the official name until 2001) is the capital of the Indian state of West Bengal, on the eastern bank of the Hooghly River 80 km (50 mi) west of the border with Bangladesh. It is the primary business, commercial, and financial hub of Eastern India and the main port of communication for North-East India. According to the 2011 Indian census, Kolkata is the seventh-most populous city in India, with a population of 45 lakh (4.5 million) residents within the city. It is a part of Kolkata Metropolitan Area (or known as Greater Kolkata) which has a population of over 1.41 crore (14.1 million) residents making it the third-most populous metropolitan area in India. In 2021, the Kolkata metropolitan area crossed 1.5 crore (15 million) registered voters. The Port of Kolkata is India's oldest operating port and its sole major riverine port. Kolkata is regarded as the cultural capital of India. Kolkata is the second largest Bengali-speaking city after Dhaka. It has the highest number of nobel laureates among all cities in India.
-
-Instruction:
-
-How many years has it been since the city of Calcutta was officially renamed Kolkata?
-
-Answer:
-
-It has been 22 years since Calcutta was renamed Kolkata.
-
-</s>
-<s> Context:
-
-The Cycle Messenger World Championships, or CMWCs, are an annual urban cycling competition whereby cycle messengers and cycling enthusiasts showcase their skills in an array of events, many of which simulate everyday tasks for a cycle messenger. Each year, the CMWCs are held in a different city around the world, with each host city designing its own unique course. The highlight of the CMWCs is the main race in which cyclists are given manifests and must pickup and deliver items to various locations around the host city as quickly and efficiently as possible. The total number of pickups and deliveries, or "drop offs" is unknown to the messengers before the race, but has been known to reach up to 100 stops and usually takes between 3–4 hours to complete. The cyclist who completes all of the assigned deliveries in the least amount of time wins the race. In addition to the main race there are also several side events which have become increasingly popular over the past few years. These events change yearly depending on the discretion of the host city but usually include backward circles, bike polo, bunnyhop, cargo race, longest skid, sprints, and trackstand.
-
-Answer:
-
-The Cycle Messenger World Championships
-
-Instruction:
-
-What does CMWCs stand for?
-
-</s>
-<s> Context:
-
-Swarcliffe Hall is a large hall that was constructed in 1800 in Birstwith, near Harrogate, England. The current house was built by John Greenwood in 1850, who engaged Major Rohde Hawkins as his architect, and is a Grade II listed building.
-
-The original Swarcliffe Hall was built on the site c1800 by the Blessard family, however the current hall which was built by the Greenwood family was completed in 1850. Charlotte Brontë was employed as a governess at the hall in 1839 and it is said her time spent there helped inspire her novel Jane Eyre.
-
-Prince Albert Victor, Duke of Clarence and Avondale visited the hall in 1888 and again during the following year whilst opening the New Bath Hospital in nearby Harrogate.
-
-Answer:
-
-Charlotte Brontë
-
-Instruction:
-
-Who wrote Jane Eyre?
-
-</s>
-<s> Instruction:
-
-What is use of bezier curve in Robotics?
-
-Context:
-
-Bézier curves can be used in robotics to produce trajectories of an end-effector due to the virtue of the control polygon’s ability to give a clear indication of whether the path is colliding with any nearby obstacle or object. Furthermore, joint space trajectories can be accurately differentiated using Bézier curves. Consequently, the derivatives of joint space trajectories are used in the calculation of the dynamics and control effort (torque profiles) of the robotic manipulator.
-
-Answer:
-
-Bézier curves can be used in robotics to produce trajectories of an end-effector due to the virtue of the control polygon’s ability to give a clear indication of whether the path is colliding with any nearby obstacle or object.
-
-</s>
-<s> Instruction:
-
-Based on this passage, what is the median number of people per family in Zangisheh?
-
-Answer:
-
-This passage does not give enough information to conclude what the median number of people per family in Zangisheh is as it only mentions the total population and number of families. We could calculate the arithmetic mean of the number of people per family from this information by dividing the total number of people by the number of families, but the information in the passage is not sufficient to determine the median number of people per family.
-
-</s>
-<s> Context:
-
-The song was written by Sumney with American singer-songwriter Tom Gallo. Sumney also solely produced the track.
-
-Answer:
-
-The song was written and produced by American singer-songwriter Moses Sumney.
-
-Instruction:
-
-Who produced the song Polly?
+Jerry Seinfeld
+Jason Alexander
+Julia Louis-Dreyfus
+Michael Richards
 
 </s>
 <PAD><s> Instruction:
 
-What does CMWCs stand for?
+Given this paragraph about full distance ironman competition, how far is each discipline
+
+Context:
+
+A number of non-WTC full distance triathlons have been held since the mid-1990s. The limited number of WTC-sanctioned events, and the limited number of entries available per race, have combined with a growth in the sport that has created demand for these non-trademarked events. Many of them share the 2.4-mile (3.9 km), 112-mile (180 km), 26.2-mile (42.2 km) format with the Ironman triathlon. Originally, many used the Ironman name. Due to aggressive trademark protection, most of these races no longer use the word "Ironman".
 
 Answer:
 
-The Cycle Messenger World Championships
+The distances for a full ironman competition are 2.4 miles (3.9km) for the swim, 112 miles (180km) for the bike and 26.2 miles (42.2km) for the run.
+
+</s>
+<PAD><s> Context:
+
+U2 are an Irish rock band from Dublin, formed in 1976. The group consists of Bono (lead vocals and rhythm guitar), the Edge (lead guitar, keyboards, and backing vocals), Adam Clayton (bass guitar), and Larry Mullen Jr. (drums and percussion). Initially rooted in post-punk, U2's musical style has evolved throughout their career, yet has maintained an anthemic quality built on Bono's expressive vocals and the Edge's chiming, effects-based guitar sounds. Bono's lyrics, often embellished with spiritual imagery, focus on personal and sociopolitical themes. Popular for their live performances, the group have staged several ambitious and elaborate tours over their career.
+
+Answer:
+
+Dublin
+
+Instruction:
+
+What city in Ireland is the band U2 from?
+
+</s>
+<PAD><s> Instruction:
+
+Given this paragraph about Fyre Festival, would you say that it was a successful event?
+
+Context:
+
+Fyre Festival was a fraudulent luxury music festival founded by con artist Billy McFarland and rapper Ja Rule. It was created with the intent of promoting the company's Fyre app for booking music talent. The festival was scheduled to take place on April 28–30 and May 5–7, 2017, on the Bahamian island of Great Exuma.
+
+Answer:
+
+No, Fyre Festival was a fraudulent luxury music festival founded by con artist Billy McFarland and rapper Ja Rule
+
+</s>
+<PAD><s> Instruction:
+
+Does Belgrandia varica live in the ocean?
+
+Context:
+
+Belgrandia varica is a species of minute freshwater snail with an operculum, an aquatic gastropod mollusc or micromollusc in the family Hydrobiidae.
+
+Answer:
+
+No, Belgrandia varica lives in freshwater.
+
+</s>
+<PAD><PAD><s> Instruction:
+
+When is the best time to go to Wallis and Futuna
+
+Answer:
+
+It is best to go from May to October in the dry season. The temperature are lower but at least it is not raining so often.
+
+</s>
+<PAD><PAD><PAD><s> Instruction:
+
+In which European country is this school located?
+
+Answer:
+
+Spain
+
+</s>
+<s> Context:
+
+American Samoa: territory since 1900; after the end of the Second Samoan Civil War, the Samoan Islands were divided into two regions. The U.S. took control of the eastern half of the islands. In 1900, the Treaty of Cession of Tutuila took effect. The Manuʻa islands became part of American Samoa in 1904, and Swains Island became part of American Samoa in 1925. Congress ratified American Samoa's treaties in 1929. For 51 years, the U.S. Navy controlled the territory. American Samoa is locally self-governing under a constitution last revised in 1967.[note 14] The first elected governor of American Samoa was in 1977, and the first non-voting member of Congress was in 1981. People born in American Samoa are U.S. nationals, but not U.S. citizens. American Samoa is technically unorganized, and its main island is Tutuila.
+
+Guam: territory since 1899, acquired at the end of the Spanish–American War. Guam is the home of Naval Base Guam and Andersen Air Force Base. It was organized under the Guam Organic Act of 1950, which granted U.S. citizenship to Guamanians and gave Guam a local government. In 1968, the act was amended to permit the election of a governor.
+
+Northern Mariana Islands: A commonwealth since 1986, the Northern Mariana Islands together with Guam were part of the Spanish Empire until 1899 when the Northern Marianas were sold to the German Empire after the Spanish–American War. Beginning in 1919, they were administered by Japan as a League of Nations mandate until the islands were captured by the United States in the Battle of Saipan and Battle of Tinian (June–August 1944) and the surrender of Aguigan (September 1945) during World War II. They became part of the United Nations Trust Territory of the Pacific Islands (TTPI) in 1947, administered by the United States as U.N. trustee. The other constituents of the TTPI were Palau, the Federated States of Micronesia and the Marshall Islands. Following failed efforts in the 1950s and 1960s to reunify Guam and the Northern Marianas, a covenant to establish the Northern Mariana Islands as a commonwealth in political union with the United States was negotiated by representatives of both political bodies; it was approved by Northern Mariana Islands voters in 1975, and came into force on March 24, 1976. In accordance with the covenant, the Northern Mariana Islands constitution partially took effect on January 9, 1978, and became fully effective on November 4, 1986. In 1986, the Northern Mariana Islands formally left U.N. trusteeship. The abbreviations "CNMI" and "NMI" are both used in the commonwealth. Most residents in the Northern Mariana Islands live on Saipan, the main island.
+
+Puerto Rico: unincorporated territory since 1899; Puerto Rico was acquired at the end of the Spanish–American War, and has been a U.S. commonwealth since 1952. Since 1917, Puerto Ricans have been granted U.S. citizenship. Puerto Rico was organized under the Puerto Rico Federal Relations Act of 1950 (Public Law 600). In November 2008, a U.S. District Court judge ruled that a series of Congressional actions have had the cumulative effect of changing Puerto Rico's status from unincorporated to incorporated. The issue is proceeding through the courts, however, and the U.S. government still refers to Puerto Rico as unincorporated. A Puerto Rican attorney has called the island "semi-sovereign". Puerto Rico has a statehood movement, whose goal is to make the territory the 51st state. See also Political status of Puerto Rico.
+
+U.S. Virgin Islands: purchased by the U.S. from Denmark in 1917 and organized under the Revised Organic Act of the Virgin Islands in 1954. U.S. citizenship was granted in 1927. The main islands are Saint Thomas, Saint John and Saint Croix.
+
+Answer:
+
+The United States has five major territories. Guam, American Samoa, Northern Mariana Islands, Puerto Rico, and U.S. Virgin Islands. Of those, the two oldest are Guam, and Puerto Rico; both being acquired in 1899 at the end of the Spanish - American War. The Northern Mariana Islands is the newest of the five major territories, joining the United States in 1986.
+
+Instruction:
+
+Given this text, what are the oldest and newest major territories of the United States?
+
+</s>
+<s> Instruction:
+
+Given this paragraph, what is the out of state acceptance rate at the University of Virginia?
+
+Context:
+
+For the undergraduate Class of 2023, the University of Virginia received a record 40,815 applications, admitting 24 percent. Approximately 40 percent of those admitted are non-white. Matriculated students come from all 50 states and 147 foreign countries. UVA is required, by Virginia state law, to matriculate two-thirds of its undergraduate student body from its pool of in-state applicants. As a result, its acceptance rate for in-state students (36 percent) is nearly twice the out-of-state rate (19 percent) as of 2019. The university has seen steady increases to its applicant pool in recent decades, and the number of applications has more than doubled since the Class of 2008 received 15,094 applications. As of 2014, 93 percent of admitted applicants ranked in the top 10 percent of their high school classes.
+
+Answer:
+
+The out of state acceptance rate at the University of Virginia is 19%.
+
+</s>
+<PAD><PAD><PAD><PAD><s> Context:
+
+he Beatles were an English rock band, formed in Liverpool in 1960, that comprised John Lennon, Paul McCartney, George Harrison and Ringo Starr. They are regarded as the most influential band of all time and were integral to the development of 1960s counterculture and popular music's recognition as an art form. Rooted in skiffle, beat and 1950s rock 'n' roll, their sound incorporated elements of classical music and traditional pop in innovative ways; the band also explored music styles ranging from folk and Indian music to psychedelia and hard rock. As pioneers in recording, songwriting and artistic presentation, the Beatles revolutionised many aspects of the music industry and were often publicised as leaders of the era's youth and sociocultural movements
+
+Instruction:
+
+Which era of counterculture were the Beatles pivotal to?
+
+Answer:
+
+The Beatles were integral to the development of 1960s counterculture
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Tümmler was born in Thorn, West-Prussia, now Toruń, Poland. He entered the 1968 Olympics as the reigning European Champion. The 1500 m final was run at a fast pace and at the start of the last lap the eventual Olympic Champion Kipchoge Keino had already established a substantial lead. Tümmler and his countryman Harald Norpoth were in second and third place but were outsprinted by the world-record holder Jim Ryun on the last lap.
+
+Answer:
+
+Bodo Tümmler is a middle-distance runner who was born in Thorn, West-Prussia (now Poland).
+
+Instruction:
+
+Given the reference text about Bodo Tümmler, who was he?
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+The Cambridge University Boat Club (CUBC) is the rowing club of the University of Cambridge, England. The club was founded in 1828 and has been located at the Goldie Boathouse on the River Cam, Cambridge since 1882. Nowadays, training primarily takes place on the River Great Ouse at Ely.
+
+Instruction:
+
+Given the reference paragraph, when was the CUBC formed?
+
+Answer:
+
+The Cambridge University Boat Club (CUBC)  was founded in 1828
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Is he still an active football player?
+
+Answer:
+
+No, he retired at the age of 36 on May 14, 2014. However he is still working as an architect which he studied during his graduation.
+
+</s>
+<s> Instruction:
+
+What does moha mean
+
+Context:
+
+Moha (Chinese: 膜蛤; pinyin: Mó Há, pronounced [muǒ.xǎ]), literally "admiring toad" or "toad worship", is an internet meme spoofing Jiang Zemin, former General Secretary of the Chinese Communist Party and paramount leader. It originated among the netizens in mainland China and has become a subculture on the Chinese internet. According to another explanation, it comes from China's social media Baidu Tieba. In the culture, Jiang is nicknamed há, or "toad", because of his supposed resemblance to a toad. Netizens who móhá (worship the toad) call themselves "toad fans", "toad lovers" or "toad worshippers" (simplified Chinese: 蛤丝; traditional Chinese: 蛤絲), or "mogicians" (膜法师; 膜法師) which is a wordplay on mófǎshī (魔法师; 魔法師, magician) in Mandarin.[note 1]
+
+Another nickname for Jiang is "elder" or "senior" (长者; 長者; Zhǎngzhě), because he once called himself an "elder" or "senior" when he was berating Hong Kong journalist Sharon Cheung who questioned him. A video clip recording this event spread on the internet and led to the rise of the culture, which later greatly rose in popularity around 2014, when Hong Kong was experiencing a period of political instability. Initially, netizens extracted Jiang's quotes from the video and imitated his wording and tone, for parody and insult. However, as the culture developed, some imitations have taken to carrying affection toward him. The quotes for imitation have also evolved to include what he said during his leadership, and in his personal life.
+
+Answer:
+
+It means toad worship, an internet meme spoofing Jiang Zemin
+
+</s>
+<PAD><s> Context:
+
+The Atlanta Falcons are a professional American football team based in Atlanta. The Falcons compete in the National Football League (NFL) as a member club of the league's National Football Conference (NFC) South division. The Falcons were founded on June 30, 1965, and joined the NFL in 1966 as an expansion team, after the NFL offered then-owner Rankin Smith a franchise to keep him from joining the rival American Football League (AFL).
+
+In their 55 years of existence, the Falcons have compiled a record of 379–487–6 (369–473–6 in the regular season and 10–14 in the playoffs), winning division championships in 1980, 1998, 2004, 2010, 2012, and 2016. The Falcons have appeared in two Super Bowls, the first during the 1998 season in Super Bowl XXXIII, where they lost to the Denver Broncos 34–19, and the second 18 years later, a 34–28 overtime loss to the New England Patriots in Super Bowl LI.
+
+The Falcons' current home field is Mercedes-Benz Stadium, which opened for the 2017 season; the team's headquarters and practice facilities are located at a 50-acre (20 ha) site in Flowery Branch, northeast of Atlanta in Hall County.
+
+Answer:
+
+Although the falcons have been to two Super Bowl games in their history, they have not won a Super Bowl yet.
+
+Instruction:
+
+Given a reference text about the Falcons, how many Super Bowls have they won in their history?
+
+</s>
+<PAD><PAD><s> Instruction:
+
+Based on this paragraph, what was Joe Biden's mother's maiden's name, what city was he born in, how many siblings did he have growing up, and what religion was he as a child?
+
+Context:
+
+Joseph Robinette Biden Jr. was born on November 20, 1942, at St. Mary's Hospital in Scranton, Pennsylvania, to Catherine Eugenia "Jean" Biden (née Finnegan) and Joseph Robinette Biden Sr. The oldest child in a Catholic family, he has a sister, Valerie, and two brothers, Francis and James. Jean was of Irish descent, while Joseph Sr. had English, Irish, and French Huguenot ancestry. Biden's paternal line has been traced to stonemason William Biden, who was born in 1789 in Westbourne, England, and emigrated to Maryland in the United States by 1820.
+https://en.wikipedia.org/wiki/Joe_Biden
+
+Answer:
+
+Based on this paragraph, Joe Biden's mother's maiden name was Finnegan, he was born in the city of Stranton, he had three siblings (a younger sister and two younger brothers), and he was raised as a member of the Catholic church.
+
+</s>
+<PAD><PAD><PAD><s> Instruction:
+
+Given a reference text about Justice League Dark, tell me who the main actors are and what roles they played.
+
+Context:
+
+Justice League Dark is a 2017 American adult animated science fantasy superhero film produced by Warner Bros. Animation and distributed by Warner Home Video. Featuring the DC Comics team of the same name created by Peter Milligan and Mikel Janín, the film is the 27th of the DC Universe Animated Original Movies and the eighth of the DC Animated Movie Universe. Unlike most installments in the DC Animated Universe Movies series, Justice League Dark features an original premise. The film stars Matt Ryan as John Constantine and Jason O'Mara as Batman, reprising their respective roles from previous media. It was released on Digital HD on January 24, 2017, and on DVD and Blu-ray on February 7.
+
+A sequel, Justice League Dark: Apokolips War, was released in May 2020.
+
+Answer:
+
+The main actors in Justice League Dark were Matt Ryan and Jason O'Mara. In the film, Matt Ryan is John Constantine and Jason O'Mara is Batman.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+The River Thames (/tɛmz/ (listen) TEMZ), known alternatively in parts as the River Isis, is a river that flows through southern England including London. At 215 miles (346 km), it is the longest river entirely in England and the second-longest in the United Kingdom, after the River Severn. The river rises at Thames Head in Gloucestershire and flows into the North Sea near Tilbury, Essex and Gravesend, Kent, via the Thames Estuary. From the west it flows through Oxford (where it is sometimes called the Isis), Reading, Henley-on-Thames and Windsor. The Thames also drains the whole of Greater London.
+
+Answer:
+
+The River Thames flows through Southern England and it is 346 kilometres long.
+
+Instruction:
+
+Given this paragraph, in what part of England does the River Thames flow, and what is its length in kilometres?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Context:
+
+Imperial rule by Europeans would continue until after the conclusion of World War II, when almost all remaining colonial territories gradually obtained formal independence. Independence movements in Africa gained momentum following World War II, which left the major European powers weakened. In 1951, Libya, a former Italian colony, gained independence. In 1956, Tunisia and Morocco won their independence from France. Ghana followed suit the next year (March 1957), becoming the first of the sub-Saharan colonies to be granted independence. Most of the rest of the continent became independent over the next decade.
+
+Instruction:
+
+Which sub-Saharan colony was the first to gain independence?
+
+Answer:
+
+Ghana was the first sub-Saharan colony to gain independence.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Where is the Kilo railway station
+
+Answer:
+
+Kilo is a station on the VR commuter rail network on the Rantarata line located in Kilo, a district of the city of Espoo in Finland. It is situated between Leppavaara railway station and Kera railway station, approximately 13 kilometres (8.1 mi) northwest/west of Helsinki Central railway station.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+What are all the different ways of saying customer lifetime value?
+
+Answer:
+
+Customer lifetime value is commonly referred to as customer lifetime value (CLV or often CLTV), lifetime customer value (LCV), or life-time value (LTV).
+
+</s>
+<s> Instruction:
+
+Given this reference text on the creation of centaurs, where did the mythology originate?
+
+Context:
+
+The centaurs were usually said to have been born of Ixion and Nephele. As the story goes, Nephele was a cloud made into the likeness of Hera in a plot to trick Ixion into revealing his lust for Hera to Zeus. Ixion seduced Nephele and from that relationship centaurs were created. Another version, however, makes them children of Centaurus, a man who mated with the Magnesian mares. Centaurus was either himself the son of Ixion and Nephele (inserting an additional generation) or of Apollo and the nymph Stilbe. In the latter version of the story, Centaurus's twin brother was Lapithes, ancestor of the Lapiths.
+
+Another tribe of centaurs was said to have lived on Cyprus. According to Nonnus, they were fathered by Zeus, who, in frustration after Aphrodite had eluded him, spilled his seed on the ground of that land. 
+
+There were also the Lamian Pheres, twelve rustic daimones (spirits) of the Lamos river. They were set by Zeus to guard the infant Dionysos, protecting him from the machinations of Hera, but the enraged goddess transformed them into ox-horned Centaurs. The Lamian Pheres later accompanied Dionysos in his campaign against the Indians.
+
+The centaur's half-human, half-horse composition has led many writers to treat them as liminal beings, caught between the two natures they embody in contrasting myths; they are both the embodiment of untamed nature, as in their battle with the Lapiths (their kin), and conversely, teachers like Chiron.
+
+Answer:
+
+A centaur is a creature from Greek mythology according to this paragraph. It can be inferred because numerous Greek gods were referenced in the passage.
+
+</s>
+<PAD><PAD><s> Context:
+
+Born in Scranton, Pennsylvania, Biden moved with his family to Delaware in 1953. He studied at the University of Delaware before earning his law degree from Syracuse University. He was elected to the New Castle County Council in 1970 and became the sixth-youngest senator in U.S. history after he was elected in 1972, at age 29. Biden was the chair or ranking member of the Senate Foreign Relations Committee for 12 years. He chaired the Senate Judiciary Committee from 1987 to 1995; drafted and led the effort to pass the Violent Crime Control and Law Enforcement Act and the Violence Against Women Act; and oversaw six U.S. Supreme Court confirmation hearings, including the contentious hearings for Robert Bork and Clarence Thomas. Biden ran unsuccessfully for the Democratic presidential nomination in 1988 and 2008. Barack Obama chose Biden as his running mate in the 2008 and 2012 presidential elections. Biden was a close counselor to Obama during his two terms as Obama's vice president. Biden and his running mate, Kamala Harris, defeated incumbents Donald Trump and Mike Pence in the 2020 presidential election. On January 20, 2021, he became the oldest president in U.S. history, the first to have a female vice president, and the first from Delaware. 
+https://en.wikipedia.org/wiki/Joe_Biden
+
+Answer:
+
+Based on this paragraph, Joe Biden has run for president three times, losing in 1988 and 2008 and eventually winning in 2020. As president, he is unique in three ways: the first to have a female vice president, and the first president from the state of Delaware.
+
+Instruction:
+
+Based on this paragraph, how many times has Joe Biden run for president and what characteristics make him unique among all past presidents?
+
+</s>
+<PAD><PAD><s> Instruction:
+
+Given this paragraph about Hydrogen Storage, what is the hydrogen boiling point?
+
+Context:
+
+Several methods exist for storing hydrogen. These include mechanical approaches such as using high pressures and low temperatures, or employing chemical compounds that release H2 upon demand. While large amounts of hydrogen are produced by various industries, it is mostly consumed at the site of production, notably for the synthesis of ammonia. For many years hydrogen has been stored as compressed gas or cryogenic liquid, and transported as such in cylinders, tubes, and cryogenic tanks for use in industry or as propellant in space programs. Interest in using hydrogen for on-board storage of energy in zero-emissions vehicles is motivating the development of new methods of storage, more adapted to this new application. The overarching challenge is the very low boiling point of H2: it boils around 20.268 K (−252.882 °C or −423.188 °F). Achieving such low temperatures requires expending significant energy.
+
+https://en.wikipedia.org/wiki/Hydrogen_storage
+
+Answer:
+
+It boils around 20.268 K (−252.882 °C or −423.188 °F).
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+The docu-series premiered on January 17, 2016, and focused on the 2016 U.S. presidential election, January to November. It was renewed for a second season, which premiered on March 19, 2017, and focused on President Trump's first 100 days. It returned on April 15, 2018 for a third season, and focused on the mid-term elections, with CBS News anchor Alex Wagner stepping in as co-host to replace Mark Halperin, who was replaced on January 3, 2018, by the show, after sexual harassment allegations. Jennifer Palmieri joined as guest host beginning October 13, 2019, with season four episode twelve, Desperate Times, Desperate Measures, and joined as a permanent co-host in season 6.
+
+Instruction:
+
+When was the the docu-series 'The Circus' created?
+
+Answer:
+
+The Circus is an American television documentary series initially following the 2016 presidential race.
+
+</s>
+<PAD><PAD><PAD><PAD><s> Context:
+
+The Wheel of Time is a series of high fantasy novels by American author Robert Jordan, with Brandon Sanderson as a co-author for the final three novels. Originally planned as a six-book series at its debut in 1990, The Wheel of Time came to span 14 volumes, in addition to a prequel novel and two companion books. Jordan died in 2007 while working on what was planned to be the final volume in the series. He prepared extensive notes which enabled fellow fantasy author Brandon Sanderson to complete the final book, which grew into three volumes: The Gathering Storm (2009), Towers of Midnight (2010), and A Memory of Light (2013).
+
+Answer:
+
+Originally planned as a six-book series at its debut in 1990, The Wheel of Time came to span 14 volumes
+
+Instruction:
+
+How many volumes of Wheel of Time are there?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Instruction:
+
+Who is Micky Mouse?
+
+Answer:
+
+Mickey Mouse is an animated cartoon character co-created in 1928 by Walt Disney and Ub Iwerks. The longtime mascot of The Walt Disney Company, Mickey is an anthropomorphic mouse who typically wears red shorts, large yellow shoes, and white gloves. Taking inspiration from silent film personalities such as Charlie Chaplin's Tramp, Mickey is traditionally characterized as a sympathetic underdog who gets by on pluck and ingenuity. Mickey is one of the world's most recognizable and universally acclaimed fictional characters of all time. Mickey generally appears alongside his girlfriend Minnie Mouse, his pet dog Pluto, and his friends Donald Duck and Goofy.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Polyvinyl chloride (alternatively: poly(vinyl chloride), colloquial: polyvinyl, or simply vinyl; abbreviated: PVC) is the world's third-most widely produced synthetic polymer of plastic (after polyethylene and polypropylene). About 40 million tons of PVC are produced each year.
+
+Answer:
+
+Each year about 40 million tons of PVC are produced.
+
+Instruction:
+
+How much PVC produced each year?
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+When did Confinity become eBay ?
+
+Answer:
+
+Confinity was acquired by X.com in 1999 which was later renamed to PayPal. PayPal was acquired by eBay in 2002.
+
+</s>
+<s> Instruction:
+
+What is the United States Bill of Rights?
+
+Context:
+
+The United States Bill of Rights comprises the first ten amendments to the United States Constitution. Proposed following the often bitter 1787–88 debate over the ratification of the Constitution and written to address the objections raised by Anti-Federalists, the Bill of Rights amendments add to the Constitution specific guarantees of personal freedoms and rights, clear limitations on the government's power in judicial and other proceedings, and explicit declarations that all powers not specifically granted to the federal government by the Constitution are reserved to the states or the people. The concepts codified in these amendments are built upon those in earlier documents, especially the Virginia Declaration of Rights (1776), as well as the Northwest Ordinance (1787), the English Bill of Rights (1689), and Magna Carta (1215).
+
+Largely because of the efforts of Representative James Madison, who studied the deficiencies of the Constitution pointed out by anti-federalists and then crafted a series of corrective proposals, Congress approved twelve articles of amendment on September 25, 1789, and submitted them to the states for ratification. Contrary to Madison's proposal that the proposed amendments be incorporated into the main body of the Constitution (at the relevant articles and sections of the document), they were proposed as supplemental additions (codicils) to it. Articles Three through Twelve were ratified as additions to the Constitution on December 15, 1791, and became Amendments One through Ten of the Constitution. Article Two became part of the Constitution on May 5, 1992, as the Twenty-seventh Amendment. Article One is still pending before the states.
+
+Although Madison's proposed amendments included a provision to extend the protection of some of the Bill of Rights to the states, the amendments that were finally submitted for ratification applied only to the federal government. The door for their application upon state governments was opened in the 1860s, following ratification of the Fourteenth Amendment. Since the early 20th century both federal and state courts have used the Fourteenth Amendment to apply portions of the Bill of Rights to state and local governments. The process is known as incorporation.
+
+There are several original engrossed copies of the Bill of Rights still in existence. One of these is on permanent public display at the National Archives in Washington, D.C.
+
+Answer:
+
+The United States Bill of Rights comprises the first ten amendments to the United States Constitution. Proposed following the often bitter 1787–88 debate over the ratification of the Constitution and written to address the objections raised by Anti-Federalists, the Bill of Rights amendments add to the Constitution specific guarantees of personal freedoms and rights, clear limitations on the government's power in judicial and other proceedings, and explicit declarations that all powers not specifically granted to the federal government by the Constitution are reserved to the states or the people. The concepts codified in these amendments are built upon those in earlier documents, especially the Virginia Declaration of Rights (1776), as well as the Northwest Ordinance (1787), the English Bill of Rights (1689), and the Magna Carta (1215).
+
+</s>
+<PAD><s> Instruction:
+
+What is Gobekli Tepe?
+
+Context:
+
+Göbekli Tepe (Turkish: [ɟœbecˈli teˈpe], "Potbelly Hill"; known as Girê Mirazan or Xirabreşkê in Kurdish) is a Neolithic archaeological site in the Southeastern Anatolia Region of Turkey. Dated to the Pre-Pottery Neolithic, between c. 9500 and 8000 BCE, the site comprises a number of large circular structures supported by massive stone pillars – the world's oldest known megaliths. Many of these pillars are richly decorated with figurative anthropomorphic details, clothing, and reliefs of wild animals, providing archaeologists rare insights into prehistoric religion and the particular iconography of the period. The 15 m (50 ft)-high, 8 ha (20-acre) tell also includes many smaller buildings, quarries, and stone-cut cisterns from the Neolithic, as well as some traces of activity from later periods.
+
+Answer:
+
+Gobekli Tepe is a neolithic archaeological site located in the Anatolia region of Turkey. It is the world's oldest known megalith, dating as far back as 12000 years.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+For the undergraduate Class of 2023, the University of Virginia received a record 40,815 applications, admitting 24 percent. Approximately 40 percent of those admitted are non-white. Matriculated students come from all 50 states and 147 foreign countries. UVA is required, by Virginia state law, to matriculate two-thirds of its undergraduate student body from its pool of in-state applicants. As a result, its acceptance rate for in-state students (36 percent) is nearly twice the out-of-state rate (19 percent) as of 2019. The university has seen steady increases to its applicant pool in recent decades, and the number of applications has more than doubled since the Class of 2008 received 15,094 applications. As of 2014, 93 percent of admitted applicants ranked in the top 10 percent of their high school classes.
+
+Answer:
+
+The out of state acceptance rate at the University of Virginia is 19%.
+
+Instruction:
+
+Given this paragraph, what is the out of state acceptance rate at the University of Virginia?
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Anoop Nautiyal is a social activist based in Dehradun, Uttarakhand. His work has focused on issues of environment and sustainable development of the state. He is the founder of Social Development Communities Foundation, an NGO and think tank based in Dehradun, which works works at the grassroots level for the empowerment of communities, as well as the sustainable development of the mountain state of Uttarakhand. He is a prolific social communicator and has also been a columnist for the Indian Express.
+
+He had a brief foray in the political space and contested the 2017 Uttarakhand Legislative Assembly election.
+
+Anoop Nautiyal attended Shri Ram College of Commerce and National Institute of Fashion Technology in New Delhi.[1
+
+Instruction:
+
+Given a reference text about Anoop Nautiyal, what did his work focus on?
+
+Answer:
+
+Anoop Nautiyal's work has focused on issues regarding the environment and sustainable development.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Zygmuntówek [zɨɡmunˈtuvɛk] is a village in the administrative district of Gmina Malanów, within Turek County, Greater Poland Voivodeship, in west-central Poland. It lies approximately 2 kilometres (1 mi) north of Malanów, 10 km (6 mi) south-west of Turek, and 112 km (70 mi) south-east of the regional capital Poznań.
+
+Answer:
+
+Malanów is south of Zygmuntówek. We know this because Zygmuntówek is north of Malanów.
+
+Instruction:
+
+What direction (North-South-East-West) is Malanów from Zygmuntówek?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Instruction:
+
+What is the least common birthday in the United States?
+
+Context:
+
+In the United States between 1973 and 1999, September 16 is the most common birthday in the United States and December 25 the least common birthday (other than February 29, because of leap years). In 2011, October 5 and 6 were reported as the most frequently occurring birthdays.
+
+Answer:
+
+The least common birthday in the United States between 1973 and 1999 was February 29 because of leap years.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given the introduction of ChatGPT, tell me how many releases there are since the fist launch and when they were launched.
+
+Answer:
+
+There are two ChatGPT versions so far. The first release was on Nov 23rd, 2022, and the second launch was released on Mar 14th, 2023.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given a reference text about the Falcons, how many Super Bowls have they won in their history?
+
+Answer:
+
+Although the falcons have been to two Super Bowl games in their history, they have not won a Super Bowl yet.
+
+</s>
+<s> Context:
+
+A large language model (LLM) is a language model consisting of a neural network with many parameters (typically billions of weights or more), trained on large quantities of unlabelled text using self-supervised learning. LLMs emerged around 2018 and perform well at a wide variety of tasks. This has shifted the focus of natural language processing research away from the previous paradigm of training specialized supervised models for specific tasks.
+
+Properties
+Though the term large language model has no formal definition, it often refers to deep learning models having a parameter count on the order of billions or more. LLMs are general purpose models which excel at a wide range of tasks, as opposed to being trained for one specific task (such as sentiment analysis, named entity recognition, or mathematical reasoning). The skill with which they accomplish tasks, and the range of tasks at which they are capable, seems to be a function of the amount of resources (data, parameter-size, computing power) devoted to them, in a way that is not dependent on additional breakthroughs in design.
+
+Though trained on simple tasks along the lines of predicting the next word in a sentence, neural language models with sufficient training and parameter counts are found to capture much of the syntax and semantics of human language. In addition, large language models demonstrate considerable general knowledge about the world, and are able to "memorize" a great quantity of facts during training.
+
+Hallucinations
+Main article: Hallucination (artificial intelligence)
+In artificial intelligence in general, and in large language models in particular, a "hallucination" is a confident response that does not seem to be justified by the model's training data.
+
+Emergent abilities
+
+On a number of natural language benchmarks involving tasks such as question answering, models perform no better than random chance until they reach a certain scale (in this case, measured by training computation), at which point their performance sharply increases. These are examples of emergent abilities.
+Unpredictable abilities that have been observed in large language models but that were not present in simpler models (and that were not explicitly designed into the model) are usually called "emergent abilities". Researchers note that such abilities "cannot be predicted simply by extrapolating the performance of smaller models". These abilities are discovered rather than programmed-in or designed, in some cases only after the LLM has been publicly deployed. Hundreds of emergent abilities have been described. Examples include multi-step arithmetic, taking college-level exams, identifying the intended meaning of a word, chain-of-thought prompting, decoding the International Phonetic Alphabet, unscrambling a word’s letters, identifying offensive content in paragraphs of Hinglish (a combination of Hindi and English), and generating a similar English equivalent of Kiswahili proverbs.
+
+Architecture and training
+Large language models have most commonly used the transformer architecture, which, since 2018, has become the standard deep learning technique for sequential data (previously, recurrent architectures such as the LSTM were most common). LLMs are trained in an unsupervised manner on unannotated text. A left-to-right transformer is trained to maximize the probability assigned to the next word in the training data, given the previous context. Alternatively, an LLM may use a bidirectional transformer (as in the example of BERT), which assigns a probability distribution over words given access to both preceding and following context. In addition to the task of predicting the next word or "filling in the blanks", LLMs may be trained on auxiliary tasks which test their understanding of the data distribution such as Next Sentence Prediction (NSP), in which pairs of sentences are presented and the model must predict whether they appear side-by-side in the training corpus.
+
+The earliest LLMs were trained on corpora having on the order of billions of words. The first model in OpenAI's GPT series was trained in 2018 on BookCorpus, consisting of 985 million words. In the same year, BERT was trained on a combination of BookCorpus and English Wikipedia, totalling 3.3 billion words. In the years since then, training corpora for LLMs have increased by orders of magnitude, reaching up to hundreds of billions or trillions of tokens.
+
+LLMs are computationally expensive to train. A 2020 study estimated the cost of training a 1.5 billion parameter model (1-2 orders of magnitude smaller than the state of the art at the time) at $1.6 million.
+
+A 2020 analysis found that neural language models' capability (as measured by training loss) increased smoothly in a power law relationship with number of parameters, quantity of training data, and computation used for training. These relationships were tested over a wide range of values (up to seven orders of magnitude) and no attenuation of the relationship was observed at the highest end of the range (including for network sizes up to trillions of parameters).
+
+Application to downstream tasks
+Between 2018 and 2020, the standard method for harnessing an LLM for a specific natural language processing (NLP) task was to fine tune the model with additional task-specific training. It has subsequently been found that more powerful LLMs such as GPT-3 can solve tasks without additional training via "prompting" techniques, in which the problem to be solved is presented to the model as a text prompt, possibly with some textual examples of similar problems and their solutions.
+
+Fine-tuning
+Main article: Fine-tuning (machine learning)
+Fine-tuning is the practice of modifying an existing pretrained language model by training it (in a supervised fashion) on a specific task (e.g. sentiment analysis, named entity recognition, or part-of-speech tagging). It is a form of transfer learning. It generally involves the introduction of a new set of weights connecting the final layer of the language model to the output of the downstream task. The original weights of the language model may be "frozen", such that only the new layer of weights connecting them to the output are learned during training. Alternatively, the original weights may receive small updates (possibly with earlier layers frozen).
+
+Prompting
+See also: Prompt engineering and Few-shot learning (natural language processing)
+In the prompting paradigm, popularized by GPT-3, the problem to be solved is formulated via a text prompt, which the model must solve by providing a completion (via inference). In "few-shot prompting", the prompt includes a small number of examples of similar (problem, solution) pairs. For example, a sentiment analysis task of labelling the sentiment of a movie review could be prompted as follows:
+
+Review: This movie stinks.
+Sentiment: negative
+
+Review: This movie is fantastic!
+Sentiment:
+
+If the model outputs "positive", then it has correctly solved the task. In zero-shot prompting, no solve examples are provided. An example of a zero-shot prompt for the same sentiment analysis task would be "The sentiment associated with the movie review 'This movie is fantastic!' is".
+
+Few-shot performance of LLMs has been shown to achieve competitive results on NLP tasks, sometimes surpassing prior state-of-the-art fine-tuning approaches. Examples of such NLP tasks are translation, question answering, cloze tasks, unscrambling words, and using a novel word in a sentence. The creation and optimisation of such prompts is called prompt engineering.
+
+Instruction tuning
+Instruction tuning is a form of fine-tuning designed to facilitate more natural and accurate zero-shot prompting interactions. Given a text input, a pretrained language model will generate a completion which matches the distribution of text on which it was trained. A naive language model given the prompt "Write an essay about the main themes of Hamlet." might provide a completion such as "A late penalty of 10% per day will be applied to submissions received after March 17." In instruction tuning, the language model is trained on many examples of tasks formulated as natural language instructions, along with appropriate responses. Various techniques for instruction tuning have been applied in practice. OpenAI's InstructGPT protocol involves supervised fine-tuning on a dataset of human-generated (prompt, response) pairs, followed by reinforcement learning from human feedback (RLHF), in which a reward function was learned based on a dataset of human preferences. Another technique, "self-instruct", fine-tunes the language model on a training set of examples which are themselves generated by an LLM (bootstrapped from a small initial set of human-generated examples).
+
+https://en.wikipedia.org/wiki/Large_language_model
+
+Answer:
+
+Instruction tuning is a form of fine-tuning designed to facilitate more natural and accurate zero-shot prompting interactions.
+
+Instruction:
+
+Given these paragraphs about Large language models, what is Instruction tuning?
+
+</s>
+<PAD><s> Instruction:
+
+Who was the first to record the Needles and Pins song?
+
+Answer:
+
+The first artist to record Needles and Pins song was DeShannon.
+
+</s>
+<s> Context:
+
+Karl Heinrich Marx FRSA (German: [maʁks]; 5 May 1818 – 14 March 1883) was a German philosopher, economist, historian, sociologist, political theorist, journalist, critic of political economy, and socialist revolutionary. His best-known titles are the 1848 pamphlet The Communist Manifesto and the four-volume Das Kapital (1867–1883). Marx's political and philosophical thought had enormous influence on subsequent intellectual, economic, and political history. His name has been used as an adjective, a noun, and a school of social theory.
+
+Born in Trier, Germany, Marx studied law and philosophy at the universities of Bonn and Berlin. He married German theatre critic and political activist Jenny von Westphalen in 1843. Due to his political publications, Marx became stateless and lived in exile with his wife and children in London for decades, where he continued to develop his thought in collaboration with German philosopher Friedrich Engels and publish his writings, researching in the British Museum Reading Room.
+
+Marx's critical theories about society, economics, and politics, collectively understood as Marxism, hold that human societies develop through class conflict. In the capitalist mode of production, this manifests itself in the conflict between the ruling classes (known as the bourgeoisie) that control the means of production and the working classes (known as the proletariat) that enable these means by selling their labour-power in return for wages. Employing a critical approach known as historical materialism, Marx predicted that capitalism produced internal tensions like previous socioeconomic systems and that these tensions would lead to its self-destruction and replacement by a new system known as the socialist mode of production. For Marx, class antagonisms under capitalism—owing in part to its instability and crisis-prone nature—would eventuate the working class's development of class consciousness, leading to their conquest of political power and eventually the establishment of a classless, communist society constituted by a free association of producers. Marx actively pressed for its implementation, arguing that the working class should carry out organised proletarian revolutionary action to topple capitalism and bring about socio-economic emancipation.
+
+Marx has been described as one of the most influential figures in human history, and his work has been both lauded and criticised. His work in economics laid the basis for some current theories about labour and its relation to capital. Many intellectuals, labour unions, artists, and political parties worldwide have been influenced by Marx's work, often modifying or adapting his ideas. Marx is typically cited as one of the principal architects of modern social science.
+
+Answer:
+
+Karl Marx studied law and philosophy at the universities of Bonn and Berlin. He died on March 14 1883.
+
+Instruction:
+
+Given the reference text about Karl Marx, tell me when he died, what subjects he studied and at which universities he studied.
+
+</s>
+<PAD><PAD><s> Context:
+
+Arsenal was the first club from the South of England to join the Football League in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division, and have won the second-most top-flight matches in English football history. In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position. Between 1998 and 2017, Arsenal qualified for the UEFA Champions League for nineteen consecutive seasons.
+
+Instruction:
+
+When did Arsenal first reach the first division? How many league titles did they win between 1989 and 2005 and how many FA cups? How many trophies in total for that period?
+
+Answer:
+
+Arsenal reached the first division in 1904. Between 1989 and 2005, Arsenal won 5 league titles and 5 FA cups. That’s a total of 10 trophies.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+The Ming treasure voyages were the seven maritime expeditions undertaken by Ming China's treasure fleet between 1405 and 1433. The Yongle Emperor ordered the construction of the treasure fleet in 1403. The grand project resulted in far-reaching ocean voyages to the coastal territories and islands in and around the South China Sea, the Indian Ocean, and beyond. Admiral Zheng He was commissioned to command the treasure fleet for the expeditions. Six of the voyages occurred during the Yongle reign (r. 1402–24), while the seventh voyage occurred during the Xuande reign (r. 1425–1435). The first three voyages reached up to Calicut on India's Malabar Coast, while the fourth voyage went as far as Hormuz in the Persian Gulf. In the last three voyages, the fleet traveled up to the Arabian Peninsula and East Africa.
+
+Instruction:
+
+Based on this paragraph about the Ming treasure voyages, who commanded the fleet?
+
+Answer:
+
+Based on this text, Admiral Zheng He commanded the Ming treasure voyages.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Old French (franceis, françois, romanz; Modern French: ancien français) was the language spoken in most of the northern half of France from approximately the 8th to the 14th centuries. Rather than a unified language, Old French was a linkage of Romance dialects, mutually intelligible yet diverse, spoken in the northern half of France. These dialects came to be collectively known as the langue d'oïl, contrasting with the langue d'oc in the south of France. The mid-14th century witnessed the emergence of Middle French, the language of the French Renaissance in the Île de France region; this dialect was a predecessor to Modern French. Other dialects of Old French evolved themselves into modern forms (Poitevin-Saintongeais, Gallo, Norman, Picard, Walloon, etc.), each with its own linguistic features and history.
+
+Instruction:
+
+Where was Old French language spoken?
+
+Answer:
+
+Northern half of France in the 8th to 14th centuries.
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Merlot (/ˈmɜːrloʊ/ MUR-loh) is a dark blue–colored wine grape variety, that is used as both a blending grape and for varietal wines. The name Merlot is thought to be a diminutive of merle, the French name for the blackbird, probably a reference to the color of the grape. Its softness and "fleshiness," combined with its earlier ripening, make Merlot a popular grape for blending with the sterner, later-ripening Cabernet Sauvignon, which tends to be higher in tannin.
+
+Answer:
+
+Merlot (/ˈmɜːrloʊ/ MUR-loh) is a dark blue–colored wine grape variety, that is used as both a blending grape and for varietal wines.
+
+Instruction:
+
+What is Merlot?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Instruction:
+
+What is the Pareto principle?
+
+Context:
+
+The Pareto principle states that for many outcomes, roughly 80% of consequences come from 20% of causes (the "vital few"). Other names for this principle are the 80/20 rule, the law of the vital few, or the principle of factor sparsity.
+
+Answer:
+
+The Pareto principle also known as the 80/20 rule or the law of the vital few, states that roughly 80% of consequences come from 20% of causes. For example 80% of revenue comes from 20% of customers (the vital few).
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given this short paragraph about the life of George K. McGunnegle, how old was he when he retired and what month of the year did that happen?
+
+Answer:
+
+George K. McGunnegle was 64 when he retired in July of 1919.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given a reference text about Kennebunkport, tell me its neighboring towns and where it is located.
+
+Answer:
+
+Kennebunkport is located in York County, Maine and is neighbored by the towns of Kennebunk and Arundel.
 
 </s>

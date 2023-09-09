@@ -359,17 +359,19 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
         # Use chop_sequences to split the sequence into individual prompts
         chopped_seq = chop_sequences([{'input_ids': sequence}], tokenizer)
         
-        # Calculate the weights for redistributing padding tokens
-        weights = [1 / len(prompt) for prompt in chopped_seq]
-        total_weights = sum(weights)
-        normalized_weights = [w / total_weights for w in weights]
+        # Calculate the inverse weights for redistributing padding tokens
+        inverse_weights = [1 / len(prompt) for prompt in chopped_seq]
         
-        # Distribute the padding tokens based on the normalized weights
-        pads_to_distribute = np.round(np.array(normalized_weights) * num_pads).astype(int)
+        # Normalize the inverse weights so they sum to 1
+        total_inverse_weights = sum(inverse_weights)
+        normalized_inverse_weights = [w / total_inverse_weights for w in inverse_weights]
         
-        ## Correct for any rounding errors
-        #while sum(pads_to_distribute) < num_pads:
-            #pads_to_distribute[np.argmin(pads_to_distribute)] += 1
+        # Distribute the padding tokens based on the normalized inverse weights
+        pads_to_distribute = [round(w * num_pads) for w in normalized_inverse_weights]
+
+        # Correct for any discrepancies due to rounding
+        while sum(pads_to_distribute) != num_pads:
+            pads_to_distribute[pads_to_distribute.index(min(pads_to_distribute))] += (num_pads - sum(pads_to_distribute))
         
         # Create new sequence and attention mask with redistributed padding tokens
         new_sequence = []
@@ -386,6 +388,8 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
         new_attention_mask_list.append(new_attention_mask)
         new_label_list.append(new_sequence)  # Labels are the same as input_ids in this case
 
+    print([len(s) for s in new_label_list])
+    
     # Overwrite the old lists with the new ones
     input_ids_list = new_input_ids_list
     attention_mask_list = new_attention_mask_list
