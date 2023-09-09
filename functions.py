@@ -518,6 +518,7 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
     print('train_epoch_steps:',train_epoch_steps)
     print('warm_ratio:',warm_ratio)
     print('warmup:',warmup)
+    print('output_dir',output_dir)
     return OurArguments(
         lora=lora,
         lora_alpha=lora_alpha,
@@ -555,7 +556,7 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
         data_collator=data_collator
     )
 
-def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, callbacks=None):
+def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, wandb, callbacks=None):
     """Initialize and return MeZOTrainer."""
 
     return MeZOTrainer(
@@ -563,7 +564,7 @@ def initialize_trainer(args, model, train_dataset, eval_dataset, tokenizer, call
         args=args,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
-
+        wandb=wandb,
         callbacks=callbacks,
         tokenizer=tokenizer
     )
@@ -690,7 +691,7 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
     # Define data collator
     data_collator = DataCollatorForLanguageModeling(
         tokenizer=tokenizer, mlm=True, mlm_probability=mlm_prob)
-    
+    print('output_dir',output_dir)
     #Warmup
     training_args = create_arguments(
         task=TASK + "-train"+"-",
@@ -750,7 +751,7 @@ def train_model(selected_prompts, min_epochs, EVAL_METRIC, output_dir, BLOCK_SIZ
         )
     ]
 
-    trainer = initialize_trainer(training_args, model, train_dataset, valid_dataset, tokenizer, callbacks=callbacks)
+    trainer = initialize_trainer(training_args, model, train_dataset, valid_dataset, tokenizer, callbacks=callbacks, wandb=wandb)
             
     # Attach the trainer to the callback
     for callback in callbacks:
@@ -795,7 +796,9 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.epoch_counter = 0  # Added an epoch counter
         self.patience_counter = 0
         self.best_metric = None
+        print('output_dir',output_dir)
         self.output_dir = output_dir
+        print('self.output_dir',self.output_dir)
         self.eval_subset_size = MIN_NUM_EVAL_EXAMPLES  # Define your eval_subset_size here
         self.train_epoch_steps = train_epoch_steps
         #self.phase = phase
@@ -995,6 +998,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         initial_eval_loss = metrics.get('eval_loss', 0)  # Extracting eval_loss
 
         # Save the initial model as the best model
+        print('save self.output_dir',self.output_dir)
         self._save_model(self.output_dir)
         print(f'Metrics initial: {initial_perplexity}, eval_loss: {initial_eval_loss}, learning_rate: {initial_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
 
@@ -1031,8 +1035,9 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         if self.epoch_counter > self.min_epochs:
 
             #if self.best_metric is None or epoch_perplexity < self.best_metric:
-            if self.best_metric is None or comparison(metric_value, self.best_metric):
+            if self.best_metric is None or self.best_metric == float('-inf') or self.best_metric == float('inf') or comparison(metric_value, self.best_metric):
                 self.best_metric = metric_value
+                print('best metric self.output_dir',self.output_dir)
                 state.best_model_checkpoint = self.output_dir
                 self._save_model(self.output_dir)
                 self.patience_counter = 0
@@ -1043,6 +1048,7 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                 if self.patience_counter >= self.patience:
                     control.should_training_stop = True
         else:
+            print('else best metric self.output_dir',self.output_dir)
             self._save_model(self.output_dir)
             print(f'Metrics: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, saved')
         print('self.best_metric',self.best_metric)    
@@ -1167,7 +1173,10 @@ class OurArguments(TrainingArguments):
 
 
 class MeZOTrainer(Trainer):
-
+    def __init__(self, wandb, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.wandb = wandb
+        
     def _inner_training_loop(
         self, batch_size=None, args=None, resume_from_checkpoint=None, trial=None, ignore_keys_for_eval=None
     ):
@@ -1515,7 +1524,9 @@ class MeZOTrainer(Trainer):
                     model.zero_grad()
                     self.state.global_step += 1
                     self.state.epoch = epoch + (step + 1 + steps_skipped) / steps_in_epoch
-                    print(f"Step {self.state.global_step}, Loss: {tr_loss.item()}")
+                    print(f"Step {self.state.global_step}, Individual Step Loss: {tr_loss_step.item()}")
+                    # Log the training loss to WandB
+                    wandb.log({"Training Loss": tr_loss_step.item(), "Step": self.state.global_step})
                     self.control = self.callback_handler.on_step_end(
                         args, self.state, self.control)
 
