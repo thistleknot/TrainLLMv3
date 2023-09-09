@@ -411,20 +411,11 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
             # For extending new_attention_mask
             new_attention_mask.extend(1 for _ in range(len(prompt)))
             new_attention_mask.extend(0 for _ in range(pad_count))
-            
-        # Shuffle new_sequence
-        shuffled_sequence = shuffle_prompts(new_sequence, eos_token_id, pad_token_id)
         
-        # Reconstruct the attention mask based on shuffled_sequence
-        shuffled_attention_mask = [1 if token != pad_token_id else 0 for token in shuffled_sequence]
-        
-        # Here labels are assumed to be the same as input_ids, so they would also be shuffled
-        shuffled_labels = shuffled_sequence.copy()
-  
         # Append to the lists
-        new_input_ids_list.append(shuffled_sequence)
-        new_attention_mask_list.append(shuffled_attention_mask)
-        new_label_list.append(shuffled_labels)
+        new_input_ids_list.append(new_sequence)
+        new_attention_mask_list.append(new_attention_mask)
+        new_label_list.append(new_sequence)  # Labels are the same as input_ids in this case
 
     print([len(s) for s in new_label_list])
     

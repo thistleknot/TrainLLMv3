@@ -106,11 +106,12 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
 		#*sampled_dolly_closed_qa_qa_prompts,\
         #*sampled_dolly_closed_qa_caq_prompts,\
         
-		*sampled_dolly_closed_qa_cqa_prompts,\
+		#*sampled_dolly_closed_qa_cqa_prompts,\
         #*sampled_dolly_closed_qa_qca_prompts,\
         
         #*sampled_dolly_15k_qa_prompts,\
         #*sampled_dolly_15k_caq_prompts,\
+        *sampled_dolly_15k_qca_prompts,\
         #*sampled_dolly_15k_cqa_prompts,\
         #*sampled_openai_tldr_prompts\
         ]
