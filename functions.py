@@ -1026,20 +1026,24 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         epoch_eval_loss = metrics.get('eval_loss', 0)
         epoch_perplexity = np.exp(epoch_eval_loss)
         
+        inverted_cosine = (((((average_similarity)+1)/2)-1)*-1)
+        
+        both = inverted_cosine*epoch_eval_loss
+        
         print("self.best_metric",self.best_metric)
         if self.eval_metric == 'cosine':
-            average_similarity = self._compute_cosine_similarity()
+            
             metric_value = average_similarity
             comparison = lambda a, b: a > b
         elif self.eval_metric == 'eval':
-            epoch_eval_loss = metrics.get('eval_loss', 0)
+            
             metric_value = epoch_eval_loss
             comparison = lambda a, b: a < b
         elif self.eval_metric == 'both':
             average_similarity = self._compute_cosine_similarity()
             epoch_eval_loss = metrics.get('eval_loss', 0)
-            inverted_cosine = (((((average_similarity)+1)/2)-1)*-1)
-            metric_value = inverted_cosine*epoch_eval_loss
+            
+            metric_value = both
             comparison = lambda a, b: a < b
         
         # Increment the epoch counter
@@ -1054,16 +1058,16 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
                 
                 self._save_model()
                 self.patience_counter = 0
-                print(f'Metrics net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {metric_value}, saved as best model')
+                print(f'Metrics net positive: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {both}, saved as best model')
             else:
                 self.patience_counter += 1
-                print(f'Metrics net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {metric_value}, no save')
+                print(f'Metrics net negative: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience: {self.patience_counter}, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {both}, no save')
                 if self.patience_counter >= self.patience:
                     control.should_training_stop = True
         else:
             #print('else best metric self.output_dir',self.output_dir)
             self._save_model()
-            print(f'Metrics: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience_counter, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {metric_value}, saved')
+            print(f'Metrics: {epoch_perplexity}, eval_loss: {epoch_eval_loss}, learning_rate: {current_lr}, patience_counter, cosine similarity: {average_similarity}, inverted_cosine: {inverted_cosine}, both: {both}, saved')
         
         print('self.best_metric',self.best_metric)    
         
