@@ -367,7 +367,16 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
         normalized_inverse_weights = [w / total_inverse_weights for w in inverse_weights]
         
         # Distribute the padding tokens based on the normalized inverse weights
-        pads_to_distribute = [round(w * num_pads) for w in normalized_inverse_weights]
+        # Distribute the padding tokens based on the normalized inverse weights
+        pads_to_distribute = [int(w * num_pads) for w in normalized_inverse_weights]
+        decimal_parts = [(w * num_pads) % 1 for w in normalized_inverse_weights]
+
+        # Correct for any discrepancies due to rounding down
+        remaining_pads = num_pads - sum(pads_to_distribute)
+        sorted_indices = sorted(range(len(decimal_parts)), key=lambda k: decimal_parts[k], reverse=True)
+
+        for i in sorted_indices[:remaining_pads]:
+            pads_to_distribute[i] += 1
 
         # Correct for any discrepancies due to rounding
         while sum(pads_to_distribute) != num_pads:
@@ -519,6 +528,7 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
         max_length=block_size,
         learning_rate=learning_rate,
         logging_dir=output_dir,
+        output_dir=output_dir,
         logging_steps=1,
         max_steps=max_steps,
         evaluation_strategy=evaluation_strategy,
@@ -529,7 +539,6 @@ def create_arguments(task, model_name, tag, learning_rate, max_steps, gradient_a
         save_total_limit=1,
         load_best_model_at_end=False,
         push_to_hub=False,
-        output_dir=output_dir,
         overwrite_output_dir=True,
         gradient_accumulation_steps=gradient_accumulation_steps,
         #warmup_steps=warmup,
@@ -795,6 +804,9 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         self.name = 'EarlyStoppingCallback'
         self.min_epochs = min_epochs
     
+    def on_train_begin(self, args, state, control):
+        self.trainer.train_loss_steps = []
+    
     def _compute_cosine_similarity(self, train=False):
         eos_token_id = self.trainer.tokenizer.eos_token_id
         eos_token = self.trainer.tokenizer.eos_token
@@ -1051,15 +1063,6 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
         if self.trainer.is_world_process_zero():
             self.trainer.tokenizer.save_pretrained(output_dir)
         self.trainer.state.best_model_checkpoint = self.output_dir
-
-    def on_train_end(self, args, state, control, **kwargs):
-        state.best_model_checkpoint = self.output_dir
-        
-    def on_step_end(self, args, state, control, **kwargs):
-        current_step = state.global_step
-        if current_step <= len(self.trainer.train_loss_steps):
-            current_loss = self.trainer.train_loss_steps[current_step - 1]
-            print(f"Step: {current_step}, Training Loss: {current_loss}")
         
 def subsample_dataset(dataset, fraction=0.1):
     """Subsample a given fraction of the dataset."""
@@ -1512,6 +1515,7 @@ class MeZOTrainer(Trainer):
                     model.zero_grad()
                     self.state.global_step += 1
                     self.state.epoch = epoch + (step + 1 + steps_skipped) / steps_in_epoch
+                    print(f"Step {self.state.global_step}, Loss: {tr_loss.item()}")
                     self.control = self.callback_handler.on_step_end(
                         args, self.state, self.control)
 

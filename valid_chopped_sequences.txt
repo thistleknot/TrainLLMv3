@@ -1,537 +1,123 @@
-<s> Instruction:
+<s> Context:
 
-per this reference text about Delaware Route 16, how many times does the road change between being a divided highway and undivided?
+Chardonnay (UK: /ˈʃɑːrdəneɪ/, US: /ˌʃɑːrdənˈeɪ/, French: [ʃaʁdɔnɛ] (listen)) is a green-skinned grape variety used in the production of white wine. The variety originated in the Burgundy wine region of eastern France, but is now grown wherever wine is produced, from England to New Zealand. For new and developing wine regions, growing Chardonnay is seen as a 'rite of passage' and an easy entry into the international wine market.
 
-Context:
-
-In Saint Johnstown, the road becomes a divided highway and DE 36 splits from DE 16 by heading to the northeast on Shawnee Road. DE 16 soon becomes undivided again and continues east through agricultural areas and woods with some residences, crossing Toms Dam Branch and running through the community of Owens. Farther east, the road passes through the community of Oakley and crosses West Branch Gum Branch and then Gum Branch. The route comes to an intersection with US 113 near a few businesses, where it is briefly a divided highway. Past this intersection, the name changes to Milton Ellendale Highway and the two-lane undivided road enters the town of Ellendale, where it becomes Main Street. In Ellendale, DE 16 runs past several homes, crossing the Delmarva Central Railroad's Indian River Subdivision line at-grade. The road leaves the town and becomes Milton Ellendale Highway again, turning southeast. The route heads through woodland and farms, running immediately to the north of the Delmarva Central Railroad's Milton Industrial Track line. DE 16 turns east away from the railroad tracks and comes to an intersection with DE 30. At this point, DE 5 Alternate (DE 5 Alt.), which runs south along DE 30, heads east along with DE 16. The road reaches the town of Milton, where it passes homes and businesses. DE 16 comes to an intersection with DE 5, where DE 5 Alt. ends and the road name changes to Broadkill Road. The route leaves Milton and continues into farmland with a few residences, turning to the northeast. The road intersects DE 1 and passes north of a golf course before it runs through a mix of farms and woods with some homes. DE 16 turns east and northeast through marshland within the Prime Hook National Wildlife Refuge before crossing Broadkill Sound and reaching the community of Broadkill Beach. Here, the route intersects Bay Shore Drive before ending at a dead end on the Delaware Bay.
+The Chardonnay grape itself is neutral, with many of the flavors commonly associated with the wine being derived from such influences as terroir and oak. It is vinified in many different styles, from the lean, crisply mineral wines of Chablis, France, to New World wines with oak and tropical fruit flavors. In cool climates (such as Chablis and the Carneros AVA of California), Chardonnay wine tends to be medium to light body with noticeable acidity and flavors of green plum, apple, and pear. In warmer locations (such as the Adelaide Hills and Mornington Peninsula in Australia and Gisborne and Marlborough region of New Zealand), the flavors become more citrus, peach, and melon, while in very warm locations (such as the Central Coast AVA of California), more fig and tropical fruit notes such as banana and mango come out. Wines that have gone through malolactic fermentation tend to have softer acidity and fruit flavors with buttery mouthfeel and hazelnut notes.
 
 Answer:
 
-DE Route 16 changes 3 times between divided and undivided highways per the information provided.
-
-</s>
-<PAD><s> Context:
-
-Telangana (/ˌtɛlənˈɡɑːnə/ (listen); Telugu: [ˈtelaŋɡaːɳa], Urdu: [ˈtɪləŋɡɑːna] (listen)) is a state in India situated on the south-central stretch of the Indian peninsula on the high Deccan Plateau. It is the eleventh-largest state and the twelfth-most populated state in India with a geographical area of 112,077 km2 (43,273 sq mi) and 35,193,978 residents as per 2011 census. On 2 June 2014, the area was separated from the northwestern part of Andhra Pradesh as the newly formed state of Telangana, with Hyderabad as its capital. Its other major cities include Warangal, Nizamabad, Khammam, Karimnagar and Ramagundam. Telangana is bordered by the states of Maharashtra to the north, Chhattisgarh to the northeast, Karnataka to the west, and Andhra Pradesh to the east and south. The terrain of Telangana consists mostly of the Deccan Plateau with dense forests covering an area of 27,292 km2 (10,538 sq mi). As of 2019, the state of Telangana is divided into 33 districts.
+Chardonnay (UK: /ˈʃɑːrdəneɪ/, US: /ˌʃɑːrdənˈeɪ/, French: [ʃaʁdɔnɛ] (listen)) is a green-skinned grape variety used in the production of white wine. The Chardonnay grape itself is neutral, with many of the flavors commonly associated with the wine being derived from such influences as terroir and oak. It is vinified in many different styles, from the lean, crisply mineral wines of Chablis, France, to New World wines with oak and tropical fruit flavors.
 
 Instruction:
 
-When was Telangana created?
-
-Answer:
-
-2014
+What is Chardonnay?
 
 </s>
 <s> Context:
 
-Marie Salomea Skłodowska–Curie (/ˈkjʊəri/ KURE-ee, French pronunciation: ​[maʁi kyʁi], Polish pronunciation: [ˈmarja skwɔˈdɔfska kʲiˈri]; born Maria Salomea Skłodowska, Polish: [ˈmarja salɔˈmɛa skwɔˈdɔfska]; 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize, the first person to win a Nobel Prize twice, and the only person to win a Nobel Prize in two scientific fields. Her husband, Pierre Curie, was a co-winner of her first Nobel Prize, making them the first-ever married couple to win the Nobel Prize and launching the Curie family legacy of five Nobel Prizes. She was, in 1906, the first woman to become a professor at the University of Paris.
+"The sauna in Finland is an old phenomenon and its roots are difficult to trace, but its earliest versions are believed to be from 7000 BC.[citation needed] Bath houses were recorded in Europe during the same time period, but Finnish bathing habits were poorly documented for most of history. One of the first written mentions of what is believed to be the sauna customs of the forefathers of the Finns was written by Nestor the Chronicler in 1112. He told of ""hot wooden saunas in which naked bathers beat themselves with branches and finally pour cold water over themselves"".
 
-Instruction:
+During the Reformation in Scandinavia the popularity of saunas expanded to other countries because the European bath houses were being destroyed.
 
-Who was the first couple to win the Nobel prize?
+One reason the sauna culture has always flourished in Finland has been because of the versatility of the sauna. When people were moving, the first thing they did was to build a sauna. Finns have used the sauna to live in, eat, address matters of hygiene, and, most importantly, give birth in an almost sterile environment. Unlike many other, more densely populated places in Europe, the availability of wood needed to build and warm the sauna has never been an issue. Another reason for its popularity is that in such a cold climate, the sauna allows people warmth for at least a short period of time. However, it is just as popular in the summer as in the winter."
 
 Answer:
 
-Marie Curie and Pierre Curie are the first couple to win the Nobel prize.
+Nestor the Chronicler in 1112. He told of "hot wooden saunas in which naked bathers beat themselves with branches and finally pour cold water over themselves"".
+
+Instruction:
+
+What is one of the first recorded mentions of the sauna in Finnish literature?
 
 </s>
 <s> Context:
 
-A multinational venture, the film was made on a US$17 million budget, and was produced by Edko Films and Zoom Hunt Productions in collaboration with China Film Co-productions Corporation and Asian Union Film & Entertainment for Columbia Pictures Film Production Asia in association with Good Machine International. With dialogue in Standard Chinese, subtitled for various markets, Crouching Tiger, Hidden Dragon became a surprise international success, grossing $213.5 million worldwide. It grossed US$128 million in the United States, becoming the highest-grossing foreign-language film produced overseas in American history. The film was the first foreign-language film to break the $100 million mark in the United States.
+Historically, the world's tallest man-made structure was the Great Pyramid of Giza in Egypt, which held the position for over 3800 years until the construction of Lincoln Cathedral in 1311. The Strasbourg Cathedral in France, completed in 1439, was the world's tallest building until 1874.
+
+ 
+
+The first skyscraper was pioneered in Chicago with the 138 ft (42.1 m) Home Insurance Building in 1885. The United States would remain the location of the world's tallest building throughout the 20th century until 1998, when the Petronas Towers were completed. Since then, two other buildings have gained the title: Taipei 101 in 2004 and Burj Khalifa in 2010. Since the beginning of the 21st century, the Middle East, China, and Southeast Asia have experienced booms in skyscraper construction
 
 Answer:
 
-This film was directed by Ang Lee and stars Chow Yun-fat, Michelle Yeoh, Zhang Ziyi, and Chang Chen. In the 73rd Academy Awards in 2001, it won Best Foreign Language Film, Best Art Direction, Best Original Score, and Best Cinematography.
+The first skyscraper was the Home Insurance Building in Chicago. It was build in 1885.
 
 Instruction:
 
-Given a reference text about a film, tell me who directed it, the main cast, and the Academy Awards it won.
+Given the following paragraph about the history of tallest buildings, which was the first skyscraper and when was it build?
+
+</s>
+<s> Context:
+
+Matilda is woken up by the wind; she looks out the window; her neighbour, Marie, is fetching flowers from the garden and then Matilda’s mother is called for the telephone by Bogey, Matilda’s brother. Matilda is off to Mr Bullen's for her music lesson. Her mom does not want her to go due to the strong wind, but she goes anyway. After the lesson, she goes for a walk with her brother to the esplanade. Here, the story changes from present to past narrative as Mansfield shows that the music lesson, the walk etc. all occurred in Matilda's past, and she and her brother are actually sailing away on board a ship several years down the line, that all that went before were memories.
+
+Instruction:
+
+What was the twist in this short story?
+
+Answer:
+
+In the middle of the short story, the story changes from present to past narrative as Mansfield shows that events such as the music lesson, the walk, etc. all occurred in Matilda's past, and she and her brother are actually sailing away on board a ship several years down the line. The reader finds out that all that went before were memories.
 
 </s>
 <s> Instruction:
 
-Given this paragraph about the JW Marriott building in Downtown Houston, what was the framing made of and how tall was it?
+Given a reference text about The Universal Data Element Framework (UDEF), tell me how the framework is used.
 
 Context:
 
-Samuel Fain Carter, the founder of Lumberman's Bank in Houston, commissioned the architecture firm of Sanguinet and Staats to design a sixteen-floor, steel-framed building on Main Street at the corner of Rusk Street in Houston. The Fort Worth-based Sanguinet and Staats had already been building skyscrapers in various cities in Texas, and was building a reputation for this type of structure.In 1909, the building had an estimated cost of $650,000. Carter planned to finance construction through issues of equity and debt, stipulating that he would restrict bonds to $400,000 in value. The Rice Institute agreed to purchase up to $200,000 in bonds.
+The Universal Data Element Framework (UDEF) was  a controlled vocabulary developed by The Open Group. It provided a framework for categorizing, naming, and indexing data. It assigned to every item of data a structured alphanumeric tag plus a controlled vocabulary name that describes the meaning of the data. This allowed relating data elements to similar elements defined by other organizations.
+
+UDEF defined a Dewey-decimal like code for each concept. For example, an "employee number" is often used in human resource management. It has a UDEF tag a.5_12.35.8 and a controlled vocabulary description "Employee.PERSON_Employer.Assigned.IDENTIFIER".
+
+UDEF has been superseded by the Open Data Element Framework (O-DEF).
 
 Answer:
 
-The building used steel framing and was 16 floors.
+The UDEF is a framework for categorizing, naming, and indexing data.
+
+</s>
+<s> Context:
+
+Nnedimma Nkemdili Okorafor was born in Cincinnati, Ohio, in 1974 to Igbo Nigerian parents who travelled to America in 1969 to attend school but purportedly could not return to Nigeria due to the Nigerian Civil War. Okorafor is the third child in a family of four children and grew up in Chicago, Illinois, and would often travel to Nigeria to spend her holidays with her extended family. Her first name is Igbo for "mother is good".
+
+Instruction:
+
+What is the meaning of "Nnedi" in Nnedi Okarafor's name?
+
+Answer:
+
+"Nnedi" is the short form of her full name "Nnedimma" which translates to "mother is good", in Nigerian Igbo language.
 
 </s>
 <s> Instruction:
 
-Who is Bill Gates?
-
-Context:
-
-William Henry Gates III (born October 28, 1955) is an American business magnate, philanthropist and investor. He is a co-founder of Microsoft, along with his late childhood friend Paul Allen. During his career at Microsoft, Gates held the positions of chairman, chief executive officer (CEO), president and chief software architect, while also being the largest individual shareholder until May 2014. He was a major entrepreneur of the microcomputer revolution of the 1970s and 1980s.
+Given the paragraph above paragraph, what is the PMP and who established the exam.
 
 Answer:
 
-Bill Gates is an American business mogul and co-founder of Microsoft.
-
-</s>
-<PAD><s> Context:
-
-Born in Chicago, Illinois, Brazelton initially played basketball for the Rich East High School, but transferred to the rival Rich Central High School during his senior year. He led the latter team to a championship in the Big Dipper tournament and was named as the most valuable player of the tournament.
-
-Answer:
-
-Tyrone Brazelton attended Rich East High School and then transferred to Rich Central High School for his senior year.
-
-Instruction:
-
-What high school did Tyrone Brazelton go to?
+PMP stands for Project Management Professional, and it was established by the Project Management Institute (PMI). The PMP is a professional certification for project managers that is recognized internationally. The PMP is based on the ECO PMP Examination Content Outline.
 
 </s>
 <PAD><s> Instruction:
 
-Given this paragraph about autonomous buildings, why would they be safer during a military attack?
+To which town in the UK did the Ford Motor Company relocate to in 1931?
 
 Answer:
 
-Autonomous buildings often rely on less civil services and are therefore safer and more comfortable during civil disasters or military attacks.
-
-</s>
-<PAD><PAD><s> Instruction:
-
-Who is Bill Gates?
-
-Answer:
-
-Bill Gates is an American business mogul and co-founder of Microsoft.
-
-</s>
-<s> Context:
-
-In Saint Johnstown, the road becomes a divided highway and DE 36 splits from DE 16 by heading to the northeast on Shawnee Road. DE 16 soon becomes undivided again and continues east through agricultural areas and woods with some residences, crossing Toms Dam Branch and running through the community of Owens. Farther east, the road passes through the community of Oakley and crosses West Branch Gum Branch and then Gum Branch. The route comes to an intersection with US 113 near a few businesses, where it is briefly a divided highway. Past this intersection, the name changes to Milton Ellendale Highway and the two-lane undivided road enters the town of Ellendale, where it becomes Main Street. In Ellendale, DE 16 runs past several homes, crossing the Delmarva Central Railroad's Indian River Subdivision line at-grade. The road leaves the town and becomes Milton Ellendale Highway again, turning southeast. The route heads through woodland and farms, running immediately to the north of the Delmarva Central Railroad's Milton Industrial Track line. DE 16 turns east away from the railroad tracks and comes to an intersection with DE 30. At this point, DE 5 Alternate (DE 5 Alt.), which runs south along DE 30, heads east along with DE 16. The road reaches the town of Milton, where it passes homes and businesses. DE 16 comes to an intersection with DE 5, where DE 5 Alt. ends and the road name changes to Broadkill Road. The route leaves Milton and continues into farmland with a few residences, turning to the northeast. The road intersects DE 1 and passes north of a golf course before it runs through a mix of farms and woods with some homes. DE 16 turns east and northeast through marshland within the Prime Hook National Wildlife Refuge before crossing Broadkill Sound and reaching the community of Broadkill Beach. Here, the route intersects Bay Shore Drive before ending at a dead end on the Delaware Bay.
-
-Answer:
-
-DE Route 16 changes 3 times between divided and undivided highways per the information provided.
-
-Instruction:
-
-per this reference text about Delaware Route 16, how many times does the road change between being a divided highway and undivided?
-
-</s>
-<PAD><s> Context:
-
-The Underground Railroad was a network of clandestine routes and safe houses established in the United States during the early- to the mid-19th century. It was used by enslaved African Americans primarily to escape into free states and Canada. The network was assisted by abolitionists and others sympathetic to the cause of the escapees. The enslaved persons who risked escape and those who aided them are also collectively referred to as the "Underground Railroad". Various other routes led to Mexico, where slavery had been abolished, and to islands in the Caribbean that were not part of the slave trade. An earlier escape route running south toward Florida, then a Spanish possession (except 1763–1783), existed from the late 17th century until approximately 1790. However, the network now generally known as the Underground Railroad began in the late 18th century. It ran north and grew steadily until the Emancipation Proclamation was signed by President Abraham Lincoln. One estimate suggests that by 1850, approximately 100,000 enslaved people had escaped to freedom via the network
-
-Instruction:
-
-What was the Underground Railroad?
-
-Answer:
-
-The Underground Railroad was a secret network of routes and safe houses in the United States established in the early 19th century that led to free states, Canada, Mexico and other overseas areas. Black slaves used the Underground Railroad to escape from slavery. It is estimated that by 1850, about 100,000 slaves had escaped to freedom by the "Railroad".
-
-</s>
-<s> Context:
-
-Joseph Robinette Biden Jr. was born on November 20, 1942, at St. Mary's Hospital in Scranton, Pennsylvania, to Catherine Eugenia "Jean" Biden (née Finnegan) and Joseph Robinette Biden Sr. The oldest child in a Catholic family, he has a sister, Valerie, and two brothers, Francis and James. Jean was of Irish descent, while Joseph Sr. had English, Irish, and French Huguenot ancestry. Biden's paternal line has been traced to stonemason William Biden, who was born in 1789 in Westbourne, England, and emigrated to Maryland in the United States by 1820.
-https://en.wikipedia.org/wiki/Joe_Biden
-
-Instruction:
-
-Based on this paragraph, what was Joe Biden's mother's maiden's name, what city was he born in, how many siblings did he have growing up, and what religion was he as a child?
-
-Answer:
-
-Based on this paragraph, Joe Biden's mother's maiden name was Finnegan, he was born in the city of Stranton, he had three siblings (a younger sister and two younger brothers), and he was raised as a member of the Catholic church.
-
-</s>
-<s> Context:
-
-Justice League Dark is a 2017 American adult animated science fantasy superhero film produced by Warner Bros. Animation and distributed by Warner Home Video. Featuring the DC Comics team of the same name created by Peter Milligan and Mikel Janín, the film is the 27th of the DC Universe Animated Original Movies and the eighth of the DC Animated Movie Universe. Unlike most installments in the DC Animated Universe Movies series, Justice League Dark features an original premise. The film stars Matt Ryan as John Constantine and Jason O'Mara as Batman, reprising their respective roles from previous media. It was released on Digital HD on January 24, 2017, and on DVD and Blu-ray on February 7.
-
-A sequel, Justice League Dark: Apokolips War, was released in May 2020.
-
-Instruction:
-
-Given a reference text about Justice League Dark, tell me who the main actors are and what roles they played.
-
-Answer:
-
-The main actors in Justice League Dark were Matt Ryan and Jason O'Mara. In the film, Matt Ryan is John Constantine and Jason O'Mara is Batman.
-
-</s>
-<s> Context:
-
-Combat readiness is a condition of the armed forces and their constituent units and formations, warships, aircraft, weapon systems or other military technology and equipment to perform during combat military operations, or functions consistent with the purpose for which they are organized or designed, or the managing of resources and personnel training in preparation for combat.
-
-Most armed forces maintain varying levels of readiness by the troops to engage in combat due to economic considerations which vary from minutes to months. In modern armed forces troops designated special forces are usually those kept at the highest state of readiness for combat, and are often alerted only a few hours before being committed to combat. Where time is of the essence in military action being initiated, the troops, such as pilots of interceptor aircraft, may be kept in constant state of combat readiness.
-
-Answer:
-
-Designated special forces are normally kept at the highest state of readiness for combat.
-
-Instruction:
-
-Given a reference text about combat readiness, tell me which troops are kept most ready for combat.
-
-</s>
-<s> Context:
-
-William Henry Gates III (born October 28, 1955) is an American business magnate, philanthropist and investor. He is a co-founder of Microsoft, along with his late childhood friend Paul Allen. During his career at Microsoft, Gates held the positions of chairman, chief executive officer (CEO), president and chief software architect, while also being the largest individual shareholder until May 2014. He was a major entrepreneur of the microcomputer revolution of the 1970s and 1980s.
-
-Answer:
-
-Bill Gates is an American business mogul and co-founder of Microsoft.
-
-Instruction:
-
-Who is Bill Gates?
+Dagenham
 
 </s>
 <PAD><s> Instruction:
 
-What high school did Tyrone Brazelton go to?
-
-Context:
-
-Born in Chicago, Illinois, Brazelton initially played basketball for the Rich East High School, but transferred to the rival Rich Central High School during his senior year. He led the latter team to a championship in the Big Dipper tournament and was named as the most valuable player of the tournament.
+How many types of cat does the world cat federation recognise?
 
 Answer:
 
-Tyrone Brazelton attended Rich East High School and then transferred to Rich Central High School for his senior year.
-
-</s>
-<PAD><s> Instruction:
-
-Which fictional LAPD detective is Titus Welliver known for playing?
-
-Answer:
-
-Titus Welliver played Harry Bosch in the TV series Bosch and also in spin off Bosch:Legacy.
-
-</s>
-<PAD><PAD><s> Instruction:
-
-How many seasons was Jeff Fisher the head coach of the Titans while they were not in Tennessee?
-
-Answer:
-
-3 seasons
-
-</s>
-<s> Instruction:
-
-Based on the following paragraph on squat lobster fisheries, where do such fisheries exist today?
-
-Context:
-
-Flesh from these animals is often commercially sold in restaurants as "langostino" or sometimes dishonestly called "lobster" when incorporated in seafood dishes. As well as being used for human consumption, there is demand for squat lobster meat to be used as feed in fish farms and shrimp or prawn farms. This is in part because they contain astaxanthin, a pigment that helps to colour the meat of farmed salmon and trout.
-Despite their worldwide distribution and great abundance, there are few functioning fisheries for squat lobsters. Experimental fisheries have occurred in several countries, including Argentina, Mexico, and New Zealand, but commercial exploitation is currently restricted to Latin America, and chiefly to Chile. The main target species are Pleuroncodes monodon, P. planipes, and Cervimunida johni.
-In Central America, the primary species of squat lobster targeted by fisheries is a species of Pleuroncodes. There is a great deal of confusion over both scientific names and common names, and the exact species is often unknown. In El Salvador, for instance, the commercial catch is generally referred to as "P. planipes", but is in fact P. monodon. Commercial fishing for squat lobsters in El Salvador began in the early 1980s; production increased markedly in the 2001 season, and has continued to grow, now making up 98% of the demersal resources landed in El Salvador, with annual catches peaking at 13,708 t in 2005. In Costa Rica, aggregations of squat lobsters are avoided, as the fishermen fear the squat lobsters will clog their nets. In Nicaragua, squat lobsters are heavily exploited, especially following a large increase in fishing effort in the 2007 season. In Panama, production reached 492 t in 2008. Chilean squat lobster fisheries initially targeted Cervimunida johni, beginning in 1953. By the mid-1960s, effort had largely switched to P. monodon. In an effort to conserve stocks, the Chilean government instituted quotas for squat lobsters, and the fishery is closely monitored. In New Zealand, Munida gregaria has been considered as a potential fisheries resource, particularly to feed farmed Chinook salmon (Oncorhynchus tshawytscha).
-
-Answer:
-
-Commercial fisheries for squat lobsters currently exist only in Latin America, mainly in Chile due to the restriction on commercial exploitation of these animals. There are, however, a number of experimental fisheries in countries such as Argentina, Mexico, and New Zealand.
-
-</s>
-<s> Instruction:
-
-Who was the first to record the Needles and Pins song?
-
-Context:
-
-"Needles and Pins" is a rock song credited to American writers Jack Nitzsche and Sonny Bono. Jackie DeShannon recorded it in 1963 and other versions followed. The most successful ones were by the Searchers, whose version reached No. 1 on the UK singles chart in 1964, and Smokie, who had a worldwide hit in 1977. Others who recorded the song include the Ramones, Gene Clark, and Tom Petty and the Heartbreakers with Stevie Nicks.
-
-Jackie DeShannon version (1963)
-In his autobiography, Bono states that he sang along with Nitzsche's guitar-playing, thus creating both the tune and the lyrics, being guided by the chord progressions. However, Jackie DeShannon claims that the song was written at the piano, and that she was a full participant in the song's creation, along with Nitzsche and Bono, although she did not get formal credit.
-
-DeShannon was the first to record the song; in the US it peaked at number 84 on the Billboard Hot 100 singles chart in May 1963. Though it was only a minor US hit, DeShannon's recording of the song topped the charts in Canada, hitting number one on the CHUM Chart in July 1963
-
-Answer:
-
-The first artist to record Needles and Pins song was DeShannon.
-
-</s>
-<PAD><s> Context:
-
-Seinfeld (/ˈsaɪnfɛld/ SYNE-feld) is an American television sitcom created by Larry David and Jerry Seinfeld. It aired on NBC from July 5, 1989, to May 14, 1998, over nine seasons and 180 episodes. It stars Seinfeld as a fictionalized version of himself and focuses on his personal life with three of his friends: best friend George Costanza (Jason Alexander), former girlfriend Elaine Benes (Julia Louis-Dreyfus) and his neighbor from across the hall, Cosmo Kramer (Michael Richards). It is set mostly in an apartment building in Manhattan's Upper West Side in New York City. It has been described as "a show about nothing", often focusing on the minutiae of daily life. Interspersed in earlier episodes are moments of stand-up comedy from the fictional Jerry Seinfeld, frequently using the episode's events for material.
-
-Instruction:
-
-Who is the main cast in Seinfeld TV show?
-
-Answer:
-
-Jerry Seinfeld
-Jason Alexander
-Julia Louis-Dreyfus
-Michael Richards
-
-</s>
-<PAD><s> Instruction:
-
-Given this paragraph about full distance ironman competition, how far is each discipline
-
-Context:
-
-A number of non-WTC full distance triathlons have been held since the mid-1990s. The limited number of WTC-sanctioned events, and the limited number of entries available per race, have combined with a growth in the sport that has created demand for these non-trademarked events. Many of them share the 2.4-mile (3.9 km), 112-mile (180 km), 26.2-mile (42.2 km) format with the Ironman triathlon. Originally, many used the Ironman name. Due to aggressive trademark protection, most of these races no longer use the word "Ironman".
-
-Answer:
-
-The distances for a full ironman competition are 2.4 miles (3.9km) for the swim, 112 miles (180km) for the bike and 26.2 miles (42.2km) for the run.
-
-</s>
-<PAD><s> Context:
-
-U2 are an Irish rock band from Dublin, formed in 1976. The group consists of Bono (lead vocals and rhythm guitar), the Edge (lead guitar, keyboards, and backing vocals), Adam Clayton (bass guitar), and Larry Mullen Jr. (drums and percussion). Initially rooted in post-punk, U2's musical style has evolved throughout their career, yet has maintained an anthemic quality built on Bono's expressive vocals and the Edge's chiming, effects-based guitar sounds. Bono's lyrics, often embellished with spiritual imagery, focus on personal and sociopolitical themes. Popular for their live performances, the group have staged several ambitious and elaborate tours over their career.
-
-Answer:
-
-Dublin
-
-Instruction:
-
-What city in Ireland is the band U2 from?
-
-</s>
-<PAD><s> Instruction:
-
-Given this paragraph about Fyre Festival, would you say that it was a successful event?
-
-Context:
-
-Fyre Festival was a fraudulent luxury music festival founded by con artist Billy McFarland and rapper Ja Rule. It was created with the intent of promoting the company's Fyre app for booking music talent. The festival was scheduled to take place on April 28–30 and May 5–7, 2017, on the Bahamian island of Great Exuma.
-
-Answer:
-
-No, Fyre Festival was a fraudulent luxury music festival founded by con artist Billy McFarland and rapper Ja Rule
-
-</s>
-<PAD><s> Instruction:
-
-Does Belgrandia varica live in the ocean?
-
-Context:
-
-Belgrandia varica is a species of minute freshwater snail with an operculum, an aquatic gastropod mollusc or micromollusc in the family Hydrobiidae.
-
-Answer:
-
-No, Belgrandia varica lives in freshwater.
-
-</s>
-<PAD><PAD><s> Instruction:
-
-When is the best time to go to Wallis and Futuna
-
-Answer:
-
-It is best to go from May to October in the dry season. The temperature are lower but at least it is not raining so often.
-
-</s>
-<PAD><PAD><PAD><s> Instruction:
-
-In which European country is this school located?
-
-Answer:
-
-Spain
+69
 
 </s>
 <s> Context:
-
-American Samoa: territory since 1900; after the end of the Second Samoan Civil War, the Samoan Islands were divided into two regions. The U.S. took control of the eastern half of the islands. In 1900, the Treaty of Cession of Tutuila took effect. The Manuʻa islands became part of American Samoa in 1904, and Swains Island became part of American Samoa in 1925. Congress ratified American Samoa's treaties in 1929. For 51 years, the U.S. Navy controlled the territory. American Samoa is locally self-governing under a constitution last revised in 1967.[note 14] The first elected governor of American Samoa was in 1977, and the first non-voting member of Congress was in 1981. People born in American Samoa are U.S. nationals, but not U.S. citizens. American Samoa is technically unorganized, and its main island is Tutuila.
-
-Guam: territory since 1899, acquired at the end of the Spanish–American War. Guam is the home of Naval Base Guam and Andersen Air Force Base. It was organized under the Guam Organic Act of 1950, which granted U.S. citizenship to Guamanians and gave Guam a local government. In 1968, the act was amended to permit the election of a governor.
-
-Northern Mariana Islands: A commonwealth since 1986, the Northern Mariana Islands together with Guam were part of the Spanish Empire until 1899 when the Northern Marianas were sold to the German Empire after the Spanish–American War. Beginning in 1919, they were administered by Japan as a League of Nations mandate until the islands were captured by the United States in the Battle of Saipan and Battle of Tinian (June–August 1944) and the surrender of Aguigan (September 1945) during World War II. They became part of the United Nations Trust Territory of the Pacific Islands (TTPI) in 1947, administered by the United States as U.N. trustee. The other constituents of the TTPI were Palau, the Federated States of Micronesia and the Marshall Islands. Following failed efforts in the 1950s and 1960s to reunify Guam and the Northern Marianas, a covenant to establish the Northern Mariana Islands as a commonwealth in political union with the United States was negotiated by representatives of both political bodies; it was approved by Northern Mariana Islands voters in 1975, and came into force on March 24, 1976. In accordance with the covenant, the Northern Mariana Islands constitution partially took effect on January 9, 1978, and became fully effective on November 4, 1986. In 1986, the Northern Mariana Islands formally left U.N. trusteeship. The abbreviations "CNMI" and "NMI" are both used in the commonwealth. Most residents in the Northern Mariana Islands live on Saipan, the main island.
-
-Puerto Rico: unincorporated territory since 1899; Puerto Rico was acquired at the end of the Spanish–American War, and has been a U.S. commonwealth since 1952. Since 1917, Puerto Ricans have been granted U.S. citizenship. Puerto Rico was organized under the Puerto Rico Federal Relations Act of 1950 (Public Law 600). In November 2008, a U.S. District Court judge ruled that a series of Congressional actions have had the cumulative effect of changing Puerto Rico's status from unincorporated to incorporated. The issue is proceeding through the courts, however, and the U.S. government still refers to Puerto Rico as unincorporated. A Puerto Rican attorney has called the island "semi-sovereign". Puerto Rico has a statehood movement, whose goal is to make the territory the 51st state. See also Political status of Puerto Rico.
-
-U.S. Virgin Islands: purchased by the U.S. from Denmark in 1917 and organized under the Revised Organic Act of the Virgin Islands in 1954. U.S. citizenship was granted in 1927. The main islands are Saint Thomas, Saint John and Saint Croix.
-
-Answer:
-
-The United States has five major territories. Guam, American Samoa, Northern Mariana Islands, Puerto Rico, and U.S. Virgin Islands. Of those, the two oldest are Guam, and Puerto Rico; both being acquired in 1899 at the end of the Spanish - American War. The Northern Mariana Islands is the newest of the five major territories, joining the United States in 1986.
-
-Instruction:
-
-Given this text, what are the oldest and newest major territories of the United States?
-
-</s>
-<s> Instruction:
-
-Given this paragraph, what is the out of state acceptance rate at the University of Virginia?
-
-Context:
-
-For the undergraduate Class of 2023, the University of Virginia received a record 40,815 applications, admitting 24 percent. Approximately 40 percent of those admitted are non-white. Matriculated students come from all 50 states and 147 foreign countries. UVA is required, by Virginia state law, to matriculate two-thirds of its undergraduate student body from its pool of in-state applicants. As a result, its acceptance rate for in-state students (36 percent) is nearly twice the out-of-state rate (19 percent) as of 2019. The university has seen steady increases to its applicant pool in recent decades, and the number of applications has more than doubled since the Class of 2008 received 15,094 applications. As of 2014, 93 percent of admitted applicants ranked in the top 10 percent of their high school classes.
-
-Answer:
-
-The out of state acceptance rate at the University of Virginia is 19%.
-
-</s>
-<PAD><PAD><PAD><PAD><s> Context:
-
-he Beatles were an English rock band, formed in Liverpool in 1960, that comprised John Lennon, Paul McCartney, George Harrison and Ringo Starr. They are regarded as the most influential band of all time and were integral to the development of 1960s counterculture and popular music's recognition as an art form. Rooted in skiffle, beat and 1950s rock 'n' roll, their sound incorporated elements of classical music and traditional pop in innovative ways; the band also explored music styles ranging from folk and Indian music to psychedelia and hard rock. As pioneers in recording, songwriting and artistic presentation, the Beatles revolutionised many aspects of the music industry and were often publicised as leaders of the era's youth and sociocultural movements
-
-Instruction:
-
-Which era of counterculture were the Beatles pivotal to?
-
-Answer:
-
-The Beatles were integral to the development of 1960s counterculture
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><s> Context:
-
-Tümmler was born in Thorn, West-Prussia, now Toruń, Poland. He entered the 1968 Olympics as the reigning European Champion. The 1500 m final was run at a fast pace and at the start of the last lap the eventual Olympic Champion Kipchoge Keino had already established a substantial lead. Tümmler and his countryman Harald Norpoth were in second and third place but were outsprinted by the world-record holder Jim Ryun on the last lap.
-
-Answer:
-
-Bodo Tümmler is a middle-distance runner who was born in Thorn, West-Prussia (now Poland).
-
-Instruction:
-
-Given the reference text about Bodo Tümmler, who was he?
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
-
-The Cambridge University Boat Club (CUBC) is the rowing club of the University of Cambridge, England. The club was founded in 1828 and has been located at the Goldie Boathouse on the River Cam, Cambridge since 1882. Nowadays, training primarily takes place on the River Great Ouse at Ely.
-
-Instruction:
-
-Given the reference paragraph, when was the CUBC formed?
-
-Answer:
-
-The Cambridge University Boat Club (CUBC)  was founded in 1828
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Is he still an active football player?
-
-Answer:
-
-No, he retired at the age of 36 on May 14, 2014. However he is still working as an architect which he studied during his graduation.
-
-</s>
-<s> Instruction:
-
-What does moha mean
-
-Context:
-
-Moha (Chinese: 膜蛤; pinyin: Mó Há, pronounced [muǒ.xǎ]), literally "admiring toad" or "toad worship", is an internet meme spoofing Jiang Zemin, former General Secretary of the Chinese Communist Party and paramount leader. It originated among the netizens in mainland China and has become a subculture on the Chinese internet. According to another explanation, it comes from China's social media Baidu Tieba. In the culture, Jiang is nicknamed há, or "toad", because of his supposed resemblance to a toad. Netizens who móhá (worship the toad) call themselves "toad fans", "toad lovers" or "toad worshippers" (simplified Chinese: 蛤丝; traditional Chinese: 蛤絲), or "mogicians" (膜法师; 膜法師) which is a wordplay on mófǎshī (魔法师; 魔法師, magician) in Mandarin.[note 1]
-
-Another nickname for Jiang is "elder" or "senior" (长者; 長者; Zhǎngzhě), because he once called himself an "elder" or "senior" when he was berating Hong Kong journalist Sharon Cheung who questioned him. A video clip recording this event spread on the internet and led to the rise of the culture, which later greatly rose in popularity around 2014, when Hong Kong was experiencing a period of political instability. Initially, netizens extracted Jiang's quotes from the video and imitated his wording and tone, for parody and insult. However, as the culture developed, some imitations have taken to carrying affection toward him. The quotes for imitation have also evolved to include what he said during his leadership, and in his personal life.
-
-Answer:
-
-It means toad worship, an internet meme spoofing Jiang Zemin
-
-</s>
-<PAD><s> Context:
-
-The Atlanta Falcons are a professional American football team based in Atlanta. The Falcons compete in the National Football League (NFL) as a member club of the league's National Football Conference (NFC) South division. The Falcons were founded on June 30, 1965, and joined the NFL in 1966 as an expansion team, after the NFL offered then-owner Rankin Smith a franchise to keep him from joining the rival American Football League (AFL).
-
-In their 55 years of existence, the Falcons have compiled a record of 379–487–6 (369–473–6 in the regular season and 10–14 in the playoffs), winning division championships in 1980, 1998, 2004, 2010, 2012, and 2016. The Falcons have appeared in two Super Bowls, the first during the 1998 season in Super Bowl XXXIII, where they lost to the Denver Broncos 34–19, and the second 18 years later, a 34–28 overtime loss to the New England Patriots in Super Bowl LI.
-
-The Falcons' current home field is Mercedes-Benz Stadium, which opened for the 2017 season; the team's headquarters and practice facilities are located at a 50-acre (20 ha) site in Flowery Branch, northeast of Atlanta in Hall County.
-
-Answer:
-
-Although the falcons have been to two Super Bowl games in their history, they have not won a Super Bowl yet.
-
-Instruction:
-
-Given a reference text about the Falcons, how many Super Bowls have they won in their history?
-
-</s>
-<PAD><PAD><s> Instruction:
-
-Based on this paragraph, what was Joe Biden's mother's maiden's name, what city was he born in, how many siblings did he have growing up, and what religion was he as a child?
-
-Context:
-
-Joseph Robinette Biden Jr. was born on November 20, 1942, at St. Mary's Hospital in Scranton, Pennsylvania, to Catherine Eugenia "Jean" Biden (née Finnegan) and Joseph Robinette Biden Sr. The oldest child in a Catholic family, he has a sister, Valerie, and two brothers, Francis and James. Jean was of Irish descent, while Joseph Sr. had English, Irish, and French Huguenot ancestry. Biden's paternal line has been traced to stonemason William Biden, who was born in 1789 in Westbourne, England, and emigrated to Maryland in the United States by 1820.
-https://en.wikipedia.org/wiki/Joe_Biden
-
-Answer:
-
-Based on this paragraph, Joe Biden's mother's maiden name was Finnegan, he was born in the city of Stranton, he had three siblings (a younger sister and two younger brothers), and he was raised as a member of the Catholic church.
-
-</s>
-<PAD><PAD><PAD><s> Instruction:
-
-Given a reference text about Justice League Dark, tell me who the main actors are and what roles they played.
-
-Context:
-
-Justice League Dark is a 2017 American adult animated science fantasy superhero film produced by Warner Bros. Animation and distributed by Warner Home Video. Featuring the DC Comics team of the same name created by Peter Milligan and Mikel Janín, the film is the 27th of the DC Universe Animated Original Movies and the eighth of the DC Animated Movie Universe. Unlike most installments in the DC Animated Universe Movies series, Justice League Dark features an original premise. The film stars Matt Ryan as John Constantine and Jason O'Mara as Batman, reprising their respective roles from previous media. It was released on Digital HD on January 24, 2017, and on DVD and Blu-ray on February 7.
-
-A sequel, Justice League Dark: Apokolips War, was released in May 2020.
-
-Answer:
-
-The main actors in Justice League Dark were Matt Ryan and Jason O'Mara. In the film, Matt Ryan is John Constantine and Jason O'Mara is Batman.
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-The River Thames (/tɛmz/ (listen) TEMZ), known alternatively in parts as the River Isis, is a river that flows through southern England including London. At 215 miles (346 km), it is the longest river entirely in England and the second-longest in the United Kingdom, after the River Severn. The river rises at Thames Head in Gloucestershire and flows into the North Sea near Tilbury, Essex and Gravesend, Kent, via the Thames Estuary. From the west it flows through Oxford (where it is sometimes called the Isis), Reading, Henley-on-Thames and Windsor. The Thames also drains the whole of Greater London.
-
-Answer:
-
-The River Thames flows through Southern England and it is 346 kilometres long.
-
-Instruction:
-
-Given this paragraph, in what part of England does the River Thames flow, and what is its length in kilometres?
-
-</s>
-<PAD><PAD><PAD><PAD><s> Context:
-
-Imperial rule by Europeans would continue until after the conclusion of World War II, when almost all remaining colonial territories gradually obtained formal independence. Independence movements in Africa gained momentum following World War II, which left the major European powers weakened. In 1951, Libya, a former Italian colony, gained independence. In 1956, Tunisia and Morocco won their independence from France. Ghana followed suit the next year (March 1957), becoming the first of the sub-Saharan colonies to be granted independence. Most of the rest of the continent became independent over the next decade.
-
-Instruction:
-
-Which sub-Saharan colony was the first to gain independence?
-
-Answer:
-
-Ghana was the first sub-Saharan colony to gain independence.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Where is the Kilo railway station
-
-Answer:
-
-Kilo is a station on the VR commuter rail network on the Rantarata line located in Kilo, a district of the city of Espoo in Finland. It is situated between Leppavaara railway station and Kera railway station, approximately 13 kilometres (8.1 mi) northwest/west of Helsinki Central railway station.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-What are all the different ways of saying customer lifetime value?
-
-Answer:
-
-Customer lifetime value is commonly referred to as customer lifetime value (CLV or often CLTV), lifetime customer value (LCV), or life-time value (LTV).
-
-</s>
-<s> Instruction:
-
-Given this reference text on the creation of centaurs, where did the mythology originate?
-
-Context:
 
 The centaurs were usually said to have been born of Ixion and Nephele. As the story goes, Nephele was a cloud made into the likeness of Hera in a plot to trick Ixion into revealing his lust for Hera to Zeus. Ixion seduced Nephele and from that relationship centaurs were created. Another version, however, makes them children of Centaurus, a man who mated with the Magnesian mares. Centaurus was either himself the son of Ixion and Nephele (inserting an additional generation) or of Apollo and the nymph Stilbe. In the latter version of the story, Centaurus's twin brother was Lapithes, ancestor of the Lapiths.
 
@@ -545,369 +131,732 @@ Answer:
 
 A centaur is a creature from Greek mythology according to this paragraph. It can be inferred because numerous Greek gods were referenced in the passage.
 
+Instruction:
+
+Given this reference text on the creation of centaurs, where did the mythology originate?
+
 </s>
-<PAD><PAD><s> Context:
+<PAD><s> Context:
 
-Born in Scranton, Pennsylvania, Biden moved with his family to Delaware in 1953. He studied at the University of Delaware before earning his law degree from Syracuse University. He was elected to the New Castle County Council in 1970 and became the sixth-youngest senator in U.S. history after he was elected in 1972, at age 29. Biden was the chair or ranking member of the Senate Foreign Relations Committee for 12 years. He chaired the Senate Judiciary Committee from 1987 to 1995; drafted and led the effort to pass the Violent Crime Control and Law Enforcement Act and the Violence Against Women Act; and oversaw six U.S. Supreme Court confirmation hearings, including the contentious hearings for Robert Bork and Clarence Thomas. Biden ran unsuccessfully for the Democratic presidential nomination in 1988 and 2008. Barack Obama chose Biden as his running mate in the 2008 and 2012 presidential elections. Biden was a close counselor to Obama during his two terms as Obama's vice president. Biden and his running mate, Kamala Harris, defeated incumbents Donald Trump and Mike Pence in the 2020 presidential election. On January 20, 2021, he became the oldest president in U.S. history, the first to have a female vice president, and the first from Delaware. 
-https://en.wikipedia.org/wiki/Joe_Biden
+The reef manta ray (Mobula alfredi) is a species of ray in the family Mobulidae, one of the largest rays in the world. Among generally recognized species, it is the second-largest species of ray, only surpassed by the giant oceanic manta ray.
 
-Answer:
+The species was described in 1868 by Gerard Krefft, the director of the Australian Museum. He named it M. alfredi in honor of Alfred, Duke of Edinburgh, the first member of the British royal family to visit Australia. It was originally described as part of the genus Manta but in 2017 was changed, along with the rest of the mantas, to be included as part of the genus Mobula.
 
-Based on this paragraph, Joe Biden has run for president three times, losing in 1988 and 2008 and eventually winning in 2020. As president, he is unique in three ways: the first to have a female vice president, and the first president from the state of Delaware.
+Reef manta rays are typically 3 to 3.5 m (9.8 to 11.5 ft) in disc width, with a maximum size of about 5.5 m (18 ft). For a long time included in M. birostris, the status of the reef manta ray as a separate species was only confirmed in 2009. The reef manta ray is found widely in the tropical and subtropical Indo-Pacific, but with a few records from the tropical East Atlantic and none from the West Atlantic or East Pacific. Compared to the giant oceanic manta ray, the reef manta ray tends to be found in shallower, more coastal habitats, but local migrations are sometimes reported. Mobula birostris is similar in appearance to Mobula alfredi and the two species may be confused as their distribution overlaps. However, there are distinguishing features.
 
 Instruction:
 
-Based on this paragraph, how many times has Joe Biden run for president and what characteristics make him unique among all past presidents?
+How big is Reef manta rays
+
+Answer:
+
+Reef manta rays are typically 3 to 3.5 m (9.8 to 11.5 ft) in disc width, with a maximum size of about 5.5 m (18 ft).
+
+</s>
+<PAD><s> Context:
+
+Alberto Michán Halbinger (born 2 December 1978) is an Israeli-Mexican Olympic horse rider. Born in Mexico, he competes for Israel. He qualified to represent Israel at the 2020 Summer Olympics in Tokyo.
+
+Biography
+Michan was born in Mexico; his family comes from Israel.
+
+He was a finalist at the FEI World Cup Jumping in 2006 and 2007.
+
+He competed in the 2006 and 2014 World Equestrian Games.
+
+He competed for Mexico at the 2008 Summer Olympics in Beijing, both in individual jumping (coming in 29th) and in team jumping (coming in 8th).
+
+He earned a bronze medal in Team Jumping at the 2011 Pan American Games in Guadalajara, Mexico.
+
+At the 2012 Summer Olympics, he tied with Scott Brash and Nick Skelton, both of the team-gold medal-winning United Kingdom, for 5th in individual jumping. He was part of the Mexican team for team jumping, which finished in fifth place.
+
+He qualified to represent Israel at the 2020 Summer Olympics in Tokyo.
+
+Instruction:
+
+Given a reference text about Alberto Michán Halbinger, in what olympics did he compete?
+
+Answer:
+
+Alberto Michán Halbinger competed in the 2008 and 2012 Summer Olympics.
 
 </s>
 <PAD><PAD><s> Instruction:
 
-Given this paragraph about Hydrogen Storage, what is the hydrogen boiling point?
+Given this paragraph about roasting peanuts to make peanut butter, what temperature are peanuts roasted using the batch method in celsius?
 
 Context:
 
-Several methods exist for storing hydrogen. These include mechanical approaches such as using high pressures and low temperatures, or employing chemical compounds that release H2 upon demand. While large amounts of hydrogen are produced by various industries, it is mostly consumed at the site of production, notably for the synthesis of ammonia. For many years hydrogen has been stored as compressed gas or cryogenic liquid, and transported as such in cylinders, tubes, and cryogenic tanks for use in industry or as propellant in space programs. Interest in using hydrogen for on-board storage of energy in zero-emissions vehicles is motivating the development of new methods of storage, more adapted to this new application. The overarching challenge is the very low boiling point of H2: it boils around 20.268 K (−252.882 °C or −423.188 °F). Achieving such low temperatures requires expending significant energy.
-
-https://en.wikipedia.org/wiki/Hydrogen_storage
+The dry roasting process employs either the batch or continuous method. In the batch method, peanuts are heated in large quantities in a revolving oven at about 800 °F (430 °C). Next, the peanuts in each batch are uniformly held and roasted in the oven at 320 °F (160 °C) for about 40 to 60 minutes. This method is good to use when the peanuts differ in moisture content. In the continuous method, a hot air roaster is employed. The peanuts pass through the roaster whilst being rocked to permit even roasting. A photometer indicates the completion of dry roasting. This method is favored by large manufacturers since it can lower the rate of spoilage and requires less labor.
 
 Answer:
 
-It boils around 20.268 K (−252.882 °C or −423.188 °F).
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-The docu-series premiered on January 17, 2016, and focused on the 2016 U.S. presidential election, January to November. It was renewed for a second season, which premiered on March 19, 2017, and focused on President Trump's first 100 days. It returned on April 15, 2018 for a third season, and focused on the mid-term elections, with CBS News anchor Alex Wagner stepping in as co-host to replace Mark Halperin, who was replaced on January 3, 2018, by the show, after sexual harassment allegations. Jennifer Palmieri joined as guest host beginning October 13, 2019, with season four episode twelve, Desperate Times, Desperate Measures, and joined as a permanent co-host in season 6.
-
-Instruction:
-
-When was the the docu-series 'The Circus' created?
-
-Answer:
-
-The Circus is an American television documentary series initially following the 2016 presidential race.
-
-</s>
-<PAD><PAD><PAD><PAD><s> Context:
-
-The Wheel of Time is a series of high fantasy novels by American author Robert Jordan, with Brandon Sanderson as a co-author for the final three novels. Originally planned as a six-book series at its debut in 1990, The Wheel of Time came to span 14 volumes, in addition to a prequel novel and two companion books. Jordan died in 2007 while working on what was planned to be the final volume in the series. He prepared extensive notes which enabled fellow fantasy author Brandon Sanderson to complete the final book, which grew into three volumes: The Gathering Storm (2009), Towers of Midnight (2010), and A Memory of Light (2013).
-
-Answer:
-
-Originally planned as a six-book series at its debut in 1990, The Wheel of Time came to span 14 volumes
-
-Instruction:
-
-How many volumes of Wheel of Time are there?
-
-</s>
-<PAD><PAD><PAD><PAD><s> Instruction:
-
-Who is Micky Mouse?
-
-Answer:
-
-Mickey Mouse is an animated cartoon character co-created in 1928 by Walt Disney and Ub Iwerks. The longtime mascot of The Walt Disney Company, Mickey is an anthropomorphic mouse who typically wears red shorts, large yellow shoes, and white gloves. Taking inspiration from silent film personalities such as Charlie Chaplin's Tramp, Mickey is traditionally characterized as a sympathetic underdog who gets by on pluck and ingenuity. Mickey is one of the world's most recognizable and universally acclaimed fictional characters of all time. Mickey generally appears alongside his girlfriend Minnie Mouse, his pet dog Pluto, and his friends Donald Duck and Goofy.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><s> Context:
-
-Polyvinyl chloride (alternatively: poly(vinyl chloride), colloquial: polyvinyl, or simply vinyl; abbreviated: PVC) is the world's third-most widely produced synthetic polymer of plastic (after polyethylene and polypropylene). About 40 million tons of PVC are produced each year.
-
-Answer:
-
-Each year about 40 million tons of PVC are produced.
-
-Instruction:
-
-How much PVC produced each year?
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-When did Confinity become eBay ?
-
-Answer:
-
-Confinity was acquired by X.com in 1999 which was later renamed to PayPal. PayPal was acquired by eBay in 2002.
-
-</s>
-<s> Instruction:
-
-What is the United States Bill of Rights?
-
-Context:
-
-The United States Bill of Rights comprises the first ten amendments to the United States Constitution. Proposed following the often bitter 1787–88 debate over the ratification of the Constitution and written to address the objections raised by Anti-Federalists, the Bill of Rights amendments add to the Constitution specific guarantees of personal freedoms and rights, clear limitations on the government's power in judicial and other proceedings, and explicit declarations that all powers not specifically granted to the federal government by the Constitution are reserved to the states or the people. The concepts codified in these amendments are built upon those in earlier documents, especially the Virginia Declaration of Rights (1776), as well as the Northwest Ordinance (1787), the English Bill of Rights (1689), and Magna Carta (1215).
-
-Largely because of the efforts of Representative James Madison, who studied the deficiencies of the Constitution pointed out by anti-federalists and then crafted a series of corrective proposals, Congress approved twelve articles of amendment on September 25, 1789, and submitted them to the states for ratification. Contrary to Madison's proposal that the proposed amendments be incorporated into the main body of the Constitution (at the relevant articles and sections of the document), they were proposed as supplemental additions (codicils) to it. Articles Three through Twelve were ratified as additions to the Constitution on December 15, 1791, and became Amendments One through Ten of the Constitution. Article Two became part of the Constitution on May 5, 1992, as the Twenty-seventh Amendment. Article One is still pending before the states.
-
-Although Madison's proposed amendments included a provision to extend the protection of some of the Bill of Rights to the states, the amendments that were finally submitted for ratification applied only to the federal government. The door for their application upon state governments was opened in the 1860s, following ratification of the Fourteenth Amendment. Since the early 20th century both federal and state courts have used the Fourteenth Amendment to apply portions of the Bill of Rights to state and local governments. The process is known as incorporation.
-
-There are several original engrossed copies of the Bill of Rights still in existence. One of these is on permanent public display at the National Archives in Washington, D.C.
-
-Answer:
-
-The United States Bill of Rights comprises the first ten amendments to the United States Constitution. Proposed following the often bitter 1787–88 debate over the ratification of the Constitution and written to address the objections raised by Anti-Federalists, the Bill of Rights amendments add to the Constitution specific guarantees of personal freedoms and rights, clear limitations on the government's power in judicial and other proceedings, and explicit declarations that all powers not specifically granted to the federal government by the Constitution are reserved to the states or the people. The concepts codified in these amendments are built upon those in earlier documents, especially the Virginia Declaration of Rights (1776), as well as the Northwest Ordinance (1787), the English Bill of Rights (1689), and the Magna Carta (1215).
-
-</s>
-<PAD><s> Instruction:
-
-What is Gobekli Tepe?
-
-Context:
-
-Göbekli Tepe (Turkish: [ɟœbecˈli teˈpe], "Potbelly Hill"; known as Girê Mirazan or Xirabreşkê in Kurdish) is a Neolithic archaeological site in the Southeastern Anatolia Region of Turkey. Dated to the Pre-Pottery Neolithic, between c. 9500 and 8000 BCE, the site comprises a number of large circular structures supported by massive stone pillars – the world's oldest known megaliths. Many of these pillars are richly decorated with figurative anthropomorphic details, clothing, and reliefs of wild animals, providing archaeologists rare insights into prehistoric religion and the particular iconography of the period. The 15 m (50 ft)-high, 8 ha (20-acre) tell also includes many smaller buildings, quarries, and stone-cut cisterns from the Neolithic, as well as some traces of activity from later periods.
-
-Answer:
-
-Gobekli Tepe is a neolithic archaeological site located in the Anatolia region of Turkey. It is the world's oldest known megalith, dating as far back as 12000 years.
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-For the undergraduate Class of 2023, the University of Virginia received a record 40,815 applications, admitting 24 percent. Approximately 40 percent of those admitted are non-white. Matriculated students come from all 50 states and 147 foreign countries. UVA is required, by Virginia state law, to matriculate two-thirds of its undergraduate student body from its pool of in-state applicants. As a result, its acceptance rate for in-state students (36 percent) is nearly twice the out-of-state rate (19 percent) as of 2019. The university has seen steady increases to its applicant pool in recent decades, and the number of applications has more than doubled since the Class of 2008 received 15,094 applications. As of 2014, 93 percent of admitted applicants ranked in the top 10 percent of their high school classes.
-
-Answer:
-
-The out of state acceptance rate at the University of Virginia is 19%.
-
-Instruction:
-
-Given this paragraph, what is the out of state acceptance rate at the University of Virginia?
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-Anoop Nautiyal is a social activist based in Dehradun, Uttarakhand. His work has focused on issues of environment and sustainable development of the state. He is the founder of Social Development Communities Foundation, an NGO and think tank based in Dehradun, which works works at the grassroots level for the empowerment of communities, as well as the sustainable development of the mountain state of Uttarakhand. He is a prolific social communicator and has also been a columnist for the Indian Express.
-
-He had a brief foray in the political space and contested the 2017 Uttarakhand Legislative Assembly election.
-
-Anoop Nautiyal attended Shri Ram College of Commerce and National Institute of Fashion Technology in New Delhi.[1
-
-Instruction:
-
-Given a reference text about Anoop Nautiyal, what did his work focus on?
-
-Answer:
-
-Anoop Nautiyal's work has focused on issues regarding the environment and sustainable development.
-
-</s>
-<PAD><PAD><PAD><s> Context:
-
-Zygmuntówek [zɨɡmunˈtuvɛk] is a village in the administrative district of Gmina Malanów, within Turek County, Greater Poland Voivodeship, in west-central Poland. It lies approximately 2 kilometres (1 mi) north of Malanów, 10 km (6 mi) south-west of Turek, and 112 km (70 mi) south-east of the regional capital Poznań.
-
-Answer:
-
-Malanów is south of Zygmuntówek. We know this because Zygmuntówek is north of Malanów.
-
-Instruction:
-
-What direction (North-South-East-West) is Malanów from Zygmuntówek?
-
-</s>
-<PAD><PAD><PAD><PAD><s> Instruction:
-
-What is the least common birthday in the United States?
-
-Context:
-
-In the United States between 1973 and 1999, September 16 is the most common birthday in the United States and December 25 the least common birthday (other than February 29, because of leap years). In 2011, October 5 and 6 were reported as the most frequently occurring birthdays.
-
-Answer:
-
-The least common birthday in the United States between 1973 and 1999 was February 29 because of leap years.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Given the introduction of ChatGPT, tell me how many releases there are since the fist launch and when they were launched.
-
-Answer:
-
-There are two ChatGPT versions so far. The first release was on Nov 23rd, 2022, and the second launch was released on Mar 14th, 2023.
-
-</s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
-
-Given a reference text about the Falcons, how many Super Bowls have they won in their history?
-
-Answer:
-
-Although the falcons have been to two Super Bowl games in their history, they have not won a Super Bowl yet.
-
-</s>
-<s> Context:
-
-A large language model (LLM) is a language model consisting of a neural network with many parameters (typically billions of weights or more), trained on large quantities of unlabelled text using self-supervised learning. LLMs emerged around 2018 and perform well at a wide variety of tasks. This has shifted the focus of natural language processing research away from the previous paradigm of training specialized supervised models for specific tasks.
-
-Properties
-Though the term large language model has no formal definition, it often refers to deep learning models having a parameter count on the order of billions or more. LLMs are general purpose models which excel at a wide range of tasks, as opposed to being trained for one specific task (such as sentiment analysis, named entity recognition, or mathematical reasoning). The skill with which they accomplish tasks, and the range of tasks at which they are capable, seems to be a function of the amount of resources (data, parameter-size, computing power) devoted to them, in a way that is not dependent on additional breakthroughs in design.
-
-Though trained on simple tasks along the lines of predicting the next word in a sentence, neural language models with sufficient training and parameter counts are found to capture much of the syntax and semantics of human language. In addition, large language models demonstrate considerable general knowledge about the world, and are able to "memorize" a great quantity of facts during training.
-
-Hallucinations
-Main article: Hallucination (artificial intelligence)
-In artificial intelligence in general, and in large language models in particular, a "hallucination" is a confident response that does not seem to be justified by the model's training data.
-
-Emergent abilities
-
-On a number of natural language benchmarks involving tasks such as question answering, models perform no better than random chance until they reach a certain scale (in this case, measured by training computation), at which point their performance sharply increases. These are examples of emergent abilities.
-Unpredictable abilities that have been observed in large language models but that were not present in simpler models (and that were not explicitly designed into the model) are usually called "emergent abilities". Researchers note that such abilities "cannot be predicted simply by extrapolating the performance of smaller models". These abilities are discovered rather than programmed-in or designed, in some cases only after the LLM has been publicly deployed. Hundreds of emergent abilities have been described. Examples include multi-step arithmetic, taking college-level exams, identifying the intended meaning of a word, chain-of-thought prompting, decoding the International Phonetic Alphabet, unscrambling a word’s letters, identifying offensive content in paragraphs of Hinglish (a combination of Hindi and English), and generating a similar English equivalent of Kiswahili proverbs.
-
-Architecture and training
-Large language models have most commonly used the transformer architecture, which, since 2018, has become the standard deep learning technique for sequential data (previously, recurrent architectures such as the LSTM were most common). LLMs are trained in an unsupervised manner on unannotated text. A left-to-right transformer is trained to maximize the probability assigned to the next word in the training data, given the previous context. Alternatively, an LLM may use a bidirectional transformer (as in the example of BERT), which assigns a probability distribution over words given access to both preceding and following context. In addition to the task of predicting the next word or "filling in the blanks", LLMs may be trained on auxiliary tasks which test their understanding of the data distribution such as Next Sentence Prediction (NSP), in which pairs of sentences are presented and the model must predict whether they appear side-by-side in the training corpus.
-
-The earliest LLMs were trained on corpora having on the order of billions of words. The first model in OpenAI's GPT series was trained in 2018 on BookCorpus, consisting of 985 million words. In the same year, BERT was trained on a combination of BookCorpus and English Wikipedia, totalling 3.3 billion words. In the years since then, training corpora for LLMs have increased by orders of magnitude, reaching up to hundreds of billions or trillions of tokens.
-
-LLMs are computationally expensive to train. A 2020 study estimated the cost of training a 1.5 billion parameter model (1-2 orders of magnitude smaller than the state of the art at the time) at $1.6 million.
-
-A 2020 analysis found that neural language models' capability (as measured by training loss) increased smoothly in a power law relationship with number of parameters, quantity of training data, and computation used for training. These relationships were tested over a wide range of values (up to seven orders of magnitude) and no attenuation of the relationship was observed at the highest end of the range (including for network sizes up to trillions of parameters).
-
-Application to downstream tasks
-Between 2018 and 2020, the standard method for harnessing an LLM for a specific natural language processing (NLP) task was to fine tune the model with additional task-specific training. It has subsequently been found that more powerful LLMs such as GPT-3 can solve tasks without additional training via "prompting" techniques, in which the problem to be solved is presented to the model as a text prompt, possibly with some textual examples of similar problems and their solutions.
-
-Fine-tuning
-Main article: Fine-tuning (machine learning)
-Fine-tuning is the practice of modifying an existing pretrained language model by training it (in a supervised fashion) on a specific task (e.g. sentiment analysis, named entity recognition, or part-of-speech tagging). It is a form of transfer learning. It generally involves the introduction of a new set of weights connecting the final layer of the language model to the output of the downstream task. The original weights of the language model may be "frozen", such that only the new layer of weights connecting them to the output are learned during training. Alternatively, the original weights may receive small updates (possibly with earlier layers frozen).
-
-Prompting
-See also: Prompt engineering and Few-shot learning (natural language processing)
-In the prompting paradigm, popularized by GPT-3, the problem to be solved is formulated via a text prompt, which the model must solve by providing a completion (via inference). In "few-shot prompting", the prompt includes a small number of examples of similar (problem, solution) pairs. For example, a sentiment analysis task of labelling the sentiment of a movie review could be prompted as follows:
-
-Review: This movie stinks.
-Sentiment: negative
-
-Review: This movie is fantastic!
-Sentiment:
-
-If the model outputs "positive", then it has correctly solved the task. In zero-shot prompting, no solve examples are provided. An example of a zero-shot prompt for the same sentiment analysis task would be "The sentiment associated with the movie review 'This movie is fantastic!' is".
-
-Few-shot performance of LLMs has been shown to achieve competitive results on NLP tasks, sometimes surpassing prior state-of-the-art fine-tuning approaches. Examples of such NLP tasks are translation, question answering, cloze tasks, unscrambling words, and using a novel word in a sentence. The creation and optimisation of such prompts is called prompt engineering.
-
-Instruction tuning
-Instruction tuning is a form of fine-tuning designed to facilitate more natural and accurate zero-shot prompting interactions. Given a text input, a pretrained language model will generate a completion which matches the distribution of text on which it was trained. A naive language model given the prompt "Write an essay about the main themes of Hamlet." might provide a completion such as "A late penalty of 10% per day will be applied to submissions received after March 17." In instruction tuning, the language model is trained on many examples of tasks formulated as natural language instructions, along with appropriate responses. Various techniques for instruction tuning have been applied in practice. OpenAI's InstructGPT protocol involves supervised fine-tuning on a dataset of human-generated (prompt, response) pairs, followed by reinforcement learning from human feedback (RLHF), in which a reward function was learned based on a dataset of human preferences. Another technique, "self-instruct", fine-tunes the language model on a training set of examples which are themselves generated by an LLM (bootstrapped from a small initial set of human-generated examples).
-
-https://en.wikipedia.org/wiki/Large_language_model
-
-Answer:
-
-Instruction tuning is a form of fine-tuning designed to facilitate more natural and accurate zero-shot prompting interactions.
-
-Instruction:
-
-Given these paragraphs about Large language models, what is Instruction tuning?
-
-</s>
-<PAD><s> Instruction:
-
-Who was the first to record the Needles and Pins song?
-
-Answer:
-
-The first artist to record Needles and Pins song was DeShannon.
-
-</s>
-<s> Context:
-
-Karl Heinrich Marx FRSA (German: [maʁks]; 5 May 1818 – 14 March 1883) was a German philosopher, economist, historian, sociologist, political theorist, journalist, critic of political economy, and socialist revolutionary. His best-known titles are the 1848 pamphlet The Communist Manifesto and the four-volume Das Kapital (1867–1883). Marx's political and philosophical thought had enormous influence on subsequent intellectual, economic, and political history. His name has been used as an adjective, a noun, and a school of social theory.
-
-Born in Trier, Germany, Marx studied law and philosophy at the universities of Bonn and Berlin. He married German theatre critic and political activist Jenny von Westphalen in 1843. Due to his political publications, Marx became stateless and lived in exile with his wife and children in London for decades, where he continued to develop his thought in collaboration with German philosopher Friedrich Engels and publish his writings, researching in the British Museum Reading Room.
-
-Marx's critical theories about society, economics, and politics, collectively understood as Marxism, hold that human societies develop through class conflict. In the capitalist mode of production, this manifests itself in the conflict between the ruling classes (known as the bourgeoisie) that control the means of production and the working classes (known as the proletariat) that enable these means by selling their labour-power in return for wages. Employing a critical approach known as historical materialism, Marx predicted that capitalism produced internal tensions like previous socioeconomic systems and that these tensions would lead to its self-destruction and replacement by a new system known as the socialist mode of production. For Marx, class antagonisms under capitalism—owing in part to its instability and crisis-prone nature—would eventuate the working class's development of class consciousness, leading to their conquest of political power and eventually the establishment of a classless, communist society constituted by a free association of producers. Marx actively pressed for its implementation, arguing that the working class should carry out organised proletarian revolutionary action to topple capitalism and bring about socio-economic emancipation.
-
-Marx has been described as one of the most influential figures in human history, and his work has been both lauded and criticised. His work in economics laid the basis for some current theories about labour and its relation to capital. Many intellectuals, labour unions, artists, and political parties worldwide have been influenced by Marx's work, often modifying or adapting his ideas. Marx is typically cited as one of the principal architects of modern social science.
-
-Answer:
-
-Karl Marx studied law and philosophy at the universities of Bonn and Berlin. He died on March 14 1883.
-
-Instruction:
-
-Given the reference text about Karl Marx, tell me when he died, what subjects he studied and at which universities he studied.
+Peanuts are heated in a revolving oven at about 430 °C using the batch method.
 
 </s>
 <PAD><PAD><s> Context:
 
-Arsenal was the first club from the South of England to join the Football League in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division, and have won the second-most top-flight matches in English football history. In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position. Between 1998 and 2017, Arsenal qualified for the UEFA Champions League for nineteen consecutive seasons.
+In 2019, Virginia men's basketball won the NCAA Championship in "March Madness", the single-elimination national college basketball tournament considered by YouGov polled American viewers (as of the same year) to be the most exciting collegiate sporting event. In 2015, when Virginia first won its first Capital One Cup its teams won the 2014 College Cup, the 2015 College World Series, and the 2015 NCAA Tennis Championships. When it repeated the feat in 2019, the program won both March Madness and the 2019 Men's Lacrosse Championship.
 
 Instruction:
 
-When did Arsenal first reach the first division? How many league titles did they win between 1989 and 2005 and how many FA cups? How many trophies in total for that period?
+According to this paragraph, tell me what is referred to as the most exciting collegiate sporting event.
 
 Answer:
 
-Arsenal reached the first division in 1904. Between 1989 and 2005, Arsenal won 5 league titles and 5 FA cups. That’s a total of 10 trophies.
+What is referred to as the most exciting collegiate sporting event is when the Virginia men's basketball team won the NCAA Championship in 2019.
 
 </s>
-<PAD><PAD><PAD><s> Context:
+<PAD><PAD><s> Instruction:
 
-The Ming treasure voyages were the seven maritime expeditions undertaken by Ming China's treasure fleet between 1405 and 1433. The Yongle Emperor ordered the construction of the treasure fleet in 1403. The grand project resulted in far-reaching ocean voyages to the coastal territories and islands in and around the South China Sea, the Indian Ocean, and beyond. Admiral Zheng He was commissioned to command the treasure fleet for the expeditions. Six of the voyages occurred during the Yongle reign (r. 1402–24), while the seventh voyage occurred during the Xuande reign (r. 1425–1435). The first three voyages reached up to Calicut on India's Malabar Coast, while the fourth voyage went as far as Hormuz in the Persian Gulf. In the last three voyages, the fleet traveled up to the Arabian Peninsula and East Africa.
+What is the history of Afrobeats?
+
+Answer:
+
+Afrobeats (not to be confused with Afrobeat or Afroswing), or Afro-pop or Afro-fusion (or Afropop or Afrofusion), is an umbrella term to describe popular music from West Africa and the diaspora that initially developed in Nigeria, Ghana, and the UK in the 2000s and 2010s. Afrobeats is less of a style per se, and more of a descriptor for the fusion of sounds flowing out of Ghana and Nigeria. Genres such as hiplife, jùjú music, highlife and naija beats, among others, were amalgamated under the 'Afrobeats' umbrella.
+
+</s>
+<PAD><PAD><PAD><s> Instruction:
+
+Who was the first African American to go to space?
+
+Answer:
+
+Guion Stewart Bluford Jr. was the first African American to go to space.  He was an American aerospace engineer, retired United States Air force officer and fighter pilot, and former NASA astronaut.  He participated in for Space Shuttle flights between 1983 and 1992.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+How many people live in the city of Oakland in 2022?
+
+Answer:
+
+About 450,000 people live in Oakland, Ca during the last census
+
+</s>
+<s> Context:
+
+The Solar System is the gravitationally bound system of the Sun and the objects that orbit it. It formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority (99.86%) of the system's mass is in the Sun, with most of the remaining mass contained in the planet Jupiter. The planetary system around the Sun contains eight planets. The four inner system planets—Mercury, Venus, Earth and Mars—are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially larger and more massive than the terrestrials. The two largest, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the next two, Uranus and Neptune, are ice giants, being composed mostly of volatile substances with relatively high melting points compared with hydrogen and helium, such as water, ammonia, and methane. All eight planets have nearly circular orbits that lie near the plane of Earth's orbit, called the ecliptic.
+
+There are an unknown number of smaller dwarf planets and innumerable small Solar System bodies orbiting the Sun. Six of the major planets, the six largest possible dwarf planets, and many of the smaller bodies are orbited by natural satellites, commonly called "moons" after Earth's Moon. Two natural satellites, Jupiter's moon Ganymede and Saturn's moon Titan, are larger than Mercury, the smallest terrestrial planet, though less massive, and Jupiter's moon Callisto is nearly as large. Each of the giant planets and some smaller bodies are encircled by planetary rings of ice, dust and moonlets. The asteroid belt, which lies between the orbits of Mars and Jupiter, contains objects composed of rock, metal and ice. Beyond Neptune's orbit lie the Kuiper belt and scattered disc, which are populations of objects composed mostly of ice and rock.
 
 Instruction:
 
-Based on this paragraph about the Ming treasure voyages, who commanded the fleet?
+What is the solar system?
 
 Answer:
 
-Based on this text, Admiral Zheng He commanded the Ming treasure voyages.
+The word solar means "pertaining to the Sun", which is derived from the Latin word sol, meaning Sun. The Sun is the dominant gravitational member of the Solar System, and its planetary system is maintained in a relatively stable, slowly evolving state by following isolated, gravitationally bound orbits around the Sun
 
 </s>
-<PAD><PAD><PAD><s> Context:
+<PAD><s> Context:
 
-Old French (franceis, françois, romanz; Modern French: ancien français) was the language spoken in most of the northern half of France from approximately the 8th to the 14th centuries. Rather than a unified language, Old French was a linkage of Romance dialects, mutually intelligible yet diverse, spoken in the northern half of France. These dialects came to be collectively known as the langue d'oïl, contrasting with the langue d'oc in the south of France. The mid-14th century witnessed the emergence of Middle French, the language of the French Renaissance in the Île de France region; this dialect was a predecessor to Modern French. Other dialects of Old French evolved themselves into modern forms (Poitevin-Saintongeais, Gallo, Norman, Picard, Walloon, etc.), each with its own linguistic features and history.
+The village school was closed during much of the war but re-opened in autumn 1944. Gorbachev did not want to return but when he did he excelled academically. He read voraciously, moving from the Western novels of Thomas Mayne Reid to the works of Vissarion Belinsky, Alexander Pushkin, Nikolai Gogol, and Mikhail Lermontov. In 1946, he joined the Komsomol, the Soviet political youth organization, becoming leader of his local group and then being elected to the Komsomol committee for the district. From primary school he moved to the high school in Molotovskoye; he stayed there during the week while walking the 19 km (12 mi) home during weekends. As well as being a member of the school's drama society, he organized sporting and social activities and led the school's morning exercise class. Over the course of five consecutive summers from 1946 onward he returned home to assist his father in operating a combine harvester, during which they sometimes worked 20-hour days. In 1948, they harvested over 8,000 centners of grain, a feat for which Sergey was awarded the Order of Lenin and his son the Order of the Red Banner of Labour.
+
+Answer:
+
+According to this passage, Gorbachev's round trip walking commute to school was 24 miles per week. He walked 12 miles each way and travelled to and from school only once per week.
 
 Instruction:
 
-Where was Old French language spoken?
-
-Answer:
-
-Northern half of France in the 8th to 14th centuries.
+Based on this passage, how many miles did Gorbachev walk each week for his round trip commute to school?
 
 </s>
-<PAD><PAD><PAD><s> Context:
+<PAD><s> Context:
 
-Merlot (/ˈmɜːrloʊ/ MUR-loh) is a dark blue–colored wine grape variety, that is used as both a blending grape and for varietal wines. The name Merlot is thought to be a diminutive of merle, the French name for the blackbird, probably a reference to the color of the grape. Its softness and "fleshiness," combined with its earlier ripening, make Merlot a popular grape for blending with the sterner, later-ripening Cabernet Sauvignon, which tends to be higher in tannin.
-
-Answer:
-
-Merlot (/ˈmɜːrloʊ/ MUR-loh) is a dark blue–colored wine grape variety, that is used as both a blending grape and for varietal wines.
+In 1931 the Ford Motor Company relocated from Trafford Park in Manchester, to a larger new plant in Dagenham, which was already the location of supplier Briggs Motorway Bodies. A 500-acre (200 ha) riverside site was developed to become Europe's largest car plant, a vast vertically integrated site with its own blast furnaces and power station, importing iron ore and exporting finished vehicles. By the 1950s Ford had taken over Briggs at Dagenham and its other sites at Doncaster, Southampton, Croydon and Romford. At its peak the Dagenham plant had 4,000,000 square feet (370,000 m2) of floor space and employed over 40,000 people, although this number gradually fell during the final three decades of the 20th century as production methods advanced and Ford invested in other European factories as well. Some of Britain's best selling cars, including the Fiesta, Escort, Cortina and Sierra, were produced at the plant over the next 71 years.
 
 Instruction:
 
-What is Merlot?
-
-</s>
-<PAD><PAD><PAD><PAD><s> Instruction:
-
-What is the Pareto principle?
-
-Context:
-
-The Pareto principle states that for many outcomes, roughly 80% of consequences come from 20% of causes (the "vital few"). Other names for this principle are the 80/20 rule, the law of the vital few, or the principle of factor sparsity.
+To which town in the UK did the Ford Motor Company relocate to in 1931?
 
 Answer:
 
-The Pareto principle also known as the 80/20 rule or the law of the vital few, states that roughly 80% of consequences come from 20% of causes. For example 80% of revenue comes from 20% of customers (the vital few).
+Dagenham
+
+</s>
+<PAD><PAD><s> Context:
+
+Guion Stewart Bluford Jr. (born November 22, 1942) is an American aerospace engineer, retired United States Air Force (USAF) officer and fighter pilot, and former NASA astronaut, in which capacity he became the first African American to go to space. While assigned to NASA, he remained a USAF officer rising to the rank of colonel. He participated in four Space Shuttle flights between 1983 and 1992. In 1983, as a member of the crew of the Orbiter Challenger on the mission STS-8, he became the first African American in space as well as the second person of African descent in space, after Cuban cosmonaut Arnaldo Tamayo Méndez.
+
+Answer:
+
+Guion Stewart Bluford Jr. was the first African American to go to space.  He was an American aerospace engineer, retired United States Air force officer and fighter pilot, and former NASA astronaut.  He participated in for Space Shuttle flights between 1983 and 1992.
+
+Instruction:
+
+Who was the first African American to go to space?
+
+</s>
+<PAD><PAD><s> Context:
+
+Adventfjorden (Advent Bay) is a 7 km long and 4 km wide bay running south-eastwards from the southern side of Isfjorden, on the west coast of Spitsbergen in Svalbard. The name represents a corruption of Adventure Bay - probably named after the Hull-built whaleship Adventure, which operated in Isfjorden in 1656. The fjord was originally[when?] known as Klass Billen Bay. At the head of Adventfjorden is Adventdalen (Advent Valley).
+
+The former mining-camp of Longyearbyen (now Svalbard's main town) lies on the fjord's southwestern shore, while another former mining-camp, Hiorthhamn, is located on its northeastern shore.
+
+Answer:
+
+Adventfjorden is 4km wide and 7km long.
+
+Instruction:
+
+Given a reference text about Adventfjorden, how wide and long is it?
+
+</s>
+<PAD><PAD><s> Context:
+
+Sagan is considered one of cycling's greatest talents, having earned many prestigious victories, including three consecutive World Championships, one European Championship, two Paris–Nice stages, seven Tirreno–Adriatico stages, one in the Tour de Romandie, three and the overall classification in the Tour de Pologne, a record seventeen stages and the overall in the Tour of California, and another fifteen in the Tour de Suisse.
+
+Answer:
+
+Sagan has won three consecutive cycling world championships
+
+Instruction:
+
+How many cycling world championships has Peter Sagan won?
+
+</s>
+<PAD><PAD><PAD><PAD><s> Context:
+
+A first-degree relative (FDR) is a person's parent (father or mother), full sibling (brother or sister) or child. It constitutes a category of family members that largely overlaps with the term nuclear family, but without spouses.
+
+Answer:
+
+Nuclear family includes spouses while first-degree relatives are only blood related.
+
+Instruction:
+
+How do the definitions of "first-degree relative" and "nuclear family" differ?
 
 </s>
 <PAD><PAD><PAD><PAD><PAD><s> Instruction:
 
-Given this short paragraph about the life of George K. McGunnegle, how old was he when he retired and what month of the year did that happen?
+Given the paragraph, what is the term budgie smuggler colloquially use to describe?
 
 Answer:
 
-George K. McGunnegle was 64 when he retired in July of 1919.
+In Australia, New Zealand and United Kingdom a "budgie smuggler" is used to describe a swimming brief
 
 </s>
-<PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+<s> Instruction:
 
-Given a reference text about Kennebunkport, tell me its neighboring towns and where it is located.
+What is Schalke 04 famous for?
+
+Context:
+
+Fußballclub Gelsenkirchen-Schalke 04 e. V., commonly known as FC Schalke 04 (German: [ɛf tseː ˈʃalkə nʊl fiːɐ̯] (listen)), Schalke 04 (German: [ˌʃalkə nʊl ˈfiːɐ̯] (listen)), or abbreviated as S04 (German: [ˈɛs nʊl fiːɐ̯] (listen)), is a professional German football and multi-sports club originally from the Schalke district of Gelsenkirchen, North Rhine-Westphalia. The "04" in the club's name derives from its formation in 1904. Schalke have been one of the most popular professional football teams in Germany, even though the club's heyday was in the 1930s and 1940s. Schalke have played in the Bundesliga, the top tier of the German football league system, since 2022, following promotion from the 2. Bundesliga in 2021–22. As of 2022, the club has 160,000 members, making it the second-largest football club in Germany and the fourth-largest club in the world in terms of membership. Other activities offered by the club include athletics, basketball, handball, table tennis, winter sports and eSports.
 
 Answer:
 
-Kennebunkport is located in York County, Maine and is neighbored by the towns of Kennebunk and Arundel.
+FC Schalke 04 (full name Fußballclub Gelsenkirchen-Schalke 04 e. V. ) is a German football and multi-sports club that was founded in 1904 in Gelsenkirchen, North Rhine-Westphalia. The club won seven times the German Championship, five times the German Cup / DFB-Pokal and 1997 the UEFA-CUP, when it beat Inter Milan in the finals. The club receives from football fans all over the world renown for its youth academy, which constantly develops famous players. Benedikt Höwedes, Manuel Neuer and Mesut Özil, who won the World Cup with Germany in 2014, were formed in the Schalke 04 youth academy. Since 2011 the youth academy is called Knappenschmiede in reference to the mining industry that was very strong in the past in the area of Western Germany. A Knappe is a miner after completion of his apprenticeship.
+
+</s>
+<PAD><s> Context:
+
+Green was selected with the 35th overall pick in the 2012 NBA draft by the Golden State Warriors. On July 30, 2012, he signed a three-year, $2.6 million contract with the Warriors. In his NBA debut in the Warriors' season opener on October 31 against the Phoenix Suns, Green played one minute, made one defensive rebound, and committed one foul. Green gradually received more playing time in subsequent games, especially in the wake of injuries to Brandon Rush and Richard Jefferson. After getting only marginal floor time at the beginning of the season, by November 22, Green was playing 15–20 minutes per game, and by December 9, as Green gained a bigger role on the team, the Warriors had won 8 of 10 games. On December 12, Green made the winning layup with 0.9 seconds left in the Warriors' 97–95 win over the defending champion Miami Heat.
+
+Answer:
+
+In his NBA debut in the Warriors' season opener on October 31, 2012, against the Phoenix Suns, Green played one minute. Green gradually received more playing time in subsequent games, especially in the wake of injuries to Brandon Rush and Richard Jefferson. After getting only marginal floor time at the beginning of the season, by November 22, 2012, Green was playing 15–20 minutes per game.
+
+It is not clear how Green's minutes increased over time beyond November 22, 2012 based on the provided text.
+
+Instruction:
+
+How did Draymond Green's minutes increase over time?
+
+</s>
+<PAD><s> Instruction:
+
+What year was Kerala formed?
+
+Context:
+
+Kerala (English: /ˈkɛrələ/ KERR-ə-lə; Malayalam: [ke:ɾɐɭɐm] (listen)) is a state on the Malabar Coast of India. It was formed on 1 November 1956, following the passage of the States Reorganisation Act, by combining Malayalam-speaking regions of the erstwhile regions of Cochin, Malabar, South Canara, and Travancore. Spread over 38,863 km2 (15,005 sq mi), Kerala is the 21st largest Indian state by area. It is bordered by Karnataka to the north and northeast, Tamil Nadu to the east and south, and the Lakshadweep Sea to the west. With 33 million inhabitants as per the 2011 census, Kerala is the 13th-largest Indian state by population. It is divided into 14 districts with the capital being Thiruvananthapuram. Malayalam is the most widely spoken language and is also the official language of the state.
+
+Answer:
+
+1956
+
+</s>
+<PAD><PAD><s> Context:
+
+Portugal's overseas presence in sub-Saharan Africa (most notably in Angola, Cape Verde, Mozambique, Guinea-Bissau, and São Tomé and Príncipe) lasted from the 16th century to 1975, after the Estado Novo regime was overthrown in a military coup in Lisbon. Rhodesia unilaterally declared independence from the United Kingdom in 1965, under the white minority government of Ian Smith, but was not internationally recognized as an independent state (as Zimbabwe) until 1980, when black nationalists gained power after a bitter guerrilla war. Although South Africa was one of the first African countries to gain independence, the state remained under the control of the country's white minority through a system of racial segregation known as apartheid until 1994.
+
+Answer:
+
+Apartheid is a system of racial segregation in South Africa.
+
+Instruction:
+
+What is apartheid, and which country experienced it?
+
+</s>
+<PAD><PAD><s> Context:
+
+Octavia Estelle Butler (June 22, 1947 – February 24, 2006) was an American science fiction author and a multiple recipient of the Hugo and Nebula awards. In 1995, Butler became the first science-fiction writer to receive a MacArthur Fellowship. Born in Pasadena, California, Butler was raised by her widowed mother. Extremely shy as a child, Butler found an outlet at the library reading fantasy, and in writing. She began writing science fiction as a teenager. She attended community college during the Black Power movement. While participating in a local writer's workshop, she was encouraged to attend the Clarion Workshop, then held in Pennsylvania, which focused on science fiction.
+
+Instruction:
+
+What is significant about Octavia Butler?
+
+Answer:
+
+She was the first science fiction writer to receive a MacArthur Fellowship.
+
+</s>
+<PAD><PAD><PAD><s> Instruction:
+
+Given this text about James Pressdee, tell me what sports they played, which awards they won, when they were born, and if they are still alive.
+
+Answer:
+
+James Stuart Pressdee played both football and cricket. Though he was an inconsistent bowler, he won the South African Cricket Annual Cricketer of the Year award in 1966. Prior to his professional sports career, James won a Welsh youth cap in football in Swansea Town. Jame was born on June 19th, 1933, and he died on July 20th, 2016 at the age of 83.
+
+</s>
+<PAD><PAD><PAD><PAD><s> Context:
+
+TELLURIDE ——>
+CITY OF GOLD
+12 MILES - 2 HOURS
+YOU DON'T HAVE TO BE
+CRAZY TO DRIVE THIS
+ROAD - BUT IT HELPS
+
+JEEPS ONLY
+
+Instruction:
+
+Can someone drive a bicycle on this road?
+
+Answer:
+
+No.  Jeeps only.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given this paragraph, what is the size in acres of Walt Disney World?
+
+Answer:
+
+According to this text, Walt Disney World is 12,500 acres and sits on 25,000 acres of property owned by the company.
+
+</s>
+<s> Instruction:
+
+Who asked Swami Vivekananda to come to Dakshineswar and in which year?
+
+Context:
+
+Swami Vivekananda (/ˈswɑːmi ˌvɪveɪˈkɑːnəndə/; Bengali: [ʃami bibekanɔndo] (listen); 12 January 1863 – 4 July 1902), born Narendranath Datta (Bengali: [nɔrendronatʰ dɔto]), was an Indian Hindu monk, philosopher, author, religious teacher, and the chief disciple of the Indian mystic Sri Ramakrishna Paramahansa. He was a key figure in the introduction of Vedanta and Yoga to the Western world and is credited with raising interfaith awareness, and bringing Hinduism to the status of a major world religion. Vivekananda became a popular figure after the 1893 Parliament of Religions in Chicago, where he began his famous speech with the words, "Sisters and brothers of America...," before introducing Hinduism to Americans. He was so impactful at the Parliament that an American newspaper described him as “an orator by divine right and undoubtedly the greatest figure at the Parliament”. After great success at the Parliament, in the subsequent years, Vivekananda delivered hundreds of lectures across the United States, England and Europe, disseminating the core tenets of Hindu philosophy, and founded the Vedanta Society of New York and the Vedanta Society of San Francisco (now Vedanta Society of Northern California), both of which became the foundations for Vedanta Societies in the West.
+
+In 1881, Narendra first met Ramakrishna, who became his spiritual focus after his own father had died in 1884.
+
+Narendra's first introduction to Ramakrishna occurred in a literature class at General Assembly's Institution when he heard Professor William Hastie lecturing on William Wordsworth's poem, The Excursion. While explaining the word "trance" in the poem, Hastie suggested that his students visit Ramakrishna of Dakshineswar to understand the true meaning of trance. This prompted some of his students (including Narendra) to visit Ramakrishna.
+
+They probably first met personally in November 1881,[note 1] though Narendra did not consider this their first meeting, and neither man mentioned this meeting later. At this time, Narendra was preparing for his upcoming F. A. examination, when Ram Chandra Datta accompanied him to Surendra Nath Mitra's, house where Ramakrishna was invited to deliver a lecture. According to Makarand Paranjape, at this meeting Ramakrishna asked young Narendra to sing. Impressed by his singing talent, he asked Narendra to come to Dakshineshwar.
+
+In late 1881 or early 1882, Narendra went to Dakshineswar with two friends and met Ramakrishna. This meeting proved to be a turning point in his life. Although he did not initially accept Ramakrishna as his teacher and rebelled against his ideas, he was attracted by his personality and began to frequently visit him at Dakshineswar. He initially saw Ramakrishna's ecstasies and visions as "mere figments of imagination" and "hallucinations". As a member of Brahmo Samaj, he opposed idol worship, polytheism and Ramakrishna's worship of Kali. He even rejected the Advaita Vedanta of "identity with the absolute" as blasphemy and madness, and often ridiculed the idea. Narendra tested Ramakrishna, who faced his arguments patiently: "Try to see the truth from all angles", he replied.
+
+Narendra's father's sudden death in 1884 left the family bankrupt; creditors began demanding the repayment of loans, and relatives threatened to evict the family from their ancestral home. Narendra, once a son of a well-to-do family, became one of the poorest students in his college. He unsuccessfully tried to find work and questioned God's existence, but found solace in Ramakrishna and his visits to Dakshineswar increased.
+
+One day, Narendra requested Ramakrishna to pray to goddess Kali for their family's financial welfare. Ramakrishna instead suggested him to go to the temple himself and pray. Following Ramakrishna's suggestion, he went to the temple thrice, but failed to pray for any kind of worldly necessities and ultimately prayed for true knowledge and devotion from the goddess. Narendra gradually grew ready to renounce everything for the sake of realising God, and accepted Ramakrishna as his Guru.
+
+In 1885, Ramakrishna developed throat cancer, and was transferred to Calcutta and (later) to a garden house in Cossipore. Narendra and Ramakrishna's other disciples took care of him during his last days, and Narendra's spiritual education continued. At Cossipore, he experienced Nirvikalpa samadhi. Narendra and several other disciples received ochre robes from Ramakrishna, forming his first monastic order. He was taught that service to men was the most effective worship of God. Ramakrishna asked him to care of the other monastic disciples, and in turn asked them to see Narendra as their leader. Ramakrishna died in the early-morning hours of 16 August 1886 in Cossipore.
+
+Answer:
+
+In 1881, Sri Ramakrishna Paramahansa asked Swami Vivekananda to come to Dakshineswar
+
+</s>
+<s> Context:
+
+The team was founded in 1972 in Atlanta as the Atlanta Flames before relocating to Calgary in 1980. The Flames played their first three seasons in Calgary at the Stampede Corral before moving into the Scotiabank Saddledome (originally the Olympic Saddledome) in 1983. In 1985–86, the Flames became the first Calgary team since the 1923–24 Tigers to compete for the Stanley Cup. In 1988–89, the Flames won their first and only Stanley Cup title. The Flames' unexpected run to the 2004 Stanley Cup Finals gave rise to the Red Mile, and in 2011, the team hosted and won the second Heritage Classic outdoor game.
+
+Answer:
+
+The Calgary Flames won their only Stanley Cup in 1989
+
+Instruction:
+
+Given this paragraph about the history of the Calgary Flames hockey team, what year did the Calgary Flames win their only Stanley Cup
+
+</s>
+<s> Instruction:
+
+Who won March Madness?
+
+Context:
+
+The 2023 NCAA Division I men's basketball tournament involved 68 teams playing in a single-elimination tournament that determined the National Collegiate Athletic Association (NCAA) Division I men's basketball national champion for the 2022–23 season. The 84th annual edition of the tournament began on March 14, 2023, and concluded with the UConn Huskies defeating the San Diego State Aztecs, 76–59 in the championship game on April 3 at NRG Stadium in Houston, Texas.
+
+Answer:
+
+UConn Huskies won the 2023 NCAA Division 1 men's basketball tournament defeating San Diego State Aztecs, 76-59. This tournament is popularly known as March Madness.
+
+</s>
+<s> Instruction:
+
+How many types of cat does the world cat federation recognise?
+
+Context:
+
+As of 2023, The International Cat Association (TICA) recognizes 73 standardized breeds, the Cat Fanciers' Association (CFA) recognizes 45, the Fédération Internationale Féline (FIFe) recognizes 50, the Governing Council of the Cat Fancy (GCCF) recognizes 45, and the World Cat Federation (WCF) recognizes 69.
+
+Answer:
+
+69
+
+</s>
+<s> Instruction:
+
+According to this paragraph, tell me what is referred to as the most exciting collegiate sporting event.
+
+Answer:
+
+What is referred to as the most exciting collegiate sporting event is when the Virginia men's basketball team won the NCAA Championship in 2019.
+
+</s>
+<s> Instruction:
+
+When was Mahatma Gandhi born?
+
+Answer:
+
+Mahatma Gandhi was born on October 2, 1869
+
+</s>
+<PAD><s> Instruction:
+
+How many American's signed the Declaration of Independence?
+
+Answer:
+
+56
+
+</s>
+<s> Context:
+
+Lamb Air Ltd. was a Canadian airline that began operations in 1934 in The Pas, Manitoba, and went out of business in 1981.
+
+History
+Tom Lamb was the son of Thomas Henry Peacock (THP) Lamb, who had emigrated from England in the late 19th century. THP Lamb turned from school teacher to fur trader and in 1900, started Lamb's Store in Moose Lake, Manitoba. Tom and his brothers and sisters grew up in northern Manitoba and worked for their father.
+
+Tom Lamb left school before finishing grade 3. Later in life, he would make the comment, while giving his acceptance speech when receiving his honorary Doctorate of law from the University of Manitoba, "If I had only gotten to grade 4". At the age of 10, Tom, who had his own team of horses and sleigh, was competing with grown men in the fish hauling business. He would have to use fish boxes to step up on to be able to load his sleigh.
+
+One of the Lamb family's businesses was "logistics and transportation". Fish, lumber, trees, fur and supplies needed to be hauled by any and all means. Dog teams, horses, boats, trucks and tractors were used. In the 1930s there was a transportation revolution happening. The aircraft was making its way into northern Canada. The first time Tom Lamb saw an aircraft he realized its potential. In 1930, Tom bought his first aircraft - a Stinson SR8. In 1930, Tom Lamb travelled to Winnipeg to learn to fly. To keep costs to a minimum, he lived in a tent behind the Winnipeg Flying Club. When he returned to The Pas and checked himself out on the Stinson.
+
+In 1935, Tom incorporated Lamb Airways Limited. The airline had some name changes throughout the years and Tom became one of the best known Manitobans, if not Canadians, in the world. His adventures have been documented in books, a television documentary and even a song.
+
+Instruction:
+
+When was Lamb Air operating
+
+Answer:
+
+Lamb Air Ltd. was a Canadian airline that began operations in 1934 in The Pas, Manitoba, and went out of business in 1981.
+
+History
+Tom Lamb was the son of Thomas Henry Peacock (THP) Lamb, who had emigrated from England in the late 19th century. THP Lamb turned from school teacher to fur trader and in 1900, started Lamb's Store in Moose Lake, Manitoba. Tom and his brothers and sisters grew up in northern Manitoba and worked for their father.
+
+Tom Lamb left school before finishing grade 3. Later in life, he would make the comment, while giving his acceptance speech when receiving his honorary Doctorate of law from the University of Manitoba, "If I had only gotten to grade 4". At the age of 10, Tom, who had his own team of horses and sleigh, was competing with grown men in the fish hauling business. He would have to use fish boxes to step up on to be able to load his sleigh.
+
+One of the Lamb family's businesses was "logistics and transportation". Fish, lumber, trees, fur and supplies needed to be hauled by any and all means. Dog teams, horses, boats, trucks and tractors were used. In the 1930s there was a transportation revolution happening. The aircraft was making its way into northern Canada. The first time Tom Lamb saw an aircraft he realized its potential. In 1930, Tom bought his first aircraft - a Stinson SR8. In 1930, Tom Lamb travelled to Winnipeg to learn to fly. To keep costs to a minimum, he lived in a tent behind the Winnipeg Flying Club. When he returned to The Pas and checked himself out on the Stinson.
+
+In 1935, Tom incorporated Lamb Airways Limited. The airline had some name changes throughout the years and Tom became one of the best known Manitobans, if not Canadians, in the world. His adventures have been documented in books, a television documentary and even a song.
+
+</s>
+<PAD><s> Context:
+
+Kerala (English: /ˈkɛrələ/ KERR-ə-lə; Malayalam: [ke:ɾɐɭɐm] (listen)) is a state on the Malabar Coast of India. It was formed on 1 November 1956, following the passage of the States Reorganisation Act, by combining Malayalam-speaking regions of the erstwhile regions of Cochin, Malabar, South Canara, and Travancore. Spread over 38,863 km2 (15,005 sq mi), Kerala is the 21st largest Indian state by area. It is bordered by Karnataka to the north and northeast, Tamil Nadu to the east and south, and the Lakshadweep Sea to the west. With 33 million inhabitants as per the 2011 census, Kerala is the 13th-largest Indian state by population. It is divided into 14 districts with the capital being Thiruvananthapuram. Malayalam is the most widely spoken language and is also the official language of the state.
+
+Instruction:
+
+What year was Kerala formed?
+
+Answer:
+
+1956
+
+</s>
+<PAD><PAD><s> Context:
+
+Most water vapors found mostly in the ocean returns to it, but winds carry water vapor over land at the same rate as runoff into the sea, about 47 Tt per year whilst evaporation and transpiration happening in land masses also contribute another 72 Tt per year. Precipitation, at a rate of 119 Tt per year over land, has several forms: most commonly rain, snow, and hail, with some contribution from fog and dew. Dew is small drops of water that are condensed when a high density of water vapor meets a cool surface. Dew usually forms in the morning when the temperature is the lowest, just before sunrise and when the temperature of the earth's surface starts to increase. Condensed water in the air may also refract sunlight to produce rainbows.
+
+Instruction:
+
+Given the following paragraph on the water cycle, what forms of precipitation do exist?
+
+Answer:
+
+Water can precipitate in the form of rain, snow, and hail as well as in the form of fog and dew. Rain is the most common form of precipitation.
+
+</s>
+<PAD><PAD><s> Context:
+
+An exoplanet or extrasolar planet is a planet outside the Solar System. The first possible evidence of an exoplanet was noted in 1917 but was not recognized as such. The first confirmation of detection occurred in 1992. A different planet, initially detected in 1988, was confirmed in 2003. As of 1 April 2023, there are 5,346 confirmed exoplanets in 3,943 planetary systems, with 855 systems having more than one planet. The James Webb Space Telescope (JWST) is expected to discover more exoplanets, and also much more about exoplanets, including composition, environmental conditions and potential for life.
+
+Answer:
+
+The detection of an exoplanet was first confirmed in 1992
+
+Instruction:
+
+In what year was the evidence of an exoplanet first confirmed?
+
+</s>
+<PAD><PAD><PAD><s> Instruction:
+
+Given a reference text that describes about hotpot, from which country does this dish originate?
+
+Context:
+
+Hot pot or hotpot (simplified Chinese: 火锅; traditional Chinese: 火鍋; pinyin: huǒguō; lit. 'fire pot'), also known as soup-food or steamboat, is a dish whereby a heat source placed on the dining table keeps a pot of soup stock simmering, and a variety of Chinese foodstuffs and ingredients are served beside the pot for the diners to put into the hot stock.
+
+Answer:
+
+Hot pot or Hotpot is originated from China.
+
+</s>
+<PAD><PAD><PAD><PAD><s> Context:
+
+Bush lost the 1992 presidential election to Democrat Bill Clinton following an economic recession, his turnaround on his tax promise, and the decreased emphasis of foreign policy in a post–Cold War political climate.
+
+Answer:
+
+George HW Bush lost the presidency due to an economic recession and his turnaround on a tax promise
+
+Instruction:
+
+Why did George HW Bush lose the presidency?
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><s> Context:
+
+Sweet Tree Holdings is a Vermont, United States, company that produces maple products from a sugarbush and processing facility in Island Pond.
+
+Answer:
+
+maple products
+
+Instruction:
+
+What type of products does this company produce?
+
+</s>
+<s> Context:
+
+James Stuart Pressdee (19 June 1933 – 20 July 2016) was a Welsh first class cricketer. He was a left-arm spinner and aggressive right-handed batsman. He also played association football in the Football League and Welsh Football League where he played as a left-back.
+
+Football Career
+He won a Welsh youth cap at football and was on the books at Swansea Town where provided reliable defensive cover. He turned professional at the Vetch Field in August 1951. He was given his League debut in Swansea's 2–0 defeat at home to Everton in March 1954, making eight Second Division appearances before concentrating on his cricket career. He also had spells with Brecon Corinthians and Llanelly in the Welsh Football League.
+
+Cricket Career
+Pressdee made his debut for Glamorgan against Nottinghamshire at Cardiff Arms Park when just 16 years of age, making him the county's youngest player in the post-war period.
+
+A regular in the Glamorgan team from 1955 onwards, Pressdee scored a thousand runs in a season on six occasions, with 1911 in 1962 being his best. He scored 13 centuries including one for North-Eastern Transvaal. Playing 322 games for Glamorgan CCC between 1949 and 1965.
+
+Pressdee was an inconsistent bowler. Having taken 71 wickets in 1955, he captured only 54 during the next seven seasons, but then in 1963 and 1964 he came to prominence as an all-rounder, completing the double (1000 runs and 100 wickets) in each season. In 1965, he took 9 for 43 against Yorkshire at Swansea. Pressdee emigrated to South Africa in 1965 where he played for North-Eastern Transvaal until 1969–70. He won the South African Cricket Annual Cricketer of the Year award in 1966 after taking 33 wickets.
+
+Pressdee returned to Wales in the 1980s and captained the Glamorgan Colts side in the South Wales Cricket Association.
+
+Answer:
+
+James Stuart Pressdee played both football and cricket. Though he was an inconsistent bowler, he won the South African Cricket Annual Cricketer of the Year award in 1966. Prior to his professional sports career, James won a Welsh youth cap in football in Swansea Town. Jame was born on June 19th, 1933, and he died on July 20th, 2016 at the age of 83.
+
+Instruction:
+
+Given this text about James Pressdee, tell me what sports they played, which awards they won, when they were born, and if they are still alive.
+
+</s>
+<PAD><s> Context:
+
+Beavers (genus Castor) are large, semiaquatic rodents of the Northern Hemisphere. There are two existing species: the North American beaver (Castor canadensis) and the Eurasian beaver (C. fiber). Beavers are the second-largest living rodents, after capybaras, weighing up to 50 kg (110 lb). They have stout bodies with large heads, long chisel-like incisors, brown or gray fur, hand-like front feet, webbed back feet, and tails that are flat and scaly. The two species differ in skull and tail shape and fur color. Beavers can be found in a number of freshwater habitats, such as rivers, streams, lakes and ponds. They are herbivorous, consuming tree bark, aquatic plants, grasses and sedges.
+
+Beavers build dams and lodges using tree branches, vegetation, rocks and mud; they chew down trees for building material. Dams restrict water flow, and lodges serve as shelters. Their infrastructure creates wetlands used by many other species, and because of their effect on other organisms in the ecosystem, beavers are considered a keystone species.
+
+Instruction:
+
+Based on the given text, do beavers eat wood or do they only chop down trees for dams?
+
+Answer:
+
+Beavers are herbivorous and are known to consume tree bark as part of their diet. However, beavers often build dams and lodges using fallen tree branches and other vegetation that they chew with their teeth in order to make materials for restricting water flow and shelter.
+
+</s>
+<PAD><s> Instruction:
+
+Based on the following paragraph about the campuses of the University of Georgia, which types of trees can be found on the campus?
+
+Context:
+
+The campuses' dominant architectural themes are Federal, Classical and Antebellum style. Though there have been many additions, changes, and augmentations, the University of Georgia's campus maintains its historic character. In 2000, the entire campus was designated as an arboretum, the University of Georgia Campus Arboretum. It is estimated to be home to about 9,000 trees with over 154 identified species including native trees such magnolias, red oaks, white oaks, and beeches, as well as non-native trees such as the North Africa Atlas cedar, the Chinese parasol and royal paulownia, and the Japanese zelkova and black pine
+
+Answer:
+
+On the campuses of the University of Georgia one can find native tree species such as magnolias, red oaks, white oaks, and beeches. There are also non-native tree species to be found such as the North Africa Atlas cedar, the Chinese parasol and royal paulownia, and the Japanese zelkova and black pine.
+
+</s>
+<PAD><PAD><s> Context:
+
+Kyoto is one of the oldest municipalities in Japan, having been chosen in 794 as the new seat of Japan's imperial court by Emperor Kanmu. The original city, named Heian-kyō, was arranged in accordance with traditional Chinese feng shui following the model of the ancient Chinese capitals of Chang'an and Luoyang. The emperors of Japan ruled from Kyoto in the following eleven centuries until 1869. It was the scene of several key events of the Muromachi period, Sengoku period, and the Boshin War, such as the Ōnin War, the Honnō-ji Incident, the Kinmon incident and the Battle of Toba–Fushimi. The capital was relocated from Kyoto to Tokyo after the Meiji Restoration.
+
+Answer:
+
+The emperors of Japan ruled from Kyoto from 794 as the new seat of Japan's imperial court for eleven centuries until 1869.
+
+Instruction:
+
+When was Kyoto the capital of Japan?
+
+</s>
+<PAD><PAD><s> Context:
+
+The 2023 NCAA Division I men's basketball tournament involved 68 teams playing in a single-elimination tournament that determined the National Collegiate Athletic Association (NCAA) Division I men's basketball national champion for the 2022–23 season. The 84th annual edition of the tournament began on March 14, 2023, and concluded with the UConn Huskies defeating the San Diego State Aztecs, 76–59 in the championship game on April 3 at NRG Stadium in Houston, Texas.
+
+Answer:
+
+UConn Huskies won the 2023 NCAA Division 1 men's basketball tournament defeating San Diego State Aztecs, 76-59. This tournament is popularly known as March Madness.
+
+Instruction:
+
+Who won March Madness?
+
+</s>
+<PAD><PAD><s> Context:
+
+Genghis Khan (born Temüjin; c. 1162 — 25 August 1227), also known as Chinggis Khan, was the founder and first khagan of the Mongol Empire, which later became the largest contiguous land empire in history. Having spent the majority of his life uniting the Mongol tribes, he launched a series of military campaigns which conquered large parts of China and Central Asia.
+
+Answer:
+
+1162
+
+Instruction:
+
+When was Genghis Khan born?
+
+</s>
+<PAD><PAD><PAD><s> Instruction:
+
+Given this paragraph about roasting peanuts to make peanut butter, what temperature are peanuts roasted using the batch method in celsius?
+
+Answer:
+
+Peanuts are heated in a revolving oven at about 430 °C using the batch method.
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+How tall is Mt. Shakspere?
+
+Answer:
+
+Mt. Shakespere is 12,174 feet (3,711 meters) tall.
+
+</s>
+<s> Instruction:
+
+History of Linux
+
+Context:
+
+The Unix operating system was conceived and implemented in 1969, at AT&T's Bell Labs, in the United States by Ken Thompson, Dennis Ritchie, Douglas McIlroy, and Joe Ossanna. First released in 1971, Unix was written entirely in assembly language, as was common practice at the time. In 1973, in a key pioneering approach, it was rewritten in the C programming language by Dennis Ritchie (with the exception of some hardware and I/O routines). The availability of a high-level language implementation of Unix made its porting to different computer platforms easier.
+
+Due to an earlier antitrust case forbidding it from entering the computer business, AT&T licensed the operating system's source code as a trade secret to anyone who asked. As a result, Unix grew quickly and became widely adopted by academic institutions and businesses. In 1984, AT&T divested itself of its regional operating companies, and was released from its obligation not to enter the computer business; freed of that obligation, Bell Labs began selling Unix as a proprietary product, where users were not legally allowed to modify it.
+
+Onyx Systems began selling early microcomputer-based Unix workstations in 1980. Later, Sun Microsystems, founded as a spin-off of a student project at Stanford University, also began selling Unix-based desktop workstations in 1982. While Sun workstations didn't utilize commodity PC hardware like Linux was later developed for, it represented the first successful commercial attempt at distributing a primarily single-user microcomputer that ran a Unix operating system.
+
+With Unix increasingly "locked in" as a proprietary product, the GNU Project, started in 1983 by Richard Stallman, had the goal of creating a "complete Unix-compatible software system" composed entirely of free software. Work began in 1984. Later, in 1985, Stallman started the Free Software Foundation and wrote the GNU General Public License (GNU GPL) in 1989. By the early 1990s, many of the programs required in an operating system (such as libraries, compilers, text editors, a command-line shell, and a windowing system) were completed, although low-level elements such as device drivers, daemons, and the kernel, called GNU Hurd, were stalled and incomplete.
+
+MINIX was created by Andrew S. Tanenbaum, a computer science professor, and released in 1987 as a minimal Unix-like operating system targeted at students and others who wanted to learn operating system principles. Although the complete source code of MINIX was freely available, the licensing terms prevented it from being free software until the licensing changed in April 2000.
+
+Although not released until 1992, due to legal complications, development of 386BSD, from which NetBSD, OpenBSD and FreeBSD descended, predated that of Linux.
+
+Linus Torvalds has stated on separate occasions that if the GNU kernel or 386BSD had been available at the time (1991), he probably would not have created Linux.
+
+Answer:
+
+Linux, computer operating system created in the early 1990s by Finnish software engineer Linus Torvalds and the Free Software Foundation (FSF).
+
+While still a student at the University of Helsinki, Torvalds started developing Linux to create a system similar to MINIX, a UNIX operating system. In 1991 he released version 0.02; Version 1.0 of the Linux kernel, the core of the operating system, was released in 1994. About the same time, American software developer Richard Stallman and the FSF made efforts to create an open-source UNIX-like operating system called GNU. In contrast to Torvalds, Stallman and the FSF started by creating utilities for the operating system first. These utilities were then added to the Linux kernel to create a complete system called GNU/Linux, or, less precisely, just Linux.
+
+</s>
+<PAD><s> Context:
+
+Founded in 1902 as Madrid Football Club, the club has traditionally worn a white home kit since its inception. The honorific title real is Spanish for "royal" and was bestowed to the club by King Alfonso XIII in 1920 together with the royal crown in the emblem. Real Madrid have played their home matches in the 81,044-capacity Santiago Bernabéu Stadium in downtown Madrid since 1947. Unlike most European sporting entities, Real Madrid's members (socios) have owned and operated the club throughout its history. The club is one of the most widely supported in the world, and was estimated to be worth $5.1 billion in 2022, making it the world's most valuable football team. In 2021, it was the second highest-earning football club in the world, with an annual revenue of €640.7 million.
+
+Instruction:
+
+Given a reference text about the history of Real Madrid Football Club, tell me the year it was founded and the name of its current stadium.
+
+Answer:
+
+Real Madrid was founded in 1902 as Madrid Football Club. Its current stadium, where they play their home matches, is Santiago Bernabeu Stadium.
+
+</s>
+<PAD><PAD><s> Instruction:
+
+Where was Mazzy Star formed?
+
+Context:
+
+"Mazzy Star is an American alternative rock band formed in 1988 in Santa Monica, California, from remnants of the group Opal. Founding member David Roback's friend Hope Sandoval became the group's vocalist when Kendra Smith left Opal.
+
+Mazzy Star is best known for the song ""Fade into You"", which brought the band some success in the mid-1990s and was the group's biggest mainstream hit, earning extensive exposure on MTV, VH1, and radio airplay. Roback and Sandoval were the creative center of the band, with Sandoval as lyricist and Roback as composer of the majority of the band's material until his death in Los Angeles on February 24, 2020, from metastatic cancer. Mazzy Star's founding drummer Keith Mitchell, originally part of Opal, died on May 14, 2017 from cancer."
+
+Answer:
+
+Mazzy Star was formed in Santa Monica, California in 1988
+
+</s>
+<PAD><PAD><s> Context:
+
+Slater is also a fundraiser and spokesperson for suicide prevention awareness. He has surfed in celebrity events for Surfers Against Suicide, telling sports website 'Athletes Talk': "I've lost a couple of friends myself to suicide and it's just a horrible thing that can be prevented. People get in this dark place and they don't know what to do so it's always nice to see a non-profit that isn't turning into anything else other than just trying to help people."
+
+Slater is passionate about preserving oceans globally and protecting temperate reefs in California through his relationship with Reef Check. Slater is on the Board of Advisors (the Ocean Advocacy Advisory Board) of ocean conservation organization Sea Shepherd Conservation Society.
+
+Instruction:
+
+Based on the paragraph below, please list out the 2 major causes supported by Kelly Slater.
+
+Answer:
+
+Kelly Slater's main activism has been directed towards suicide prevention and ocean conservation.
+
+</s>
+<PAD><PAD><s> Context:
+
+Outcault painted electric light displays for Edison Laboratories for the 1888 Centennial Exposition of the Ohio Valley and Middle Atlantic States in Cincinnati. This led to full-time work with Edison in West Orange, New Jersey, doing mechanical drawings and illustrations. Edison appointed him official artist for the company's traveling exhibition in 1889–90, which included supervising the installation of Edison exhibits at the Exposition Universelle in Paris. While there, he studied art in the Latin Quarter and added the u to his surname.
+
+Answer:
+
+Outclaut painted electric light displays for Edison Laboratories for the 1888 Centennial Exposition of the Ohio Valley and Middle Atlantic States in Cincinnati.
+
+Instruction:
+
+Who did Outcault paint electric light displays for?
+
+</s>
+<PAD><PAD><PAD><s> Context:
+
+Oakland population in 2022 is estimated to be 439,483
+
+Answer:
+
+About 450,000 people live in Oakland, Ca during the last census
+
+Instruction:
+
+How many people live in the city of Oakland in 2022?
+
+</s>
+<PAD><PAD><PAD><PAD><PAD><PAD><s> Instruction:
+
+Given this paragraph about the history of Beijing, when did Beijing get the current name?
+
+Answer:
+
+In 1403, during the Ming dynasty, Beijing got its current name.
 
 </s>
