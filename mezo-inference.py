@@ -39,11 +39,11 @@ infer_model.config.use_cache = True
 
 #tokenizer = AutoTokenizer.from_pretrained('bits-ft')
 
-tokenizer = AutoTokenizer.from_pretrained(MODEL, legacy=False)
+tokenizer = AutoTokenizer.from_pretrained('bits', legacy=False)
 
-tokenizer.add_special_tokens(special_tokens_dict)
+#tokenizer.add_special_tokens(special_tokens_dict)
 
-infer_model.resize_token_embeddings(len(tokenizer))
+#infer_model.resize_token_embeddings(len(tokenizer),pad_to_multiple_of=8)
 
 print("Special tokens:", tokenizer.special_tokens_map)
 print("BOS Token:", tokenizer.bos_token)
@@ -54,7 +54,7 @@ print("SEP Token:", tokenizer.sep_token)
 print("CLS Token:", tokenizer.cls_token)
 print("MASK Token:", tokenizer.mask_token)
 
-query_text = (
+query_text1 = (
 f"""Context:
 
 Most of the climbing done in modern times is considered free climbing—climbing using one's own physical strength, with equipment used solely as protection and not as support—as opposed to aid climbing, the gear-dependent form of climbing that was dominant in the sport's earlier days. Free climbing is typically divided into several styles that differ from one another depending on the choice of equipment used and the configurations of their belay, rope and anchor systems.
@@ -63,15 +63,34 @@ Instruction:
 
 Why is free climbing called free climbing?
 
-Answer:
+Answer:""")
 
-Free climbing is named""")
-torch.manual_seed(SEED)
+query_text2 = (
+f"""Context:
+
+
+
+Instruction:
+
+Give me a list of the teenage mutant ninja turtles
+
+Answer:""")
+torch.manual_seed(SEED+1)
+
+class StoppingCriteriaSub(StoppingCriteria):
+
+    def __init__(self, stops = []):
+      StoppingCriteria.__init__(self), 
+
+    def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor, stops = []):
+      self.stops = stops
+      for i in range(len(stops)):
+        self.stops = self.stops[i]
 
 # attention_mask = torch.ones_like(input_ids)
 generator = pipeline('text-generation', model=infer_model, tokenizer=tokenizer,
                      min_length=50,
-                     max_length=512,
+                     max_length=1024,
                      temperature=0.7,
                      # attention_mask=attention_mask,
                      do_sample=True,
@@ -80,9 +99,10 @@ generator = pipeline('text-generation', model=infer_model, tokenizer=tokenizer,
                      num_return_sequences=1,
                      no_repeat_ngram_size=2,
                      #num_beams=5,
+                     stopping_criteria = StoppingCriteriaList([StoppingCriteriaSub(stops = [[tokenizer.eos_token_id]])])
                      #early_stopping=True
 )
 
 # results = generator(query_text, do_sample=True, min_length=50, max_length=200)
-results = generator(query_text)
+results = generator(query_text1)
 print(results[0]['generated_text'])

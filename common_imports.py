@@ -13,7 +13,8 @@ from random import shuffle
 from sklearn.model_selection import train_test_split, KFold
 from torch.utils.data import DataLoader, SequentialSampler, Dataset
 from tqdm import tqdm
-from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, AutoModelForMaskedLM, BitsAndBytesConfig, Trainer, EvalPrediction, TrainingArguments, TrainerControl, TrainerState, TrainerCallback, logging, pipeline, DataCollatorForLanguageModeling
+from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, AutoModelForMaskedLM, BitsAndBytesConfig, Trainer, EvalPrediction, TrainingArguments, TrainerControl, TrainerState, TrainerCallback, logging, pipeline, DataCollatorForLanguageModeling, StoppingCriteriaList, StoppingCriteria
+from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, AutoModelForMaskedLM, BitsAndBytesConfig, Trainer, EvalPrediction, TrainingArguments, TrainerControl, TrainerState, TrainerCallback, logging, pipeline, DataCollatorForLanguageModeling, StoppingCriteriaList, StoppingCriteria
 from transformers import LlamaForCausalLM as HF_LlamaForCausalLM
 from transformers.trainer_callback import TrainerCallback
 from typing import Dict, Optional, Any, Union

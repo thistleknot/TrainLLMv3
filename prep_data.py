@@ -50,6 +50,9 @@ def generate_and_store_prompts(dataset, indices, prompt_dict, prompt_templates, 
         
         formatted_record = {'context': context, 'prompt': prompt, 'response': response}
         
+        #will handle things like blank contexts
+        formatted_record.replace('\n\n\n\n','\n\n')
+        
         # Generate and store each type of prompt
         for task_key in task_keys:
             prompt_template = prompt_templates.get(task_key, None)
