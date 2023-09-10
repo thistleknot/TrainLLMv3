@@ -110,6 +110,8 @@ for info in datasets_info:
     datasets_[dataset_name] = load_or_download_dataset(info['pkl_path'], info['dataset_name'], info.get('splits'))
 
 # Access individual datasets_
+ea_zeyl = datasets_['ea_zeyl']['ea_zeyl']['train']
+aa_zeyl = datasets_['aa_zeyl']['aa_zeyl']['train']
 squad_v2 = datasets_['squad_v2']
 openai_summarize_tldr = datasets_['openai_summarize_tldr']
 wizardLM = datasets_['WizardLM_evol_instruct_V2_196k']
@@ -117,12 +119,16 @@ dolly_closed_qa = datasets_['dolly_closed_qa']
 dolly_15k = datasets_['databricks-dolly-15k']
 english_quotes = datasets_['english_quotes']
 
+#print(ea_zeyl)
+
 squad_v2_indices = list(range(len(squad_v2)))  # You could customize this list as needed
 dolly_closed_qa_indices = list(range(len(dolly_closed_qa)))  # You could customize this list as needed
 dolly_15k_indices = list(range(len(dolly_15k)))  # You could customize this list as needed
 openai_summarize_tldr_indices = list(range(len(openai_summarize_tldr)))  # You could customize this list as needed
 wizardlm_train_indices = list(range(len(wizardLM)))  # You could customize this list as needed
 english_quotes_indices = list(range(len(english_quotes)))  # You could customize this list as needed
+
+#ea/aa_zeyl already have indexes
 
 # Add indices
 add_indices_to_records(squad_v2, squad_v2_indices)
@@ -133,6 +139,8 @@ add_indices_to_records(wizardLM, wizardlm_train_indices)
 add_indices_to_records(english_quotes, english_quotes_indices)
 
 # Initialize your dictionaries
+ea_zeyl_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
+aa_zeyl_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
 squad_v2_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
 dolly_closed_qca_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
 dolly_15k_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
@@ -141,6 +149,8 @@ wizardlm_qa_prompts = {'qa': {} }
 english_quotes_prompts = {'qt': {}}
 
 # Define template dictionaries
+ea_zeyl_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'qa': qa_prompt_template, 'caq': caq_prompt_template}
+aa_zeyl_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'qa': qa_prompt_template, 'caq': caq_prompt_template}
 squad_v2_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'qa': qa_prompt_template, 'caq': caq_prompt_template}
 dolly_closed_qa_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'caq': caq_prompt_template, 'qa': qa_prompt_template}
 dolly_15k_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'caq': caq_prompt_template, 'qa': qa_prompt_template}
@@ -152,6 +162,7 @@ english_quotes_templates = {'qt': quote_prompt_template}
 # Key mappings for different datasets
 #alt: dynamically-derived approach based on the number of non-empty fields (lose some of the benefits of explicitness and it could become tricky to manage when you encounter datasets that don't fit neatly into those categories)
 squad_v2_key_mapping = {'context': 'context', 'response': 'answers', 'prompt': 'question'}
+zeyl_key_mapping = {'context': 'context', 'response': 'answer', 'prompt': 'question'}
 dolly_closed_qa_key_mapping = {'context': 'context', 'response': 'response', 'prompt': 'instruction'}
 dolly_15k_key_mapping = {'context': 'context', 'response': 'response', 'prompt': 'instruction'}  # Assuming same keys as dolly_closed_qa
 

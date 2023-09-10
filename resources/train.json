@@ -11,7 +11,7 @@
     "input_file": "./source/",
     "model_name": "open_llama_3b_v2",
     "warm_ratio": 0.25,
-    "learning_rate": 4.45e-5,
+    "learning_rate": 3e-5,
     "weight_decay": 0.1,
     "adam_beta1": 0.9,
     "adam_beta2": 0.999,
@@ -37,7 +37,7 @@
     "weight_decay": 0.1,
     "max_grad_norm": 0.3,
     "optim": "paged_adamw_8bit",
-    "fine_tune_sample_size": 100,
+    "fine_tune_sample_size": 1500,
     "zo_eps": 1e-3,
     "lr_scheduler_type": "linear",
     "mlm_prob": 0.15

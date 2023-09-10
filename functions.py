@@ -1754,9 +1754,9 @@ class MeZOTrainer(Trainer):
                 
                 # Combine the two losses
                 inverted_cosine = (((((average_similarity)+1)/2)-1)*-1)
-                
-                composite_loss = original_loss * inverted_cosine
-                print(f'Train: loss: {original_loss}, average_similarity: {average_similarity}, inverted cosine: {inverted_cosine}, composite_loss: {composite_loss}')
+                alpha = 1/inverted_cosine
+                composite_loss = original_loss * alpha
+                print(f'Train: loss: {original_loss}, average_similarity: {average_similarity}, inverted cosine: {inverted_cosine}, alpha:{alpha}, composite_loss: {composite_loss}')
 
                 if self.args.n_gpu > 1:
                     # Warning: this is copied from the original Huggingface Trainer. Untested.
