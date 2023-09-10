@@ -11,6 +11,11 @@ import datasets
 import torch
 from tqdm import tqdm
 
+
+def clear_cuda():
+    torch.cuda.empty_cache()
+    torch.cuda.synchronize()
+
 # Function to read data
 def read_data(input_file):
     selected_prompts = []
@@ -94,13 +99,12 @@ def create_dataset(selected_prompts, tokenizer):
     
     return dataset_dict
 
-
 def main():
     device_map = 'cuda'
 
     paths = {
-        'ea':"/data/text-generation-webui/models/t5-large-generation-squad-QuestionAnswer",
-        'aa':"/data/text-generation-webui/models/t5-large-generation-race-QuestionAnswer"
+        'aa':"/data/text-generation-webui/models/t5-large-generation-race-QuestionAnswer",
+        'ea':"/data/text-generation-webui/models/t5-large-generation-squad-QuestionAnswer"
         }
 
     for p in paths:
@@ -120,16 +124,15 @@ def main():
         print(len(contexts))
 
         num_q = 1
-        if(False):
-            num_c = 10
-        else:
-            num_c = len(contexts)
+
+        num_c = len(contexts)
 
         bs = 16
 
         device_map = 'cuda'
 
         print('num_c',num_c)
+        
         input_tokens = [tokenizer.convert_ids_to_tokens(tokenizer.encode(c)) for c in contexts]
 
         input_tokens = [i for i in input_tokens if len(i) <= 512]
@@ -206,5 +209,10 @@ def main():
         # Save the final_output dictionary to an indented JSON file
         with open(f'{p}.json', 'w') as f:
             json.dump(final_output, f, indent=4)
+            
+        #garbage collection
+        del translator
+        clear_cuda()
+        
 
 main()

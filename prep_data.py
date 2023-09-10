@@ -190,6 +190,12 @@ generate_and_store_prompts(dolly_closed_qa, dolly_closed_qa_indices, dolly_close
 generate_and_store_prompts(dolly_15k, dolly_15k_indices, dolly_15k_prompts, dolly_15k_templates, ['caq', 'cqa', 'qca', 'qa'], key_mapping=dolly_15k_key_mapping)
 #generate_and_store_prompts(wizardLM, wizardlm_train_indices, wizardlm_qa_prompts, wizardlm_templates, ['qa'], key_mapping=wizardlm_key_mapping)
 generate_and_store_prompts(openai_summarize_tldr, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
+
+generate_and_store_prompts(ea_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
+
+
+generate_and_store_prompts(aa_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
+
 #generate_and_store_prompts(english_quotes, english_quotes_indices, english_quotes_prompts, english_quotes_templates, ['qt'], key_mapping=english_quotes_key_mapping)
 
 datasets_dict = {
