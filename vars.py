@@ -85,7 +85,8 @@ datasets_info = [
     {'pkl_path': './source/dolly_closed_qa.pkl', 'dataset_name': 'lionelchg/dolly_closed_qa', 'splits': ['train', 'test']},
     {'pkl_path': './source/dolly-15k.pkl', 'dataset_name': 'databricks/databricks-dolly-15k', 'splits': ['train']},
     {'pkl_path': './source/english_quotes.pkl', 'dataset_name': 'Abirate/english_quotes', 'splits': ['train']},
-    {'pkl_path': './source/ea_zeyl.pkl', 'dataset_name': 'thistleknot/ea_zeyl', 'splits': ['train']},
-    {'pkl_path': './source/aa_zeyl.pkl', 'dataset_name': 'thistleknot/aa_zeyl', 'splits': ['train']}
+    {'pkl_path': './source/ea.pkl', 'dataset_name': 'thistleknot/ea_zeyl', 'splits': ['train']},
+    {'pkl_path': './source/aa.pkl', 'dataset_name': 'thistleknot/aa_zeyl', 'splits': ['train']},
+    {'pkl_path': './source/summ.pkl', 'dataset_name': 'thistleknot/summ_zeyl', 'splits': ['train']}
 ]
 

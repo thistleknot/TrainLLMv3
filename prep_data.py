@@ -71,6 +71,7 @@ def add_indices_to_records(records, indices):
         records[i]['index'] = i
 
 # Function to load or download dataset
+# see vars.py
 def load_or_download_dataset(pkl_path, dataset_name, splits):
     if os.path.exists(pkl_path):
         print(f"Loading {dataset_name} from pickle file...")
@@ -102,7 +103,6 @@ qa_prompt_template = "Instruction:\n\n{prompt}\n\nAnswer:\n\n{response}\n\n"
 summ_prompt_template = "Context:\n\n{context}\n\nPrompt:\n\n{prompt}\n\nResponse:\n\n{response}\n\n"
 quote_prompt_template = "Prompt:\n\n{quote_prompt}\n\n{tags}Response:\n\n{quote}-{author}\n\n"
 
-
 # Load or download datasets_
 datasets_ = {}
 for info in datasets_info:
@@ -110,8 +110,9 @@ for info in datasets_info:
     datasets_[dataset_name] = load_or_download_dataset(info['pkl_path'], info['dataset_name'], info.get('splits'))
 
 # Access individual datasets_
-ea_zeyl = datasets_['ea_zeyl']['ea_zeyl']['train']
-aa_zeyl = datasets_['aa_zeyl']['aa_zeyl']['train']
+ea_zeyl = datasets_['ea_zeyl']#['train']
+aa_zeyl = datasets_['aa_zeyl']#['train']
+summ_zeyl = datasets_['summ_zeyl']#['train']
 squad_v2 = datasets_['squad_v2']
 openai_summarize_tldr = datasets_['openai_summarize_tldr']
 wizardLM = datasets_['WizardLM_evol_instruct_V2_196k']
@@ -191,10 +192,12 @@ generate_and_store_prompts(dolly_15k, dolly_15k_indices, dolly_15k_prompts, doll
 #generate_and_store_prompts(wizardLM, wizardlm_train_indices, wizardlm_qa_prompts, wizardlm_templates, ['qa'], key_mapping=wizardlm_key_mapping)
 generate_and_store_prompts(openai_summarize_tldr, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
 
-generate_and_store_prompts(ea_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
+#generate_and_store_prompts(ea_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
 
 
-generate_and_store_prompts(aa_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
+#generate_and_store_prompts(aa_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
+
+#generate_and_store_prompts(summ_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
 
 #generate_and_store_prompts(english_quotes, english_quotes_indices, english_quotes_prompts, english_quotes_templates, ['qt'], key_mapping=english_quotes_key_mapping)
 
