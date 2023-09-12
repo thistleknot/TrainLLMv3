@@ -231,13 +231,13 @@ def main():
                 # Use the index as the key and include the actual context text as part of the value
                 if(p=='summ'):
                     final_output[f"{idx}"] = {
-                        'context:': context_,
+                        'context': context_,
                         'summary': output_text,
                         
                     }
                 else:
                     final_output[f"{idx}"] = {
-                        'context:': context_,
+                        'context': context_,
                         'question': question_answer.split(tokenizer.sep_token)[0],
                         'answer': '\n'.join(question_answer.split(tokenizer.sep_token)[1:]).strip()
                     }

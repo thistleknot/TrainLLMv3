@@ -102,6 +102,7 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         #*sampled_qa_prompts,\
         #*sampled_caq_prompts,\
         #*sampled_cqa_prompts,\
+        *sampled_qca_prompts,\
         
 		#*sampled_dolly_closed_qa_qa_prompts,\
         #*sampled_dolly_closed_qa_caq_prompts,\
@@ -111,9 +112,19 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
         
         #*sampled_dolly_15k_qa_prompts,\
         #*sampled_dolly_15k_caq_prompts,\
-        *sampled_dolly_15k_qca_prompts,\
-        #*sampled_dolly_15k_cqa_prompts,\
-        #*sampled_openai_tldr_prompts\
+        #*sampled_dolly_15k_qca_prompts,\
+        *sampled_dolly_15k_cqa_prompts,\
+        
+        *sampled_openai_tldr_prompts,\
+        
+        *sampled_aa_zeyl_qca_prompts,\
+        #*sampled_aa_zeyl_cqa_prompts,\
+        
+        
+        *sampled_ea_zeyl_qca_prompts,\
+        #*sampled_ea_zeyl_cqa_prompts,\
+        
+        *sampled_summ_zeyl_prompts\
         ]
         #[print(p) for p in selected_prompts]
         pickle.dump(selected_prompts, open('./selected_prompts_I.pkl', 'wb'))
@@ -197,42 +208,58 @@ def process_phase(phase, output_dir, prior_phase_dir=None):
 with open('./source/datasets_dict.pkl', 'rb') as f:
     datasets_dict = pickle.load(f)
     
-    #squad_v2_indices = extract_indices(datasets_dict['squad_v2']['pretrain'])
-    #openai_tldr_indices = extract_indices(datasets_dict['openai_summarize_tldr']['pretrain'])
+    squad_v2_indices = extract_indices(datasets_dict['squad_v2']['pretrain'])
+    openai_tldr_indices = extract_indices(datasets_dict['openai_summarize_tldr']['pretrain'])
     #dolly_closed_qa_indices = extract_indices(datasets_dict['dolly_closed_qa']['pretrain'])
     dolly_15k_indices = extract_indices(datasets_dict['dolly_15k']['pretrain'])
+    ea_zeyl_indices = extract_indices(datasets_dict['ea_zeyl']['pretrain'])
+    aa_zeyl_indices = extract_indices(datasets_dict['aa_zeyl']['pretrain'])
+    summ_zeyl_indices = extract_indices(datasets_dict['summ_zeyl']['pretrain'])
+    #print(datasets_dict['summ_zeyl']['pretrain'].keys())
+    #print(len(datasets_dict['summ_zeyl']['pretrain']))
+    #print(np.max(summ_zeyl_indices))
     
-    #sampled_squad_indices = random.sample(squad_v2_indices, FINE_TUNE_SAMPLE_SIZE)
-    #sampled_openai_tldr_indices = random.sample(openai_tldr_indices, FINE_TUNE_SAMPLE_SIZE)
+    sampled_squad_indices = random.sample(squad_v2_indices, FINE_TUNE_SAMPLE_SIZE)
+    sampled_openai_tldr_indices = random.sample(openai_tldr_indices, FINE_TUNE_SAMPLE_SIZE)
     #sampled_dolly_closed_qa_indices = random.sample(dolly_closed_qa_indices, FINE_TUNE_SAMPLE_SIZE)
     sampled_dolly_15k_indices = random.sample(dolly_15k_indices, FINE_TUNE_SAMPLE_SIZE)
+    
+    sampled_ea_zeyl_indices = random.sample(ea_zeyl_indices, FINE_TUNE_SAMPLE_SIZE)
+    sampled_aa_zeyl_indices = random.sample(aa_zeyl_indices, FINE_TUNE_SAMPLE_SIZE)
+    sampled_summ_zeyl_indices = random.sample(summ_zeyl_indices, FINE_TUNE_SAMPLE_SIZE)
 
     # 3. Extract prompts using the sampled indices
-    """
+    
     # For SQuAD v2
-    sampled_qa_prompts = [datasets_dict['squad_v2']['pretrain']['qa'][i] for i in sampled_squad_indices]
+    #sampled_qa_prompts = [datasets_dict['squad_v2']['pretrain']['qa'][i] for i in sampled_squad_indices]
     #not meant to be caq, some questions have non specific questions about a presumed prior context.
-    sampled_caq_prompts = [datasets_dict['squad_v2']['pretrain']['caq'][i] for i in sampled_squad_indices]
+    #sampled_caq_prompts = [datasets_dict['squad_v2']['pretrain']['caq'][i] for i in sampled_squad_indices]
     sampled_cqa_prompts = [datasets_dict['squad_v2']['pretrain']['cqa'][i] for i in sampled_squad_indices]
     sampled_qca_prompts = [datasets_dict['squad_v2']['pretrain']['qca'][i] for i in sampled_squad_indices]
 
     # For Dolly Closed QA
-    sampled_dolly_closed_qa_qa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qa'][i] for i in sampled_dolly_closed_qa_indices]
-    sampled_dolly_closed_qa_caq_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['caq'][i] for i in sampled_dolly_closed_qa_indices]
-    sampled_dolly_closed_qa_cqa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['cqa'][i] for i in sampled_dolly_closed_qa_indices]
-    sampled_dolly_closed_qa_qca_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qca'][i] for i in sampled_dolly_closed_qa_indices]
-    """
-    # For Dolly 15K
-    sampled_dolly_15k_qa_prompts = [datasets_dict['dolly_15k']['pretrain']['qa'][i] for i in sampled_dolly_15k_indices]
-    sampled_dolly_15k_caq_prompts = [datasets_dict['dolly_15k']['pretrain']['caq'][i] for i in sampled_dolly_15k_indices]
-    sampled_dolly_15k_cqa_prompts = [datasets_dict['dolly_15k']['pretrain']['cqa'][i] for i in sampled_dolly_15k_indices]
-    print(len(datasets_dict['dolly_15k']['pretrain']['qca']))
+    #sampled_dolly_closed_qa_qa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qa'][i] for i in sampled_dolly_closed_qa_indices]
+    #sampled_dolly_closed_qa_caq_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['caq'][i] for i in sampled_dolly_closed_qa_indices]
+    #sampled_dolly_closed_qa_cqa_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['cqa'][i] for i in sampled_dolly_closed_qa_indices]
+    #sampled_dolly_closed_qa_qca_prompts = [datasets_dict['dolly_closed_qa']['pretrain']['qca'][i] for i in sampled_dolly_closed_qa_indices]
     
-    sampled_dolly_15k_qca_prompts = [datasets_dict['dolly_15k']['pretrain']['qca'][i] for i in sampled_dolly_15k_indices]
-    print(len(sampled_dolly_15k_qca_prompts))
+    # For Dolly 15K
+    #sampled_dolly_15k_qa_prompts = [datasets_dict['dolly_15k']['pretrain']['qa'][i] for i in sampled_dolly_15k_indices]
+    #sampled_dolly_15k_caq_prompts = [datasets_dict['dolly_15k']['pretrain']['caq'][i] for i in sampled_dolly_15k_indices]
+    sampled_dolly_15k_qca_prompts = [datasets_dict['dolly_15k']['pretrain']['qca'][i] for i in sampled_dolly_15k_indices]    
+    sampled_dolly_15k_cqa_prompts = [datasets_dict['dolly_15k']['pretrain']['cqa'][i] for i in sampled_dolly_15k_indices]
     
     # For OpenAI TLDR
     sampled_openai_tldr_prompts = [datasets_dict['openai_summarize_tldr']['pretrain']['summ'][i] for i in sampled_dolly_15k_indices]
+    
+    # For mine    
+    sampled_ea_zeyl_cqa_prompts = [datasets_dict['ea_zeyl']['pretrain']['cqa'][i] for i in sampled_ea_zeyl_indices]
+    sampled_ea_zeyl_qca_prompts = [datasets_dict['ea_zeyl']['pretrain']['qca'][i] for i in sampled_ea_zeyl_indices]
+    
+    sampled_aa_zeyl_cqa_prompts = [datasets_dict['aa_zeyl']['pretrain']['cqa'][i] for i in sampled_aa_zeyl_indices]
+    sampled_aa_zeyl_qca_prompts = [datasets_dict['aa_zeyl']['pretrain']['qca'][i] for i in sampled_aa_zeyl_indices]
+    
+    sampled_summ_zeyl_prompts = [datasets_dict['summ_zeyl']['pretrain']['summ'][i] for i in sampled_summ_zeyl_indices]
 
 # Execute phases
 process_phase("Phase I", output_dir='./bits', prior_phase_dir=None)

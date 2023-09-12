@@ -143,6 +143,59 @@ def shuffle_dataset(dataset_dict):
 
     return shuffled_dataset
     
+def shuffle_prompts_within_sequence(sequence, attention_mask, eos_token_id, pad_token_id):
+    # Step 1: Extract individual prompts along with their padding tokens
+    prompts = []
+    start_idx = 0
+    for i, token_id in enumerate(sequence):
+        if token_id == eos_token_id:
+            prompt = sequence[start_idx:i+1]
+            prompts.append(prompt)
+            start_idx = i + 1
+
+    # Count the number of padding tokens in the sequence
+    num_pads = sequence.count(pad_token_id)
+    
+    # Calculate the inverse weights for redistributing padding tokens
+    inverse_weights = [1 / len(prompt) for prompt in prompts]
+    
+    # Normalize the inverse weights so they sum to 1
+    total_inverse_weights = sum(inverse_weights)
+    normalized_inverse_weights = [w / total_inverse_weights for w in inverse_weights]
+    
+    # Distribute the padding tokens based on the normalized inverse weights
+    pads_to_distribute = [int(w * num_pads) for w in normalized_inverse_weights]
+    decimal_parts = [(w * num_pads) % 1 for w in normalized_inverse_weights]
+    
+    # Correct for any discrepancies due to rounding down
+    remaining_pads = num_pads - sum(pads_to_distribute)
+    sorted_indices = sorted(range(len(decimal_parts)), key=lambda k: decimal_parts[k], reverse=True)
+    for i in sorted_indices[:remaining_pads]:
+        pads_to_distribute[i] += 1
+    
+    # Correct for any discrepancies due to rounding
+    while sum(pads_to_distribute) != num_pads:
+        pads_to_distribute[pads_to_distribute.index(min(pads_to_distribute))] += (num_pads - sum(pads_to_distribute))
+
+    # Step 2: Shuffle the extracted prompts
+    random.shuffle(prompts)
+
+    # Step 3: Concatenate them back to form a new sequence
+    new_sequence = []
+    new_attention_mask = []
+    new_labels = []  # Assuming labels are the same as input_ids in your case
+
+    for prompt, pad_count in zip(prompts, pads_to_distribute):
+        new_sequence.extend(prompt)
+        new_sequence.extend([pad_token_id] * pad_count)
+        new_attention_mask.extend([1 if token != pad_token_id else 0 for token in prompt])
+        new_attention_mask.extend([0] * pad_count)
+        new_labels.extend(prompt)  # Assuming labels are the same as input_ids
+        new_labels.extend([pad_token_id] * pad_count)
+
+    return new_sequence, new_attention_mask, new_labels
+    
+"""
 def shuffle_prompts(sequence, eos_token_id, pad_token_id):
     # Initialize an empty list to store individual prompts
     prompts = []
@@ -167,7 +220,8 @@ def shuffle_prompts(sequence, eos_token_id, pad_token_id):
     shuffled_sequence.extend([pad_token_id] * pad_count)
     
     return shuffled_sequence
-    
+"""
+
 def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
     shuffled_hierarchical_dataset = {}
     
@@ -183,6 +237,7 @@ def shuffle_hierarchical_dataset(hierarchical_dataset_dict):
     
     return shuffled_hierarchical_dataset
 
+"""
 def shuffle_prompts(sequence, eos_token_id, pad_token_id):
     prompt_list = []
     current_prompt = []
@@ -202,6 +257,7 @@ def shuffle_prompts(sequence, eos_token_id, pad_token_id):
         shuffled_sequence.extend([pad_token_id] * (len(sequence) - len(shuffled_sequence)))
     
     return shuffled_sequence
+"""
 
 def process_dataset_stride(dataset_dict, tokenizer, STRIDE_LENGTH, BLOCK_SIZE, SPLIT_RATIO, SUB_SAMPLE, SUB_SAMPLE_RATIO, SHUFFLE):
     
@@ -394,61 +450,27 @@ def process_dataset(dataset_dict, tokenizer, SPLIT_RATIO, BLOCK_SIZE, SUB_SAMPLE
     new_attention_mask_list = []
     new_label_list = []  # Labels will be the same as input_ids in this case
 
+    # Initialize lists to store the new sequences, attention masks, and labels
+    new_input_ids_list = []
+    new_attention_mask_list = []
+    new_label_list = []
+
     # Loop through each sequence in label_list
     for sequence in label_list:
+        # Create new sequence, attention mask, and labels with redistributed padding tokens
+        new_sequence, new_attention_mask, new_label = shuffle_prompts_within_sequence(
+            sequence, 
+            [1] * len(sequence),  # Assuming all tokens are initially unpadded
+            eos_token_id, 
+            pad_token_id
+        )
         
-        # Count the number of padding tokens in the sequence
-        num_pads = sequence.count(pad_token_id)
-        
-        # Use chop_sequences to split the sequence into individual prompts
-        chopped_seq = chop_sequences([{'input_ids': sequence}], tokenizer)
-        
-        # Calculate the inverse weights for redistributing padding tokens
-        inverse_weights = [1 / len(prompt) for prompt in chopped_seq]
-        
-        # Normalize the inverse weights so they sum to 1
-        total_inverse_weights = sum(inverse_weights)
-        normalized_inverse_weights = [w / total_inverse_weights for w in inverse_weights]
-        
-        # Distribute the padding tokens based on the normalized inverse weights
-        # Distribute the padding tokens based on the normalized inverse weights
-        pads_to_distribute = [int(w * num_pads) for w in normalized_inverse_weights]
-        decimal_parts = [(w * num_pads) % 1 for w in normalized_inverse_weights]
-
-        # Correct for any discrepancies due to rounding down
-        remaining_pads = num_pads - sum(pads_to_distribute)
-        sorted_indices = sorted(range(len(decimal_parts)), key=lambda k: decimal_parts[k], reverse=True)
-
-        for i in sorted_indices[:remaining_pads]:
-            pads_to_distribute[i] += 1
-
-        # Correct for any discrepancies due to rounding
-        while sum(pads_to_distribute) != num_pads:
-            pads_to_distribute[pads_to_distribute.index(min(pads_to_distribute))] += (num_pads - sum(pads_to_distribute))
-        
-        # Create new sequence and attention mask with redistributed padding tokens
-        
-        prompts = []
-        #
-        for prompt, pad_count in zip(chopped_seq, pads_to_distribute):
-            internal_prompt = []
-            prompts.append([prompt,pad_count])
-            
-        random.shuffle(prompts)
-        
-        new_sequence = []
-        new_attention_mask = []
-        for prompt, pad_count in prompts:
-            new_sequence.extend(prompt)
-            new_sequence.extend([pad_token_id for _ in range(pad_count)])
-            # For extending new_attention_mask
-            new_attention_mask.extend(1 for _ in range(len(prompt)))
-            new_attention_mask.extend(0 for _ in range(pad_count))
-        
+        # Append the new sequence, attention mask, and labels to their respective lists
         new_input_ids_list.append(new_sequence)
         new_attention_mask_list.append(new_attention_mask)
-        new_label_list.append(new_sequence)
-        
+        new_label_list.append(new_label)
+
+    # Optionally, print the lengths of the new sequences for debugging
     print([len(s) for s in new_label_list])
     
     # Overwrite the old lists with the new ones
@@ -1059,8 +1081,30 @@ class EarlyStoppingCallback_epochs(TrainerCallback):
 
     def on_epoch_end(self, args, state, control, **kwargs):
         current_lr = self.trainer.optimizer.param_groups[0]['lr']
-        # Sample a new eval_subset from valid_dataset or train_dataset depending on eval_mode
-        #new_eval_subset = random.sample(list(self.valid_dataset), 1max(1, min(self.eval_subset_size, len(self.valid_dataset), self.train_epoch_steps)))
+        # Assuming self.train_dataset and self.valid_dataset are the datasets you want to shuffle
+        for i, example in enumerate(self.train_dataset):
+            new_seq, new_mask, new_label = shuffle_prompts_within_sequence(
+                example['input_ids'], 
+                example['attention_mask'], 
+                self.trainer.tokenizer.eos_token_id, 
+                self.trainer.tokenizer.pad_token_id
+            )
+            self.train_dataset[i]['input_ids'] = new_seq
+            self.train_dataset[i]['attention_mask'] = new_mask
+            self.train_dataset[i]['labels'] = new_label  # Assuming labels are the same as input_ids
+
+        # Shuffle prompts within each sequence for the validation dataset
+        for i, example in enumerate(self.valid_dataset):
+            new_seq, new_mask, new_label = shuffle_prompts_within_sequence(
+                example['input_ids'], 
+                example['attention_mask'], 
+                self.trainer.tokenizer.eos_token_id, 
+                self.trainer.tokenizer.pad_token_id
+            )
+            self.valid_dataset[i]['input_ids'] = new_seq
+            self.valid_dataset[i]['attention_mask'] = new_mask
+            self.valid_dataset[i]['labels'] = new_label  # Assuming labels are the same as input_ids
+            
         new_eval_subset = random.sample(list(self.valid_dataset), 1)
         
         # Update the trainer's eval_dataset

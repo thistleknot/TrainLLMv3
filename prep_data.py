@@ -25,7 +25,7 @@ def generate_and_store_prompts(dataset, indices, prompt_dict, prompt_templates, 
         append_field = key_mapping.get('append_field', None)
         
         if default_prompt == 'tldr_prompt':
-            default_prompt = 'TL;DR'
+            default_prompt = 'summarize'
         elif default_prompt == 'quote_prompt':
             default_prompt = 'Provide a quote that includes'
         
@@ -59,6 +59,9 @@ def generate_and_store_prompts(dataset, indices, prompt_dict, prompt_templates, 
             if prompt_template:
                 formatted_prompt = prompt_template.format(**formatted_record)
                 formatted_prompt = formatted_prompt.replace('\n\n\n\n', '\n\n')
+                
+                if not context.strip():
+                    formatted_prompt = formatted_prompt.replace('Context:\n\n{context}', '').strip()
                 
                 if i not in prompt_dict[task_key]:
                     prompt_dict[task_key][i] = []
@@ -110,9 +113,9 @@ for info in datasets_info:
     datasets_[dataset_name] = load_or_download_dataset(info['pkl_path'], info['dataset_name'], info.get('splits'))
 
 # Access individual datasets_
-ea_zeyl = datasets_['ea_zeyl']#['train']
-aa_zeyl = datasets_['aa_zeyl']#['train']
-summ_zeyl = datasets_['summ_zeyl']#['train']
+ea_zeyl = datasets_['ea_zeyl']['ea']['train']
+aa_zeyl = datasets_['aa_zeyl']['aa']['train']
+summ_zeyl = datasets_['summ_zeyl']['summ']['train']
 squad_v2 = datasets_['squad_v2']
 openai_summarize_tldr = datasets_['openai_summarize_tldr']
 wizardLM = datasets_['WizardLM_evol_instruct_V2_196k']
@@ -120,7 +123,9 @@ dolly_closed_qa = datasets_['dolly_closed_qa']
 dolly_15k = datasets_['databricks-dolly-15k']
 english_quotes = datasets_['english_quotes']
 
-#print(ea_zeyl)
+#print(len(summ_zeyl))
+#print(summ_zeyl)
+ea_zeyl_indices = aa_zeyl_indices = summ_zeyl_indices = list(range(len(summ_zeyl)))
 
 squad_v2_indices = list(range(len(squad_v2)))  # You could customize this list as needed
 dolly_closed_qa_indices = list(range(len(dolly_closed_qa)))  # You could customize this list as needed
@@ -132,6 +137,10 @@ english_quotes_indices = list(range(len(english_quotes)))  # You could customize
 #ea/aa_zeyl already have indexes
 
 # Add indices
+add_indices_to_records(ea_zeyl, ea_zeyl_indices)
+add_indices_to_records(aa_zeyl, aa_zeyl_indices)
+add_indices_to_records(summ_zeyl, summ_zeyl_indices)
+
 add_indices_to_records(squad_v2, squad_v2_indices)
 add_indices_to_records(dolly_closed_qa, dolly_closed_qa_indices)
 add_indices_to_records(dolly_15k, dolly_15k_indices)
@@ -142,6 +151,7 @@ add_indices_to_records(english_quotes, english_quotes_indices)
 # Initialize your dictionaries
 ea_zeyl_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
 aa_zeyl_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
+summ_zeyl_prompts = {'summ': {} }
 squad_v2_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
 dolly_closed_qca_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
 dolly_15k_prompts = {'caq': {}, 'cqa': {}, 'qca': {}, 'qa': {} }
@@ -152,6 +162,7 @@ english_quotes_prompts = {'qt': {}}
 # Define template dictionaries
 ea_zeyl_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'qa': qa_prompt_template, 'caq': caq_prompt_template}
 aa_zeyl_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'qa': qa_prompt_template, 'caq': caq_prompt_template}
+summ_zeyl_templates = {'summ': summ_prompt_template}
 squad_v2_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'qa': qa_prompt_template, 'caq': caq_prompt_template}
 dolly_closed_qa_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'caq': caq_prompt_template, 'qa': qa_prompt_template}
 dolly_15k_templates = {'cqa': cqa_prompt_template, 'qca': qca_prompt_template, 'caq': caq_prompt_template, 'qa': qa_prompt_template}
@@ -163,18 +174,25 @@ english_quotes_templates = {'qt': quote_prompt_template}
 # Key mappings for different datasets
 #alt: dynamically-derived approach based on the number of non-empty fields (lose some of the benefits of explicitness and it could become tricky to manage when you encounter datasets that don't fit neatly into those categories)
 squad_v2_key_mapping = {'context': 'context', 'response': 'answers', 'prompt': 'question'}
-zeyl_key_mapping = {'context': 'context', 'response': 'answer', 'prompt': 'question'}
+ea_zeyl_key_mapping = {'context': 'context', 'response': 'answer', 'prompt': 'question'}
+aa_zeyl_key_mapping = {'context': 'context', 'response': 'answer', 'prompt': 'question'}
 dolly_closed_qa_key_mapping = {'context': 'context', 'response': 'response', 'prompt': 'instruction'}
 dolly_15k_key_mapping = {'context': 'context', 'response': 'response', 'prompt': 'instruction'}  # Assuming same keys as dolly_closed_qa
-
 wizardlm_key_mapping = {'context': None, 'prompt': 'instruction', 'response': 'answer'}
 
 openai_summ_key_mapping = {
     'context': 'prompt', 
     'response': 'label', 
     'prompt': 'tldr_prompt',
-    'default_prompt': 'TL;DR',
+    'default_prompt': 'summarize',
     'context_replace_field': '\nTL;DR: '
+}
+
+t5_summ_key_mapping = {
+    'context': 'context', 
+    'response': 'summary', 
+    'prompt': 'tldr_prompt',
+    'default_prompt': 'summarize',
 }
 
 english_quotes_key_mapping = {
@@ -192,12 +210,9 @@ generate_and_store_prompts(dolly_15k, dolly_15k_indices, dolly_15k_prompts, doll
 #generate_and_store_prompts(wizardLM, wizardlm_train_indices, wizardlm_qa_prompts, wizardlm_templates, ['qa'], key_mapping=wizardlm_key_mapping)
 generate_and_store_prompts(openai_summarize_tldr, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
 
-#generate_and_store_prompts(ea_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
-
-
-#generate_and_store_prompts(aa_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
-
-#generate_and_store_prompts(summ_zeyl, openai_summarize_tldr_indices, openai_summarize_tldr_prompts, openai_summ_templates, ['summ'], key_mapping=openai_summ_key_mapping)
+generate_and_store_prompts(ea_zeyl, ea_zeyl_indices, ea_zeyl_prompts, ea_zeyl_templates, ['caq', 'cqa', 'qca', 'qa'], key_mapping=ea_zeyl_key_mapping)
+generate_and_store_prompts(aa_zeyl, aa_zeyl_indices, aa_zeyl_prompts, aa_zeyl_templates, ['caq', 'cqa', 'qca', 'qa'], key_mapping=aa_zeyl_key_mapping)
+generate_and_store_prompts(summ_zeyl, summ_zeyl_indices, summ_zeyl_prompts, summ_zeyl_templates, ['summ'], key_mapping=t5_summ_key_mapping)
 
 #generate_and_store_prompts(english_quotes, english_quotes_indices, english_quotes_prompts, english_quotes_templates, ['qt'], key_mapping=english_quotes_key_mapping)
 
@@ -207,8 +222,12 @@ datasets_dict = {
     'dolly_15k': {'pretrain': dolly_15k_prompts, 'finetune': None},
     'openai_summarize_tldr': {'pretrain': openai_summarize_tldr_prompts, 'finetune': None},
     'wizardlm_qa': {'pretrain': wizardlm_qa_prompts},
-    'english_quotes': {'pretrain': english_quotes_prompts, 'finetune': None}
+    'english_quotes': {'pretrain': english_quotes_prompts, 'finetune': None},
+    'ea_zeyl': {'pretrain': ea_zeyl_prompts, 'finetune': None},
+    'aa_zeyl': {'pretrain': aa_zeyl_prompts, 'finetune': None},
+    'summ_zeyl': {'pretrain': summ_zeyl_prompts, 'finetune': None},
 }
+
 def print_first_record_of_subdatasets(datasets_dict):
     for dataset_name, subdatasets in datasets_dict.items():
         print(f"Dataset: {dataset_name}")
