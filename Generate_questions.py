@@ -4,13 +4,12 @@ import transformers
 from transformers import AutoTokenizer
 from datasets import Dataset
 from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, AutoModelForMaskedLM, AutoModelForSeq2SeqLM, BitsAndBytesConfig, Trainer, EvalPrediction, TrainingArguments, TrainerControl, TrainerState, TrainerCallback, logging, pipeline, DataCollatorForLanguageModeling
-
+import numpy as np
 import json
 import os
 import datasets
 import torch
 from tqdm import tqdm
-
 
 def clear_cuda():
     torch.cuda.empty_cache()
@@ -31,6 +30,7 @@ def read_data(input_file):
 def process_dataset(dataset_dict, tokenizer, STRIDE_LENGTH=128, BLOCK_SIZE=256):
     
     eos_token_id = tokenizer.eos_token_id
+    
     tokenized_text = torch.tensor([token for sublist in dataset_dict["input_ids"] for token in (sublist)])
     total_length = len(tokenized_text)
 
@@ -84,7 +84,7 @@ def create_dataset(selected_prompts, tokenizer):
     labels_list = []
 
     for text in selected_prompts:
-        tokenized_text = tokenizer.encode(text, add_special_tokens=True, return_tensors='pt').squeeze()
+        tokenized_text = tokenizer.encode(text, add_special_tokens=False, return_tensors='pt').squeeze()
         attention_mask = [1] * len(tokenized_text) # Adjusting for variable lengths
         input_ids_list.append(tokenized_text.tolist())  # Truncate or pad as needed
         
@@ -94,7 +94,8 @@ def create_dataset(selected_prompts, tokenizer):
     dataset_dict = {
         "input_ids": input_ids_list,
         "attention_mask": attention_mask_list,
-        "labels": labels_list
+        "labels": labels_list,
+        "text": text
     }
     
     return dataset_dict
@@ -102,32 +103,39 @@ def create_dataset(selected_prompts, tokenizer):
 def main():
     device_map = 'cuda'
 
-    paths = {
+    models = {
+        'summ':"/data/text-generation-webui/models/flan-t5-3b-summarizer",
+        #'summ':"/data/text-generation-webui/models/flan-t5-large-finetuned-openai-summarize_from_feedback",
         'aa':"/data/text-generation-webui/models/t5-large-generation-race-QuestionAnswer",
         'ea':"/data/text-generation-webui/models/t5-large-generation-squad-QuestionAnswer"
         }
 
-    for p in paths:
-        tokenizer = transformers.AutoTokenizer.from_pretrained(paths[p]+'/')
-        translator = ctranslate2.Translator(paths[p]+'_ct/',device=device_map)
+    for p in models:
+        print(p)
+        tokenizer = transformers.AutoTokenizer.from_pretrained(models[p]+'/')
+        translator = ctranslate2.Translator(models[p]+'_ct/',device=device_map)
 
         # Read data
         input_file = "/data/TrainLLMv3/input/"
         selected_prompts = read_data(input_file)
 
         # Create initial dataset
-        dataset = process_dataset(create_dataset(selected_prompts, tokenizer),tokenizer)
+        dataset_ = create_dataset(selected_prompts, tokenizer)
+        dataset = process_dataset(dataset_,tokenizer)
 
         #chunking means I don't need to sort this, I can create batches of equal size.
         # Convert tokenized text to a list of strings for the API
         contexts = [tokenizer.decode(seq, skip_special_tokens=True) for seq in dataset['input_ids']]
-        print(len(contexts))
+        #contexts = dataset_['text']
 
         num_q = 1
 
         num_c = len(contexts)
 
         bs = 16
+        
+        if(p=='summ'):
+            bs = int(bs/2.6)
 
         device_map = 'cuda'
 
@@ -160,38 +168,60 @@ def main():
         #results = translator.translate_batch(input_tokens, max_batch_size=bs, asynchronous=True, batch_type="tokens", num_hypotheses=num_q)
         # Initialize an empty list to store all results
         all_results = []
+        
+        #sample_size = bs*1
+        sample_size = len(input_tokens)
 
         # Split the input_tokens into sub-batches of size 2
-        for i in range(0, len(input_tokens), bs):
-            sub_batch = input_tokens[i:i+bs]
+        for i in range(0, len(input_tokens[0:sample_size]), bs):
+            if(i%100):
+                print(i)
             
+            sub_batch = input_tokens[i:i+bs]
             # Translate the sub-batch
             results = translator.translate_batch(
                 sub_batch, 
-                max_batch_size=bs, 
+                max_batch_size=1, 
                 asynchronous=True, 
                 batch_type="examples", 
                 num_hypotheses=num_q
             )
             
-            # Append the results to all_results
-            all_results.extend(results)
+            try:
+                # Append the results to all_results
+                #print([r.result() for r in results])
+                all_results.extend([r.result() for r in results])
+            except:
+                print('error on resultsm trying sequentially',i)
 
+                for i_ in range(0, len(sub_batch)):
+                    print(len(sub_batch[i_]))
+                    
+                    results = translator.translate_batch(
+                        sub_batch[i_], 
+                        max_batch_size=1, 
+                        asynchronous=False, 
+                        batch_type="examples", 
+                        num_hypotheses=num_q
+                    )
+                    print([r.result() for r in results])
+                    all_results.append([r.result() for r in results])
         print(len(all_results))
 
         print('converted_contexts:',len(converted_contexts))
         # Iterate through each context and its corresponding translation result
-        for idx, (context_, async_result) in enumerate(zip(converted_contexts, all_results)):
+        for idx, (context_, async_result) in enumerate(zip(converted_contexts[0:sample_size], all_results)):
 
             # Initialize an empty list to hold QA pairs for the current context
             
             # Get the actual result from the AsyncTranslationResult
-            for hypothesis in async_result.result():
+            for hypothesis in async_result:#.result():
                 # Decode the tokens back to text
                 output_text = tokenizer.decode(tokenizer.convert_tokens_to_ids(hypothesis['tokens']))
                 
                 # Split the output text into question and answer
                 #question, answer = output_text.split('<sep>')
+                
                 question_answer = output_text#.split('<sep>')
                 
                 question_answer = question_answer.replace(tokenizer.pad_token, "").replace(tokenizer.eos_token, "")
@@ -199,11 +229,18 @@ def main():
 
                 # Store the context and its QA pairs in the final_output dictionary
                 # Use the index as the key and include the actual context text as part of the value
-                final_output[f"{idx}"] = {
-                    'context:': context_,
-                    'question': question_answer.split(tokenizer.sep_token)[0],
-                    'answer': '\n'.join(question_answer.split(tokenizer.sep_token)[1:]).strip()
-                }
+                if(p=='summ'):
+                    final_output[f"{idx}"] = {
+                        'context:': context_,
+                        'summary': output_text,
+                        
+                    }
+                else:
+                    final_output[f"{idx}"] = {
+                        'context:': context_,
+                        'question': question_answer.split(tokenizer.sep_token)[0],
+                        'answer': '\n'.join(question_answer.split(tokenizer.sep_token)[1:]).strip()
+                    }
             print('final_output',len(final_output))
 
         # Save the final_output dictionary to an indented JSON file
