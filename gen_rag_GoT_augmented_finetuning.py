@@ -24,7 +24,7 @@ script_path = "source /home/user/miniconda3/etc/profile.d/conda.sh && cd /home/u
 HOST = '192.168.3.17:5000'
 URI = f'http://{HOST}/api/v1/generate'
 
-n_samples = 1
+n_samples = 600
 top_k = 10  # The number of neighbors you want to consider.
 
 # Load dataset and model
@@ -170,6 +170,7 @@ Inductive reasoning: Evaluate the likelihood of a premise being true by the sum 
 Causal reasoning: Identify directional interacting relationships between between nodes (across edges).
 Node: Represents an idea.
 Edge: Represents the relationship and direction between two ideas.
+Weights: Weights represent the chance of the statement being True (condition/constraint chance).
 Interaction: Represents edge weights, or merit of these ideas.
 Conditions:  Determining factors presumed of context.
 
@@ -181,7 +182,7 @@ Identify Core Ideas (Nodes/Thesis)
 Identify Constraints (Vertices, edges, Anti-thesis)
  - Constraints: Identify and explain up to two contrasting ideas--within any single sentence--that constrain, limit, and/or differentiate the universal (e.g. metal and hot/cold, i.e. ways a form can vary, differentiating characteristics) which will serve as axioms of understanding that differentiate and connect across these ideas.
  - Conditions: Identify determining factors between interacting ideas for the idea to be active. 
- - Activation Function: Use scientific consensus (else popular opinion) to derive probabilities (likelihoods) of each condition (constraints) being True, of which all conditions percents should add up to 1.  A sum product of greater than 50% is interpreted as a universal having met all it's conditions to be True for a specific directional interaction (i.e. a specific moment in time where two nodes directly interacted with one another).
+ - Activation Function:  Using scientific consensus--else popular opinion--for each condition estimate edge weights using density probabilities for each condition, the sum total of all conditionals should equal 1.  Sum product of all nodes and their conditional percents greater than .5 is interpreted as a universal having met all it's conditions to be True for a specific directional interaction (i.e. a specific moment in time where two nodes directly interacted with one another).
 
 Synthesis
  - Premises: Identify and describe associated interactions between universals by exploring and evaluating node edge direction and weights.
@@ -263,12 +264,12 @@ kill_command = f"ssh {user}@{server_ip} -C 'pkill -f \"server.py\" || kill -9 $(
 print(kill_command)
 
 commands = [
-    ["deci",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/DeciLM-6b-instruct/"],
-    ["intern",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/internlm-chat-7b/"],
+    #["deci",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/DeciLM-6b-instruct/"],
+    #["intern",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/internlm-chat-7b/"],
     ["synthia",f"{script_path} --api --listen --extensions openai --use_fast --xformers --sdp-attention --n-gpu-layers 128 --threads 8 --cpu --n_ctx 4096 --numa --model /home/user/text-generation-webui/models/synthia-7b-v1.3.Q4_K_M.gguf"],
     ["athena",f"{script_path} --api --listen --extensions openai --use_fast --xformers --sdp-attention --n-gpu-layers 128 --threads 8 --cpu --n_ctx 4096 --numa --model /home/user/text-generation-webui/models/Athena-v3.q5_K_M.gguf"],
     ["speechless",f"{script_path} --api --listen --extensions openai --use_fast --xformers --sdp-attention --n-gpu-layers 128 --threads 8 --cpu --n_ctx 4096 --numa --model /home/user/text-generation-webui/models/speechless-llama2-hermes-orca-platypus-wizardlm-13b.Q4_K_M.gguf"],
-    ["qwen",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/Qwen-LLaMAfied-7B-Chat/"]
+    #["qwen",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/Qwen-LLaMAfied-7B-Chat/"]
 ]
 
 for name_, command in commands:
