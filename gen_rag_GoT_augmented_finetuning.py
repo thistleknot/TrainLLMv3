@@ -24,7 +24,7 @@ script_path = "source /home/user/miniconda3/etc/profile.d/conda.sh && cd /home/u
 HOST = '192.168.3.17:5000'
 URI = f'http://{HOST}/api/v1/generate'
 
-n_samples = 5
+n_samples = 600
 top_k = 10  # The number of neighbors you want to consider.
 
 # Load dataset and model
@@ -168,11 +168,9 @@ Solely source from the context.
 Syllogistic reasoning: Deduce conclusions from premises; each premise is a statement claimed to be true.
 Inductive reasoning: Evaluate the likelihood of a premise being true by the sum liklihood of all it's conditional interaction weights.
 Causal reasoning: Identify directional interacting relationships between between nodes (across edges).
-Node: Represents an idea.
+Node: Represents an idea.  Initialized with an output activation value.
 Edge: Represents the relationship and direction between two ideas.
-Weights: Weights represent the chance of the statement being True (condition/constraint chance).
-Interaction: Represents edge weights, or merit of these ideas.
-Conditions:  Determining factors presumed from context.
+Interaction Weights: Weights represent the chance of a connection between two ideas as being activated (limiting condition/constraint, chance).
 
 Graph of Thoughts (GoT) process
 
@@ -180,21 +178,19 @@ Ideas (Nodes/Thesis)
  - Universals: Identify and describe 2 to 3 main ideas, themes, or shared meanings expressed across at least 2 sentences within the context, representing each as a node in a causal graph. These nodes should signify universally accepted truths or well-agreed-upon concepts, as in the universal ideas of Aristotle, the forms of Plato, or the archetypes of Jung (e.g., nouns, verbs, adjectives, i.e., a Platonic class/form of being, i.e., Archetypes: when some attribute is True across multiple instances of a perceived class).
 
 Constraints (Vertices, edges, Anti-thesis)
- - Constraints: Identify and explain up to two contrasting ideas within any single sentence that constrain, limit, and/or offer differentiating characteristics (axiom) across the universal ideas, representing these as edges in the causal graph.
- - Conditions: Identify determining factors between interacting ideas (nodes) for the idea (node) to be active and represent them as weights on the edges in the causal graph.
+ - Constraints: Identify and explain up to two contrasting ideas within any single sentence as axioms, limiting conditions that different by characteristics.
   
- Premises
- - Rank dependent ideas: Sequentially rank the ideas (nodes) causally to identify edge directions as the necessary pre-conditions (edges/constraints) for up to but no more than 3 premises.
- - Define Activation Function: For each premise, starting with the nodes as ranked, consult scientific consensus (else popular opinion) to provide a likelihood value between 0 and 1 as the initial probability either as the initial value for the node's activation itself (primary nodes have no inputs, thereby nothing to sum product, these first principles simply have probabilities of being True), or in the case of subsequent nodes, as edge weights between the prior node.
- - Rank Strength: Iterate over each node identified in a given premise and rank the incoming edge weights from highest to lowest to identify the relevative importance of each contributing factor.
+Premises as Direct Causal Graph (Develop up to 3)
+ - Node P initialize output: Define each node's output value as it's chance of being True, consult scientific consensus (else popular opinion) and provide a likelihood value between 0 and 1 (ideas inherently have p >= .5 to be assumed generally true).  This will serve as the node's output when multiplied subsequent node's connecting edge weights.
+ - Rank dependent ideas and assign edge weights: Sequentially rank the ideas (nodes) causally, explicitly assigning edge weights and directions referencing scientific consensus (else popular opinion) to provide a likelihood value between 0 and 1.
+ - Rank axioms: Iterate over each node identified in a given premise and rank the incoming axioms (edge weights) from highest to lowest to identify the relevative importance of each contributing factor.
  
- Evaluate
-  - Activation: For each premise and then by each ranked idea. Calculate the weighted sum of inputs, each multiplied by its corresponding edge weight, and then convert this total score to a probability between 0 and 1 (P) using the logistic function: P(Y=1) = 1 / (1 + e^-Total Score).  Explicitly state this probability, and if >= 0.5, the idea (universal) adequately supports the premise.
-  - Forward Pass: Pass the node's computed probability (activation value) to the next sequential node in the premise, the measure of the interaction is determined by the product between the prior node's activation and the edge weight between them.  Repeat until the final node in the sequence is reached which represents the generalized truthfulness of the entire premise.  Repeat for each premise.
-  - Rank order the premises by their stated activations.
+Evaluate
+ - Activation Function Forward Pass: For each premise, start from the first ranked idea and calculate the weighted sum of (outputs * edge weights) processing nodes sequentially by rank.  Convert the sum to a probability between 0 and 1 (P) using the logistic function: P(Y=1) = 1 / (1 + e^-weighted sum).  Explicitly state this probability, and if >= 0.5, then the subsequent node's output is activated for the next condition. Repeat until the final node in the sequence is reached.  Repeat for each premise.
+ - Rank order premises: Sort by highest final outputs, identifying >=.5 as qualified as generally True.
 
- Conclusion
-  - Generalize: Apply deductive (syllogistic) reasoning by identifying the strongest evaluated premise to the next strongest premise via the greatest edge weight between the two premise's nodes, explicitly stating the edge weight of this connection.  Iterate once more from the 1st premise to 3rd premise, else 2nd to 3rd; use this to construct a cohesive conclusion that aligns with the identified lineages, avoid merely restating premises but integrate them to reveal a unified, overarching insight or principle.
+Conclusion
+ - Generalize: Apply deductive (syllogistic) reasoning starting from the highest ranked premise to the second connecting via their greatest ranked axiom.  Repeat this process from 1st to 3rd premise, else 2nd to 3rd.  Synthesize the connections to unveil an overarching insight or principle.
  
 Response:
 """
