@@ -176,19 +176,24 @@ Conditions:  Determining factors presumed from context.
 
 Graph of Thoughts (GoT) process
 
-Identify Core Ideas (Nodes/Thesis)
+Ideas (Nodes/Thesis)
  - Universals: Identify and describe 2 to 3 main ideas, themes, or shared meanings expressed across at least 2 sentences within the context, representing each as a node in a causal graph. These nodes should signify universally accepted truths or well-agreed-upon concepts, as in the universal ideas of Aristotle, the forms of Plato, or the archetypes of Jung (e.g., nouns, verbs, adjectives, i.e., a Platonic class/form of being, i.e., Archetypes: when some attribute is True across multiple instances of a perceived class).
 
-Identify Constraints (Vertices, edges, Anti-thesis)
+Constraints (Vertices, edges, Anti-thesis)
  - Constraints: Identify and explain up to two contrasting ideas within any single sentence that constrain, limit, and/or offer differentiating characteristics (axiom) across the universal ideas, representing these as edges in the causal graph.
  - Conditions: Identify determining factors between interacting ideas (nodes) for the idea (node) to be active and represent them as weights on the edges in the causal graph.
   
- Synthesis
- - Develop Premises: Sequentially order the ideas (nodes) causally to identify edge directions as the necessary conditions (edges/constraints) for node activations.
- -- Activation Function:  For each premise, explicitly refer to scientific consensus (else popular opinion) and provide a numerical value as the edge weight (between 0 and 1) to the different conditions between interacting nodes, with the sum total equal to 1.
- -- Rank Strength: Iterate over each node identified in a given premise and rank the incoming edge weights from highest to lowest to identify the relevative importance of each contributing factor.
- - Evaluate: Apply inductive reasoning to each premise by iterating over each node, computing the weighted sum of incoming edges; if the sum is ≥ 0.5, explicitly state the activation value for the node (universal). Utilize the computed sum from one node as the input for the subsequent node, culminating in the final node’s output, which reveals the generalized truthfulness of the entire premise.
- - Conclusion:  Apply deductive (syllogistic) reasoning by identifying the strongest evaluated premise to the next strongest premise via the greatest edge weight between the two premises nodes, explicitly stating the edge weight of this connection.  Iterate once more from the 1st premise to 3rd premise, else 2nd to 3rd; use this to construct a cohesive conclusion that aligns with the identified linkages and is not a mere restatement of premises but integrates them to reveal a unified, overarching insight or principle.
+ Premises
+ - Rank dependent ideas: Sequentially rank the ideas (nodes) causally to identify edge directions as the necessary pre-conditions (edges/constraints), providing no more than 3 premises.
+ - Define Activation Function: For each premise, starting with the nodes as ranked, consult scientific consensus (else popular opinion) to provide a value between 0 and 1 as the initial probability either of the initial node's activation output value itself (which has no input edge weights), or in the case of subsequent nodes, as edge weights between the prior node.
+ - Rank Strength: Iterate over each node identified in a given premise and rank the incoming edge weights from highest to lowest to identify the relevative importance of each contributing factor.
+ 
+ Evaluate
+  - Activation: For each premise and then by each ranked idea, start from the first ranked node.  Determine calculate the weighted sum of inputs, each multiplied by its corresponding edge weight, and then convert this total score to a probability between 0 and 1 (P) using the logistic function: P(Y=1) = 1 / (1 + e^-Total Score).  Explicitly state this probability, and if >= 0.5, the idea (universal) adequately supports the premise.
+  - Forward Pass: Pass the node's computed probability (activation value) to the next sequential node in the premise, the measure of the interaction is determined by the product between the prior node's activation and the edge weight between them.  Repeat until the final node in the sequence is reached which represents the generalized truthfulness of the entire premise.
+
+ Conclusion
+  - Generalize: Apply deductive (syllogistic) reasoning by identifying the strongest evaluated premise to the next strongest premise via the greatest edge weight between the two premise's nodes, explicitly stating the edge weight of this connection.  Iterate once more from the 1st premise to 3rd premise, else 2nd to 3rd; use this to construct a cohesive conclusion that aligns with the identified lineages, avoid merely restating premises but integrate them to reveal a unified, overarching insight or principle.
  
 Response:
 """
