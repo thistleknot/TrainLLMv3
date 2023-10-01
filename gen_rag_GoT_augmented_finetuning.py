@@ -24,7 +24,7 @@ script_path = "source /home/user/miniconda3/etc/profile.d/conda.sh && cd /home/u
 HOST = '192.168.3.17:5000'
 URI = f'http://{HOST}/api/v1/generate'
 
-n_samples = 600
+n_samples = 5
 top_k = 10  # The number of neighbors you want to consider.
 
 # Load dataset and model
@@ -172,22 +172,23 @@ Node: Represents an idea.
 Edge: Represents the relationship and direction between two ideas.
 Weights: Weights represent the chance of the statement being True (condition/constraint chance).
 Interaction: Represents edge weights, or merit of these ideas.
-Conditions:  Determining factors presumed of context.
+Conditions:  Determining factors presumed from context.
 
 Graph of Thoughts (GoT) process
 
 Identify Core Ideas (Nodes/Thesis)
- - Identify and describe 2 to 3 main ideas, themes, or shared meanings expressed across at least 2 sentences within the context (e.g. universals: Aristotle; forms: Plato; Archetypes: Jung; e.g. nouns, verbs, adjectives, i.e. a platonic class/form of being, i.e. Archetypes: when some attribute is True across multiple instances of some percieved class).
+ - Universals: Identify and describe 2 to 3 main ideas, themes, or shared meanings expressed across at least 2 sentences within the context, representing each as a node in a causal graph. These nodes should signify universally accepted truths or well-agreed-upon concepts, as in the universal ideas of Aristotle, the forms of Plato, or the archetypes of Jung (e.g., nouns, verbs, adjectives, i.e., a Platonic class/form of being, i.e., Archetypes: when some attribute is True across multiple instances of a perceived class).
 
 Identify Constraints (Vertices, edges, Anti-thesis)
- - Constraints: Identify and explain up to two contrasting ideas--within any single sentence--that constrain, limit, and/or differentiate the universal (e.g. metal and hot/cold, i.e. ways a form can vary, differentiating characteristics) which will serve as axioms of understanding that differentiate and connect across these ideas.
- - Conditions: Identify determining factors between interacting ideas for the idea to be active. 
- - Activation Function:  Using scientific consensus--else popular opinion--for each condition estimate edge weights using density probabilities for each condition, the sum total of all conditionals should equal 1.  Sum product of all nodes and their conditional percents greater than .5 is interpreted as a universal having met all it's conditions to be True for a specific directional interaction (i.e. a specific moment in time where two nodes directly interacted with one another).
-
-Synthesis
- - Premises: Identify and describe associated interactions between universals by exploring and evaluating node edge direction and weights.
- - Rank: Identify the premises with the most and least weight by interpreting the conditional interaction weights (i.e. sum product between two nodes edges). 
- - Conclusion: Apply deductive logic to integrate and synthesize the premises and derive conclusions from them, while utilizing inductive reasoning to assess their merits, evaluating the probability of the necessary conditions, to formulate a coherent and generalized syllogism.
+ - Constraints: Identify and explain up to two contrasting ideas within any single sentence that constrain, limit, and/or offer differentiating characteristics (axiom) across the universal ideas, representing these as edges in the causal graph.
+ - Conditions: Identify determining factors between interacting ideas (nodes) for the idea (node) to be active and represent them as weights on the edges in the causal graph.
+ 
+ Synthesis
+ - Premises: Sequentially order the necessary ideas (nodes) to establish causal directions which identify necessary conditions (edges/constraints).
+ -- Activation Function:  For each premise, utilize scientific consensus (or popular opinion when consensus is absent) to allocate weights to the interacting edges, with the sum total of all conditionals is equal to 1.
+ -- Rank Strength: Iterate over each node identified in a given premise and rank the incoming edge weights from highest to lowest to identify the relevative importance of each contributing factor.
+ - Evaluate: Apply inductive reasoning to each premise. Iterate over each node, computing the weighted sum of incoming edges; if the sum is ≥ 0.5, designate the node (universal) as activated. Utilize the computed sum from one node as the input for the subsequent node, culminating in the final node’s output, which reveals the generalized truthfulness of the entire premise.
+ - Conclusion: Apply deductive logic to integrate the evaluated causal relationships between nodes within the premises to formulate a coherent, generalized syllogism.
  
 Response:
 """
@@ -261,6 +262,7 @@ len([q for q in quotes if len(q) <128])
 
 # Define the commands to be executed remotely
 kill_command = f"ssh {user}@{server_ip} -C 'pkill -f \"server.py\" || kill -9 $(ps aux | grep \"server.py\" | grep -v grep | awk '{{print $2}}')'"
+subprocess.run(kill_command, shell=True)
 print(kill_command)
 
 commands = [
