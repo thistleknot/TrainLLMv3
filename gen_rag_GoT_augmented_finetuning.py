@@ -97,17 +97,107 @@ for i, sample in enumerate(samples):
 
 promptsArray = []
 
+#works with qwen, speechless, athena, and synthia
+def format_universal_prompt(context: str) -> str:
+    """
+    Formats and returns a Universal Analysis prompt string.
+    
+    :param context: The context string to be included in the prompt.
+    :return: A formatted prompt string.
+    """
+    return f"""
+Context:
+
+{context}
+Instruction:
+
+When responding, follow the processes outlined below.
+Succinct points.
+Use 3rd person objective.
+Solely source from what is being expressed within the context.
+
+Universals (thesis)
+Identify no more than three core ideas, themes, or meanings shared (expressed) across any subset of sentences (i.e. universals: Aristotle; forms: Plato; Archetypes: Jung).
+
+Constraints (elenchus, anti-thesis)
+Identify and explain up to two contrary ideas expressed within any single sentence that differentiates itself from a shared meaning.
+
+Conclusion (Synthesis)
+Integrate the derived information to form premises (syllogistic and causal reasoning) to construct a clear, cohesive generalized conclusion.
+
+Response:
+
+Universals
+"""
+
+#works with athena
+def format_GoT_prompt(context):
+    return f"""
+Context:
+
+{context}
+Instruction:
+
+When responding, follow the processes outlined below.
+Be succinct.
+Use 3rd person objective.
+Solely source from what is being expressed within the context.
+
+Graph of Thoughts (GoT) process
+ Nodes: Identify 2 to 3 main ideas (e.g. nouns, verbs, adjectives) expressed across multiple sentences within the context.
+ Vertices: Limit/constrain/shape these ideas by identifying 1 to 2 contraries to act as axioms (edges) of understanding (e.g. hot/cold across a discussion about metals) that differentiate across these ideas.
+Synthesis process
+ Premises: Describe the product of these interactions between nodes (vertices).
+ Rank: Identify the premises with most/least weight (using scientific consensus, else popular opinion).
+ Generalize: Synthesize the interrelated information.
+
+Response:
+"""
+
+def format_combined_prompt(context: str) -> str:
+    return f"""
+Context:
+
+{context}
+Instruction:
+
+When responding, follow the process as outlined below.
+Be succinct.
+Use 3rd person objective.
+Solely source from the context.
+Syllogistic reasoning: Deduce conclusions from premises; each premise is a statement claimed to be true.
+Inductive reasoning: Evaluate the likelihood of a premise being true by the sum liklihood of all it's conditional interaction weights.
+Causal reasoning: Identify directional interacting relationships between between nodes (across edges).
+Node: Represents an idea.
+Edge: Represents the relationship and direction between two ideas.
+Interaction: Represents edge weights, or merit of these ideas.
+Conditions:  Determining factors presumed of context.
+
+Graph of Thoughts (GoT) process
+
+Identify Core Ideas (Nodes/Thesis)
+ - Identify and describe 2 to 3 main ideas, themes, or shared meanings expressed across at least 2 sentences within the context (e.g. universals: Aristotle; forms: Plato; Archetypes: Jung; e.g. nouns, verbs, adjectives, i.e. a platonic class/form of being, i.e. Archetypes: when some attribute is True across multiple instances of some percieved class).
+
+Identify Constraints (Vertices, edges, Anti-thesis)
+ - Constraints: Identify and explain up to two contrasting ideas--within any single sentence--that constrain, limit, and/or differentiate the universal (e.g. metal and hot/cold, i.e. ways a form can vary, differentiating characteristics) which will serve as axioms of understanding that differentiate and connect across these ideas.
+ - Conditions: Identify determining factors between interacting ideas for the idea to be active. 
+ - Activation Function: Use scientific consensus (else popular opinion) to derive probabilities (likelihoods) of each condition (constraints) being True, of which all conditions percents should add up to 1.  A sum product of greater than 50% is interpreted as a universal having met all it's conditions to be True for a specific directional interaction (i.e. a specific moment in time where two nodes directly interacted with one another).
+
+Synthesis
+ - Premises: Identify and describe associated interactions between universals by exploring and evaluating node edge direction and weights.
+ - Rank: Identify the premises with the most and least weight by interpreting the conditional interaction weights (i.e. sum product between two nodes edges). 
+ - Conclusion: Apply deductive logic to integrate and synthesize the premises and derive conclusions from them, while utilizing inductive reasoning to assess their merits, evaluating the probability of the necessary conditions, to formulate a coherent and generalized syllogism.
+ 
+Response:
+"""
+
+promptsArray = []
 for sample, selected_matches in final_samples_dict.items():
     context = ""
     for match, weight in selected_matches:
         context += f"{match}\n"
-    prompt = f"Context:\n\n{context}\n\nInstruction:\n\nWhen responding, follow the processes outlined below.\nBe succinct.\nUse 3rd person objective.\nSolely source from what is being expressed within the context.\n\nGraph of Thoughts (GoT) process\n Nodes: Identify 2 to 3 common ideas (e.g. nouns, verbs, adjectives).\n Vertices: Identify 1 to 2 contraries as axioms (edges) of understanding (e.g. ranges such as hot/cold) across these ideas.\nSynthesis process\n Premises: Use nodes and vertices to form premises.\n Rank: Identify the premises with most/least weight (using scientific consensus, else popular opinion).\n Generalize: Synthesize the interrelated information.\n\nResponse:\n"
-    #prompt = f"Context:\n\n{context}\nInstruction:\n\nSuccinct points.\n3rd person objective.\n\nUniversals (thesis)\nIdentify no more than three core ideas, themes, or meanings shared (expressed) across any subset of sentences (i.e. universals: Aristotle; forms: Plato; Archetypes: Jung).\n\nConstraints (elenchus, anti-thesis)\nIdentify and explain up to two contrary ideas expressed within any single sentence that differentiates itself from a shared meaning.\n\nConclusion (Synthesis)\nIntegrate the derived information to form premises (syllogistic and causal reasoning) to construct a clear, cohesive generalized conclusion.\n\nResponse:\n\nUniversals\n\n"
-    # Prepare the prompt and append it to the promptsArray
-    #prepped_prompt = f"Context:\n\n{all_quotes_str}\nInstruction:\n\nLet's think step by step.\nStep 1. Identify the facts expressed.\nStep 2. Identify the common themes amongst the facts.\nStep 3. Generalize the information.\n\nResponse:\n\n"
-    #prompt = f"Context:\n\n{all_quotes_str}\nInstruction:\n\nSource information from sentences within the context\nProvide clear and concise explanations.\n3rd person objective.\nProvide an outline containing the following\n\nCommon Factors\nIdentify no more than three core ideas, themes, or meanings shared/expressed across any subset of sentences (i.e. universals: Aristotle; forms: Plato; Archetypes: Jung).\nCounter Examples\nIdentify and explain up to two contrary ideas expressed within any single sentence that differentiates itself from a shared meaning.\nConclusion\nIntegrate the derived information to form premises (syllogistic and causal reasoning) in support of a generalized conclusion.\n\nResponse:\n\nCommon Factors\n"
-    #prompt = f"Context:\n\n{all_quotes_str}\n\nInstruction:\n\nIdentify and unpack the common archetypal (Jungian) meaning(s) via synthesis from the above quotes.\n\nResponse:\n\n"
-    promptsArray.append(prompt)
+    
+    promptsArray.append(format_combined_prompt(context))
 
 promptsarray = [p for p in promptsArray if len(p) <= 1024]
 
@@ -173,6 +263,8 @@ kill_command = f"ssh {user}@{server_ip} -C 'pkill -f \"server.py\" || kill -9 $(
 print(kill_command)
 
 commands = [
+    ["deci",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/DeciLM-6b-instruct/"],
+    ["intern",f"{script_path} --api --listen --xformers --sdp-attention --trust-remote-code --disk-cache-dir /data/tmp --use_double_quant --quant_type nf4 --numa --load-in-4bit --settings settings-template.yaml --model /home/user/text-generation-webui/models/internlm-chat-7b/"],
     ["synthia",f"{script_path} --api --listen --extensions openai --use_fast --xformers --sdp-attention --n-gpu-layers 128 --threads 8 --cpu --n_ctx 4096 --numa --model /home/user/text-generation-webui/models/synthia-7b-v1.3.Q4_K_M.gguf"],
     ["athena",f"{script_path} --api --listen --extensions openai --use_fast --xformers --sdp-attention --n-gpu-layers 128 --threads 8 --cpu --n_ctx 4096 --numa --model /home/user/text-generation-webui/models/Athena-v3.q5_K_M.gguf"],
     ["speechless",f"{script_path} --api --listen --extensions openai --use_fast --xformers --sdp-attention --n-gpu-layers 128 --threads 8 --cpu --n_ctx 4096 --numa --model /home/user/text-generation-webui/models/speechless-llama2-hermes-orca-platypus-wizardlm-13b.Q4_K_M.gguf"],
@@ -180,7 +272,7 @@ commands = [
 ]
 
 for name_, command in commands:
-    print(command)
+    print(name_)
     full_command = f"ssh {user}@{server_ip} -C '{command}'"
     print(full_command)
     process = subprocess.Popen(full_command, shell=True)
@@ -191,6 +283,7 @@ for name_, command in commands:
     with tqdm(total=len(promptsArray), desc='Processing prompts') as progress_bar:
         for p in promptsArray:
             prompt, result = run(p)
+            print(prompt + result)
             responses.append([prompt, result])
             progress_bar.update(1)
 
